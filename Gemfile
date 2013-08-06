@@ -8,5 +8,3 @@ gem 'middleman-deploy'
 
 # For feed.xml.builder
 gem "builder", "~> 3.0.0"
-
-gem 'nokogiri'
