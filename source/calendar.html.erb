@@ -1,0 +1,36 @@
+---
+pageable: true
+---
+<h1>Archive for
+  <% case page_type
+     when 'day' %>
+    <%= Date.new(year, month, day).strftime('%Y-%m-%d') %>
+  <% when 'month' %>
+    <%= Date.new(year, month, 1).strftime('%Y-%m') %>
+  <% when 'year' %>
+    <%= year %>
+  <% end %>
+</h1>
+
+<% if paginate %>
+  <p>Page <%= page_number %> of <%= num_pages %></p>
+
+  <% if prev_page %>
+    <p><%= link_to 'Previous page', prev_page %></p>
+  <% end %>
+<% end %>
+
+<div class="list-group">
+  <% page_articles.each_with_index do |article, i| %>
+    <a href="<%= url_for(article) %>" class="list-group-item">
+      <h4><%= article.title %></h4>
+      <p><%= article.date.strftime('%Y-%m-%d') %></p>
+    </a>
+  <% end %>
+</div>
+
+<% if paginate %>
+  <% if next_page %>
+    <p><%= link_to 'Next page', next_page %></p>
+  <% end %>
+<% end %>

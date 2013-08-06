@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
+    <title>Chris Searle</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="/stylesheets/bootstrap.css" rel="stylesheet" media="screen">
+    <link rel="shortcut icon" href="/favicon.ico" />
+  </head>
+  <body>
+    <div class="navbar">
+      <a class="navbar-brand" href="/">Chris Searle</a>
+      <ul class="nav navbar-nav">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tags/">All Tags</a></li>
+        <li><a href="/articles/">All Articles</a></li>
+      </ul>
+      <ul class="nav navbar-nav pull-right">
+        <li><%= link_to 'Cryptographic Keys', '/cryptographic_keys.html' %></li>
+        <li><a href="http://about.me/chrissearle" target="_blank">Other Sites</a></li>
+      </ul>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-lg-9">
+          <%= yield %>
+        </div>
+        <div class="col-12 col-lg-3">
+
+          <script type="text/javascript"><!--
+          google_ad_client = "ca-pub-6208435820744910";
+          /* www.chrissearle.org - left - thin */
+          google_ad_slot = "5194006361";
+          google_ad_width = 160;
+          google_ad_height = 90;
+          //-->
+          </script>
+          <script type="text/javascript"
+          src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+          </script>
+
+          <h2>Popular Tags</h2>
+
+          <div class="list-group">
+            <% blog.tags.sort_by{|k,v| v.size}.reverse[0...8].each do |tag, articles| %>
+              <a href="<%= tag_path(tag) %>" class="list-group-item">
+                <span class="badge"><%= articles.size %></span>
+                <%= tag %>
+              </a>
+            <% end %>
+          </div>
+
+          <h2>Recent Articles</h2>
+
+          <div class="list-group">
+            <% blog.articles[0...10].each do |article| %>
+              <a href="<%= url_for(article) %>" class="list-group-item">
+                <%= article.title %>
+              </a>
+            <% end %>
+          </div>
+
+          <h2>By Year</h2>
+
+          <div class="list-group">
+            <% blog.articles.group_by {|a| a.date.year }.each do |year, articles| %>
+              <a href="<%= blog_year_path(year) %>" class="list-group-item">
+                <span class="badge"><%= articles.size %></span>
+                <%= year %>
+              </a>
+            <% end %>
+          </div>
+        </div>
+    </div>
+    <div id="footer">
+      <script type="text/javascript"><!--
+      google_ad_client = "ca-pub-6208435820744910";
+      /* www.chrissearle.org - footer large */
+      google_ad_slot = "5379170846";
+      google_ad_width = 728;
+      google_ad_height = 90;
+      //-->
+      </script>
+      <script type="text/javascript"
+      src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+      </script>
+    </div>
+    <!-- JavaScript plugins (requires jQuery) -->
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/javascripts/bootstrap.js"></script>
+
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-2221544-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+  </body>
+</html>
+

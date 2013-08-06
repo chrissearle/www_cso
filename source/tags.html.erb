@@ -1,0 +1,12 @@
+---
+---
+<h1>All Tags</h1>
+
+<div class="list-group">
+  <% blog.tags.sort.each do |tag, articles| %>
+    <a href="<%= tag_path(tag) %>" class="list-group-item">
+      <span class="badge"><%= articles.size %></span>
+      <%= tag %>
+    </a>
+  <% end %>
+</div>

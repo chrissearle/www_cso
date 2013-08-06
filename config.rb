@@ -26,7 +26,7 @@ activate :blog do |blog|
 end
 
 page "/feed.xml", :layout => false
-
+page "blog/*", :layout => :article_layout
 
 activate :directory_indexes
 
@@ -88,10 +88,10 @@ set :images_dir, 'images'
 # Build-specific configuration
 configure :build do
   # For example, change the Compass output style for deployment
-  # activate :minify_css
+  activate :minify_css
   
   # Minify Javascript on build
-  # activate :minify_javascript
+  activate :minify_javascript
   
   # Enable cache buster
   # activate :cache_buster
@@ -106,4 +106,16 @@ configure :build do
   
   # Or use a different image path
   # set :http_path, "/Content/images/"
+end
+
+configure :development do
+  activate :livereload
+end
+
+activate :deploy do |deploy|
+  deploy.method = :rsync
+  deploy.user   = 'chris'
+  deploy.host   = 'menavaur.chrissearle.org'
+  deploy.path   = '/srv/www/test.chrissearle.org/htdocs'
+  deploy.clean  = true
 end

@@ -1,0 +1,28 @@
+---
+pageable: true
+per_page: 12
+---
+<h1>Articles tagged '<%= tagname %>'</h1>
+
+<% if paginate %>
+  <p>Page <%= page_number %> of <%= num_pages %></p>
+
+  <% if prev_page %>
+    <p><%= link_to 'Previous page', prev_page %></p>
+  <% end %>
+<% end %>
+
+<div class="list-group">
+  <% page_articles.each_with_index do |article, i| %>
+    <a href="<%= url_for(article) %>" class="list-group-item">
+      <h4><%= article.title %></h4>
+      <p><%= article.date.strftime('%Y-%m-%d') %></p>
+    </a>
+  <% end %>
+</div>
+
+<% if paginate %>
+  <% if next_page %>
+    <p><%= link_to 'Next page', next_page %></p>
+  <% end %>
+<% end %>
