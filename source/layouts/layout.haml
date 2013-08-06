@@ -1,0 +1,71 @@
+!!! 5
+%html
+  %head
+    %meta{ :charset => 'utf-8' }
+    %meta{ :'http-equiv' => 'X-UA-Compatible', :content => 'IE=edge;chrome=1' }
+    %title
+      Chris Searle
+    %meta{ :name => "viewport", :content => "width=device-width, initial-scale=1.0" }
+    %link{ :href => "/stylesheets/bootstrap.css", :rel => "stylesheet", :media => "screen" }
+    %link{ :rel => "shortcut icon", :href => "/favicon.ico" }
+  %body
+    .navbar
+      %a.navbar-brand{ :href => "/"}
+        Chris Searle
+      %ul.nav.navbar-nav
+        %li
+          %a{ :href => '/'}
+            Home
+        %li
+          %a{ :href => '/tags/'}
+            All Tags
+        %li
+          %a{ :href => '/articles/'}
+            All Articles
+      %ul.nav.navbar-nav.pull-right
+        %li= link_to 'Cryptographic Keys', '/cryptographic_keys.html'
+        %li
+          %a{ :target => '_blank', :href => "http://about.me/chrissearle/" }
+            Other Sites
+
+    .container
+      .row
+        .col-12.col-lg-9
+          = yield
+        .col-12.col-lg-3
+          %script(src="/javascripts/left-thin-as.js")
+          %script(src="http://pagead2.googlesyndication.com/pagead/show_ads.js")
+          
+          %h2
+            Popular Tags
+
+          .list-group
+            - blog.tags.sort_by{|k,v| v.size}.reverse[0...8].each do |tag, articles|
+              %a.list-group-item{ :href => tag_path(tag) }
+                %span.badge= articles.size
+                = tag
+
+          %h2
+            Recent Articles
+
+          .list-group
+            - blog.articles[0...10].each do |article|
+              %a.list-group-item{ :href => url_for(article) }
+                = article.title
+
+          %h2
+            By Year
+
+          .list-group
+            - blog.articles.group_by {|a| a.date.year }.each do |year, articles|
+              %a.list-group-item{ :href => blog_year_path(year) }
+                %span.badge= articles.size
+                = year
+                
+    %footer.footer
+      %script(src="/javascripts/footer-large-as.js")
+      %script(src="http://pagead2.googlesyndication.com/pagead/show_ads.js")
+
+    %script(src="http://code.jquery.com/jquery.js")
+    %script(src="/javascripts/bootstrap.js")
+    %script(src="/javascripts/ga.js")

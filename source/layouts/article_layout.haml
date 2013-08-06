@@ -1,0 +1,14 @@
+= wrap_layout :layout do
+  %article
+    %h1= current_page.title
+    %p.well
+      Posted:
+      = current_page.date.strftime('%Y-%m-%d %H:%M')
+      - current_page.tags.each do |tag|
+        |
+        = link_to tag, tag_path(tag)
+    = yield
+
+  .disqus_thread
+
+  %script(src="/javascripts/disqus.js")

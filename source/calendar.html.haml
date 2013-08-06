@@ -1,0 +1,41 @@
+---
+pageable: true
+---
+%h1
+  Archive for
+  - case page_type
+    - when 'day'
+      = Date.new(year, month, day).strftime('%Y-%m-%d')
+    - when 'month'
+      = Date.new(year, month, 1).strftime('%Y-%m')
+    - when 'year'
+      = year
+
+.list-group
+  - page_articles.each_with_index do |article, i|
+    %a.list-group-item{ :href => url_for(article) }
+      %h4= article.title
+      %p= article.date.strftime('%Y-%m-%d')
+
+- if paginate
+  %ul.pagination
+    %li{:class => prev_page ? "" : "disabled"}
+      - if prev_page
+        =link_to "Prev", prev_page.url
+      - else
+        %span Prev
+    - (page_number - 2 .. page_number + 2).select{|i| i > 0 && i <= num_pages}.each do |i|
+      - if i == page_number
+        %li.active
+          %span= i
+      - else
+        %li
+          - p = nil
+          - (i ... page_number).each do p = p ? p.metadata[:locals]['prev_page'] : prev_page; end
+          - (page_number ... i).each do p = p ? p.metadata[:locals]['next_page'] : next_page; end
+          =link_to "#{i}", p && p.url
+    %li{:class => next_page ? "" : "disabled"}
+      - if next_page
+        =link_to "Next", next_page.url
+      - else
+        %span Next
