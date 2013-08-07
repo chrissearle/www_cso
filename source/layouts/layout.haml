@@ -11,23 +11,31 @@
     %link{ :rel => "shortcut icon", :href => "/favicon.ico" }
   %body
     .navbar
-      %a.navbar-brand{ :href => "/"}
-        Chris Searle
-      %ul.nav.navbar-nav
-        %li
-          %a{ :href => '/'}
-            Home
-        %li
-          %a{ :href => '/tags/'}
-            All Tags
-        %li
-          %a{ :href => '/articles/'}
-            All Articles
-      %ul.nav.navbar-nav.pull-right
-        %li= link_to 'Cryptographic Keys', '/cryptographic_keys.html'
-        %li
-          %a{ :target => '_blank', :href => "http://about.me/chrissearle/" }
-            Other Sites
+      .container
+        %button.navbar-toggle{ :type => "button", :data => { :toggle => "collapse",  :target => ".navbar-responsive-collapse" } }
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+      
+        %a.navbar-brand{ :href => "/"}
+          Chris Searle
+        
+        .nav-collapse.collapse.navbar-responsive-collapse
+          %ul.nav.navbar-nav
+            %li
+              %a{ :href => '/'}
+                Home
+            %li
+              %a{ :href => '/tags/'}
+                All Tags
+            %li
+              %a{ :href => '/articles/'}
+                All Articles
+          %ul.nav.navbar-nav.pull-right
+            %li= link_to 'Cryptographic Keys', '/cryptographic_keys.html'
+            %li
+              %a{ :target => '_blank', :href => "http://about.me/chrissearle/" }
+                Other Sites
 
     .container
       .row
