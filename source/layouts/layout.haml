@@ -34,8 +34,14 @@
         .col-12.col-lg-9
           = yield
         .col-12.col-lg-3
-          %script(src="/javascripts/left-thin-as.js")
-          %script(src="http://pagead2.googlesyndication.com/pagead/show_ads.js")
+        
+          %form{ :action => "http://www.google.com", :id => "cse-search-box" }
+            %div
+              %input{ :type => 'hidden', :name => 'cx', :value => 'partner-pub-6208435820744910:4vtji8-o7c0' }
+              %input{ :type => 'text', :name => 'q', :size => '40' }
+              %input{ :type => 'submit', :name => 'sa', :value => 'Search' }
+
+          %script(src="http://www.google.com/coop/cse/brand?form=cse-search-box&amp;lang=en")
           
           %h2
             Popular Tags
@@ -45,6 +51,10 @@
               %a.list-group-item{ :href => tag_path(tag) }
                 %span.badge= articles.size
                 = tag
+
+          .centered
+            %script(src="/javascripts/left-thin-as.js")
+            %script(src="http://pagead2.googlesyndication.com/pagead/show_ads.js")
 
           %h2
             Recent Articles
