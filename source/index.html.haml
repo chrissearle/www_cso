@@ -9,6 +9,8 @@ pageable: true
     - article.tags.each do |tag|
       |
       = link_to tag, tag_path(tag)
+    %br
+    %a{ :href => "#{url_for(article)}#disqus_thread"}
   = article.body
 
 - if paginate
@@ -33,3 +35,5 @@ pageable: true
         =link_to "Next", next_page.url
       - else
         %span Next
+
+%script(src="/javascripts/disqus-links.js")
