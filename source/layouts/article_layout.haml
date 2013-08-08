@@ -9,6 +9,21 @@
         = link_to tag, tag_path(tag)
     = yield
 
+  .centered
+    %ul.pagination
+      - prev_article = current_article.previous_article
+      %li{:class => prev_article ? "" : "disabled"}
+        - if prev_article
+          =link_to "< #{short_title(prev_article.title)}", prev_article.url
+        - else
+          %span Prev
+      - next_article = current_article.next_article
+      %li{:class => next_article ? "" : "disabled"}
+        - if next_article
+          =link_to "#{short_title(next_article.title)} >", next_article.url
+        - else
+          %span Next
+
   .disqus_thread
 
   %script(src="/javascripts/disqus.js")
