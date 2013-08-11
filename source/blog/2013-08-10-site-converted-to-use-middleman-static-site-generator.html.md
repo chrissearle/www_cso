@@ -6,7 +6,7 @@ tags: drupal, middleman, site generation
 
 I've had this site running drupal since [august 2006](/2006/08/17/Migration_to_drupal) but over time I've reduced the modules in use to almost nothing. There's nothing on the site that needs to be dynamic any more.
 
-So I decided to migrate it to a static site generator - which means that the site is a lot easier to server, requires far less maintenance and can be easily stored under version control :)
+So I decided to migrate it to a static site generator - which means that the site is a lot easier to serve, requires far less maintenance and can be easily stored under version control :)
 
 I've tried [nanoc](http://nanoc.ws) before - it works but I find the documentation on extending it a bit opaque, so for this site I've gone with [middleman](http://middlemanapp.com/). It seems to work well and I find that writing the few small extensions I need has been easy.
 
