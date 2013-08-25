@@ -114,7 +114,6 @@ end
 
 activate :deploy do |deploy|
   deploy.method = :rsync
-  deploy.user   = 'chris'
   deploy.host   = 'menavaur.chrissearle.org'
   deploy.path   = '/srv/www/www.chrissearle.org/htdocs'
   deploy.clean  = true
