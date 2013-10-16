@@ -108,10 +108,6 @@ configure :build do
   # set :http_path, "/Content/images/"
 end
 
-configure :development do
-  activate :livereload
-end
-
 activate :deploy do |deploy|
   deploy.method = :rsync
   deploy.host   = 'menavaur.chrissearle.org'
