@@ -14,10 +14,14 @@ Short form:
 
 * Use GPUSniffer to get the card name (both of the apps have a copy of the GPUSniffer - choose one of the following):
 
-        /Applications/Adobe\ Premiere\ Pro\ CS6/Adobe\ Premiere\ Pro\ CS6.app/Contents/GPUSniffer.app/Contents/MacOS/GPUSniffer
-        /Applications/Adobe\ After\ Effects\ CS6/Adobe\ After\ Effects\ CS6.app/Contents/GPUSniffer.app/Contents/MacOS/GPUSniffer
+~~~ shell
+/Applications/Adobe\ Premiere\ Pro\ CS6/Adobe\ Premiere\ Pro\ CS6.app/Contents/GPUSniffer.app/Contents/MacOS/GPUSniffer
+/Applications/Adobe\ After\ Effects\ CS6/Adobe\ After\ Effects\ CS6.app/Contents/GPUSniffer.app/Contents/MacOS/GPUSniffer
+~~~
 
 * Add the card name to both
 
-        /Applications/Adobe\ Premiere\ Pro\ CS6/Adobe\ Premiere\ Pro\ CS6.app/Contents/cuda_supported_cards.txt
-        /Applications/Adobe\ After\ Effects\ CS6/Adobe\ After\ Effects\ CS6.app/Contents/raytracer_supported_cards.txt
+~~~ shell
+/Applications/Adobe\ Premiere\ Pro\ CS6/Adobe\ Premiere\ Pro\ CS6.app/Contents/cuda_supported_cards.txt
+/Applications/Adobe\ After\ Effects\ CS6/Adobe\ After\ Effects\ CS6.app/Contents/raytracer_supported_cards.txt
+~~~

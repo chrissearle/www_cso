@@ -12,11 +12,15 @@ If you enable several databases on the same plugin - it does a lot of stuff to b
 
 I found that if I insert this line
 
-    $pg->{title} = $pg->{title} . " " . $pg->wildcard_parameter();
+~~~ perl
+$pg->{title} = $pg->{title} . " " . $pg->wildcard_parameter();
+~~~
 
 just before the call to 
 
-    $pg->Process();
+~~~ perl
+$pg->Process();
+~~~
 
 then I get unique titles.
 

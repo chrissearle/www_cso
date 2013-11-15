@@ -18,8 +18,10 @@ So - you need to force the mac to ignore hostname allocation by setting a fixed 
 
 For Lion and Mountain Lion:
 
-    scutil --set HostName local.foo.bar
-    
+~~~ shell
+scutil --set HostName local.foo.bar
+~~~ 
+
 Previous versions of OSX had some settings in /etc/hostconfig - but I don't have an old enough install to test on.
 
 YMMV on whether you need sudo or not for editing /etc/hosts and scutil call
