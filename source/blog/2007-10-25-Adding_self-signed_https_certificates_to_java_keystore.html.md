@@ -33,3 +33,7 @@ If you need to install someone else's certificate and they don't have a download
     echo |\
     openssl s_client -connect ${REMHOST}:${REMPORT} 2>&1 |\
     sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p'
+
+**Update 2013-11-22**
+
+Mac certificate file path - the path given above matches the JDKs from Apple. The path for the certificate file if you're using java 7 from oracle on your mac will match the path given for windows/linux above - in other words - from java 7 and on - the path is the same for windows/linux/mac (makes sense since the JDK now comes from the same place).
