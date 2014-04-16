@@ -4,6 +4,16 @@ date: 2011-10-02 17:49:10 +0200
 tags: mkv, mkvtoolsnix, mkvmerge, mkvinfo, matroska
 ---
 
+**Update - 2014-04-16**
+
+As pointed out in the comments below - mkvmerge --split now has a chapters option
+
+   mkvmerge -o output.mkv --split chapters:1,3,5 testfile.mkv 
+
+**Original post**
+
+The original post shows how to do timecode based splitting which may still be useful for people:
+
 I had the need to split some mkv (matroska video) files on chapter marks.
 
 I'd normally use handbrake for this - split and encode. But I didn't really want to reencode each time.
