@@ -7,8 +7,7 @@
       - current_page.tags.each do |tag|
         |
         = link_to tag, tag_path(tag)
-    = find_and_preserve do
-      = yield
+    ~ yield
 
   .centered
     %ul.pagination

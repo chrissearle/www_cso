@@ -45,8 +45,7 @@
     .container
       .row
         .col-12.col-lg-9
-          = find_and_preserve do
-            = yield
+          ~ yield
         .col-12.col-lg-3
         
           %form{ :action => "http://www.google.com", :id => "cse-search-box" }
