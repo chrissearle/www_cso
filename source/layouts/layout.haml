@@ -14,7 +14,7 @@
     %link{ :rel => "shortcut icon", :href => "/favicon.ico" }
     %link{ :rel => "alternate home", :type => "application/rss+xml", :href => url_for('/feed.xml') }
   %body
-    .navbar
+    .navbar.navbar-fixed-top.navbar-inverse 
       .container
         %button.navbar-toggle{ :type => "button", :data => { :toggle => "collapse",  :target => ".navbar-responsive-collapse" } }
           %span.icon-bar
@@ -22,6 +22,7 @@
           %span.icon-bar
       
         %a.navbar-brand{ :href => "/"}
+          %img.logo(src="/logo.png")
           Chris Searle
         
         .nav-collapse.collapse.navbar-responsive-collapse
