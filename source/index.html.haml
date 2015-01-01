@@ -11,7 +11,8 @@ pageable: true
       = link_to tag, tag_path(tag)
     %br
     %a{ :href => "#{url_for(article)}#disqus_thread"}
-  = article.body
+  = article.summary
+  = link_to 'Read full article', article
 
 - if paginate
   %ul.pagination
