@@ -17,16 +17,30 @@ task :deploy do
   puts status ? 'OK' : 'FAILED'
 end
 
-desc 'Build docker image'
-task :docker do
-  puts '## Building docker image'
-  commit = `git rev-parse --short HEAD`.strip
-  status = system("docker build -t chris/www_cso:#{commit} .")
-  puts "Hash #{commit}: #{status ? 'OK' : 'FAILED'}"
-  status = system('docker build -t chris/www_cso:latest .')
-  puts "Latest: #{status ? 'OK' : 'FAILED'}"
+namespace :docker do
+  def get_commit
+    `git rev-parse --short HEAD`.strip
+  end
+  
+  desc 'Build docker image'
+  task :package do
+    puts '## Building docker image'
+    status = system("docker build -t docker.home.chrissearle.org:5000/www_cso:#{get_commit()} .")
+    puts "Hash #{get_commit()}: #{status ? 'OK' : 'FAILED'}"
+    status = system("docker tag -f docker.home.chrissearle.org:5000/www_cso:#{get_commit()} docker.home.chrissearle.org:5000/www_cso:latest")
+    puts "Latest: #{status ? 'OK' : 'FAILED'}"
+  end
+
+  desc 'Deploy to repo'
+  task :deploy do
+    puts '## Deploying docker image'
+    status = system("docker push docker.home.chrissearle.org:5000/www_cso:#{get_commit()}")
+    puts "Hash #{get_commit()}: #{status ? 'OK' : 'FAILED'}"
+    status = system('docker push docker.home.chrissearle.org:5000/www_cso:latest')
+    puts "Latest: #{status ? 'OK' : 'FAILED'}"
+  end
 end
 
 desc 'Build and create docker container'
-task :package => [:build, :docker] do
+task :package => [:build, :'docker:package', :'docker:deploy'] do
 end
