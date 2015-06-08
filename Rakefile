@@ -24,20 +24,24 @@ namespace :docker do
   
   desc 'Build docker image'
   task :package do
-    puts '## Building docker image'
-    status = system("docker build -t docker.home.chrissearle.org:5000/www_cso:#{get_commit()} .")
-    puts "Hash #{get_commit()}: #{status ? 'OK' : 'FAILED'}"
-    status = system("docker tag -f docker.home.chrissearle.org:5000/www_cso:#{get_commit()} docker.home.chrissearle.org:5000/www_cso:latest")
-    puts "Latest: #{status ? 'OK' : 'FAILED'}"
+    Dir.chdir('build') do
+      puts '## Building docker image'
+      status = system("docker build -t docker.home.chrissearle.org:5000/www_cso:#{get_commit()} .")
+      puts "Hash #{get_commit()}: #{status ? 'OK' : 'FAILED'}"
+      status = system("docker tag -f docker.home.chrissearle.org:5000/www_cso:#{get_commit()} docker.home.chrissearle.org:5000/www_cso:latest")
+      puts "Latest: #{status ? 'OK' : 'FAILED'}"
+    end
   end
 
   desc 'Deploy to repo'
   task :deploy do
-    puts '## Deploying docker image'
-    status = system("docker push docker.home.chrissearle.org:5000/www_cso:#{get_commit()}")
-    puts "Hash #{get_commit()}: #{status ? 'OK' : 'FAILED'}"
-    status = system('docker push docker.home.chrissearle.org:5000/www_cso:latest')
-    puts "Latest: #{status ? 'OK' : 'FAILED'}"
+    Dir.chdir('build') do
+      puts '## Deploying docker image'
+      status = system("docker push docker.home.chrissearle.org:5000/www_cso:#{get_commit()}")
+      puts "Hash #{get_commit()}: #{status ? 'OK' : 'FAILED'}"
+      status = system('docker push docker.home.chrissearle.org:5000/www_cso:latest')
+      puts "Latest: #{status ? 'OK' : 'FAILED'}"
+    end
   end
 end
 

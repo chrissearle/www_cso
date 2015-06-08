@@ -1,8 +1,10 @@
 FROM nginx
 MAINTAINER chris@chrissearle.org
 
+EXPOSE 11112
+
 COPY default.conf /etc/nginx/conf.d/default.conf
-COPY build /usr/share/nginx/html
+COPY site /usr/share/nginx/html
+
 RUN chown -R nginx /usr/share/nginx/html/*
 
-EXPOSE 11112

@@ -34,6 +34,8 @@ set :css_dir, 'stylesheets'
 
 set :js_dir, 'javascripts'
 
+set :build_dir, 'build/site'
+
 set :images_dir, 'images'
 
 set :markdown_engine, :redcarpet
