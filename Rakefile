@@ -28,8 +28,8 @@ namespace :docker do
       puts '## Building docker image'
       status = system("docker build -t docker.home.chrissearle.org:5000/www_cso:#{get_commit()} .")
       puts "Hash #{get_commit()}: #{status ? 'OK' : 'FAILED'}"
-      status = system("docker tag -f docker.home.chrissearle.org:5000/www_cso:#{get_commit()} docker.home.chrissearle.org:5000/www_cso:latest")
-      puts "Latest: #{status ? 'OK' : 'FAILED'}"
+      status = system("docker tag -f docker.home.chrissearle.org:5000/www_cso:#{get_commit()} docker.home.chrissearle.org:5000/www_cso:staging")
+      puts "Staging: #{status ? 'OK' : 'FAILED'}"
     end
   end
 
@@ -39,9 +39,17 @@ namespace :docker do
       puts '## Deploying docker image'
       status = system("docker push docker.home.chrissearle.org:5000/www_cso:#{get_commit()}")
       puts "Hash #{get_commit()}: #{status ? 'OK' : 'FAILED'}"
-      status = system('docker push docker.home.chrissearle.org:5000/www_cso:latest')
-      puts "Latest: #{status ? 'OK' : 'FAILED'}"
+      status = system('docker push docker.home.chrissearle.org:5000/www_cso:staging')
+      puts "Staging: #{status ? 'OK' : 'FAILED'}"
     end
+  end
+
+  desc 'Promote docker image'
+  task :promote do
+    status = system("docker tag -f docker.home.chrissearle.org:5000/www_cso:staging docker.home.chrissearle.org:5000/www_cso:latest")
+    puts "Latest: #{status ? 'OK' : 'FAILED'}"
+    status = system('docker push docker.home.chrissearle.org:5000/www_cso:latest')
+    puts "Latest: #{status ? 'OK' : 'FAILED'}"
   end
 end
 
