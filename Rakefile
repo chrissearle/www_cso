@@ -2,7 +2,7 @@ desc 'Build the website from source'
 task :build do
   puts '## Building website'
   status = system('middleman build --clean')
-  puts status ? 'OK' : 'FAILED'
+  puts status ? 'OK' : 'FAILED')
 end
 
 desc 'Run the preview server at http://localhost:4567'
@@ -26,9 +26,9 @@ namespace :docker do
   task :package do
     Dir.chdir('build') do
       puts '## Building docker image'
-      status = system("docker build -t docker.home.chrissearle.org:5000/www_cso:#{get_commit()} .")
+      status = system("docker build -t chrissearle/www_cso:#{get_commit()} .")
       puts "Hash #{get_commit()}: #{status ? 'OK' : 'FAILED'}"
-      status = system("docker tag -f docker.home.chrissearle.org:5000/www_cso:#{get_commit()} docker.home.chrissearle.org:5000/www_cso:staging")
+      status = system("docker tag -f chrissearle/www_cso:#{get_commit()} chrissearle/www_cso:staging")
       puts "Staging: #{status ? 'OK' : 'FAILED'}"
     end
   end
@@ -37,18 +37,18 @@ namespace :docker do
   task :deploy do
     Dir.chdir('build') do
       puts '## Deploying docker image'
-      status = system("docker push docker.home.chrissearle.org:5000/www_cso:#{get_commit()}")
+      status = system("docker push chrissearle/www_cso:#{get_commit()}")
       puts "Hash #{get_commit()}: #{status ? 'OK' : 'FAILED'}"
-      status = system('docker push docker.home.chrissearle.org:5000/www_cso:staging')
+      status = system('docker push chrissearle/www_cso:staging')
       puts "Staging: #{status ? 'OK' : 'FAILED'}"
     end
   end
 
   desc 'Promote docker image'
   task :promote do
-    status = system("docker tag -f docker.home.chrissearle.org:5000/www_cso:staging docker.home.chrissearle.org:5000/www_cso:latest")
+    status = system("docker tag -f chrissearle/www_cso:staging chrissearle/www_cso:latest")
     puts "Latest: #{status ? 'OK' : 'FAILED'}"
-    status = system('docker push docker.home.chrissearle.org:5000/www_cso:latest')
+    status = system('docker push chrissearle/www_cso:latest')
     puts "Latest: #{status ? 'OK' : 'FAILED'}"
   end
 end
