@@ -2,7 +2,7 @@ desc 'Build the website from source'
 task :build do
   puts '## Building website'
   status = system('middleman build --clean')
-  puts status ? 'OK' : 'FAILED'
+  puts status ? 'OK' : 'FAILED')d
 end
 
 desc 'Run the preview server at http://localhost:4567'
@@ -28,7 +28,7 @@ namespace :docker do
       puts '## Building docker image'
       status = system("docker build -t chrissearle/www_cso:#{get_commit()} .")
       puts "Hash #{get_commit()}: #{status ? 'OK' : 'FAILED'}"
-      status = system("docker tag -f chrissearle/www_cso:#{get_commit()} chrissearle/www_cso:staging")
+      status = system("docker tag chrissearle/www_cso:#{get_commit()} chrissearle/www_cso:staging")
       puts "Staging: #{status ? 'OK' : 'FAILED'}"
     end
   end
@@ -46,7 +46,7 @@ namespace :docker do
 
   desc 'Promote docker image'
   task :promote do
-    status = system("docker tag -f chrissearle/www_cso:staging chrissearle/www_cso:latest")
+    status = system("docker tag chrissearle/www_cso:staging chrissearle/www_cso:latest")
     puts "Latest: #{status ? 'OK' : 'FAILED'}"
     status = system('docker push chrissearle/www_cso:latest')
     puts "Latest: #{status ? 'OK' : 'FAILED'}"
