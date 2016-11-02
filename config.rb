@@ -25,6 +25,17 @@ activate :blog do |blog|
   # blog.page_link = "page/:num"
 end
 
+activate :ogp do |ogp|
+  ogp.namespaces = {
+    fb: data.ogp.fb,
+    # from data/ogp/fb.yml
+    og: data.ogp.og
+    # from data/ogp/og.yml
+  }
+  ogp.base_url = 'https://www.chrissearle.org/'
+  ogp.blog = true
+end
+
 page "/feed.xml", :layout => false
 page "blog/*", :layout => :article_layout
 
@@ -39,7 +50,6 @@ set :build_dir, 'build/site'
 set :images_dir, 'images'
 
 set :markdown_engine, :redcarpet
-set :markdown, :fenced_code_blocks => true, :smartypants => true, :tables => true
 
 activate :syntax
 
@@ -64,11 +74,4 @@ configure :build do
   
   # Or use a different image path
   # set :http_path, "/Content/images/"
-end
-
-activate :deploy do |deploy|
-  deploy.method = :rsync
-  deploy.host   = 'bryanek.chrissearle.org'
-  deploy.path   = '/srv/www/www.chrissearle.org/htdocs'
-  deploy.clean  = true
 end

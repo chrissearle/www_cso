@@ -14,7 +14,6 @@ img.post {
   margin-bottom: 10px;
 }
 
-
 body {
   padding-top: 70px;
 }
@@ -22,4 +21,19 @@ body {
 img.logo {
   width: 25px;
   height: 25px;
+}
+
+a {
+  color: #0076b7;
+}
+
+.pagination > .disabled > a,
+.pagination > .disabled > span,
+.pagination > .active > a,
+.pagination > .active > span {
+  color: #707070;
+}
+
+.badge {
+  background-color: #767676;
 }

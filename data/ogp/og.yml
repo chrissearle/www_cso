@@ -1,0 +1,10 @@
+---
+description: 'www.chrissearle.org'
+image:
+  '': https://www.chrissearle.org/logo.png
+  secure_url: https://www.chrissearle.org/logo.png
+  type: image/png
+  width: 300
+  height: 300
+locale:
+  '': en_gb
