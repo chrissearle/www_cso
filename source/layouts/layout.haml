@@ -91,8 +91,11 @@
                 = year
 
     %footer.footer
-      %script(src='/javascripts/footer-large-as.js')
-      %script(src='//pagead2.googlesyndication.com/pagead/show_ads.js')
+      %script{ :async => true, :src => '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js' }
+      %ins{ :class => 'adsbygoogle', :style => 'display:inline-block;width:728px;height:90px', :data => { :'ad-client' => 'ca-pub-6208435820744910', :'ad-slot' => '5379170846' } }
+      %script
+        :plain
+          (adsbygoogle = window.adsbygoogle || []).push({});
 
     %script(src='//code.jquery.com/jquery.js')
     %script(src='/javascripts/bootstrap.js')
