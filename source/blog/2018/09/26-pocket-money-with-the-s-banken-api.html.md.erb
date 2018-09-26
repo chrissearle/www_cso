@@ -106,6 +106,8 @@ So - once you have the client ID, client secret, your ID and the account interna
 
 ## The app
 
+S'banken have [their own client](https://github.com/Sbanken/sbankenclient-ios) that gives easy access to the API from swift - but for this simple app it was more fun to see what was happening behind the scenes by doing it directly (and it keeps a very simple app very simple).
+
 I won't be posting the code - since it's just a test - but it's a fairly standard app with two pages - one showing the data, one allowing you to enter the ID/secret etc.
 
 I didn't want to store these in plain text in user defaults so I used the keychain. For that I read [this article on keychain and swift](https://medium.com/ios-os-x-development/securing-user-data-with-keychain-for-ios-e720e0f9a8e2) and used the SwiftKeychainWrapper mentioned there.
@@ -113,3 +115,4 @@ I didn't want to store these in plain text in user defaults so I used the keycha
 The calls are made using URLSession and URLRequest and are more or less copied from stack overflow :)
 
 The rest is standard stuff - put up a spinner when refreshing, update the GUI etc.
+
