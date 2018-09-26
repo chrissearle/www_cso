@@ -32,7 +32,7 @@ So - now we have a client ID and a client secret - good stuff. Time for the next
 
 To use any of the APIs provided you need an authorization token. So the first step is to generate one.
 
-At the time of writing that is done by sending a POST request to https://auth.sbanken.no/identityserver/connect/token
+At the time of writing that is done by sending a POST request to `https://auth.sbanken.no/identityserver/connect/token`
 
 It needs the following headers:
 
@@ -44,7 +44,7 @@ And the body:
 
     grant_type=client_credentials
 
-What is AUTHSTRING? It is the base64 encoded value of the string "client ID:client secret"
+What is `AUTHSTRING`? It is the base64 encoded value of the string `"client ID:client secret"`
 
 When you post this you should get a JSON response with the following:
 
@@ -54,7 +54,7 @@ When you post this you should get a JSON response with the following:
         "token_type":"Bearer"
     }
 
-This access_token can be used for calls to the other APIs for the number of seconds in expires_in - after that you need to reauthorize.
+This `access_token` can be used for calls to the other APIs for the number of seconds in `expires_in` - after that you need to reauthorize.
 
 ## Getting the accounts list
 
@@ -62,7 +62,7 @@ So - the next step is to grab the account information. S'banken have made the do
 
 The first thing we need to do is to get the list of accounts - since we need the internal account ID of the account we want to get the balance for.
 
-To do this we need to send a GET request to https://api.sbanken.no/bank/api/v1/accounts/
+To do this we need to send a GET request to `https://api.sbanken.no/bank/api/v1/accounts/`
 
 It needs the following headers:
 
@@ -70,9 +70,9 @@ It needs the following headers:
     Authorization: Bearer ACCESS_TOKEN
     Accept: application/json
 
-ACCESS_TOKEN is the token we got from the authorization stage. CUSTOMER_ID is your full norwegian personal ID (11 digits).
+`ACCESS_TOKEN` is the token we got from the authorization stage. `CUSTOMER_ID` is your full norwegian personal ID (11 digits).
 
-This should give a JSON response with a list of account items (under the items key)
+This should give a JSON response with a list of account items (under the `items` key)
 
 An account looks like:
 
@@ -87,9 +87,9 @@ An account looks like:
         "creditLimit":0.000
     }
 
-* BANK_ACCOUNT_NUMBER is the normal 11 digit account number you are used to. 
-* INTERNAL_ACCOUNT_ID is what we want for the next step
-* ACCOUNT_NAME is the name you have given the account in the normal S'banken website
+* `BANK_ACCOUNT_NUMBER` is the normal 11 digit account number you are used to. 
+* `INTERNAL_ACCOUNT_ID` is what we want for the next step
+* `ACCOUNT_NAME` is the name you have given the account in the normal S'banken website
 
 You could stop here - but - we can reduce the network traffic if we store the account ID - and use that - we can then just request a single account.
 
@@ -97,8 +97,8 @@ You could stop here - but - we can reduce the network traffic if we store the ac
 
 This is almost the same as the previous step. Two changes:
 
-* We change the GET to go to https://api.sbanken.no/bank/api/v1/accounts/INTERNAL_ACCOUNT_ID
-* The response has a single account under the item key instead of a list under the items key
+* We change the GET to go to `https://api.sbanken.no/bank/api/v1/accounts/INTERNAL_ACCOUNT_ID`
+* The response has a single account object under the `item` key instead of a list of account objects under the `items` key
 
 ## API Summary
 
