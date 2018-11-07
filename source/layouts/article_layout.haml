@@ -11,13 +11,13 @@
 
   .centered
     %ul.pagination
-      - prev_article = current_article.previous_article
+      - prev_article = current_article.article_previous
       %li{:class => prev_article ? "" : "disabled"}
         - if prev_article
           =link_to "< #{short_title(prev_article.title)}", prev_article.url
         - else
           %span Prev
-      - next_article = current_article.next_article
+      - next_article = current_article.article_next
       %li{:class => next_article ? "" : "disabled"}
         - if next_article
           =link_to "#{short_title(next_article.title)} >", next_article.url

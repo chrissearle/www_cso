@@ -1,6 +1,5 @@
-###
-# Blog settings
-###
+
+Haml::TempleEngine.disable_option_validator!
 
 Time.zone = "Europe/Oslo"
 

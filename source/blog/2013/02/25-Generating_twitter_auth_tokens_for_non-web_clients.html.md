@@ -8,7 +8,7 @@ I use twitter for various system stuff - and needed a way to get auth tokens for
 
 Twitter provides PIN based authentication for this - you generate a URL based on the consumer token/secret - visit that - log in - get a PIN and use the PIN to generate the auth token/secret.
 
-[get_keys.rb](get_keys.rb) is a simple ruby script to do just that.
+[get_keys.rb](get_keys_rb) is a simple ruby script to do just that.
 
 It takes consumer_token and consumer_secret as command line params (in that order), generates the authorize URL and prints it - then waits for the PIN. Displays consumer and auth token info at the end.
 
