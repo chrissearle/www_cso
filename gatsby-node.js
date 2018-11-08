@@ -28,16 +28,12 @@ const createYearPages = (createPage, posts) => {
 
   const years = Object.keys(postsByYear)
 
-  createPage({
-    path: '/years',
-    component: allYearsTemplate,
-    context: {
-      years: years.sort().reverse(),
-    },
-  })
+  const yearsWithCounts = {}
 
   years.forEach(year => {
     const posts = postsByYear[year]
+
+    yearsWithCounts[year] = posts.length
 
     createPage({
       path: `/years/${year}`,
@@ -47,6 +43,14 @@ const createYearPages = (createPage, posts) => {
         year,
       },
     })
+  })
+
+  createPage({
+    path: '/years',
+    component: allYearsTemplate,
+    context: {
+      years: yearsWithCounts,
+    },
   })
 }
 
