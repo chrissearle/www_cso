@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react'
 
-import { Link } from "gatsby";
+import { Link } from 'gatsby'
 
 const AllYearsTemplate = ({ data, pageContext }) => {
-  const { years } = pageContext;
+  const { years } = pageContext
 
   return (
     <div>
@@ -15,12 +15,12 @@ const AllYearsTemplate = ({ data, pageContext }) => {
               <li key={index}>
                 <Link to={`/years/${year}`}>{year}</Link>
               </li>
-            );
+            )
           })}
         </ul>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default AllYearsTemplate;
+export default AllYearsTemplate

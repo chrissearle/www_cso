@@ -1,24 +1,24 @@
-import React from "react";
+import React from 'react'
 
-import { graphql, Link } from "gatsby";
+import { graphql, Link } from 'gatsby'
 
 const Index = ({ data }) => {
-  const { edges } = data.allMarkdownRemark;
+  const { edges } = data.allMarkdownRemark
 
   return (
     <div>
       {edges.map(edge => {
-        const { frontmatter, fields } = edge.node;
+        const { frontmatter, fields } = edge.node
 
         return (
           <div key={fields.path}>
             <Link to={fields.path}>{frontmatter.title}</Link>
           </div>
-        );
+        )
       })}
     </div>
-  );
-};
+  )
+}
 
 export const query = graphql`
   query HomepageQuery {
@@ -39,6 +39,6 @@ export const query = graphql`
       }
     }
   }
-`;
+`
 
-export default Index;
+export default Index

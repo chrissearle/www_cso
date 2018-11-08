@@ -1,8 +1,10 @@
-import React from "react";
+import React from 'react'
 
-import { Link } from "gatsby";
+import { Link } from 'gatsby'
 
-import Header from "../components/header";
+import Header from '../components/header'
+
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 const Layout = ({ children }) => {
   return (
@@ -16,7 +18,7 @@ const Layout = ({ children }) => {
       </div>
       <div>{children}</div>
     </div>
-  );
-};
+  )
+}
 
-export default Layout;
+export default Layout

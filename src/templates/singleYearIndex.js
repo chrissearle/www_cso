@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react'
 
-import { Link } from "gatsby";
+import { Link } from 'gatsby'
 
 const SingleYearTemplate = ({ data, pageContext }) => {
-  const { posts, year } = pageContext;
+  const { posts, year } = pageContext
 
   return (
     <div>
@@ -15,12 +15,12 @@ const SingleYearTemplate = ({ data, pageContext }) => {
               <li key={index}>
                 <Link to={post.fields.path}>{post.frontmatter.title}</Link>
               </li>
-            );
+            )
           })}
         </ul>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default SingleYearTemplate;
+export default SingleYearTemplate

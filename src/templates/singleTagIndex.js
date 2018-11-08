@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react'
 
-import { Link } from "gatsby";
+import { Link } from 'gatsby'
 
 const SingleTagTemplate = ({ data, pageContext }) => {
-  const { posts, tagName } = pageContext;
+  const { posts, tagName } = pageContext
 
   return (
     <div>
@@ -15,12 +15,12 @@ const SingleTagTemplate = ({ data, pageContext }) => {
               <li key={index}>
                 <Link to={post.fields.path}>{post.frontmatter.title}</Link>
               </li>
-            );
+            )
           })}
         </ul>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default SingleTagTemplate;
+export default SingleTagTemplate

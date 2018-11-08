@@ -1,44 +1,48 @@
-import React from "react";
+import React from 'react'
+import { graphql, Link } from 'gatsby'
 
-import { graphql, Link } from "gatsby";
+import { Pagination, PaginationItem, PaginationLink } from 'reactstrap'
 
-const Button = ({ path, title }) => {
+const PageLinks = ({ nodes }) => {
   return (
-    <span style={{ marginRight: "10px" }}>
-      <Link to={path}>{title}</Link>
-    </span>
-  );
-};
+    <Pagination>
+      {nodes
+        .filter(node => node)
+        .map(node => {
+          return (
+            <PaginationItem key={node.fields.path}>
+              <PaginationLink href={node.fields.path}>
+                {node.frontmatter.title}
+              </PaginationLink>
+            </PaginationItem>
+          )
+        })}
+    </Pagination>
+  )
+}
 
 const Template = ({ data, pageContext }) => {
-  const { next, prev } = pageContext;
+  const { next, prev } = pageContext
 
-  const { markdownRemark } = data;
+  const { markdownRemark } = data
 
-  const title = markdownRemark.frontmatter.title;
+  const title = markdownRemark.frontmatter.title
 
-  const html = markdownRemark.html;
+  const html = markdownRemark.html
 
   return (
     <div>
-      <h1 style={{ fontFamily: "avenir" }}>{title}</h1>
+      <h1 style={{ fontFamily: 'avenir' }}>{title}</h1>
       <div
         className="blogpost"
         dangerouslySetInnerHTML={{ __html: html }}
-        style={{ fontFamily: "avenir" }}
+        style={{ fontFamily: 'avenir' }}
       />
 
-      <div style={{ marginBottom: "1rem", fontFamily: "avenir" }}>
-        {prev && (
-          <Button path={prev.fields.path} title={prev.frontmatter.title} />
-        )}
-        {next && (
-          <Button path={next.fields.path} title={next.frontmatter.title} />
-        )}
-      </div>
+      <PageLinks nodes={[prev, next]} />
     </div>
-  );
-};
+  )
+}
 
 export const query = graphql`
   query($pathSlug: String!) {
@@ -50,6 +54,6 @@ export const query = graphql`
       }
     }
   }
-`;
+`
 
-export default Template;
+export default Template
