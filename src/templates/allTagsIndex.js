@@ -10,7 +10,7 @@ const AllTagsTemplate = ({ data, pageContext }) => {
   return (
     <Layout>
       <h2>Tags</h2>
-      <div style={{ fontFamily: "avenir" }}>
+      <div>
         <ul>
           {tags.map((tagName, index) => {
             return (

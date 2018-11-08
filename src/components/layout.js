@@ -14,16 +14,7 @@ const Layout = ({ children }) => {
       <div>
         <Link to="/years">By Year</Link>
       </div>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          fontFamily: "avenir"
-        }}
-      >
-        {children}
-      </div>
+      <div>{children}</div>
     </div>
   );
 };

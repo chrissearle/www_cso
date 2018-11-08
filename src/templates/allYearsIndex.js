@@ -10,7 +10,7 @@ const AllYearsTemplate = ({ data, pageContext }) => {
   return (
     <Layout>
       <h2>Years</h2>
-      <div style={{ fontFamily: "avenir" }}>
+      <div>
         <ul>
           {years.map((year, index) => {
             return (
