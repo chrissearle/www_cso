@@ -2,8 +2,6 @@ import React from "react";
 
 import { graphql, Link } from "gatsby";
 
-import Layout from "../components/layout";
-
 const Button = ({ path, title }) => {
   return (
     <span style={{ marginRight: "10px" }}>
@@ -22,7 +20,7 @@ const Template = ({ data, pageContext }) => {
   const html = markdownRemark.html;
 
   return (
-    <Layout>
+    <div>
       <h1 style={{ fontFamily: "avenir" }}>{title}</h1>
       <div
         className="blogpost"
@@ -38,7 +36,7 @@ const Template = ({ data, pageContext }) => {
           <Button path={next.fields.path} title={next.frontmatter.title} />
         )}
       </div>
-    </Layout>
+    </div>
   );
 };
 

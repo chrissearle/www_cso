@@ -25,3 +25,6 @@ run:
 
 run_stage:
 	docker run -d -p 8088:80 chrissearle/www_cso:staging
+
+clean:
+	rm -rf build/site
