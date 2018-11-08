@@ -12,49 +12,53 @@ In short - create two files
 
 **/Library/LaunchDaemons/limit.maxfiles.plist**
 
-    <?xml version="1.0" encoding="UTF-8"?>
-    <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-    <plist version="1.0">
-      <dict>
-        <key>Label</key>
-        <string>limit.maxfiles</string>
-        <key>ProgramArguments</key>
-        <array>
-          <string>launchctl</string>
-          <string>limit</string>
-          <string>maxfiles</string>
-          <string>200000</string>
-          <string>200000</string>
-        </array>
-        <key>RunAtLoad</key>
-        <true/>
-        <key>ServiceIPC</key>
-        <false/>
-      </dict>
-    </plist>
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>Label</key>
+    <string>limit.maxfiles</string>
+    <key>ProgramArguments</key>
+    <array>
+      <string>launchctl</string>
+      <string>limit</string>
+      <string>maxfiles</string>
+      <string>200000</string>
+      <string>200000</string>
+    </array>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>ServiceIPC</key>
+    <false/>
+  </dict>
+</plist>
+```
 
 **/Library/LaunchDaemons/limit.maxproc.plist**
 
-    <?xml version="1.0" encoding="UTF-8"?>
-    <!DOCTYPE plist PUBLIC "-//Apple/DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-    <plist version="1.0">
-      <dict>
-        <key>Label</key>
-        <string>limit.maxproc</string>
-        <key>ProgramArguments</key>
-        <array>
-          <string>launchctl</string>
-          <string>limit</string>
-          <string>maxproc</string>
-          <string>2048</string>
-          <string>2048</string>
-        </array>
-        <key>RunAtLoad</key>
-        <true />
-        <key>ServiceIPC</key>
-          <false />
-      </dict>
-    </plist>
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple/DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>Label</key>
+    <string>limit.maxproc</string>
+    <key>ProgramArguments</key>
+    <array>
+      <string>launchctl</string>
+      <string>limit</string>
+      <string>maxproc</string>
+      <string>2048</string>
+      <string>2048</string>
+    </array>
+    <key>RunAtLoad</key>
+    <true />
+    <key>ServiceIPC</key>
+      <false />
+  </dict>
+</plist>
+```
 
 Make sure both are owned `root:wheel` and have permissions `-rw-r--r--` and then either restart or reload the launchd config.
 

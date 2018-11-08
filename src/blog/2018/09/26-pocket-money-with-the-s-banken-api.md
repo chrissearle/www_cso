@@ -48,11 +48,13 @@ What is `AUTHSTRING`? It is the base64 encoded value of the string `"client ID:c
 
 When you post this you should get a JSON response with the following:
 
-    {
-        "access_token":"ACCESS_TOKEN",
-        "expires_in":3600,
-        "token_type":"Bearer"
-    }
+```json
+{
+  "access_token": "ACCESS_TOKEN",
+  "expires_in": 3600,
+  "token_type": "Bearer"
+}
+```
 
 This `access_token` can be used for calls to the other APIs for the number of seconds in `expires_in` - after that you need to reauthorize.
 
@@ -76,20 +78,22 @@ This should give a JSON response with a list of account items (under the `items`
 
 An account looks like:
 
-    {
-        "accountId":"INTERNAL_ACCOUNT_ID",
-        "accountNumber":"BANK_ACCOUNT_NUMBER",
-        "ownerCustomerId":"YOUR_SSN",
-        "name":"ACCOUNT_NAME",
-        "accountType":"Standard account",
-        "available":999.999,
-        "balance":999.999,
-        "creditLimit":0.000
-    }
+```json
+{
+  "accountId": "INTERNAL_ACCOUNT_ID",
+  "accountNumber": "BANK_ACCOUNT_NUMBER",
+  "ownerCustomerId": "YOUR_SSN",
+  "name": "ACCOUNT_NAME",
+  "accountType": "Standard account",
+  "available": 999.999,
+  "balance": 999.999,
+  "creditLimit": 0.0
+}
+```
 
-* `BANK_ACCOUNT_NUMBER` is the normal 11 digit account number you are used to. 
-* `INTERNAL_ACCOUNT_ID` is what we want for the next step
-* `ACCOUNT_NAME` is the name you have given the account in the normal S'banken website
+- `BANK_ACCOUNT_NUMBER` is the normal 11 digit account number you are used to.
+- `INTERNAL_ACCOUNT_ID` is what we want for the next step
+- `ACCOUNT_NAME` is the name you have given the account in the normal S'banken website
 
 You could stop here - but - we can reduce the network traffic if we store the account ID - and use that - we can then just request a single account.
 
@@ -97,8 +101,8 @@ You could stop here - but - we can reduce the network traffic if we store the ac
 
 This is almost the same as the previous step. Two changes:
 
-* We change the GET to go to `https://api.sbanken.no/bank/api/v1/accounts/INTERNAL_ACCOUNT_ID`
-* The response has a single account object under the `item` key instead of a list of account objects under the `items` key
+- We change the GET to go to `https://api.sbanken.no/bank/api/v1/accounts/INTERNAL_ACCOUNT_ID`
+- The response has a single account object under the `item` key instead of a list of account objects under the `items` key
 
 ## API Summary
 
@@ -115,4 +119,3 @@ I didn't want to store these in plain text in user defaults so I used the keycha
 The calls are made using URLSession and URLRequest and are more or less copied from stack overflow :)
 
 The rest is standard stuff - put up a spinner when refreshing, update the GUI etc.
-

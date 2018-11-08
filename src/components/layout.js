@@ -9,6 +9,7 @@ import { StaticQuery, graphql } from 'gatsby'
 import Header from '../components/header'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
+import 'prismjs/themes/prism-okaidia.css'
 
 const Layout = ({ data, title, children }) => {
   let displayTitle = data.site.siteMetadata.title
