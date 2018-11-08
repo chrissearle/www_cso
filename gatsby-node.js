@@ -72,16 +72,12 @@ const createTagPages = (createPage, posts) => {
 
   const tags = Object.keys(postsByTag)
 
-  createPage({
-    path: '/tags',
-    component: allTagsTemplate,
-    context: {
-      tags: tags.sort(),
-    },
-  })
+  const tagsWithCounts = {}
 
   tags.forEach(tagName => {
     const posts = postsByTag[tagName]
+
+    tagsWithCounts[tagName] = posts.length
 
     createPage({
       path: `/tags/${tagName}`,
@@ -91,6 +87,14 @@ const createTagPages = (createPage, posts) => {
         tagName,
       },
     })
+  })
+
+  createPage({
+    path: '/tags',
+    component: allTagsTemplate,
+    context: {
+      tags: tagsWithCounts,
+    },
   })
 }
 
