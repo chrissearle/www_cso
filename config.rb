@@ -26,8 +26,6 @@ end
 
 activate :ogp do |ogp|
   ogp.namespaces = {
-    fb: data.ogp.fb,
-    # from data/ogp/fb.yml
     og: data.ogp.og
     # from data/ogp/og.yml
   }
