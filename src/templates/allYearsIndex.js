@@ -1,12 +1,14 @@
 import React from "react";
 
-import { graphql, Link } from "gatsby";
+import { Link } from "gatsby";
+
+import Layout from "../components/layout";
 
 const AllYearsTemplate = ({ data, pageContext }) => {
   const { years } = pageContext;
 
   return (
-    <div>
+    <Layout>
       <h2>Years</h2>
       <div style={{ fontFamily: "avenir" }}>
         <ul>
@@ -19,7 +21,7 @@ const AllYearsTemplate = ({ data, pageContext }) => {
           })}
         </ul>
       </div>
-    </div>
+    </Layout>
   );
 };
 

@@ -1,12 +1,14 @@
-import React from 'react'
+import React from "react";
 
-import { graphql, Link } from 'gatsby'
+import { Link } from "gatsby";
+
+import Layout from "../components/layout";
 
 const SingleTagTemplate = ({ data, pageContext }) => {
-  const { posts, tagName } = pageContext
+  const { posts, tagName } = pageContext;
 
   return (
-    <div>
+    <Layout>
       <div>
         Posts about {`${tagName}`}
         <div>
@@ -16,13 +18,13 @@ const SingleTagTemplate = ({ data, pageContext }) => {
                 <li key={index}>
                   <Link to={post.fields.path}>{post.frontmatter.title}</Link>
                 </li>
-              )
+              );
             })}
           </ul>
         </div>
       </div>
-    </div>
-  )
-}
+    </Layout>
+  );
+};
 
-export default SingleTagTemplate
+export default SingleTagTemplate;

@@ -1,33 +1,36 @@
-import React from 'react'
-import { graphql, Link } from 'gatsby'
+import React from "react";
+
+import { graphql, Link } from "gatsby";
+
+import Layout from "../components/layout";
 
 const Button = ({ path, title }) => {
   return (
-    <span style={{ marginRight: '10px' }}>
+    <span style={{ marginRight: "10px" }}>
       <Link to={path}>{title}</Link>
     </span>
-  )
-}
+  );
+};
 
 const Template = ({ data, pageContext }) => {
-  const { next, prev } = pageContext
+  const { next, prev } = pageContext;
 
-  const { markdownRemark } = data
+  const { markdownRemark } = data;
 
-  const title = markdownRemark.frontmatter.title
+  const title = markdownRemark.frontmatter.title;
 
-  const html = markdownRemark.html
+  const html = markdownRemark.html;
 
   return (
-    <div>
-      <h1 style={{ fontFamily: 'avenir' }}>{title}</h1>
+    <Layout>
+      <h1 style={{ fontFamily: "avenir" }}>{title}</h1>
       <div
         className="blogpost"
         dangerouslySetInnerHTML={{ __html: html }}
-        style={{ fontFamily: 'avenir' }}
+        style={{ fontFamily: "avenir" }}
       />
 
-      <div style={{ marginBottom: '1rem', fontFamily: 'avenir' }}>
+      <div style={{ marginBottom: "1rem", fontFamily: "avenir" }}>
         {prev && (
           <Button path={prev.fields.path} title={prev.frontmatter.title} />
         )}
@@ -35,9 +38,9 @@ const Template = ({ data, pageContext }) => {
           <Button path={next.fields.path} title={next.frontmatter.title} />
         )}
       </div>
-    </div>
-  )
-}
+    </Layout>
+  );
+};
 
 export const query = graphql`
   query($pathSlug: String!) {
@@ -49,6 +52,6 @@ export const query = graphql`
       }
     }
   }
-`
+`;
 
-export default Template
+export default Template;

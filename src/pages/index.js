@@ -2,39 +2,23 @@ import React from "react";
 
 import { graphql, Link } from "gatsby";
 
-import Header from "../components/header";
+import Layout from "../components/layout";
 
-const Layout = ({ data }) => {
+const Index = ({ data }) => {
   const { edges } = data.allMarkdownRemark;
 
   return (
-    <div>
-      <Header />
-      <div>
-        <Link to="/tags">All Tags</Link>
-      </div>
-      <div>
-        <Link to="/years">By Year</Link>
-      </div>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          fontFamily: "avenir"
-        }}
-      >
-        {edges.map(edge => {
-          const { frontmatter, fields } = edge.node;
+    <Layout>
+      {edges.map(edge => {
+        const { frontmatter, fields } = edge.node;
 
-          return (
-            <div key={fields.path}>
-              <Link to={fields.path}>{frontmatter.title}</Link>
-            </div>
-          );
-        })}
-      </div>
-    </div>
+        return (
+          <div key={fields.path}>
+            <Link to={fields.path}>{frontmatter.title}</Link>
+          </div>
+        );
+      })}
+    </Layout>
   );
 };
 
@@ -59,4 +43,4 @@ export const query = graphql`
   }
 `;
 
-export default Layout;
+export default Index;

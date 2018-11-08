@@ -1,12 +1,14 @@
 import React from "react";
 
-import { graphql, Link } from "gatsby";
+import { Link } from "gatsby";
+
+import Layout from "../components/layout";
 
 const SingleYearTemplate = ({ data, pageContext }) => {
   const { posts, year } = pageContext;
 
   return (
-    <div>
+    <Layout>
       <div>
         Posts from {`${year}`}
         <div>
@@ -21,7 +23,7 @@ const SingleYearTemplate = ({ data, pageContext }) => {
           </ul>
         </div>
       </div>
-    </div>
+    </Layout>
   );
 };
 

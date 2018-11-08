@@ -1,26 +1,28 @@
-import React from 'react'
+import React from "react";
 
-import { graphql, Link } from 'gatsby'
+import { Link } from "gatsby";
+
+import Layout from "../components/layout";
 
 const AllTagsTemplate = ({ data, pageContext }) => {
-  const { tags } = pageContext
+  const { tags } = pageContext;
 
   return (
-    <div>
+    <Layout>
       <h2>Tags</h2>
-      <div style={{ fontFamily: 'avenir' }}>
+      <div style={{ fontFamily: "avenir" }}>
         <ul>
           {tags.map((tagName, index) => {
             return (
               <li key={index}>
                 <Link to={`/tags/${tagName}`}>{tagName}</Link>
               </li>
-            )
+            );
           })}
         </ul>
       </div>
-    </div>
-  )
-}
+    </Layout>
+  );
+};
 
-export default AllTagsTemplate
+export default AllTagsTemplate;
