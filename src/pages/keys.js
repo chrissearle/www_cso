@@ -7,7 +7,7 @@ import Layout from '../components/layout'
 const Keys = () => {
   return (
     <Layout>
-      <h2 className="mb-4 mt-4">Cryptographic Keys</h2>
+      <h2 className="mb-4">Cryptographic Keys</h2>
       <Card className="mb-4" outline color="primary">
         <CardHeader>Current</CardHeader>
         <CardBody>

@@ -30,7 +30,7 @@ const Layout = ({ data, title, children }) => {
       <Header title={data.site.siteMetadata.title} />
       <Container>
         <Row>
-          <Col md="12" lg="9">
+          <Col md="12" lg="9" className="pt-4">
             {children}
           </Col>
         </Row>

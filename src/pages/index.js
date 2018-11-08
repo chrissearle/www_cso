@@ -1,46 +1,15 @@
 import React from 'react'
 
-import { graphql, Link } from 'gatsby'
-
 import Layout from '../components/layout'
 
-const Index = ({ data }) => {
-  const { edges } = data.allMarkdownRemark
-
+const Index = () => {
   return (
     <Layout>
-      {edges.map(edge => {
-        const { frontmatter, fields } = edge.node
+      <h2>More to come</h2>
 
-        return (
-          <div key={fields.path}>
-            <Link to={fields.path}>{frontmatter.title}</Link>
-          </div>
-        )
-      })}
+      <p>For now - use the links in the menu above</p>
     </Layout>
   )
 }
-
-export const query = graphql`
-  query HomepageQuery {
-    allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] }
-      filter: { fields: { collection: { eq: "blog" } } }
-    ) {
-      edges {
-        node {
-          fields {
-            path
-          }
-          frontmatter {
-            title
-            date
-          }
-        }
-      }
-    }
-  }
-`
 
 export default Index
