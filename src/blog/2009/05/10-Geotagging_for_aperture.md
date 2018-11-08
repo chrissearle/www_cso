@@ -16,7 +16,7 @@ tags: aperture, gps, photography, geotagging, gpsphotolinker, houdahgeo, mapertu
 
 The geographical information has to be stored in the metadata of the photo. For a camera that has GPS support built in (e.g. the iPhone) this is embedded in the [EXIF](http://en.wikipedia.org/wiki/EXIF) metadata - this is the metadata that the camera embeds when the shot is taken.
 
-This EXIF metadata is *not* editable in Aperture (or in many other apps) - the user editable metadata is the [IPTC](http://en.wikipedia.org/wiki/IPTC) fields (caption, copyright, keywords etc). Geotagging can be added to the IPTC set.
+This EXIF metadata is _not_ editable in Aperture (or in many other apps) - the user editable metadata is the [IPTC](http://en.wikipedia.org/wiki/IPTC) fields (caption, copyright, keywords etc). Geotagging can be added to the IPTC set.
 
 [This article](http://www.organizepictures.com/2009/01/methods-for-geotagging-pictures) gave a pretty simple comparison of these methods. Here the author has the following that is a good rule of thumb:
 
@@ -24,7 +24,7 @@ This EXIF metadata is *not* editable in Aperture (or in many other apps) - the u
 
 ### Aperture
 
-What does aperture want? Well - for aperture to work without issues - if you can get the geotagging info into the *EXIF* metadata *before* you import to aperture then things will work much smoother. In particular - it appears (this is an empirical observation based on symptoms) that when you export a file it exports EXIF from the master and IPTC from the versions so if the geotagging metadata is in the EXIF of a version (and the aperture API's do not allow the master EXIF to be edited) then the information will be lost.
+What does aperture want? Well - for aperture to work without issues - if you can get the geotagging info into the _EXIF_ metadata _before_ you import to aperture then things will work much smoother. In particular - it appears (this is an empirical observation based on symptoms) that when you export a file it exports EXIF from the master and IPTC from the versions so if the geotagging metadata is in the EXIF of a version (and the aperture API's do not allow the master EXIF to be edited) then the information will be lost.
 
 ## Software
 
@@ -36,7 +36,7 @@ Import is from disk or from your photo library (aperture, iphoto).
 
 Geotagging from GPX, NMEA data or from direct connection to a GPS or via reverse geocoding, google earth or via placement on a map. I've always used it with GPX files.
 
-Importantly - it can write back to the EXIF data. 
+Importantly - it can write back to the EXIF data.
 
 Exports to flickr, locr, google earth - but for me - I just use it to update the files metadata prior to aperture import.
 
@@ -60,7 +60,7 @@ All the above software has been based around using GPS tracks from a handheld GP
 
 ### GP-1
 
-![GP-1](http://www.nikonusa.com/en_INC/IMG/Assets/Photography-Accessories/Miscellaneous/2010/25396-GP-1-GPS-Unit/Views/353_25396_GP-1-GPS-Unit_front.jpg)
+![GP-1](https://www.europe-nikon.com/tmp/eu/2419865273/3760176746/2327365364/27184057/1391280926/3864574427/2811668887/2187440206/3919017901/2136552956.png)
 
 This device connects directly to a range of Nikon digital SLR's and is a small hotshoe mountable gps that instead of recording the position and time for later matching sends the data into the camera where it is embedded into the EXIF fields. This dramatically simplifies the workflow when bringing the shots into aperture.
 
@@ -80,6 +80,6 @@ I do have one issue. This is an issue I meet time and again - and is not specifi
 
 ## Conclusion
 
-For my usage - I will be using the GP-1 device to embed directly to the EXIF at capture. This means that geolocation information simply *just works*. In cases where manual geotagging is required - I'll be using HoudahGeo prior to import. Inside aperture for viewing I will use maperture (unless Apple adds places to aperture) - however - not for editing - since this does not work for exports.
+For my usage - I will be using the GP-1 device to embed directly to the EXIF at capture. This means that geolocation information simply _just works_. In cases where manual geotagging is required - I'll be using HoudahGeo prior to import. Inside aperture for viewing I will use maperture (unless Apple adds places to aperture) - however - not for editing - since this does not work for exports.
 
 In summary - the definitive geotagging software for aperture has yet to be written - but the tools are available to work around issues. Of them all - if Maperture can fix the fact that the data doesn't stick at export when applied after import - then I'll be sticking with that.
