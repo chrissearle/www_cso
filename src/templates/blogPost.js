@@ -7,7 +7,7 @@ import Layout from '../components/layout'
 
 const PageLinks = ({ nodes }) => {
   return (
-    <Pagination>
+    <Pagination listClassName="justify-content-center">
       {nodes
         .filter(node => node)
         .map(node => {
