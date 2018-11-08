@@ -1,7 +1,5 @@
 import React from 'react'
 
-import { StaticQuery, graphql } from 'gatsby'
-
 import {
   Container,
   Navbar,
@@ -13,9 +11,7 @@ import {
 
 import '../stylesheets/header.css'
 
-const TitleAndDescription = ({ data }) => {
-  const title = data.site.siteMetadata.title
-
+const TitleAndDescription = ({ title }) => {
   return (
     <Navbar color="dark" dark expand="lg">
       <Container>
@@ -36,9 +32,7 @@ const TitleAndDescription = ({ data }) => {
         </Nav>
         <Nav className="ml-auto" navbar>
           <NavItem>
-            <NavLink href="/cryptographic_keys.html">
-              Cryptographic Keys
-            </NavLink>
+            <NavLink href="/keys">Cryptographic Keys</NavLink>
           </NavItem>
           <NavItem>
             <NavLink href="//about.me/chrissearle/">Other sites</NavLink>
@@ -49,22 +43,8 @@ const TitleAndDescription = ({ data }) => {
   )
 }
 
-const Header = () => {
-  return (
-    <StaticQuery
-      query={graphql`
-        query {
-          site {
-            siteMetadata {
-              title
-              description
-            }
-          }
-        }
-      `}
-      render={data => <TitleAndDescription data={data} />}
-    />
-  )
+const Header = ({ title }) => {
+  return <TitleAndDescription title={title} />
 }
 
 export default Header

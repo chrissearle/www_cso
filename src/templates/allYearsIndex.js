@@ -2,11 +2,13 @@ import React from 'react'
 
 import { Link } from 'gatsby'
 
+import Layout from '../components/layout'
+
 const AllYearsTemplate = ({ data, pageContext }) => {
   const { years } = pageContext
 
   return (
-    <div>
+    <Layout>
       <h2>Years</h2>
       <div>
         <ul>
@@ -19,7 +21,7 @@ const AllYearsTemplate = ({ data, pageContext }) => {
           })}
         </ul>
       </div>
-    </div>
+    </Layout>
   )
 }
 

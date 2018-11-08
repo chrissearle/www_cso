@@ -2,11 +2,13 @@ import React from 'react'
 
 import { Link } from 'gatsby'
 
+import Layout from '../components/layout'
+
 const SingleYearTemplate = ({ data, pageContext }) => {
   const { posts, year } = pageContext
 
   return (
-    <div>
+    <Layout>
       Posts from {`${year}`}
       <div>
         <ul>
@@ -19,7 +21,7 @@ const SingleYearTemplate = ({ data, pageContext }) => {
           })}
         </ul>
       </div>
-    </div>
+    </Layout>
   )
 }
 

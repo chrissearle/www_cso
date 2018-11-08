@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: 'Chris Searle',
-    description: '...',
+    description: 'Random thoughts on various things tech',
     siteUrl: `https://www.chrissearle.org`,
   },
   plugins: [
@@ -13,5 +13,6 @@ module.exports = {
         path: `${__dirname}/src/blog`,
       },
     },
+    `gatsby-plugin-react-helmet`,
   ],
 }

@@ -2,11 +2,13 @@ import React from 'react'
 
 import { Link } from 'gatsby'
 
+import Layout from '../components/layout'
+
 const AllTagsTemplate = ({ data, pageContext }) => {
   const { tags } = pageContext
 
   return (
-    <div>
+    <Layout>
       <h2>Tags</h2>
       <div>
         <ul>
@@ -19,7 +21,7 @@ const AllTagsTemplate = ({ data, pageContext }) => {
           })}
         </ul>
       </div>
-    </div>
+    </Layout>
   )
 }
 

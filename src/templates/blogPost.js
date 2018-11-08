@@ -3,6 +3,8 @@ import { graphql, Link } from 'gatsby'
 
 import { Pagination, PaginationItem, PaginationLink } from 'reactstrap'
 
+import Layout from '../components/layout'
+
 const PageLinks = ({ nodes }) => {
   return (
     <Pagination>
@@ -31,7 +33,7 @@ const Template = ({ data, pageContext }) => {
   const html = markdownRemark.html
 
   return (
-    <div>
+    <Layout title={title}>
       <h1 style={{ fontFamily: 'avenir' }}>{title}</h1>
       <div
         className="blogpost"
@@ -40,7 +42,7 @@ const Template = ({ data, pageContext }) => {
       />
 
       <PageLinks nodes={[prev, next]} />
-    </div>
+    </Layout>
   )
 }
 

@@ -2,11 +2,13 @@ import React from 'react'
 
 import { graphql, Link } from 'gatsby'
 
+import Layout from '../components/layout'
+
 const Index = ({ data }) => {
   const { edges } = data.allMarkdownRemark
 
   return (
-    <div>
+    <Layout>
       {edges.map(edge => {
         const { frontmatter, fields } = edge.node
 
@@ -16,7 +18,7 @@ const Index = ({ data }) => {
           </div>
         )
       })}
-    </div>
+    </Layout>
   )
 }
 
