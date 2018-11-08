@@ -2,22 +2,35 @@ import React from 'react'
 
 import { graphql, Link } from 'gatsby'
 
+import { ListGroup, ListGroupItem, Badge } from 'reactstrap'
+
 import Layout from '../components/layout'
+
+import moment from 'moment'
 
 const Articles = ({ data }) => {
   const { edges } = data.allMarkdownRemark
 
   return (
     <Layout>
-      {edges.map(edge => {
-        const { frontmatter, fields } = edge.node
+      <h2>All Articles</h2>
+      <ListGroup>
+        {edges.map(edge => {
+          const { frontmatter, fields } = edge.node
+          const date = moment(frontmatter.date, 'YYYY-MM-DD HH:mm Z').format(
+            'YYYY-MM-DD'
+          )
 
-        return (
-          <div key={fields.path}>
-            <Link to={fields.path}>{frontmatter.title}</Link>
-          </div>
-        )
-      })}
+          return (
+            <ListGroupItem key={fields.path}>
+              <Link to={fields.path}>{frontmatter.title}</Link>
+              <Badge pill color="dark" className="float-right">
+                {date}
+              </Badge>
+            </ListGroupItem>
+          )
+        })}
+      </ListGroup>
     </Layout>
   )
 }
