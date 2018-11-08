@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Link } from 'gatsby'
+import { Container, Row, Col } from 'reactstrap'
 
 import Header from '../components/header'
 
@@ -10,13 +10,16 @@ const Layout = ({ children }) => {
   return (
     <div>
       <Header />
-      <div>
-        <Link to="/tags">All Tags</Link>
-      </div>
-      <div>
-        <Link to="/years">By Year</Link>
-      </div>
-      <div>{children}</div>
+      <Container>
+        <Row>
+          <Col md="12" />
+        </Row>
+        <Row>
+          <Col md="12" lg="9">
+            {children}
+          </Col>
+        </Row>
+      </Container>
     </div>
   )
 }
