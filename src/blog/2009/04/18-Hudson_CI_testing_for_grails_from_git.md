@@ -14,9 +14,9 @@ This was extremely simple - I just grabbed the hudson.war file from the hudson s
 
 This was a bit more complex. Under Manage Hudson > Configure System
 
-<%= fancybox_image("hudson_ldap.png", "Hudson LDAP config") %>
+![Hudson LDAP config](hudson_ldap.png 'Hudson LDAP config')
 
-Note the User/Group names - <code>ROLE_ADMIN</code> and <code>ROLE_HUDSON</code>. For this to work you need <code>groupOfUniqueNames</code> entries directly under the group search base (here <code>ou=groups,dc=chrissearle,dc=net</code>) with the names <code>cn=admin</code> and <code>cn=hudson</code>. Hudson will match this by removing ROLE_ and lowercasing the rolename. This was unclear in the hudson docs I was reading but google came to the rescue.
+Note the User/Group names - <code>ROLE*ADMIN</code> and <code>ROLE_HUDSON</code>. For this to work you need <code>groupOfUniqueNames</code> entries directly under the group search base (here <code>ou=groups,dc=chrissearle,dc=net</code>) with the names <code>cn=admin</code> and <code>cn=hudson</code>. Hudson will match this by removing ROLE* and lowercasing the rolename. This was unclear in the hudson docs I was reading but google came to the rescue.
 
 **Plugins**
 
@@ -26,13 +26,13 @@ Each plugin will add a config section under Manage Hudson > Configure System.
 
 For git:
 
-<%= fancybox_image("hudson_git.png", "Hudson - git") %>
+![Hudson - git](hudson_git.png 'Hudson - git')
 
 Since git is in the path this is OK - otherwise set the full path.
 
 For grails:
 
-<%= fancybox_image("hudson_grails.png", "Hudson - grails") %>
+![Hudson - grails](hudson_grails.png 'Hudson - grails')
 
 Here only grails 1.0.4 is configured - but you can add several different versions.
 
@@ -42,13 +42,13 @@ Now lets add a grails project.
 
 Choose New Job from the main menu.
 
-<%= fancybox_image("hudson_build.png", "Hudson build") %>
+![Hudson - build](hudson_build.png 'Hudson - build')
 
 Add a name and choose free-style.
 
 To configure the project - choose git from the SCM configuration section - my projects have the ability to be cloned over http - so just add the clone URL as the git repository url. Set a branch if you're not testing master.
 
-For build triggers - I chose to poll the SCM with the following schedule <code>*/5 * * * *</code>
+For build triggers - I chose to poll the SCM with the following schedule <code>_/5 _ \* \* \*</code>
 
 For build choose "Add build step" and choose Build with Grails. You'll need to pick which grails installation from the dropdown (these were configured above) and also target.
 

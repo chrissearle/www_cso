@@ -19,6 +19,13 @@ module.exports = {
               noInlineHighlight: false,
             },
           },
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 850,
+              showCaptions: true,
+            },
+          },
         ],
       },
     },
@@ -41,5 +48,6 @@ module.exports = {
     },
     `gatsby-plugin-polyfill-io`,
     `gatsby-plugin-sitemap`,
+    `gatsby-plugin-sharp`,
   ],
 }

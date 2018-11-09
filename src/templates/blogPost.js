@@ -16,6 +16,8 @@ import Layout from '../components/layout'
 
 import TagsMap from '../components/tagsMap'
 
+import '../stylesheets/blogImage.css'
+
 const PageLinks = ({ nodes }) => {
   return (
     <Pagination listClassName="justify-content-center">

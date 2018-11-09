@@ -5,5 +5,5 @@ published: false
 tags: iphone, ios4, ibooks, pdf
 ---
 
-<%= fancybox_image("ibooks-ios4-1.png", "Screenshot") %>
-<%= fancybox_image("ibooks-ios4-2.png", "Screenshot") %>
+![Screenshot](ibooks-ios4-1.png 'Screenshot')
+![Screenshot](ibooks-ios4-2.png 'Screenshot')

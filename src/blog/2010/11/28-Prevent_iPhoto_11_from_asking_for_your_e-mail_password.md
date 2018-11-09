@@ -4,7 +4,7 @@ date: 2010-11-28 19:46:06 +0100
 tags: mac, smtp, osx, mail, passwords, iphoto, iphoto 11, keychain access, ilife 11
 ---
 
-iPhoto '11 from iLife '11 has a new set of e-mail templates for sending photos directly from the application. 
+iPhoto '11 from iLife '11 has a new set of e-mail templates for sending photos directly from the application.
 
 However - each time it prompts for your e-mail password and doesn't seem to have a "remember" option.
 
@@ -20,6 +20,6 @@ It defaults to showing the Attributes pane - select Access Control at the top.
 
 Add iPhoto to the list of applications (the + symbol):
 
-<%= fancybox_image("password-access.png", "Screenshot") %>
+![Screenshot](password-access.png 'Screenshot')
 
 Save changes and you're done.

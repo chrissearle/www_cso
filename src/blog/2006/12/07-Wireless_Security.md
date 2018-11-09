@@ -6,4 +6,4 @@ tags: networking
 
 The following dialog appeared when I got to work this morning (where I connect via wired ethernet rather than wifi). I feel that someone has not really understood the concept of wifi security:
 
-<%= fancybox_image("network-dialog.png", "Network Dialog") %>
+![Network Dialog](network-dialog.png 'Network Dialog')

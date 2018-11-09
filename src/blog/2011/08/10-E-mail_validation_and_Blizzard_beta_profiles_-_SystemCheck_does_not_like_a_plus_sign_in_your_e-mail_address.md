@@ -16,11 +16,11 @@ Analysis went fine - but sending the report always failed.
 
 It always gave "There was a problem sending your system information to Battle.net":
 
-<%= fancybox_image("Battle.net-SystemCheck.png", "Screenshot") %>
+![Screenshot](Battle.net-SystemCheck.png 'Screenshot')
 
 Every FAQ on it suggests network issues or similar. This time I even got around to using wireshark to prove that the connection was OK.
 
-Yesterday they finally sent me the real reason: *Submission will fail if your e-mail address has a + in it*.
+Yesterday they finally sent me the real reason: _Submission will fail if your e-mail address has a + in it_.
 
 Am mentioning this here since I didn't find it anywhere on google and I spent an awful long time looking.
 
