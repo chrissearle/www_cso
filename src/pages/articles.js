@@ -36,7 +36,7 @@ const Articles = ({ data }) => {
 }
 
 export const query = graphql`
-  query HomepageQuery {
+  query ArticlesQuery {
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
       filter: { fields: { collection: { eq: "blog" } } }
