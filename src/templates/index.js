@@ -7,7 +7,6 @@ import { Link } from 'gatsby'
 import _ from 'lodash'
 
 import {
-  Button,
   Card,
   CardBody,
   CardText,
@@ -20,6 +19,8 @@ import {
 } from 'reactstrap'
 
 import moment from 'moment'
+
+import TagsMap from '../components/tagsMap'
 
 const Index = ({ pageContext }) => {
   const { group, index, pageCount } = pageContext
@@ -41,36 +42,21 @@ const Index = ({ pageContext }) => {
         const tags = post.frontmatter.tags && post.frontmatter.tags.split(/, */)
 
         return (
-          <div key={`ex_${post.fields.path}`}>
-            <Card className="mb-4">
-              <CardHeader>
-                Posted: {date}
-                {tags &&
-                  tags.map(tag => {
-                    return (
-                      <Button
-                        key={`tag_${tag}_ex_${post.fields.path}`}
-                        outline
-                        color="info"
-                        size="sm"
-                        className="ml-2"
-                      >
-                        <Link to={`/tags/${tag}`}>{tag}</Link>
-                      </Button>
-                    )
-                  })}
-              </CardHeader>
-              <CardBody>
-                <CardTitle>
-                  <Link to={post.fields.path}>{post.frontmatter.title}</Link>
-                </CardTitle>
-                <CardText>{post.excerpt}</CardText>
-              </CardBody>
-              <CardFooter>
-                <Link to={post.fields.path}>Read full article</Link>
-              </CardFooter>
-            </Card>
-          </div>
+          <Card className="mb-4" key={`ex_${post.fields.path}`}>
+            <CardHeader>
+              Posted: {date}
+              <TagsMap tags={tags} keyPrefix={post.fields.path} />
+            </CardHeader>
+            <CardBody>
+              <CardTitle>
+                <Link to={post.fields.path}>{post.frontmatter.title}</Link>
+              </CardTitle>
+              <CardText>{post.excerpt}</CardText>
+            </CardBody>
+            <CardFooter>
+              <Link to={post.fields.path}>Read full article</Link>
+            </CardFooter>
+          </Card>
         )
       })}
       <Pagination listClassName="justify-content-center">
