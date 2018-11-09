@@ -2,6 +2,6 @@ footer.footer {
   margin-top: 10px;
   padding: 10px;
   padding-bottom: 10px;
-  background-color: #eaeaea;
+  background-color: rgba(0, 0, 0, 0.03);
   text-align: center;
 }
