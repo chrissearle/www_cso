@@ -40,5 +40,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-polyfill-io`,
+    `gatsby-plugin-sitemap`,
   ],
 }
