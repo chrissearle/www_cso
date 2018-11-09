@@ -15,7 +15,7 @@ const TagsMap = ({ tags, keyPrefix }) => {
               outline
               color="info"
               size="sm"
-              className="ml-2"
+              className="ml-2 mt-2"
             >
               <Link to={`/tags/${tag}`}>{tag}</Link>
             </Button>

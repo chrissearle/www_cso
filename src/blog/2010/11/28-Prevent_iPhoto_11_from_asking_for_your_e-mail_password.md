@@ -2,6 +2,7 @@
 title: Prevent iPhoto '11 from asking for your e-mail password
 date: 2010-11-28 19:46:06 +0100
 tags: mac, smtp, osx, mail, passwords, iphoto, iphoto 11, keychain access, ilife 11
+image: password-access.png
 ---
 
 iPhoto '11 from iLife '11 has a new set of e-mail templates for sending photos directly from the application.

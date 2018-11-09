@@ -146,6 +146,9 @@ exports.createPages = ({ graphql, actions }) => {
                     title
                     tags
                     date
+                    image {
+                      publicURL
+                    }
                   }
                   excerpt(pruneLength: 200)
                 }

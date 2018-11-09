@@ -5,6 +5,9 @@ module.exports = {
     siteUrl: `https://www.chrissearle.org`,
   },
   plugins: [
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    `gatsby-image`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -48,6 +51,5 @@ module.exports = {
     },
     `gatsby-plugin-polyfill-io`,
     `gatsby-plugin-sitemap`,
-    `gatsby-plugin-sharp`,
   ],
 }

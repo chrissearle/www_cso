@@ -12,7 +12,9 @@ import {
   CardText,
   CardHeader,
   CardTitle,
+  CardColumns,
   CardFooter,
+  CardImg,
   Pagination,
   PaginationItem,
   PaginationLink,
@@ -32,36 +34,51 @@ const Index = ({ pageContext }) => {
 
   return (
     <Layout>
-      {group.map(edge => {
-        const post = edge.node
+      <CardColumns>
+        {group.map(edge => {
+          const post = edge.node
 
-        const date = moment(post.frontmatter.date, 'YYYY-MM-DD HH:mm Z').format(
-          'YYYY-MM-DD'
-        )
+          const date = moment(
+            post.frontmatter.date,
+            'YYYY-MM-DD HH:mm Z'
+          ).format('YYYY-MM-DD')
 
-        const tags = post.frontmatter.tags && post.frontmatter.tags.split(/, */)
+          const tags =
+            post.frontmatter.tags && post.frontmatter.tags.split(/, */)
 
-        return (
-          <Card className="mb-4" key={`ex_${post.fields.path}`}>
-            <CardHeader>
-              Posted: {date}
-              <TagsMap tags={tags} keyPrefix={post.fields.path} />
-            </CardHeader>
-            <CardBody>
-              <CardTitle>
-                <Link to={post.fields.path}>{post.frontmatter.title}</Link>
-              </CardTitle>
-              <CardText>{post.excerpt}</CardText>
-            </CardBody>
-            <CardFooter>
-              <Link to={post.fields.path}>Read full article</Link>
-            </CardFooter>
-          </Card>
-        )
-      })}
+          return (
+            <Card className="mb-4" key={`ex_${post.fields.path}`}>
+              <CardHeader tag="h6">
+                <div>Posted: {date}</div>
+              </CardHeader>
+              {post.frontmatter.image && (
+                <Link to={post.fields.path}>
+                  <CardImg
+                    top
+                    width="100%"
+                    src={post.frontmatter.image.publicURL}
+                  />
+                </Link>
+              )}
+              <CardBody>
+                <CardTitle>
+                  <Link to={post.fields.path}>{post.frontmatter.title}</Link>
+                </CardTitle>
+                <CardText>{post.excerpt}</CardText>
+              </CardBody>
+              <CardFooter>
+                <TagsMap tags={tags} keyPrefix={post.fields.path} />
+                <div className="mt-2">
+                  <Link to={post.fields.path}>Read full article</Link>
+                </div>
+              </CardFooter>
+            </Card>
+          )
+        })}
+      </CardColumns>
       <Pagination listClassName="justify-content-center">
         <PaginationItem disabled={index <= 1}>
-          <PaginationLink href={previousUrl}>&lt;</PaginationLink>
+          <PaginationLink href={`/${previousUrl}`}>&lt;</PaginationLink>
         </PaginationItem>
         <PaginationItem active={1 === index}>
           <PaginationLink href={'/'}>1</PaginationLink>
@@ -69,12 +86,12 @@ const Index = ({ pageContext }) => {
         {pages.map(page => {
           return (
             <PaginationItem active={page === index} key={`page_${page}`}>
-              <PaginationLink href={page}>{page}</PaginationLink>
+              <PaginationLink href={`/${page}`}>{page}</PaginationLink>
             </PaginationItem>
           )
         })}
         <PaginationItem disabled={index >= pageCount}>
-          <PaginationLink href={nextUrl}>&gt;</PaginationLink>
+          <PaginationLink href={`/${nextUrl}`}>&gt;</PaginationLink>
         </PaginationItem>
       </Pagination>
     </Layout>
