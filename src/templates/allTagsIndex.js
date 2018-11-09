@@ -13,7 +13,7 @@ const AllTagsTemplate = ({ pageContext }) => {
 
   return (
     <Layout>
-      <h2>Tags</h2>
+      <h2>All Tags</h2>
       <ListGroup>
         {tagNames.map((tagName, index) => {
           return (

@@ -6,10 +6,16 @@ import Helmet from 'react-helmet'
 
 import { StaticQuery, graphql } from 'gatsby'
 
-import Header from '../components/header'
+import Header from './header'
+import RecentPosts from './recentPosts'
+import TopTags from './topTags'
+import Search from './search'
+import AdBoxFooter from './adboxFooter'
+import AdBoxRight from './adboxRight'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'prismjs/themes/prism-okaidia.css'
+import '../stylesheets/footer.css'
 
 const Layout = ({ data, title, children }) => {
   let displayTitle = data.site.siteMetadata.title
@@ -34,8 +40,17 @@ const Layout = ({ data, title, children }) => {
           <Col md="12" lg="9" className="pt-4">
             {children}
           </Col>
+          <Col md="12" lg="3" className="pt-4">
+            <Search />
+            <TopTags />
+            <AdBoxRight />
+            <RecentPosts />
+          </Col>
         </Row>
       </Container>
+      <footer className="footer">
+        <AdBoxFooter />
+      </footer>
     </div>
   )
 }
