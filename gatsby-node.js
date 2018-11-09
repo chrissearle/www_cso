@@ -1,5 +1,6 @@
 const path = require('path')
 const moment = require('moment')
+const createPaginatedPages = require('gatsby-paginate')
 
 const pathFromFile = file => {
   return file.replace(
@@ -146,6 +147,7 @@ exports.createPages = ({ graphql, actions }) => {
                     tags
                     date
                   }
+                  excerpt(pruneLength: 200)
                 }
               }
             }
@@ -153,6 +155,13 @@ exports.createPages = ({ graphql, actions }) => {
         `
       ).then(result => {
         const posts = result.data.allMarkdownRemark.edges
+
+        createPaginatedPages({
+          edges: posts,
+          createPage: createPage,
+          pageTemplate: 'src/templates/index.js',
+          pageLength: 20,
+        })
 
         createTagPages(createPage, posts)
         createYearPages(createPage, posts)

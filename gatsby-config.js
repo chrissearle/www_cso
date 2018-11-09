@@ -39,5 +39,6 @@ module.exports = {
         respectDNT: true,
       },
     },
+    `gatsby-plugin-polyfill-io`,
   ],
 }
