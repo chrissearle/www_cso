@@ -18,20 +18,29 @@ import { displayDate } from '../functions'
 
 import '../stylesheets/blogImage.css'
 
-const PageLinks = ({ nodes }) => {
+const PageLink = ({ path, title }) => {
+  return (
+    <PaginationItem>
+      <PaginationLink href={path}>{title}</PaginationLink>
+    </PaginationItem>
+  )
+}
+
+const PageLinks = ({ prev, next }) => {
   return (
     <Pagination listClassName="justify-content-center">
-      {nodes
-        .filter(node => node)
-        .map(node => {
-          return (
-            <PaginationItem key={node.fields.path}>
-              <PaginationLink href={node.fields.path}>
-                {node.frontmatter.title}
-              </PaginationLink>
-            </PaginationItem>
-          )
-        })}
+      {prev && (
+        <PageLink
+          path={prev.fields.path}
+          title={`< ${prev.frontmatter.title}`}
+        />
+      )}
+      {next && (
+        <PageLink
+          path={next.fields.path}
+          title={`${next.frontmatter.title} >`}
+        />
+      )}
     </Pagination>
   )
 }
@@ -68,7 +77,7 @@ const Template = ({ data, pageContext }) => {
         style={{ fontFamily: 'avenir' }}
       />
 
-      <PageLinks nodes={[prev, next]} />
+      <PageLinks prev={prev} next={next} />
     </Layout>
   )
 }
