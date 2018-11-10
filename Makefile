@@ -14,6 +14,7 @@ package: docker_build
 	docker tag chrissearle/www_cso:`git rev-parse --short HEAD` chrissearle/www_cso:staging
 
 stage:
+	docker push chrissearle/www_cso:`git rev-parse --short HEAD`
 	docker push chrissearle/www_cso:staging
 
 promote:
