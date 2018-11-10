@@ -10,11 +10,11 @@ import {
   PaginationLink,
 } from 'reactstrap'
 
-import moment from 'moment'
-
 import Layout from '../components/layout'
 
 import TagsMap from '../components/tagsMap'
+
+import { displayDate } from '../functions'
 
 import '../stylesheets/blogImage.css'
 
@@ -49,9 +49,7 @@ const Template = ({ data, pageContext }) => {
 
   const tags = frontmatter.tags && frontmatter.tags.split(/, */)
 
-  const date = moment(frontmatter.date, 'YYYY-MM-DD HH:mm Z').format(
-    'YYYY-MM-DD'
-  )
+  const date = displayDate(frontmatter.date)
 
   return (
     <Layout title={title}>

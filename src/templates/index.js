@@ -15,10 +15,10 @@ import {
   CardImg,
 } from 'reactstrap'
 
-import moment from 'moment'
-
 import TagsMap from '../components/tagsMap'
 import Pagination from '../components/pagination'
+
+import { displayDate } from '../functions'
 
 const Index = ({ pageContext }) => {
   const { group, index, pageCount } = pageContext
@@ -29,10 +29,7 @@ const Index = ({ pageContext }) => {
         {group.map(edge => {
           const post = edge.node
 
-          const date = moment(
-            post.frontmatter.date,
-            'YYYY-MM-DD HH:mm Z'
-          ).format('YYYY-MM-DD')
+          const date = displayDate(post.frontmatter.date)
 
           const tags =
             post.frontmatter.tags && post.frontmatter.tags.split(/, */)

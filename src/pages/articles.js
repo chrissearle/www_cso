@@ -6,7 +6,7 @@ import { ListGroup, ListGroupItem, Badge } from 'reactstrap'
 
 import Layout from '../components/layout'
 
-import moment from 'moment'
+import { displayDate } from '../functions'
 
 const Articles = ({ data }) => {
   const { edges } = data.allMarkdownRemark
@@ -17,9 +17,7 @@ const Articles = ({ data }) => {
       <ListGroup>
         {edges.map(edge => {
           const { frontmatter, fields } = edge.node
-          const date = moment(frontmatter.date, 'YYYY-MM-DD HH:mm Z').format(
-            'YYYY-MM-DD'
-          )
+          const date = displayDate(frontmatter.date)
 
           return (
             <ListGroupItem key={fields.path}>

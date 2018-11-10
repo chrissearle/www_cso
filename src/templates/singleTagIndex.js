@@ -4,11 +4,11 @@ import { Link } from 'gatsby'
 
 import { ListGroup, ListGroupItem, Badge } from 'reactstrap'
 
-import moment from 'moment'
-
 import Layout from '../components/layout'
 
-const SingleTagTemplate = ({ data, pageContext }) => {
+import { displayDate } from '../functions'
+
+const SingleTagTemplate = ({ pageContext }) => {
   const { posts, tagName } = pageContext
 
   return (
@@ -16,10 +16,7 @@ const SingleTagTemplate = ({ data, pageContext }) => {
       <h2>Posts about {`${tagName}`}</h2>
       <ListGroup>
         {posts.map((post, index) => {
-          const date = moment(
-            post.frontmatter.date,
-            'YYYY-MM-DD HH:mm Z'
-          ).format('YYYY-MM-DD')
+          const date = displayDate(post.frontmatter.date)
 
           return (
             <ListGroupItem key={index}>
