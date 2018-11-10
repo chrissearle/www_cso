@@ -8,8 +8,8 @@ To avoid having to set up multiple cron lines - here's a script that will read y
 
 Not sure where I saw the code (rss feed) - but the comment was present in the downloaded code - so thats a pointer to where it starts.
 
-Changes I've made - the dir match is changed from ** to * so that it will follow symlinks. It also handles multiple drupal installs. Timeout wrapping added - one of my sites takes a long while to return.
+Changes I've made - the dir match is changed from \*_ to _ so that it will follow symlinks. It also handles multiple drupal installs. Timeout wrapping added - one of my sites takes a long while to return.
 
-[drupal_cron.rb](drupal_cron_rb)
+[drupal_cron.rb](drupal_cron.rb)
 
 Feel free to comment with fixes or suggestions to make it better.
