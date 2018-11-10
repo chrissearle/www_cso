@@ -67,7 +67,11 @@ const Index = ({ pageContext }) => {
                 <CardText>{post.excerpt}</CardText>
               </CardBody>
               <CardFooter>
-                <TagsMap tags={tags} keyPrefix={post.fields.path} />
+                <TagsMap
+                  tags={tags}
+                  keyPrefix={post.fields.path}
+                  innerClass="ml-2 mt-2"
+                />
                 <div className="mt-2">
                   <Link to={post.fields.path}>Read full article</Link>
                 </div>

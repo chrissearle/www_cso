@@ -4,7 +4,9 @@ import { Link } from 'gatsby'
 
 import { Button } from 'reactstrap'
 
-const TagsMap = ({ tags, keyPrefix }) => {
+const TagsMap = ({ tags, keyPrefix, innerClass }) => {
+  const className = innerClass ? innerClass : 'ml-2'
+
   return (
     <React.Fragment>
       {tags &&
@@ -15,7 +17,7 @@ const TagsMap = ({ tags, keyPrefix }) => {
               outline
               color="info"
               size="sm"
-              className="ml-2 mt-2"
+              className={className}
             >
               <Link to={`/tags/${tag}`}>{tag}</Link>
             </Button>
