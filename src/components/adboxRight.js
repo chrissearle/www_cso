@@ -1,7 +1,15 @@
 import React from 'react'
 
+import AdSense from 'react-adsense'
+
 const AdBoxRight = () => {
-  return <div>Ad box will go here</div>
+  return (
+    <AdSense.Google
+      client="ca-pub-6208435820744910"
+      slot="5194006361"
+      style={{ width: '160px', height: '90px' }}
+    />
+  )
 }
 
 export default AdBoxRight

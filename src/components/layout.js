@@ -51,6 +51,10 @@ const Layout = ({ data, title, children }) => {
       <footer className="footer">
         <AdBoxFooter />
       </footer>
+      <script
+        async
+        src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+      />
     </div>
   )
 }
