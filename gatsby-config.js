@@ -5,6 +5,7 @@ module.exports = {
     siteUrl: `https://www.chrissearle.org`,
   },
   plugins: [
+    `gatsby-plugin-force-trailing-slashes`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-image`,
