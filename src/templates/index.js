@@ -10,7 +10,6 @@ import {
   CardText,
   CardHeader,
   CardTitle,
-  CardColumns,
   CardFooter,
   CardImg,
 } from 'reactstrap'
@@ -25,49 +24,46 @@ const Index = ({ pageContext }) => {
 
   return (
     <Layout>
-      <CardColumns>
-        {group.map(edge => {
-          const post = edge.node
+      {group.map(edge => {
+        const post = edge.node
 
-          const date = displayDate(post.frontmatter.date)
+        const date = displayDate(post.frontmatter.date)
 
-          const tags =
-            post.frontmatter.tags && post.frontmatter.tags.split(/, */)
+        const tags = post.frontmatter.tags && post.frontmatter.tags.split(/, */)
 
-          return (
-            <Card className="mb-4" key={`ex_${post.fields.path}`}>
-              <CardHeader tag="h6">
-                <div>Posted: {date}</div>
-              </CardHeader>
-              {post.frontmatter.image && (
-                <Link to={post.fields.path}>
-                  <CardImg
-                    top
-                    width="100%"
-                    src={post.frontmatter.image.publicURL}
-                  />
-                </Link>
-              )}
-              <CardBody>
-                <CardTitle>
-                  <Link to={post.fields.path}>{post.frontmatter.title}</Link>
-                </CardTitle>
-                <CardText>{post.excerpt}</CardText>
-              </CardBody>
-              <CardFooter>
-                <TagsMap
-                  tags={tags}
-                  keyPrefix={post.fields.path}
-                  innerClass="ml-2 mt-2"
+        return (
+          <Card className="mb-4" key={`ex_${post.fields.path}`}>
+            <CardHeader tag="h6">
+              <div>Posted: {date}</div>
+            </CardHeader>
+            {post.frontmatter.image && (
+              <Link to={post.fields.path}>
+                <CardImg
+                  top
+                  width="100%"
+                  src={post.frontmatter.image.publicURL}
                 />
-                <div className="mt-2">
-                  <Link to={post.fields.path}>Read full article</Link>
-                </div>
-              </CardFooter>
-            </Card>
-          )
-        })}
-      </CardColumns>
+              </Link>
+            )}
+            <CardBody>
+              <CardTitle>
+                <Link to={post.fields.path}>{post.frontmatter.title}</Link>
+              </CardTitle>
+              <CardText>{post.excerpt}</CardText>
+            </CardBody>
+            <CardFooter>
+              <TagsMap
+                tags={tags}
+                keyPrefix={post.fields.path}
+                innerClass="ml-2 mt-2"
+              />
+              <div className="mt-2">
+                <Link to={post.fields.path}>Read full article</Link>
+              </div>
+            </CardFooter>
+          </Card>
+        )
+      })}
       <Pagination index={index} pageCount={pageCount} />
     </Layout>
   )
