@@ -26,4 +26,3 @@ Sessions divided by model:
 </table>
 
 Note - this data is only available for units that have connected and uploaded - so may change slightly over time.
-READMORE

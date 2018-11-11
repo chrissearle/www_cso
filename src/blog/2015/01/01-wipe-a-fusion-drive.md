@@ -22,8 +22,6 @@ What to do?
 
 Googling led me to the following info. It appears that a fusion drive is based on the concepts of a logical volume system similar to lvm - but managed with diskutil.
 
-READMORE
-
 ### Warning
 
 **Note that this will not be recoverable. Make sure of your backups _before_ you start.**

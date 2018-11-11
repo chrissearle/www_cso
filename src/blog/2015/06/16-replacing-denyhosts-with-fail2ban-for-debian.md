@@ -14,8 +14,6 @@ Denyhosts is something that I used to block incoming ssh attacks (it adds IP add
 
 So - time to look at fail2ban.
 
-READMORE
-
 Fail2ban doesn't by default use hosts.deny - it creates iptables rules (that by default time out after a while). I was quite happy with this so the default config in jessie is pretty close to what I want.
 
 Installation is easy - a simple apt-get/aptitude install of fail2ban.
