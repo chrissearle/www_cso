@@ -14,6 +14,8 @@ import Layout from '../components/layout'
 
 import TagsMap from '../components/tagsMap'
 
+import Discussion from '../components/disqusPost'
+
 import { displayDate } from '../functions'
 
 import '../stylesheets/blogImage.css'
@@ -45,7 +47,7 @@ const PageLinks = ({ prev, next }) => {
   )
 }
 
-const Template = ({ data, pageContext }) => {
+const Template = ({ location, data, pageContext }) => {
   const { next, prev } = pageContext
 
   const { markdownRemark } = data
@@ -78,6 +80,8 @@ const Template = ({ data, pageContext }) => {
       />
 
       <PageLinks prev={prev} next={next} />
+
+      <Discussion title={title} url={location.href} />
     </Layout>
   )
 }

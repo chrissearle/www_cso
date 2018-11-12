@@ -6,7 +6,7 @@ const Search = () => {
   return (
     <Card className="mb-4">
       <CardBody>
-        <CardText>
+        <CardText tag="div">
           <Form action="//www.google.com" id="cse-search-box">
             <Input
               type="hidden"
