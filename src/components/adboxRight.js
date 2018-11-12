@@ -7,7 +7,7 @@ const AdBoxRight = () => {
     <AdSense.Google
       client="ca-pub-6208435820744910"
       slot="5194006361"
-      style={{ width: '160px', height: '90px' }}
+      style={{ display: 'inline-block', width: '160px', height: '90px' }}
     />
   )
 }
