@@ -69,12 +69,13 @@ const Layout = ({
       content: metaDate(article.date),
     })
 
-    article.tags.forEach(tag => {
-      meta.push({
-        name: 'article:tag',
-        content: tag,
+    article.tags &&
+      article.tags.forEach(tag => {
+        meta.push({
+          name: 'article:tag',
+          content: tag,
+        })
       })
-    })
   }
 
   if (image) {
