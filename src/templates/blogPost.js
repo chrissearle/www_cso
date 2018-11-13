@@ -74,8 +74,12 @@ const Template = ({ location, data, pageContext }) => {
         <meta property="og:url" content={location.href} />
         <meta property="og:type" content="article" />
         <meta
-          property="og:article:published_time"
+          property="article:published_time"
           content={metaDate(frontmatter.date)}
+        />
+        <meta
+          property="article:author"
+          content="https://about.me/chrissearle"
         />
       </Helmet>
       <h1 style={{ fontFamily: 'avenir' }}>{title}</h1>
