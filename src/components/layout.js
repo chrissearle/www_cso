@@ -13,22 +13,11 @@ import Search from './search'
 import AdBoxFooter from './adboxFooter'
 import AdBoxRight from './adboxRight'
 
-import { metaDate } from '../functions'
-
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'prismjs/themes/prism-okaidia.css'
 import '../stylesheets/footer.css'
 
-const Layout = ({
-  data,
-  title,
-  description,
-  type,
-  url,
-  article,
-  image,
-  children,
-}) => {
+const Layout = ({ data, title, description, url, image, children }) => {
   const siteMetadata = data.site.siteMetadata
 
   let displayTitle = siteMetadata.title
@@ -36,47 +25,9 @@ const Layout = ({
     displayTitle = title + ' - ' + siteMetadata.title
   }
 
-  const meta = [
-    {
-      name: 'description',
-      content: description ? description : siteMetadata.description,
-    },
-    {
-      property: 'og:title',
-      content: displayTitle,
-    },
-    {
-      property: 'og:description',
-      content: description ? description : siteMetadata.description,
-    },
-    {
-      property: 'og:locale',
-      content: 'en_gb',
-    },
-    {
-      property: 'og:type',
-      content: type ? type : 'website',
-    },
-    {
-      property: 'og:url',
-      content: url ? url : data.site.siteMetadata.siteUrl,
-    },
-  ]
-
-  if (article) {
-    meta.push({
-      name: 'article:published_time',
-      content: metaDate(article.date),
-    })
-
-    article.tags &&
-      article.tags.forEach(tag => {
-        meta.push({
-          name: 'article:tag',
-          content: tag,
-        })
-      })
-  }
+  const displayDescription = description
+    ? description
+    : siteMetadata.description
 
   if (image) {
     //  og:image
@@ -88,7 +39,18 @@ const Layout = ({
 
   return (
     <div>
-      <Helmet title={displayTitle} meta={meta} />
+      <Helmet>
+        <title>{displayTitle}</title>
+        <meta name="description" content={displayDescription} />
+        <meta property="og:title" content={displayTitle} />
+        <meta property="og:description" content={displayDescription} />
+        <meta property="og:locale" content="en_gb" />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content={url ? url : data.site.siteMetadata.siteUrl}
+        />
+      </Helmet>
       <Header title={data.site.siteMetadata.title} />
       <Container>
         <Row>
@@ -114,15 +76,7 @@ const Layout = ({
   )
 }
 
-const WrappedLayout = ({
-  title,
-  description,
-  type,
-  url,
-  article,
-  image,
-  children,
-}) => {
+const WrappedLayout = ({ title, description, url, image, children }) => {
   return (
     <StaticQuery
       query={graphql`
@@ -142,9 +96,7 @@ const WrappedLayout = ({
           children={children}
           title={title}
           description={description}
-          type={type}
           url={url}
-          article={article}
           image={image}
         />
       )}
