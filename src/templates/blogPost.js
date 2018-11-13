@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
+import _ from 'lodash'
 
 import {
   Card,
@@ -54,7 +55,7 @@ const PageLinks = ({ prev, next }) => {
 }
 
 const ImageMeta = ({ frontmatter, location }) => {
-  if (frontmatter.image.childImageSharp.fixed) {
+  if (_.has(frontmatter, 'image.childImageSharp.fixed')) {
     const image = frontmatter.image.childImageSharp.fixed
     const url = join(location.origin, image.src)
 
