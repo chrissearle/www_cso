@@ -42,23 +42,23 @@ const Layout = ({
       content: description ? description : siteMetadata.description,
     },
     {
-      name: 'og:title',
+      property: 'og:title',
       content: displayTitle,
     },
     {
-      name: 'og:description',
+      property: 'og:description',
       content: description ? description : siteMetadata.description,
     },
     {
-      name: 'og:locale',
+      property: 'og:locale',
       content: 'en_gb',
     },
     {
-      name: 'og:type',
+      property: 'og:type',
       content: type ? type : 'website',
     },
     {
-      name: 'og:url',
+      property: 'og:url',
       content: url ? url : data.site.siteMetadata.siteUrl,
     },
   ]
