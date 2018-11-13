@@ -4,9 +4,13 @@ import { Card, CardBody, CardHeader, CardFooter } from 'reactstrap'
 
 import Layout from '../components/layout'
 
-const Keys = () => {
+const Keys = ({ location }) => {
   return (
-    <Layout>
+    <Layout
+      title="Chris Searle - Cryptographic Keys"
+      description="Cryptographic kys and fingerprints"
+      url={location.href}
+    >
       <h2 className="mb-4">Cryptographic Keys</h2>
       <Card className="mb-4" outline color="primary">
         <CardHeader>Current</CardHeader>

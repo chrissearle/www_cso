@@ -13,27 +13,81 @@ import Search from './search'
 import AdBoxFooter from './adboxFooter'
 import AdBoxRight from './adboxRight'
 
+import { metaDate } from '../functions'
+
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'prismjs/themes/prism-okaidia.css'
 import '../stylesheets/footer.css'
 
-const Layout = ({ data, title, children }) => {
-  let displayTitle = data.site.siteMetadata.title
+const Layout = ({
+  data,
+  title,
+  description,
+  type,
+  url,
+  article,
+  image,
+  children,
+}) => {
+  const siteMetadata = data.site.siteMetadata
+
+  let displayTitle = siteMetadata.title
   if (title) {
-    displayTitle = title + ' - ' + data.site.siteMetadata.title
+    displayTitle = title + ' - ' + siteMetadata.title
+  }
+
+  const meta = [
+    {
+      name: 'description',
+      content: description ? description : siteMetadata.description,
+    },
+    {
+      name: 'og:title',
+      content: displayTitle,
+    },
+    {
+      name: 'og:description',
+      content: description ? description : siteMetadata.description,
+    },
+    {
+      name: 'og:locale',
+      content: 'en_gb',
+    },
+    {
+      name: 'og:type',
+      content: type ? type : 'website',
+    },
+    {
+      name: 'og:url',
+      content: url ? url : data.site.siteMetadata.siteUrl,
+    },
+  ]
+
+  if (article) {
+    meta.push({
+      name: 'article:published_time',
+      content: metaDate(article.date),
+    })
+
+    article.tags.forEach(tag => {
+      meta.push({
+        name: 'article:tag',
+        content: tag,
+      })
+    })
+  }
+
+  if (image) {
+    //  og:image
+    //  og:image:secure_url
+    //  og:image:type
+    //  og:image:width
+    //  og:image:height
   }
 
   return (
     <div>
-      <Helmet
-        title={displayTitle}
-        meta={[
-          {
-            name: 'description',
-            content: data.site.siteMetadata.description,
-          },
-        ]}
-      />
+      <Helmet title={displayTitle} meta={meta} />
       <Header title={data.site.siteMetadata.title} />
       <Container>
         <Row>
@@ -59,7 +113,15 @@ const Layout = ({ data, title, children }) => {
   )
 }
 
-const WrappedLayout = ({ title, children }) => {
+const WrappedLayout = ({
+  title,
+  description,
+  type,
+  url,
+  article,
+  image,
+  children,
+}) => {
   return (
     <StaticQuery
       query={graphql`
@@ -68,11 +130,23 @@ const WrappedLayout = ({ title, children }) => {
             siteMetadata {
               title
               description
+              siteUrl
             }
           }
         }
       `}
-      render={data => <Layout data={data} children={children} title={title} />}
+      render={data => (
+        <Layout
+          data={data}
+          children={children}
+          title={title}
+          description={description}
+          type={type}
+          url={url}
+          article={article}
+          image={image}
+        />
+      )}
     />
   )
 }

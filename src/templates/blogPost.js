@@ -52,7 +52,7 @@ const Template = ({ location, data, pageContext }) => {
 
   const { markdownRemark } = data
 
-  const { frontmatter } = markdownRemark
+  const { frontmatter, excerpt } = markdownRemark
 
   const title = frontmatter.title
 
@@ -63,7 +63,16 @@ const Template = ({ location, data, pageContext }) => {
   const date = displayDate(frontmatter.date)
 
   return (
-    <Layout title={title}>
+    <Layout
+      title={title}
+      description={excerpt}
+      type="article"
+      url={location.href}
+      article={{
+        date: frontmatter.date,
+        tags: tags,
+      }}
+    >
       <h1 style={{ fontFamily: 'avenir' }}>{title}</h1>
       <Card className="mb-4">
         <CardBody>
@@ -95,6 +104,7 @@ export const query = graphql`
         date
         tags
       }
+      excerpt(pruneLength: 200)
     }
   }
 `
