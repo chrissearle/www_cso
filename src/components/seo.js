@@ -6,12 +6,10 @@ import Helmet from 'react-helmet'
 
 import { lookup } from 'mime-types'
 
-import join from 'url-join'
-
 const SEO = ({ data }) => {
   const siteMetadata = data.site.siteMetadata
 
-  const image = join(siteMetadata.siteUrl, 'logo.png')
+  const image = siteMetadata.siteUrl + '/logo.png'
 
   return (
     <Helmet>

@@ -12,7 +12,6 @@ import {
   PaginationLink,
 } from 'reactstrap'
 
-import join from 'url-join'
 import { lookup } from 'mime-types'
 
 import Layout from '../components/layout'
@@ -57,7 +56,7 @@ const PageLinks = ({ prev, next }) => {
 const ImageMeta = ({ frontmatter, location }) => {
   if (_.has(frontmatter, 'image.childImageSharp.fixed')) {
     const image = frontmatter.image.childImageSharp.fixed
-    const url = join(location.origin, image.src)
+    const url = location.origin + image.src
 
     return (
       <Helmet>
@@ -68,6 +67,8 @@ const ImageMeta = ({ frontmatter, location }) => {
       </Helmet>
     )
   }
+
+  return null
 }
 
 const Template = ({ location, data, pageContext }) => {
