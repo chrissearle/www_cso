@@ -53,10 +53,10 @@ const PageLinks = ({ prev, next }) => {
   )
 }
 
-const ImageMeta = ({ frontmatter, location }) => {
+const ImageMeta = ({ frontmatter, origin }) => {
   if (_.has(frontmatter, 'image.childImageSharp.fixed')) {
     const image = frontmatter.image.childImageSharp.fixed
-    const url = location.origin + image.src
+    const url = origin + image.src
 
     return (
       <Helmet>
@@ -86,13 +86,20 @@ const Template = ({ location, data, pageContext }) => {
 
   const date = displayDate(frontmatter.date)
 
+  // const url = location.href
+  // const origin = location.origin
+  // Facebook isn't playing ball with location used in the header
+
+  const origin = data.site.siteMetadata.siteUrl
+  const url = data.site.siteMetadata.siteUrl + markdownRemark.fields.path
+
   return (
     <Layout title={title} description={excerpt}>
       <SEO />
       <Helmet>
         <meta property="og:description" content={excerpt} />
         <meta property="og:title" content={title} />
-        <meta property="og:url" content={location.href} />
+        <meta property="og:url" content={url} />
         <meta property="og:type" content="article" />
         <meta
           property="article:published_time"
@@ -103,7 +110,7 @@ const Template = ({ location, data, pageContext }) => {
           content="https://about.me/chrissearle"
         />
       </Helmet>
-      <ImageMeta location={location} frontmatter={frontmatter} />
+      <ImageMeta origin={origin} frontmatter={frontmatter} />
       <h1 style={{ fontFamily: 'avenir' }}>{title}</h1>
       <Card className="mb-4">
         <CardBody>
@@ -145,6 +152,14 @@ export const query = graphql`
         }
       }
       excerpt(pruneLength: 200)
+      fields {
+        path
+      }
+    }
+    site {
+      siteMetadata {
+        siteUrl
+      }
     }
   }
 `
