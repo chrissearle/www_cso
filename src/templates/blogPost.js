@@ -1,6 +1,5 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Helmet from 'react-helmet'
 
 import {
   Card,
@@ -17,7 +16,7 @@ import TagsMap from '../components/tagsMap'
 
 import Discussion from '../components/disqusPost'
 
-import { displayDate, metaDate } from '../functions'
+import { displayDate } from '../functions'
 
 import '../stylesheets/blogImage.css'
 
@@ -64,15 +63,7 @@ const Template = ({ location, data, pageContext }) => {
   const date = displayDate(frontmatter.date)
 
   return (
-    <Layout title={title} description={excerpt} url={location.href}>
-      <Helmet>
-        <meta property="og:type" content="article" />
-        <meta
-          property="og:article:published_time"
-          content={metaDate(frontmatter.date)}
-        />
-      </Helmet>
-
+    <Layout title={title} description={excerpt}>
       <h1 style={{ fontFamily: 'avenir' }}>{title}</h1>
       <Card className="mb-4">
         <CardBody>

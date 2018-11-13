@@ -17,7 +17,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'prismjs/themes/prism-okaidia.css'
 import '../stylesheets/footer.css'
 
-const Layout = ({ data, title, description, url, image, children }) => {
+const Layout = ({ data, title, description, children }) => {
   const siteMetadata = data.site.siteMetadata
 
   let displayTitle = siteMetadata.title
@@ -29,29 +29,13 @@ const Layout = ({ data, title, description, url, image, children }) => {
     ? description
     : siteMetadata.description
 
-  if (image) {
-    //  og:image
-    //  og:image:secure_url
-    //  og:image:type
-    //  og:image:width
-    //  og:image:height
-  }
-
   return (
     <div>
       <Helmet>
         <title>{displayTitle}</title>
         <meta name="description" content={displayDescription} />
-        <meta property="og:title" content={displayTitle} />
-        <meta property="og:description" content={displayDescription} />
-        <meta property="og:locale" content="en_gb" />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:url"
-          content={url ? url : data.site.siteMetadata.siteUrl}
-        />
       </Helmet>
-      <Header title={data.site.siteMetadata.title} />
+      <Header title={siteMetadata.title} />
       <Container>
         <Row>
           <Col md="12" lg="9" className="pt-4">
@@ -76,7 +60,7 @@ const Layout = ({ data, title, description, url, image, children }) => {
   )
 }
 
-const WrappedLayout = ({ title, description, url, image, children }) => {
+const WrappedLayout = ({ title, description, children }) => {
   return (
     <StaticQuery
       query={graphql`
@@ -96,8 +80,6 @@ const WrappedLayout = ({ title, description, url, image, children }) => {
           children={children}
           title={title}
           description={description}
-          url={url}
-          image={image}
         />
       )}
     />
