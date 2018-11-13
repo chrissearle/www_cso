@@ -69,7 +69,6 @@ const WrappedLayout = ({ title, description, children }) => {
             siteMetadata {
               title
               description
-              siteUrl
             }
           }
         }

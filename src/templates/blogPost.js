@@ -11,6 +11,9 @@ import {
   PaginationLink,
 } from 'reactstrap'
 
+import join from 'url-join'
+import { lookup } from 'mime-types'
+
 import Layout from '../components/layout'
 
 import TagsMap from '../components/tagsMap'
@@ -50,6 +53,22 @@ const PageLinks = ({ prev, next }) => {
   )
 }
 
+const ImageMeta = ({ frontmatter, location }) => {
+  if (frontmatter.image.childImageSharp.fixed) {
+    const image = frontmatter.image.childImageSharp.fixed
+    const url = join(location.origin, image.src)
+
+    return (
+      <Helmet>
+        <meta property="og:image" content={url} />
+        <meta property="og:image:width" content={image.width} />
+        <meta property="og:image:height" content={image.height} />
+        <meta property="og:image:type" content={lookup(url)} />
+      </Helmet>
+    )
+  }
+}
+
 const Template = ({ location, data, pageContext }) => {
   const { next, prev } = pageContext
 
@@ -82,6 +101,7 @@ const Template = ({ location, data, pageContext }) => {
           content="https://about.me/chrissearle"
         />
       </Helmet>
+      <ImageMeta location={location} frontmatter={frontmatter} />
       <h1 style={{ fontFamily: 'avenir' }}>{title}</h1>
       <Card className="mb-4">
         <CardBody>
@@ -112,6 +132,15 @@ export const query = graphql`
         title
         date
         tags
+        image {
+          childImageSharp {
+            fixed {
+              width
+              height
+              src
+            }
+          }
+        }
       }
       excerpt(pruneLength: 200)
     }

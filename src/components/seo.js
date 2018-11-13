@@ -4,10 +4,14 @@ import { StaticQuery, graphql } from 'gatsby'
 
 import Helmet from 'react-helmet'
 
+import { lookup } from 'mime-types'
+
+import join from 'url-join'
+
 const SEO = ({ data }) => {
   const siteMetadata = data.site.siteMetadata
 
-  const image = siteMetadata.siteUrl + '/logo.png'
+  const image = join(siteMetadata.siteUrl, 'logo.png')
 
   return (
     <Helmet>
@@ -19,7 +23,7 @@ const SEO = ({ data }) => {
       <meta property="og:title" content={siteMetadata.title} />
       <meta property="og:description" content={siteMetadata.description} />
       <meta property="og:image" content={image} />
-      <meta property="og:image:type" content="image/png" />
+      <meta property="og:image:type" content={lookup(image)} />
       <meta property="og:image:width" content="300" />
       <meta property="og:image:height" content="300" />
     </Helmet>
