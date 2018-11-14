@@ -3,6 +3,7 @@ import React from 'react'
 import Layout from '../components/layout'
 
 import { Link } from 'gatsby'
+import Img from 'gatsby-image'
 
 import {
   Card,
@@ -11,7 +12,6 @@ import {
   CardHeader,
   CardTitle,
   CardFooter,
-  CardImg,
 } from 'reactstrap'
 
 import TagsMap from '../components/tagsMap'
@@ -38,11 +38,7 @@ const Index = ({ pageContext }) => {
             </CardHeader>
             {post.frontmatter.image && (
               <Link to={post.fields.path}>
-                <CardImg
-                  top
-                  width="100%"
-                  src={post.frontmatter.image.publicURL}
-                />
+                <Img fluid={post.frontmatter.image.childImageSharp.fluid} />
               </Link>
             )}
             <CardBody>

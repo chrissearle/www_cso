@@ -129,6 +129,9 @@ exports.createPages = ({ graphql, actions }) => {
   return new Promise((resolve, reject) => {
     const blogTemplate = path.resolve('src/templates/blogPost.js')
 
+    // GatsbyImageSharpFluid is defined in gatsby-transformer-sharp - but when ...GatsbyImageSharpFluid
+    // is used on fluid it breaks the query. Copied in the contents directly
+
     resolve(
       graphql(
         `
@@ -147,7 +150,15 @@ exports.createPages = ({ graphql, actions }) => {
                     tags
                     date
                     image {
-                      publicURL
+                      childImageSharp {
+                        fluid(maxWidth: 1000) {
+                          base64
+                          aspectRatio
+                          src
+                          srcSet
+                          sizes
+                        }
+                      }
                     }
                   }
                   excerpt(pruneLength: 200)
