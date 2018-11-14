@@ -17,7 +17,7 @@ tags:
 `
 
 const folder = path.join(__dirname, prefix, date.format('YYYY/MM'))
-const filename = path.join(folder, `${date.format('DD')}-${slug}`)
+const filename = path.join(folder, `${date.format('DD')}-${slug}.md`)
 
 fs.mkdir(folder, { recursive: true }, err => {
   if (err) {
