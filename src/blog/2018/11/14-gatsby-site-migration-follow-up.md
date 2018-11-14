@@ -4,7 +4,7 @@ date: 2018-11-14 20:51 CET
 tags: javascript, react, gatsby, middleman
 ---
 
-So - the migtation [started a few days ago](/2018/11/10/update-blog-engine-to-gatsby) is now more or less complete.
+So - the migtation [started a few days ago](/2018/11/10/update-blog-engine-to-gatsby/) is now more or less complete.
 
 This has been applied on two blogs
 
