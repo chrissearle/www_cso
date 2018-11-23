@@ -5392,6 +5392,17 @@ gatsby-paginate@^1.0.16:
   dependencies:
     path "^0.12.7"
 
+gatsby-plugin-feed@^2.0.9:
+  version "2.0.9"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-feed/-/gatsby-plugin-feed-2.0.9.tgz#fed0908164331910b6299150d27b794d6d2dac90"
+  integrity sha512-Ro4nL6x4V0Z8+q15ceoMXYg41UZWo4/CAFnt0RW5WFuYQZOaqNfhxrHHNMEjI0tp2P2a4t0zLArY6uX8oHgVEQ==
+  dependencies:
+    "@babel/runtime" "^7.0.0"
+    lodash.merge "^4.6.0"
+    mkdirp "^0.5.1"
+    pify "^3.0.0"
+    rss "^1.2.2"
+
 gatsby-plugin-force-trailing-slashes@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-force-trailing-slashes/-/gatsby-plugin-force-trailing-slashes-1.0.4.tgz#acbf1730aa63807a18a02960e96d4d6f98341df0"
@@ -10838,6 +10849,14 @@ ripemd160@^2.0.0, ripemd160@^2.0.1:
     hash-base "^3.0.0"
     inherits "^2.0.1"
 
+rss@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/rss/-/rss-1.2.2.tgz#50a1698876138133a74f9a05d2bdc8db8d27a921"
+  integrity sha1-UKFpiHYTgTOnT5oF0r3I240nqSE=
+  dependencies:
+    mime-types "2.1.13"
+    xml "1.0.1"
+
 run-async@^2.2.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/run-async/-/run-async-2.3.0.tgz#0371ab4ae0bdd720d4166d7dfda64ff7a445a6c0"
@@ -12989,6 +13008,11 @@ xml2js@^0.4.5:
   dependencies:
     sax ">=0.6.0"
     xmlbuilder "~9.0.1"
+
+xml@1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/xml/-/xml-1.0.1.tgz#78ba72020029c5bc87b8a81a3cfcd74b4a2fc1e5"
+  integrity sha1-eLpyAgApxbyHuKgaPPzXS0ovweU=
 
 xmlbuilder@~9.0.1:
   version "9.0.7"
