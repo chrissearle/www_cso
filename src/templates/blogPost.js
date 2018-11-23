@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import rehypeReact from 'rehype-react'
 import Helmet from 'react-helmet'
 import _ from 'lodash'
 
@@ -25,6 +26,11 @@ import SEO from '../components/seo'
 import { displayDate, metaDate } from '../functions'
 
 import '../stylesheets/blogImage.css'
+
+const renderAst = new rehypeReact({
+  createElement: React.createElement,
+  components: {},
+}).Compiler
 
 const PageLink = ({ path, title }) => {
   return (
@@ -120,11 +126,9 @@ const Template = ({ location, data, pageContext }) => {
           </CardText>
         </CardBody>
       </Card>
-      <div
-        className="blogpost"
-        dangerouslySetInnerHTML={{ __html: html }}
-        style={{ fontFamily: 'avenir' }}
-      />
+      <div className="blogpost" style={{ fontFamily: 'avenir' }}>
+        {renderAst(post.htmlAst)}
+      </div>
 
       <PageLinks prev={prev} next={next} />
 
@@ -136,7 +140,7 @@ const Template = ({ location, data, pageContext }) => {
 export const query = graphql`
   query($pathSlug: String!) {
     markdownRemark(fields: { path: { eq: $pathSlug } }) {
-      html
+      htmlAst
       frontmatter {
         title
         date
