@@ -27,6 +27,14 @@ import { displayDate, metaDate } from '../functions'
 
 import '../stylesheets/blogImage.css'
 
+const exists = (obj, path) => {
+  if (_.has(obj, path)) {
+    return !_.isNil(_.get(obj, path))
+  }
+
+  return false
+}
+
 const renderAst = new rehypeReact({
   createElement: React.createElement,
   components: {},
@@ -60,12 +68,13 @@ const PageLinks = ({ prev, next }) => {
 }
 
 const ImageMeta = ({ frontmatter, origin }) => {
-  if (_.has(frontmatter, 'image.childImageSharp.fixed')) {
+  if (exists(frontmatter, 'image.childImageSharp.fixed')) {
     const image = frontmatter.image.childImageSharp.fixed
     const url = origin + image.src
 
     return (
       <Helmet>
+        <meta name="image" content={url} />
         <meta property="og:image" content={url} />
         <meta property="og:image:width" content={image.width} />
         <meta property="og:image:height" content={image.height} />
@@ -86,7 +95,7 @@ const Template = ({ location, data, pageContext }) => {
 
   const title = frontmatter.title
 
-  const html = markdownRemark.html
+  const htmlAst = markdownRemark.htmlAst
 
   const tags = frontmatter.tags && frontmatter.tags.split(/, */)
 
@@ -99,9 +108,11 @@ const Template = ({ location, data, pageContext }) => {
   const origin = data.site.siteMetadata.siteUrl
   const url = data.site.siteMetadata.siteUrl + markdownRemark.fields.path
 
+  const hideImage = exists(frontmatter, 'image.childImageSharp.fixed')
+
   return (
     <Layout title={title} description={excerpt}>
-      <SEO />
+      <SEO hideImage={hideImage} />
       <Helmet>
         <meta property="og:description" content={excerpt} />
         <meta property="og:title" content={title} />
@@ -127,7 +138,7 @@ const Template = ({ location, data, pageContext }) => {
         </CardBody>
       </Card>
       <div className="blogpost" style={{ fontFamily: 'avenir' }}>
-        {renderAst(post.htmlAst)}
+        {renderAst(htmlAst)}
       </div>
 
       <PageLinks prev={prev} next={next} />
