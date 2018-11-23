@@ -1,6 +1,6 @@
 ---
 title: UFW with Docker
-date: 2018-09-21 08:16 CEST
+date: 2018-09-21 08:16 +0200
 tags: ufw, docker, iptables, firewall
 ---
 

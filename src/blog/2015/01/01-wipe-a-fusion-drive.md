@@ -1,6 +1,6 @@
 ---
 title: Wipe a fusion drive
-date: 2015-01-01 12:07 CET
+date: 2015-01-01 12:07 +0100
 tags: osx, fusion, diskutil, mac
 ---
 

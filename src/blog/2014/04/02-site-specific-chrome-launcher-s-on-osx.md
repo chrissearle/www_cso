@@ -1,6 +1,6 @@
 ---
 title: Site specific chrome launcher's on OSX
-date: 2014-04-02 10:44 CEST
+date: 2014-04-02 10:44 +0200
 tags: chrome, osx
 ---
 

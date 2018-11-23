@@ -1,6 +1,6 @@
 ---
 title: Update this blog's engine from middlemanapp to gatsby
-date: 2018-10-11 14:38 CET
+date: 2018-10-11 14:38 +0100
 tags: javascript, react, gatsby, middleman
 ---
 

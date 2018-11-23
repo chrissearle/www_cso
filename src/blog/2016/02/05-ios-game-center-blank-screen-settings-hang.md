@@ -1,6 +1,6 @@
 ---
 title: iOS Game Center blank screen/settings hang
-date: 2016-02-05 07:00 CET
+date: 2016-02-05 07:00 +0100
 tags: ios, apple, game center
 ---
 

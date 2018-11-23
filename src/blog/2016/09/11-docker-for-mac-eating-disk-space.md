@@ -1,6 +1,6 @@
 ---
 title: Docker for mac eating disk space
-date: 2016-09-11 08:01 CEST
+date: 2016-09-11 08:01 +0200
 tags: docker, mac, osx
 ---
 

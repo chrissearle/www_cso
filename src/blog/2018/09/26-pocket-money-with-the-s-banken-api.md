@@ -1,6 +1,6 @@
 ---
 title: Pocket money with the S'banken API
-date: 2018-09-26 10:54 CEST
+date: 2018-09-26 10:54 +0200
 tags: s'banken, open banking, ios
 ---
 

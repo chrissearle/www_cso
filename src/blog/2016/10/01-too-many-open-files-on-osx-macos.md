@@ -1,6 +1,6 @@
 ---
 title: Too many open files on OSX/macOS
-date: 2016-10-01 12:18 CEST
+date: 2016-10-01 12:18 +0200
 tags: osx, mac, ulimit
 ---
 

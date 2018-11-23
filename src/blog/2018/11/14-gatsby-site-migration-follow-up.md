@@ -1,6 +1,6 @@
 ---
 title: Gatsby site migration - follow up
-date: 2018-11-14 20:51 CET
+date: 2018-11-14 20:51 +0100
 tags: javascript, react, gatsby, middleman
 ---
 

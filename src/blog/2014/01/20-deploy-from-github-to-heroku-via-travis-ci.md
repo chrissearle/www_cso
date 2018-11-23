@@ -1,6 +1,6 @@
 ---
 title: Deploy from github to heroku via travis-ci
-date: 2014-01-20 10:47 CET
+date: 2014-01-20 10:47 +0100
 tags: maven, java, travis-ci, heroku, continuous integration, continuous deployment, github
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Postgresql sort 'WHERE id IN' by original id list order
-date: 2014-05-02 10:36 CEST
+date: 2014-05-02 10:36 +0200
 tags: postgresql, rails
 ---
 

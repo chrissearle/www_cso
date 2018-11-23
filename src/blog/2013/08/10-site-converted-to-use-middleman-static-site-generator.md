@@ -1,6 +1,6 @@
 ---
 title: Site converted to use middleman static site generator
-date: 2013-08-10 12:02 CEST
+date: 2013-08-10 12:02 +0200
 tags: drupal, middleman, site generation
 ---
 

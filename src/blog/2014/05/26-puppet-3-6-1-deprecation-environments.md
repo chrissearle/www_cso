@@ -1,6 +1,6 @@
 ---
 title: "Puppet 3.6.1 - deprecation: environments"
-date: 2014-05-26 08:18 CEST
+date: 2014-05-26 08:18 +0200
 tags: puppet, debian
 ---
 

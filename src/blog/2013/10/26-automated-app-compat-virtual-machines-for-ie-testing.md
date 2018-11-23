@@ -1,6 +1,6 @@
 ---
 title: Automated App Compat virtual machines for IE testing
-date: 2013-10-26 12:33 CEST
+date: 2013-10-26 12:33 +0200
 tags: virtualbox, microsoft, ie, ievms, testing
 ---
 

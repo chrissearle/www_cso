@@ -1,6 +1,6 @@
 ---
 title: Cisco SB SG200-08 Gigabit Smart Switch
-date: 2015-10-30 06:44 CET
+date: 2015-10-30 06:44 +0100
 tags: cisco, networking, switch, snmp
 ---
 

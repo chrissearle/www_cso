@@ -1,6 +1,6 @@
 ---
 title: Puppet service config for ejabberd
-date: 2013-12-13 09:29 CET
+date: 2013-12-13 09:29 +0100
 tags: puppet, ejabberd
 ---
 

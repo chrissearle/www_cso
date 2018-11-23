@@ -1,6 +1,6 @@
 ---
 title: Replace ssmtp with postfix null client
-date: 2014-10-21 09:49 CEST
+date: 2014-10-21 09:49 +0200
 tags: mail, gmail, ssmtp, postfix
 ---
 

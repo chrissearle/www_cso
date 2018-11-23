@@ -1,6 +1,6 @@
 ---
 title: Setting system path for command line on Mac OSX
-date: 2014-01-28 08:42 CET
+date: 2014-01-28 08:42 +0100
 tags: mac, osx, homebrew
 ---
 

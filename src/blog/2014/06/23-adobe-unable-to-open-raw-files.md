@@ -1,6 +1,6 @@
 ---
 title: Adobe - unable to open raw files
-date: 2014-06-23 19:25 CEST
+date: 2014-06-23 19:25 +0200
 tags: adobe, lightroom, photoshop, bridge
 ---
 

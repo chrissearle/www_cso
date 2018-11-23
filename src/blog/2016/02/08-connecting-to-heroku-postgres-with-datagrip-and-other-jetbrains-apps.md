@@ -1,6 +1,6 @@
 ---
 title: Connecting to heroku postgres with DataGrip (and other jetbrains apps)
-date: 2016-02-08 18:22 CET
+date: 2016-02-08 18:22 +0100
 tags: heroku, postgresql, datagrip, jetbrains, intellij
 ---
 

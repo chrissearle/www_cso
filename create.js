@@ -11,7 +11,7 @@ const date = moment.tz('Europe/Oslo')
 const slug = slugify(title, { lower: true })
 const frontmatter = `---
 title: ${title}
-date: ${date.format('YYYY-MM-DD HH:mm z')}
+date: ${date.format('YYYY-MM-DD HH:mm ZZ')}
 tags: 
 ---
 `

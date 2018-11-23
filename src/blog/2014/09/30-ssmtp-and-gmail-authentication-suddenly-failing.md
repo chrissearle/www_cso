@@ -1,6 +1,6 @@
 ---
 title: sSMTP and Gmail - authentication suddenly failing
-date: 2014-09-30 12:27 CEST
+date: 2014-09-30 12:27 +0200
 tags: mail, gmail, google, smtp, ssmtp
 ---
 

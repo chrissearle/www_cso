@@ -1,6 +1,6 @@
 ---
 title: Chrome - prevent custom print dialog on OSX
-date: 2014-07-27 22:14 CEST
+date: 2014-07-27 22:14 +0200
 tags: chrome, mac, osx
 ---
 

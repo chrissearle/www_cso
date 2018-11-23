@@ -1,6 +1,6 @@
 ---
 title: Replacing denyhosts with fail2ban for debian
-date: 2015-06-16 22:39 CEST
+date: 2015-06-16 22:39 +0200
 tags: debian, ssh, denyhosts, fail2ban
 ---
 

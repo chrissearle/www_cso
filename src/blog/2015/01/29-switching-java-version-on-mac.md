@@ -1,6 +1,6 @@
 ---
 title: Switching java version on mac
-date: 2015-01-29 15:52 CET
+date: 2015-01-29 15:52 +0100
 tags: java, osx, mac
 ---
 
