@@ -26,6 +26,7 @@ import SEO from '../components/seo'
 import { displayDate, metaDate } from '../functions'
 
 import '../stylesheets/blogImage.css'
+import '../stylesheets/blogOverrides.css'
 
 const exists = (obj, path) => {
   if (_.has(obj, path)) {
