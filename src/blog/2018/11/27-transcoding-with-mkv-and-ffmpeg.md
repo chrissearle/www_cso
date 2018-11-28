@@ -1,7 +1,12 @@
 ---
 title: Transcoding with MKV and ffmpeg
 date: 2018-11-27 14:34 +0100
-tags: mkv, matrovska, codec, vc-1, h264, ffmpeg
+tags: mkv, matrovska, codec, vc-1, h264, ffmpeg, plex
+---
+
+_Update: I should have checked the plex support site to start with - this is already documented on [this support article](https://support.plex.tv/articles/201358273-converting-iso-video-ts-and-other-disk-image-formats/).
+However - I did get to learn a fair bit more about how ffmpeg command line works :)_
+
 ---
 
 To make it easier to use the films I buy easier for the kids - I use Plex.
@@ -22,11 +27,11 @@ So - it means I guess I have to try to figure out the command line for FFmpeg.
 
 The example file I have has the following track list:
 
-0. video (VC-1)
-1. audio (English)
-1. audio (Norwegian)
-1. subtitles (English PGS)
-1. subtitles (Norwegian PGS)
+1. video (VC-1)
+2. audio (English)
+3. audio (Norwegian)
+4. subtitles (English PGS)
+5. subtitles (Norwegian PGS)
 
 ## Getting the track info
 
