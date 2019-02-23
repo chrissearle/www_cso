@@ -73,7 +73,7 @@ vault-password.txt filter=git-crypt diff=git-crypt
 
 ### Test
 
-Just push to github. Locally the `vault-password.txt`file looks fine - but on github it is shown just as data - and is not readable.
+Just push to github. Locally the `vault-password.txt` file looks fine - but on github it is shown just as data - and is not readable.
 
 ### Clone to a new machine
 
