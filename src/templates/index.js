@@ -50,6 +50,7 @@ const Index = ({ pageContext }) => {
             <CardFooter>
               <TagsMap
                 tags={tags}
+                series={post.frontmatter.series}
                 keyPrefix={post.fields.path}
                 innerClass="ml-2 mt-2"
               />

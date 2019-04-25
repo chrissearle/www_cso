@@ -228,7 +228,7 @@ exports.createPages = ({ graphql, actions }) => {
         seriesInfo.forEach(series => {
           const seriesPosts = _.filter(posts, {
             node: { frontmatter: { series: series.title } },
-          })
+          }).reverse()
 
           createPaginatedPages({
             edges: seriesPosts,
