@@ -1,11 +1,14 @@
 import React from 'react'
 
 import { Link } from 'gatsby'
+import slugify from 'slugify'
 
 import { Button } from 'reactstrap'
 
-const TagsMap = ({ tags, keyPrefix, innerClass }) => {
+const TagsMap = ({ tags, series, keyPrefix, innerClass }) => {
   const className = innerClass ? innerClass : 'ml-2'
+
+  const seriesPath = series ? `/series/${slugify(series)}`.toLowerCase() : ''
 
   return (
     <React.Fragment>
@@ -23,6 +26,13 @@ const TagsMap = ({ tags, keyPrefix, innerClass }) => {
             </Button>
           )
         })}
+      {series && (
+        <Button outline color="success" size="sm" className={className}>
+          <Link className="text-success" to={seriesPath}>
+            {series}
+          </Link>
+        </Button>
+      )}
     </React.Fragment>
   )
 }

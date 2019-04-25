@@ -1,6 +1,8 @@
 const path = require('path')
 const moment = require('moment')
 const createPaginatedPages = require('gatsby-paginate')
+const _ = require('lodash')
+const slugify = require('slugify')
 
 const pathFromFile = file => {
   return file.replace(
@@ -103,6 +105,41 @@ const createTagPages = (createPage, posts) => {
   })
 }
 
+const createSeriesPage = (createPage, posts, series) => {
+  const allSeriesTemplate = path.resolve('src/templates/allSeriesIndex.js')
+
+  const postsBySeries = {}
+
+  posts.forEach(({ node }) => {
+    if (node.frontmatter.series) {
+      const seriesName = node.frontmatter.series
+
+      if (!postsBySeries[seriesName]) {
+        postsBySeries[seriesName] = []
+      }
+
+      postsBySeries[seriesName].push(node)
+    }
+  })
+
+  const seriesWithCounts = {}
+
+  series.forEach(seriesInfo => {
+    const posts = postsBySeries[seriesInfo.title]
+
+    seriesWithCounts[seriesInfo.title] = posts.length
+  })
+
+  createPage({
+    path: '/series',
+    component: allSeriesTemplate,
+    context: {
+      seriesWithCounts: seriesWithCounts,
+      seriesInfo: series,
+    },
+  })
+}
+
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
@@ -149,6 +186,7 @@ exports.createPages = ({ graphql, actions }) => {
                     title
                     tags
                     date
+                    series
                     image {
                       childImageSharp {
                         fluid(maxWidth: 1000) {
@@ -177,6 +215,32 @@ exports.createPages = ({ graphql, actions }) => {
           pageLength: 20,
         })
 
+        const seriesInfo = _.uniqBy(posts, 'node.frontmatter.series')
+          .map(({ node }) => node.frontmatter.series)
+          .filter(series => !_.isNil(series))
+          .map(series => {
+            return {
+              title: series,
+              path: `series/${slugify(series)}`.toLowerCase(),
+            }
+          })
+
+        seriesInfo.forEach(series => {
+          const seriesPosts = _.filter(posts, {
+            node: { frontmatter: { series: series.title } },
+          })
+
+          createPaginatedPages({
+            edges: seriesPosts,
+            createPage: createPage,
+            pageTemplate: 'src/templates/index.js',
+            pageLength: 20,
+            pathPrefix: series.path,
+            title: `Series: ${series.title}`,
+          })
+        })
+
+        createSeriesPage(createPage, posts, seriesInfo)
         createTagPages(createPage, posts)
         createYearPages(createPage, posts)
 
