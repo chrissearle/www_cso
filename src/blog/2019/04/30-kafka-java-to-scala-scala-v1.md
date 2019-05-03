@@ -223,7 +223,7 @@ import org.apache.kafka.common.serialization.StringDeserializer
 
 import scala.collection.JavaConverters._
 
-object BasicProducer {
+object BasicConsumer {
 
   def main(args: Array[String]): Unit = {
 
