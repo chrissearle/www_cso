@@ -1,5 +1,5 @@
 ---
-title: Kafka - java to scala - scala v1
+title: Kafka - java to scala - scala v1 - basic
 date: 2019-04-30 12:08 +0200
 tags: kafka, scala, producer, consumer
 series: Kafka - java to scala
