@@ -14,7 +14,7 @@ Currently it looks like I'll be digging through the following:
 * [Get a java example running](/2019/04/25/kafka-java-to-scala-java/)
 * [Convert java example to scala](/2019/04/30/kafka-java-to-scala-scala-v1)
 * [Update the scala version](/2019/05/03/kafka-java-to-scala-scala-v2/) to be more "scala-like" and add a config file instead of hard coded values
-* A slight digression to look at basic akka-streams
+* [A slight digression to look at basic akka-streams](/2019/05/08/kafka-java-to-scala-akka-streams-basics/)
 * Use akka-streams for the scala example
 * Use the lessons learnd to transform a more complex example
 

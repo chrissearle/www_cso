@@ -5,8 +5,6 @@ tags: kafka, scala, producer, consumer, pureconfig
 series: Kafka - java to scala
 ---
 
-## Quick recap on aims
-
 This series goes through conversion of java kafka clients to scala - step by step - hopefully learning other useful scala stuff on the way.
 
 In the previous step we created a basic producer and consumer in scala but it was very close to a line by line conversion. Let's try for something that is closer to normal scala - and let's get the config values out to a configuration file.
