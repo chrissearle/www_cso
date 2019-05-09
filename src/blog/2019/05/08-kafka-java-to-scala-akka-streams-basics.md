@@ -13,7 +13,7 @@ Moving forward - we will look at using them together with akka streams but befor
 
 ## Brief intro to akka streams
 
-Akka itself has a large amount of information available on the  [doc.akka.io](https://doc.akka.io) site. This goes into much more detail and covers a much larger area than this post will - so do give it a read if you want more info.
+Akka itself has a large amount of information available on the [doc.akka.io](https://doc.akka.io) site. This goes into much more detail and covers a much larger area than this post will - so do give it a read if you want more info.
 
 I also found [this article at scalac.io](https://scalac.io/streams-in-akka-scala-introduction/) to be very informative.
 
@@ -150,8 +150,6 @@ object FactorialExample extends App {
 
 ## Compile and run
 
-The project setup has both objects in the same package.
-
 Start the sbt console, clean, compile and run each client:
 
 ```shell
@@ -217,3 +215,7 @@ $ sbt
 This was an extremely brief look at akka-streams - taken mostly from the [akka streams quick start guide](https://doc.akka.io/docs/akka/current/stream/stream-quickstart.html) and from [scalac.io](https://scalac.io/streams-in-akka-scala-introduction/).
 
 Our next step will be to use akka streams for our producer and consumer clients.
+
+## Links
+
+- [Streams project](streams.tar.gz)
