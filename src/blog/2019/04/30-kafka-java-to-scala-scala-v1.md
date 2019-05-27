@@ -312,7 +312,5 @@ But moving forward we'll look at improving the code, better scala, akka, streams
 
 ## Links
 
-* [Producer project](producer.tar.gz)
-* [Consumer project](consumer.tar.gz)
-
-
+- [Producer project](https://github.com/chrissearle/kafka-java-to-scala/tree/master/scala-v1-basic/producer)
+- [Consumer project](https://github.com/chrissearle/kafka-java-to-scala/tree/master/scala-v1-basic/consumer)

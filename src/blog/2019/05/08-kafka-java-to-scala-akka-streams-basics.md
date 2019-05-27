@@ -218,4 +218,4 @@ Our next step will be to use akka streams for our producer and consumer clients.
 
 ## Links
 
-- [Streams project](streams.tar.gz)
+- [Streams project](https://github.com/chrissearle/kafka-java-to-scala/tree/master/akka-streams-basics)

@@ -263,6 +263,7 @@ Copy it into the container:
 ```shell
 docker cp target/scala-2.12/pureconfig-producer-assembly-0.1.jar labs_kafka_1:/tmp
 ```
+
 ```shell
 docker cp target/scala-2.12/pureconfig-consumer-assembly-0.1.jar labs_kafka_1:/tmp
 ```
@@ -309,6 +310,5 @@ In this step we tidied up the producer and consumer a little and moved our confi
 
 ## Links
 
-* [Producer project](producer.tar.gz)
-* [Consumer project](consumer.tar.gz)
-
+- [Producer project](https://github.com/chrissearle/kafka-java-to-scala/tree/master/scala-v2-config/producer)
+- [Consumer project](https://github.com/chrissearle/kafka-java-to-scala/tree/master/scala-v2-config/consumer)

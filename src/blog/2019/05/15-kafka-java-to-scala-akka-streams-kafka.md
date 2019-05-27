@@ -208,5 +208,5 @@ In this case - each recipe is simple - but in more complex situations you can us
 
 ## Links
 
-- [Producer project](streams-producer.tar.gz)
-- [Consumer project](streams-consumer.tar.gz)
+- [Producer project](https://github.com/chrissearle/kafka-java-to-scala/tree/master/akka-streams-kafka/producer)
+- [Consumer project](https://github.com/chrissearle/kafka-java-to-scala/tree/master/akka-streams-kafka/consumer)

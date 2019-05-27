@@ -33,3 +33,7 @@ In the repo just cloned in the labs directory there is a docker-compose.yml file
     docker-compose up -d
 
 Make sure you have a good amount of memory available to docker - 4-5 Gb minimum :)
+
+## Code
+
+Code written in this series of posts can be found [on github](https://github.com/chrissearle/kafka-java-to-scala)
