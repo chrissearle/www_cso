@@ -1,12 +1,15 @@
-# gatsby-starter-hello-world
-Starter with the bare essentials needed for a [Gatsby](https://www.gatsbyjs.org/) site.
+# www.chrissearle.org
 
-Install this starter (assuming Gatsby is installed) by running from your CLI:
-```
-gatsby new gatsby-site https://github.com/gatsbyjs/gatsby-starter-hello-world
-```
+Gatsby based site generator for www.chrissearle.org
 
-Or [view the live demo here](https://gatsby-starter-hello-world-demo.netlify.com/).
+## Available tasks
 
-## Running in development
-`gatsby develop`
+For all tasks - see Makefile. Some of the most common:
+
+make develop - start gatsby in develop mode
+
+make package - build and create docker image
+
+make stage - send package to dockerhub with `:staging`
+
+make promote - tag the current `:staging` with `:latest`
