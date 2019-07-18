@@ -16,9 +16,9 @@ I used the suggestions on that readme - but found I had the error message that i
 
 However on that issue they state that plain MariaDB image seems to work where the webhippie/mariadb image does not. Things to note:
 
-* the MariaDB image uses some different environment variables
-* I configured the mail client at this point - using gmail
-* I added the sub_url setting so that it would be easier to keep track of when doing the nginx proxy
+- the MariaDB image uses some different environment variables
+- I configured the mail client at this point - using gmail
+- I added the sub_url setting so that it would be easier to keep track of when doing the nginx proxy
 
 ```shell
 docker volume create owncloud_redis
@@ -117,3 +117,6 @@ This means that whatever apache/php combination the container is using - it shou
 
 This last step is annoying - it will need to be done every time we pull an updated container. We can either live with that, pull out the two files as single file volume mounts - or see if it can get added as an environment setting later on. I need a little more time using owncloud before I start digging in to the repo for that :)
 
+overwritecli
+overwritehost
+overwriteprotocol
