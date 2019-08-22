@@ -24,6 +24,8 @@ Firstly you will need the lab code - we'll be using the java suggested solutions
 
 Clone this git repo: https://github.com/confluentinc/training-developer-src.git
 
+We will be using the version tagged 5.0.0-v1.3.0 so checkout that tag.
+
 ## Docker
 
 We will also use the lab docker setup to run kafka and the other systems that we will be using so you will need docker up and running.

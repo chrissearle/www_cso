@@ -17,7 +17,7 @@ On the course one of the first things you develop is a basic consumer and produc
 
 Take a look inside the solution/basic-producer folder.
 
-There is one main java file here - [BasicProducer.java](https://github.com/confluentinc/training-developer-src/blob/master/solution/basic-producer/src/main/java/clients/BasicProducer.java)
+There is one main java file here - [BasicProducer.java](https://github.com/confluentinc/training-developer-src/blob/5.0.0-v1.3.0/solution/basic-producer/src/main/java/clients/BasicProducer.java)
 
 The main method does three main things:
 
@@ -92,7 +92,7 @@ So - let's see if we can see what was added to the topic using a consumer.
 
 Take a look inside the solution/basic-consumer folder.
 
-There is one main java file here - [BasicConsumer.java](https://github.com/confluentinc/training-developer-src/blob/master/solution/basic-consumer/src/main/java/clients/BasicConsumer.java)
+There is one main java file here - [BasicConsumer.java](https://github.com/confluentinc/training-developer-src/blob/5.0.0-v1.3.0/solution/basic-consumer/src/main/java/clients/BasicConsumer.java)
 
 The main method does three main things:
 
