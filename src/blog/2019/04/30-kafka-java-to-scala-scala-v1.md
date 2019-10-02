@@ -13,7 +13,7 @@ In the previous step we created a basic producer and consumer in java. Let's try
 
 ### Project Structure
 
-Scala uses sbt instead of gradle.
+Scala uses sbt as its build tool.
 
 First we create the project structure. We'll use the sbt function that uses a giter8 template to create the project.
 
@@ -25,7 +25,7 @@ This will download a bunch of stuff then create a structure in ./basicproducer.
 
 Now - let's get `build.sbt` updated. We need to customize the file so that it works for us.
 
-Firstly - at the time of writing the latest scala was 2.13 - but some dependencies in kafka we'll be using are expecting a 2.12.x - so we'øø set the scalaVersion.
+Firstly - at the time of writing the latest scala was 2.13 - but some dependencies in kafka we'll be using are expecting a 2.12.x - so we'll set the scalaVersion.
 
 I've also updated the organization and dumped the organizationName params.
 
@@ -97,9 +97,9 @@ object BasicProducer {
       val key = "key-" + i
       val value = "value-" + i
 
-      val record = new ProducerRecord[String, String](topic, key, value)
+      println(s"### Sending ${i} ###")
 
-      producer.send(record)
+      producer.send(new ProducerRecord[String, String](topic, key, value))
     }
 
     producer.close(Duration.ofMillis(100))
@@ -168,7 +168,7 @@ import org.apache.kafka.clients.consumer.ConsumerConfig._
 import org.apache.kafka.clients.consumer.KafkaConsumer
 import org.apache.kafka.common.serialization.StringDeserializer
 
-import scala.collection.JavaConverters._
+import collection.JavaConverters._
 
 object BasicConsumer {
 
@@ -179,7 +179,7 @@ object BasicConsumer {
     val settings = new Properties()
 
     settings.put(GROUP_ID_CONFIG, "basic-consumer")
-    settings.put(BOOTSTRAP_SERVERS_CONFIG, "lcoalhost:29092")
+    settings.put(BOOTSTRAP_SERVERS_CONFIG, "localhost:29092")
     settings.put(ENABLE_AUTO_COMMIT_CONFIG, "true")
     settings.put(AUTO_COMMIT_INTERVAL_MS_CONFIG, "1000")
     settings.put(AUTO_OFFSET_RESET_CONFIG, "earliest")
@@ -223,6 +223,7 @@ sbt run
 
 The output is the same as for the java example
 
+```
 *** Starting Basic Consumer ***
 offset = 0, key = key-1, value = value-1
 offset = 1, key = key-2, value = value-2
