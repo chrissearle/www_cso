@@ -5,7 +5,7 @@ tags: scala, akka, akka streams
 series: Kafka - java to scala
 ---
 
-This series goes through conversion of java kafka clients to scala - step by step - hopefully learning other useful scala stuff on the way.
+This series goes through conversion of some basic java kafka clients to scala - step by step. It is important to understand that it is written from my viewpoint - someone who has played with scala, likes it, but has never really had time to get into it.
 
 In the [last post](/2019/05/03/kafka-java-to-scala-scala-v2/) we updated our clients to use a configuration library and to make them somewhat more scala-like.
 
@@ -59,12 +59,12 @@ This gives the following object:
 object IntSeqExample extends App {
     implicit val system = ActorSystem("IntSeqExample")
     implicit val materializer = ActorMaterializer()
+    implicit val ec = system.dispatcher
 
     val source: Source[Int, NotUsed] = Source(1 to 100)
 
     val done: Future[Done] = source.runForeach(i => println(i))
 
-    implicit val ec = system.dispatcher
     done.onComplete(_ => system.terminate())
 }
 ```
@@ -75,6 +75,7 @@ However - this code uses some nice shortcut methods that hide some of what is go
 object IntSeqExample2 extends App {
     implicit val system = ActorSystem("IntSeqExample2")
     implicit val materializer = ActorMaterializer()
+    implicit val ec = system.dispatcher
 
     val source: Source[Int, NotUsed] = Source(1 to 100)
 
@@ -82,7 +83,6 @@ object IntSeqExample2 extends App {
 
     val done = source.runWith(sink)
 
-    implicit val ec = system.dispatcher
     done.onComplete(_ => system.terminate())
 }
 ```
@@ -134,6 +134,7 @@ This gives the following object:
 object FactorialExample extends App {
     implicit val system = ActorSystem("FactorialExample")
     implicit val materializer = ActorMaterializer()
+    implicit val ec = system.dispatcher
 
     val source: Source[Int, NotUsed] = Source(1 to 100)
 
@@ -143,7 +144,6 @@ object FactorialExample extends App {
       .zipWith(Source(0 to 100))((num, idx) => s"$idx! = $num")
       .runForeach(println)
 
-    implicit val ec = system.dispatcher
     done.onComplete(_ => system.terminate())
 }
 ```
