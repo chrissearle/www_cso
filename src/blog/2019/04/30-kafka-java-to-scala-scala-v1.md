@@ -15,79 +15,60 @@ In the previous step we created a basic producer and consumer in java. Let's try
 
 Scala uses sbt instead of gradle.
 
-First we create the project structure.
+First we create the project structure. We'll use the sbt function that uses a giter8 template to create the project.
 
-Create an empty directory as the root for this project.
+`sbt new scala/scala-seed.g8 --name=BasicProducer`
+
+This will download a bunch of stuff then create a structure in ./basicproducer.
 
 #### build.sbt
 
-Now - add a file called `build.sbt` - this defines the dependencies etc.
+Now - let's get `build.sbt` updated. We need to customize the file so that it works for us.
+
+Firstly - at the time of writing the latest scala was 2.13 - but some dependencies in kafka we'll be using are expecting a 2.12.x - so we'øø set the scalaVersion.
+
+I've also updated the organization and dumped the organizationName params.
+
+Finally - we'll drop the Dependencies object (we can delete the file `project/Dependencies.scala`) - we have such a simple project we don't need a complex dependency setup.
+
+This gives be the following file:
 
 ```scala
-name := "basic-producer"
+ThisBuild / scalaVersion     := "2.12.10"
+ThisBuild / version          := "0.1.0-SNAPSHOT"
+ThisBuild / organization     := "net.chrissearle"
 
-version := "0.1"
+lazy val root = (project in file("."))
+  .settings(
+    name := "BasicProducer",
+    libraryDependencies ++= Seq(
+      "org.apache.kafka" % "kafka-clients" % "2.3.0"
+    )
+  )
 
-scalaVersion := "2.12.8"
-
-libraryDependencies ++= Seq(
-  "org.apache.kafka" % "kafka-clients" % "2.2.0",
-  "ch.qos.logback" % "logback-classic" % "1.2.3",
-  "ch.qos.logback" % "logback-core" % "1.2.3",
-)
 ```
 
 #### project/build.properties
 
-Create a directory called project and inside that a file called `build.properties` - this will configure which sbt version we want to use.
+We configure which sbt version we want in the file `project/build.properties`.
+
+The generated version is fine:
 
 ```
-sbt.version=1.2.8
-```
-
-#### project/assembly.sbt
-
-The java project used the gradle application plugin to build the deliverable with dependencies etc. We'll use the scala assembly plugin for the same reason. The file `assembly.sbt` also lives in the project directory beside the build.properties file.
-
-```
-addSbtPlugin("com.eed3si9n" % "sbt-assembly" % "0.14.9")
+sbt.version=1.3.2
 ```
 
 ### Project Code
 
-Create the source and resources directories:
-
-```shell
-mkdir -p src/main/scala/clients
-mkdir -p src/main/resources
-```
-
-In resources we have one file - the logback configuration `logback.xml`. It will just dump warn and above to STDOUT.
-
-```xml
-<configuration>
-  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
-    <encoder>
-      <pattern>%d{HH:mm:ss.SSS} TKD [%thread] %-5level %logger{36} - %msg%n
-      </pattern>
-    </encoder>
-  </appender>
-
-  <root level="warn">
-    <appender-ref ref="STDOUT" />
-  </root>
-</configuration>
-```
+The template created the directory structure we want under src/main. Let's remove the src/main/scala/example/Hello.scala file - we don't need that. For now we'll also remove the src/test directory - naughty I know - but there are plenty of other scala testing tutorials out there.
 
 #### Scala producer
 
 Now for the actual scala code.
 
-We'll create BasicProducer.scala in the src/main/scala/clients directory.
+We'll create BasicProducer.scala in the src/main/scala directory.
 
 ```scala
-package clients
-
 import java.time.Duration
 import java.util.Properties
 
@@ -104,13 +85,13 @@ object BasicProducer {
     val settings = new Properties()
 
     settings.put(CLIENT_ID_CONFIG, "basic-producer")
-    settings.put(BOOTSTRAP_SERVERS_CONFIG, "kafka:9092")
+    settings.put(BOOTSTRAP_SERVERS_CONFIG, "localhost:29092")
     settings.put(KEY_SERIALIZER_CLASS_CONFIG, classOf[StringSerializer].getCanonicalName)
     settings.put(VALUE_SERIALIZER_CLASS_CONFIG, classOf[StringSerializer].getCanonicalName)
 
     val producer = new KafkaProducer[String, String](settings)
 
-    val topic = "basic-topic"
+    val topic = "scala-v1-basic-topic"
 
     for (i <- 1 to 5) {
       val key = "key-" + i
@@ -137,40 +118,23 @@ Let's make sure it compiles:
 sbt compile
 ```
 
-And then - let's create the deliverable - the assembly plugin will create a fat jar for us.
+And then - let's run it. sbt's run will just run the first main method it finds.
 
 ```shell
-sbt assembly
+sbt run
 ```
 
-The jar file is created under target/scala-2.12/basic-producer-assembly-0.1.jar - we need to copy this into the docker container:
-
-```shell
-docker cp target/scala-2.12/basic-producer-assembly-0.1.jar labs_kafka_1:/tmp
-```
-
-Now - let's get a shell in the same docker container:
-
-```shell
-docker exec -it labs_kafka_1 /bin/bash
-```
-
-And finally - let's run the producer:
-
-```shell
-cd /tmp
-java -jar basic-producer-assembly-0.1.jar
-```
-
-The output here is almost the same as for the java - apart from one log line (since we've configured logback):
+The output here is almost the same as for the java example (we still haven't configured logging so ignore related lines):
 
 ```
 *** Starting Basic Producer ***
-09:02:35.258 TKD [kafka-producer-network-thread | basic-producer] WARN  o.apache.kafka.clients.NetworkClient - [Producer clientId=basic-producer] Error while fetching metadata with correlation id 1 : {basic-topic=LEADER_NOT_AVAILABLE}
+### Sending 1 ###
+### Sending 2 ###
+### Sending 3 ###
+### Sending 4 ###
+### Sending 5 ###
 ### Stopping Basic Producer ###
 ```
-
-The warning there is coming from the process of the topic being autocreated on the first call - if we had created the topic before running this code then it would not have shown that warning.
 
 ## Consumer
 
@@ -178,40 +142,25 @@ The warning there is coming from the process of the topic being autocreated on t
 
 We will use almost the same project structure for the consumer as for the producer.
 
-Create an empty directory as the root for this project.
-
 #### build.sbt
 
 The only difference in build.sbt is the name:
 
 ```scala
-name := "basic-consumer"
+name := "BasicConsumer"
 ```
 
 #### project
 
-`project/build.properties` and `project/assembly.sbt` are the same as for producer.
+`project/build.properties` is the same as for producer.
 
 ### Project Code
 
-Create the same source and resources directories:
-
-```shell
-mkdir -p src/main/scala/clients
-mkdir -p src/main/resources
-```
-
-In resources we have the same logback.xml configuration file.
-
 #### Scala consumer
 
-Now for the actual scala code.
-
-We'll create BasicConsumer.scala in the src/main/scala/clients directory.
+We'll create BasicConsumer.scala in the src/main/scala directory.
 
 ```scala
-package clients
-
 import java.time.Duration
 import java.util.Properties
 
@@ -229,8 +178,8 @@ object BasicConsumer {
 
     val settings = new Properties()
 
-    settings.put(GROUP_ID_CONFIG, "basic-consumer-v0.1.0")
-    settings.put(BOOTSTRAP_SERVERS_CONFIG, "kafka:9092")
+    settings.put(GROUP_ID_CONFIG, "basic-consumer")
+    settings.put(BOOTSTRAP_SERVERS_CONFIG, "lcoalhost:29092")
     settings.put(ENABLE_AUTO_COMMIT_CONFIG, "true")
     settings.put(AUTO_COMMIT_INTERVAL_MS_CONFIG, "1000")
     settings.put(AUTO_OFFSET_RESET_CONFIG, "earliest")
@@ -239,7 +188,7 @@ object BasicConsumer {
 
     val consumer = new KafkaConsumer[String, String](settings)
 
-    val topic = "basic-topic"
+    val topic = "scala-v1-basic-topic"
 
     try {
       consumer.subscribe(List(topic).asJava)
@@ -266,34 +215,14 @@ Let's make sure it compiles:
 sbt compile
 ```
 
-And then - let's create the deliverable - the assembly plugin will create a fat jar for us.
+And then run:
 
 ```shell
-sbt assembly
+sbt run
 ```
 
-The jar file is created under target/scala-2.12/basic-consumer-assembly-0.1.jar - we need to copy this into the docker container:
+The output is the same as for the java example
 
-```shell
-docker cp target/scala-2.12/basic-consumer-assembly-0.1.jar labs_kafka_1:/tmp
-```
-
-Now - let's get a shell in the same docker container:
-
-```shell
-docker exec -it labs_kafka_1 /bin/bash
-```
-
-And finally - let's run the consumer:
-
-```shell
-cd /tmp
-java -jar basic-consumer-assembly-0.1.jar
-```
-
-The output here is almost the same as for the java:
-
-```
 *** Starting Basic Consumer ***
 offset = 0, key = key-1, value = value-1
 offset = 1, key = key-2, value = value-2
@@ -312,5 +241,5 @@ But moving forward we'll look at improving the code, better scala, akka, streams
 
 ## Links
 
-- [Producer project](https://github.com/chrissearle/kafka-java-to-scala/tree/master/scala-v1-basic/producer)
-- [Consumer project](https://github.com/chrissearle/kafka-java-to-scala/tree/master/scala-v1-basic/consumer)
+- [Producer project](https://github.com/chrissearle/kafka-java-to-scala/tree/master/scala-v1-basic/basicproducer)
+- [Consumer project](https://github.com/chrissearle/kafka-java-to-scala/tree/master/scala-v1-basic/basicconsumer)

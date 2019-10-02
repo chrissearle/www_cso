@@ -5,26 +5,25 @@ tags: kafka, java, producer, consumer
 series: Kafka - java to scala
 ---
 
-This series goes through conversion of java kafka clients to scala - step by step - hopefully learning other useful scala stuff on the way.
+This series goes through conversion of some basic java kafka clients to scala - step by step. It is important to understand that it is written from my viewpoint - someone who has played with scala, likes it, but has never really had time to get into it.
 
 You will need to have the correct initial setup - see [the introduction](/2019/04/25/kafka-java-to-scala-introduction/)
 
 ## Basic Java clients
 
-On the course one of the first things you develop is a basic consumer and producer in java. Here we will examine the provided solution examples for these two clients - as a basis to what we want to convert to scala later.
+On the [kafka course](https://www.confluent.io/training/) one of the first things you develop is a basic consumer and producer in java.
 
 ## Producer
 
-Take a look inside the solution/basic-producer folder.
-
-There is one main java file here - [BasicProducer.java](https://github.com/confluentinc/training-developer-src/blob/5.0.0-v1.3.0/solution/basic-producer/src/main/java/clients/BasicProducer.java)
+Let's take a look at the basic producer. There is one main java file here - [BasicProducer.java](https://github.com/chrissearle/kafka-java-to-scala/blob/master/java-starter/producer/src/main/java/net/chrissearle/kafka/BasicProducer.java)
 
 The main method does three main things:
 
 ```java
 Properties settings = new Properties();
-settings.put("client.id", "basic-producer-v0.1.0");
-settings.put("bootstrap.servers", "kafka:9092");
+
+settings.put("client.id", "basic-producer");
+settings.put("bootstrap.servers", "localbhost:29092");
 settings.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
 settings.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
 ```
@@ -32,73 +31,55 @@ settings.put("value.serializer", "org.apache.kafka.common.serialization.StringSe
 This sets up the configuration of the kafka producer that we want an says we are working with records that use String both as key and value.
 
 ```java
-final KafkaProducer<String, String> producer = new KafkaProducer<>(settings);
+KafkaProducer<String, String> producer = new KafkaProducer<>(settings);
 ```
 
 This creates the producer with the supplied configuration.
 
 ```java
-final String topic = "hello-world-topic";
-
-for(int i=1; i<=5; i++){
+for (int i = 1; i <= 5; i++) {
     final String key = "key-" + i;
     final String value = "value-" + i;
-    final ProducerRecord<String, String> record = new ProducerRecord<>(topic, key, value);
+
+    System.out.println("### Sending " + i + " ###");
+
+    final ProducerRecord<String, String> record = new ProducerRecord<>(TOPIC, key, value);
     producer.send(record);
 }
 ```
 
 This posts 5 messages to the topic `hello-world-topic`
 
-### Running the producer
+### Build and run the producer
 
-If you have a recent gradle already installed then you can simply run `gradle build` in the solutions/basic-producer folder.
+This is a standard maven project - simply open in your favourite IDE and build.
 
-If not - you can use gradle in docker to build (use a gradle container and mount the source as a volume).
+The BasicProducer class contains a standard main method - so you should easily be able to run the code from the IDE too.
 
-The build creates amongst other things a distribution directory.
-
-Let's copy the distribution into the kafka node so that we can run it within the kafka network set up by docker-compose:
-
-```shell
-docker cp build/distributions/basic-producer.tar labs_kafka_1:/tmp
-```
-
-Now - let's get a shell in the same docker container:
-
-```shell
-docker exec -it labs_kafka_1 /bin/bash
-```
-
-And finally - let's extract and run the producer:
-
-```shell
-cd /tmp
-tar xf basic-producer.tar
-cd basic-producer
-bin/basic-producer
-```
-
-The output isn't wildly exciting:
+The output isn't wildly exciting (we haven't configured logging so ignore related lines):
 
 ```
 *** Starting Basic Producer ***
-### Stopping Basic Producer ###
+### Sending 1 ###
+### Sending 2 ###
+### Sending 3 ###
+### Sending 4 ###
+### Sending 5 ###
 ```
 
 So - let's see if we can see what was added to the topic using a consumer.
 
 ## Consumer
 
-Take a look inside the solution/basic-consumer folder.
-
-There is one main java file here - [BasicConsumer.java](https://github.com/confluentinc/training-developer-src/blob/5.0.0-v1.3.0/solution/basic-consumer/src/main/java/clients/BasicConsumer.java)
+There is again one main java file here - [BasicConsumer.java](https://github.com/chrissearle/kafka-java-to-scala/blob/master/java-starter/consumer/src/main/java/net/chrissearle/kafka/BasicConsumer.java)
 
 The main method does three main things:
 
 ```java
 Properties settings = new Properties();
-settings.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "kafka:9092");
+
+settings.put(ConsumerConfig.GROUP_ID_CONFIG, "basic-consumer");
+settings.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:29092");
 settings.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, "true");
 settings.put(ConsumerConfig.AUTO_COMMIT_INTERVAL_MS_CONFIG, "1000");
 settings.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
@@ -115,41 +96,22 @@ KafkaConsumer<String, String> consumer = new KafkaConsumer<>(settings);
 This creates the consumer with the supplied configuration.
 
 ```java
-consumer.subscribe(Arrays.asList("hello-world-topic"));
+consumer.subscribe(Collections.singletonList("hello-world-topic"));
 
 while (true) {
     ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100));
-    for (ConsumerRecord<String, String> record : records)
-        System.out.printf("offset = %d, key = %s, value = %s\n",    record.offset(), record.key(), record.value());
+
+    for (ConsumerRecord<String, String> record : records) {
+        System.out.printf("offset = %d, key = %s, value = %s%n", record.offset(), record.key(),record.value());
+    }
 }
 ```
 
 This subscribes to the topic `hello-world-topic` and prints out whatever it finds there.
 
-### Running the consumer
+### Build and run the consumer
 
-Build with `gradle build` in the solutions/basic-consumer folder.
-
-Copy the distribution into the kafka node so that we can run it within the kafka network set up by docker-compose:
-
-```shell
-docker cp build/distributions/basic-consumer.tar labs_kafka_1:/tmp
-```
-
-Now - let's get a shell in the same docker container:
-
-```shell
-docker exec -it labs_kafka_1 /bin/bash
-```
-
-And finally - let's extract and run the consumer:
-
-```shell
-cd /tmp
-tar xf basic-consumer.tar
-cd basic-consumer
-bin/basic-consumer
-```
+This is also a standard maven project - again we simply open in your favourite IDE and build then run the main method in BasicConsumer.
 
 The output now shows the messages that the basic producer sent to the topic:
 
