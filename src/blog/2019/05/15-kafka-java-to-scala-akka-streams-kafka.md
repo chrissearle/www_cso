@@ -176,6 +176,8 @@ Moving to akka streams allows us to create our processing almost as a line by li
 
 In this case - each recipe is simple - but in more complex situations you can use composition to be able to keep the code simple to understand.
 
+The API for the consumer/producer code now also looks very similar to the kafka streams API. Something for a future article perhaps?
+
 ## Links
 
 - [Producer project](https://github.com/chrissearle/kafka-java-to-scala/tree/master/akka-streams-kafka/producer)
