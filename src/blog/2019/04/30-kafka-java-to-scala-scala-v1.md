@@ -5,7 +5,7 @@ tags: kafka, scala, producer, consumer
 series: Kafka - java to scala
 ---
 
-This series goes through conversion of java kafka clients to scala - step by step - hopefully learning other useful scala stuff on the way.
+This series goes through conversion of some basic java kafka clients to scala - step by step. It is important to understand that it is written from my viewpoint - someone who has played with scala, likes it, but has never really had time to get into it.
 
 In the previous step we created a basic producer and consumer in java. Let's try for a direct conversion (almost line by line) to scala as a first step.
 
