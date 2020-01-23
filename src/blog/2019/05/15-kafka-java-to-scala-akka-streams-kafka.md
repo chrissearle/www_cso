@@ -16,7 +16,7 @@ We'll start with the same project setup as we used in [the configuration project
 There are two changes to `build.sbt`:
 
 - Set the `name` to `AkkaProducer`/`AkkaConsumer` as appropriate
-- Add the [Alpakka Kafka](https://doc.akka.io/docs/alpakka-kafka/current/home.html) dependency `"com.typesafe.akka" %% "akka-stream-kafka" % "1.0.5"`
+- Add the [Alpakka Kafka](https://doc.akka.io/docs/alpakka-kafka/current/home.html) dependency `"com.typesafe.akka" %% "akka-stream-kafka" % "2.0.0"`
 
 The project directory (build.properties) are the same as before.
 
@@ -51,8 +51,7 @@ OK - so how does the code look now?
 
 We still have a config case class and we still load the config with pureconfig (note - the kafka libraries for akka-streams can read application.conf themselves if you format it for them - see [producer](https://doc.akka.io/docs/alpakka-kafka/current/producer.html#settings) and [consumer](https://doc.akka.io/docs/alpakka-kafka/current/consumer.html#settings) documentation).
 
-However - once we have a configuration - we want to create the producer settings. For the producer that's simple - it takes a system and serializers and then we set the bootstrap server. We have no other options we want to set here - but we could add them (we'll see this in the consumer shortly).
-
+However - once we have a configuration - we want to create the producer settings. For the producer that's simple - it takes a system and serializers and then we set the bootstrap server. We have no other options we want to set here - but we could add them if we did have (we'll see this in the consumer shortly).
 
 ```scala
   private def buildProducerSettings(sys: ActorSystem, config: Config) = {
@@ -71,7 +70,6 @@ Finally we set up our akka stream:
 - Flow: creates a producer message with a record of [String, Int]
 - Flow: send the message to the producer which sends it to kafka
 - Sink: consume each response from kafka and print what was done
-
 
 ```scala
       println("*** Starting Producer ***")
