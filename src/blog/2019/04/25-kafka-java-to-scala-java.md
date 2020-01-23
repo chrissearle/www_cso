@@ -23,12 +23,12 @@ The main method does three main things:
 Properties settings = new Properties();
 
 settings.put("client.id", "basic-producer");
-settings.put("bootstrap.servers", "localbhost:29092");
+settings.put("bootstrap.servers", "localhost:29092");
 settings.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
 settings.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
 ```
 
-This sets up the configuration of the kafka producer that we want an says we are working with records that use String both as key and value.
+This sets up the configuration of the kafka producer that we want and says we are working with records that use String both as key and value.
 
 ```java
 KafkaProducer<String, String> producer = new KafkaProducer<>(settings);
@@ -54,7 +54,7 @@ This posts 5 messages to the topic `hello-world-topic`
 
 This is a standard maven project - simply open in your favourite IDE and build.
 
-The BasicProducer class contains a standard main method - so you should easily be able to run the code from the IDE too.
+The BasicProducer class contains a standard main method - so you should easily be able to run the code from the IDE too. You can also use the maven-exec plugin (see [the readme](https://github.com/chrissearle/kafka-java-to-scala/blob/master/java-starter/producer/README.md)).
 
 The output isn't wildly exciting (we haven't configured logging so ignore related lines):
 
@@ -73,7 +73,7 @@ So - let's see if we can see what was added to the topic using a consumer.
 
 There is again one main java file here - [BasicConsumer.java](https://github.com/chrissearle/kafka-java-to-scala/blob/master/java-starter/consumer/src/main/java/net/chrissearle/kafka/BasicConsumer.java)
 
-The main method does three main things:
+The main method again does three main things:
 
 ```java
 Properties settings = new Properties();
@@ -87,7 +87,7 @@ settings.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.cl
 settings.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
 ```
 
-This sets up the configuration of the kafka consumer that we want an says we are working with records that use String both as key and value.
+This sets up the configuration of the kafka consumer that we want and says we are working with records that use String both as key and value.
 
 ```java
 KafkaConsumer<String, String> consumer = new KafkaConsumer<>(settings);
@@ -111,9 +111,9 @@ This subscribes to the topic `hello-world-topic` and prints out whatever it find
 
 ### Build and run the consumer
 
-This is also a standard maven project - again we simply open in your favourite IDE and build then run the main method in BasicConsumer.
+This is also a standard maven project - again simply open in your favourite IDE and build then run the main method in BasicConsumer or use [maven directly from the command line](https://github.com/chrissearle/kafka-java-to-scala/blob/master/java-starter/consumer/README.md).
 
-The output now shows the messages that the basic producer sent to the topic:
+The consumer output now shows the messages that the basic producer sent to the topic:
 
 ```
 *** Starting Basic Consumer ***
