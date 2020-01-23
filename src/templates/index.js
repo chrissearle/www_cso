@@ -28,6 +28,9 @@ const Index = ({ pageContext }) => {
         const post = edge.node
 
         const date = displayDate(post.frontmatter.date)
+        const updated = post.frontmatter.updated
+          ? displayDate(post.frontmatter.updated)
+          : ''
 
         const tags = post.frontmatter.tags && post.frontmatter.tags.split(/, */)
 
@@ -35,6 +38,7 @@ const Index = ({ pageContext }) => {
           <Card className="mb-4" key={`ex_${post.fields.path}`}>
             <CardHeader tag="h6">
               <div>Posted: {date}</div>
+              {updated && <div class="small">Updated: {updated}</div>}
             </CardHeader>
             {post.frontmatter.image && (
               <Link to={post.fields.path}>

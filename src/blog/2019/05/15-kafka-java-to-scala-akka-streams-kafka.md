@@ -3,6 +3,7 @@ title: Kafka - java to scala - akka streams kafka
 date: 2019-05-15 12:10 +0200
 tags: scala, akka, akka streams, kafka, producer, consumer
 series: Kafka - java to scala
+updated: 2020-01-23
 ---
 
 This series goes through conversion of some basic java kafka clients to scala - step by step. It is important to understand that it is written from my viewpoint - someone who has played with scala, likes it, but has never really had time to get into it.

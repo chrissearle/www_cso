@@ -3,6 +3,7 @@ title: Kafka - java to scala - introduction
 date: 2019-04-25 12:02 +0200
 tags: kafka, java, scala
 series: Kafka - java to scala
+updated: 2020-01-23
 ---
 
 I was recently a participant on a [Confluent on-premesis kafka course](https://www.confluent.io/training/). While working through the labs (which are in java), for fun I tried the same code in kotlin. That was fun - but I thought it could be a nice exercise to convert from java to scala - step by step - and maybe learn some new scala stuff on the way. It will assume some level of kafka knowledge - what is a producer, consumer, topic etc.

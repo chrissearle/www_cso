@@ -3,6 +3,7 @@ title: Kafka - java to scala - scala v2 - config
 date: 2019-05-03 11:33 +0200
 tags: kafka, scala, producer, consumer, pureconfig
 series: Kafka - java to scala
+updated: 2020-01-23
 ---
 
 This series goes through conversion of some basic java kafka clients to scala - step by step. It is important to understand that it is written from my viewpoint - someone who has played with scala, likes it, but has never really had time to get into it.
@@ -111,7 +112,7 @@ Another option is to just use load - this returns in effect an Either - where th
 ```scala
 ConfigSource.default.load[Config] match {
     case Left(errors) => ...
-    case Right(config: Config) => ...   
+    case Right(config: Config) => ...
 }
 ```
 

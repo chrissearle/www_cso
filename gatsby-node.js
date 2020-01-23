@@ -186,6 +186,7 @@ exports.createPages = ({ graphql, actions }) => {
                     title
                     tags
                     date
+                    updated
                     series
                     image {
                       childImageSharp {

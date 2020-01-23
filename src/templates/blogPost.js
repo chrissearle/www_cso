@@ -102,6 +102,8 @@ const Template = ({ location, data, pageContext }) => {
 
   const date = displayDate(frontmatter.date)
 
+  const updated = frontmatter.updated ? displayDate(frontmatter.updated) : ''
+
   // const url = location.href
   // const origin = location.origin
   // Facebook isn't playing ball with location used in the header
@@ -123,6 +125,12 @@ const Template = ({ location, data, pageContext }) => {
           property="article:published_time"
           content={metaDate(frontmatter.date)}
         />
+        {updated && (
+          <meta
+            property="article:modified_time"
+            content={metaDate(frontmatter.updated)}
+          />
+        )}
         <meta
           property="article:author"
           content="https://about.me/chrissearle"
@@ -135,6 +143,7 @@ const Template = ({ location, data, pageContext }) => {
           <CardText>
             Posted: {date}
             <TagsMap tags={tags} series={frontmatter.series} keyPrefix="post" />
+            {updated && <div className="small">Updated: {updated}</div>}
           </CardText>
         </CardBody>
       </Card>
@@ -156,6 +165,7 @@ export const query = graphql`
       frontmatter {
         title
         date
+        updated
         tags
         series
         image {
