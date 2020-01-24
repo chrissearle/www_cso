@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: 'Chris Searle',
-    description: 'Random thoughts on various things tech',
+    description: 'Remind me - how did I do that again?',
     siteUrl: `https://www.chrissearle.org`,
   },
   plugins: [
