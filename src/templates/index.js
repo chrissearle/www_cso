@@ -20,10 +20,10 @@ import Pagination from '../components/pagination'
 import { displayDate } from '../functions'
 
 const Index = ({ pageContext }) => {
-  const { group, index, pageCount } = pageContext
+  const { group, index, pageCount, title } = pageContext
 
   return (
-    <Layout>
+    <Layout title={title}>
       {group.map(edge => {
         const post = edge.node
 

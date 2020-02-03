@@ -237,7 +237,9 @@ exports.createPages = ({ graphql, actions }) => {
             pageTemplate: 'src/templates/index.js',
             pageLength: 20,
             pathPrefix: series.path,
-            title: `Series: ${series.title}`,
+            context: {
+              title: `Series: ${series.title}`,
+            },
           })
         })
         createSeriesPage(createPage, posts, seriesInfo)
