@@ -1,7 +1,7 @@
 ---
 title: Catalina and USB Serial chips
 date: 2019-11-22 22:59 +0100
-tags: IOT, Wemos, Lolin, ESP8266, ESP32, CP2102, CH341, CH340, OSX, Catalina, Mac
+tags: iot, wemos, lolin, esp8266, esp32, cp2102, ch341, ch340, osx, catalina, mac
 ---
 
 Up until recently - working with ESP8266 and ESP32 devices on Mac OSX required obtaining USB to serial drivers so that the correct port under /dev/ would work when the device was connected.
