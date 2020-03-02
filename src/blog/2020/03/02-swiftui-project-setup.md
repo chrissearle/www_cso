@@ -45,10 +45,14 @@ In the final window - make sure that the package is checked off for your app's t
 
 ![Add package confirmation](add-package.png)
 
-Now do the same with https://github.com/twostraws/CodeScanner
+Now do the same with https://github.com/twostraws/CodeScanner.git
 
 Finally git add and commit the changes.
 
 ## Summary
 
 The project is now ready to use - in the next step we'll start by testing out QR code scanning.
+
+---
+
+[GitHub Repository](https://github.com/chrissearle/lommepenger-swiftui)

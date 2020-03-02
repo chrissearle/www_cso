@@ -43,5 +43,9 @@ SwiftUI will be used instead of Swift+Storyboards. SwiftUI is not quite as featu
 We will make use of the new Swift Package Manager for dependencies. Initial libraries I expect to use are:
 
 - [Alamofire](https://github.com/Alamofire/Alamofire.git) - network calls
-- [Code Scanner](https://github.com/twostraws/CodeScanner) - wraps up the QR scanner in a nice swift UI component
+- [Code Scanner](https://github.com/twostraws/CodeScanner.git) - wraps up the QR scanner in a nice swift UI component
 - [SwiftUI Refresh](https://github.com/timbersoftware/SwiftUIRefresh.git) - implements pull to refresh for Swift UI
+
+---
+
+[GitHub Repository](https://github.com/chrissearle/lommepenger-swiftui)
