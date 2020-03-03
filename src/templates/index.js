@@ -56,7 +56,6 @@ const Index = ({ pageContext }) => {
                 tags={tags}
                 series={post.frontmatter.series}
                 keyPrefix={post.fields.path}
-                innerClass="ml-2 mt-2"
               />
               <div className="mt-2">
                 <Link to={post.fields.path}>Read full article</Link>

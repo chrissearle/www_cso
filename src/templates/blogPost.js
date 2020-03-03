@@ -6,8 +6,7 @@ import _ from 'lodash'
 
 import {
   Card,
-  CardBody,
-  CardText,
+  CardHeader,
   Pagination,
   PaginationItem,
   PaginationLink,
@@ -139,13 +138,13 @@ const Template = ({ location, data, pageContext }) => {
       <ImageMeta origin={origin} frontmatter={frontmatter} />
       <h1 style={{ fontFamily: 'avenir' }}>{title}</h1>
       <Card className="mb-4">
-        <CardBody>
-          <CardText>
+        <CardHeader>
+          <div className="mb-2">
             Posted: {date}
-            <TagsMap tags={tags} series={frontmatter.series} keyPrefix="post" />
-            {updated && <div className="small">Updated: {updated}</div>}
-          </CardText>
-        </CardBody>
+            {updated && <> / Updated: {updated}</>}
+          </div>
+          <TagsMap tags={tags} series={frontmatter.series} keyPrefix="post" />
+        </CardHeader>
       </Card>
       <div className="blogpost" style={{ fontFamily: 'avenir' }}>
         {renderAst(htmlAst)}
