@@ -1,7 +1,7 @@
 ---
 title: Scanning QR codes with SwiftUI
 date: 2020-03-03 11:28 +0100
-tags: s'banken, open banking, ios, swift, swiftui, xcode
+tags: ios, swift, swiftui, xcode
 series: Revisiting the S'banken API with SwiftUI
 ---
 
@@ -13,10 +13,10 @@ We will use a simple JSON format:
 
 ```json
 {
-    "clientId": "application id from S'banken (applikasjonsnøkkel)",
-    "clientSecret": "application password from S'banken",
-    "userId": "national identity number (fødselsnummer)",
-    "accountNr": "bank account number"
+  "clientId": "application id from S'banken (applikasjonsnøkkel)",
+  "clientSecret": "application password from S'banken",
+  "userId": "national identity number (fødselsnummer)",
+  "accountNr": "bank account number"
 }
 ```
 
@@ -31,7 +31,7 @@ class Config : Codable {
     let userId: String
     let accountNr: String
 }
-``` 
+```
 
 This will not compile yet - since we need to actually conform to Codable - so add the following enum to the class:
 
@@ -66,8 +66,8 @@ Here we ask for high error correction (we want to be sure that the code is corre
 
 We need to do two things:
 
-* Handling showing/hiding the scanner
-* Handling the scan data received
+- Handling showing/hiding the scanner
+- Handling the scan data received
 
 ### Scanner Sheet
 

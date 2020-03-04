@@ -1,7 +1,7 @@
 ---
 title: SwiftUI project setup
 date: 2020-03-02 20:54 +0100
-tags: s'banken, open banking, ios, swift, swiftui, xcode
+tags: ios, swift, swiftui, xcode
 series: Revisiting the S'banken API with SwiftUI
 ---
 
