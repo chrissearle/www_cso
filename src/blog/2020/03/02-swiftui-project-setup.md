@@ -9,6 +9,8 @@ Let's start by getting the correct project setup.
 
 You'll need to be on the latest Xcode (11.3 or so) - and it will be best if you are running Catalina - then we can get the canvas previews in XCode to work.
 
+---
+
 ## Setup
 
 In Xcode - start a new project. Choose iOS and a single view app.
@@ -18,6 +20,8 @@ Fill out the project details. In my case - I will end up keeping the same detail
 ![Project Setup](project-setup.png)
 
 Choose a place to save the project and enable git repository generation.
+
+---
 
 ## .gitignore
 
@@ -30,6 +34,8 @@ $ curl -o .gitignore https://raw.githubusercontent.com/github/gitignore/master/S
 $ git add .gitignore
 $ git ci -m "Add .gitignore"
 ```
+
+---
 
 ## Libraries
 
@@ -48,6 +54,8 @@ In the final window - make sure that the package is checked off for your app's t
 Now do the same with https://github.com/twostraws/CodeScanner.git
 
 Finally git add and commit the changes.
+
+---
 
 ## Summary
 

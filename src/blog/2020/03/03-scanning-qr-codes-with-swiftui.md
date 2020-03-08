@@ -44,6 +44,8 @@ enum CodingKeys: String, CodingKey {
 }
 ```
 
+---
+
 ## QR Code Generation
 
 **Important: The JSON and the QR code contain keys and IDs and should not be shared or made publically available.**
@@ -61,6 +63,8 @@ qrencode -l H -o config.png < config.json
 Here we ask for high error correction (we want to be sure that the code is correct). The command should generate a PNG image of the QR code in config.png.
 
 ![Example config.png QR code](config.png)
+
+---
 
 ## QR Code Scanner
 
@@ -129,6 +133,8 @@ Finally - we need to do one more thing - we need to have permission to use the c
 
 Let's try - run it from Xcode on a device and scan the example QR code above - you should see the contents in the Xcode console.
 
+---
+
 ## Parsing
 
 So - we can now get the contents of the QR code as a json string.
@@ -177,6 +183,8 @@ The CodeScannerView now looks like this:
      self.showingScanner = false
  }
 ```
+
+---
 
 ## Summary
 

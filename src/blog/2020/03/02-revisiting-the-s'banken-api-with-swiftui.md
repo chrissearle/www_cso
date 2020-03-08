@@ -11,6 +11,8 @@ The still don't - but - iOS development has moved on a bit since then - notably 
 
 In this series - we will take a look at creating the app from scratch - but using SwiftUI and some helper libraries.
 
+---
+
 ## Recap
 
 The [S'banken API](https://secure.sbanken.no/Personal/ApiBeta/Info/) provides several functions. In the previous application - we used:
@@ -26,6 +28,8 @@ To do this - we needed 3 values:
 - The ID number of the account owner (fødselsnummer - 11 digits)
 
 The authorization uses _client credentials grant flow_.
+
+---
 
 ## The plan
 

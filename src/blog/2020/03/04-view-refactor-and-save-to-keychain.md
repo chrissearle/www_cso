@@ -7,6 +7,8 @@ series: Revisiting the S'banken API with SwiftUI
 
 At this stage - we've a lot of stuff in the main ContentView. Let's do something about that first.
 
+---
+
 ## Refactor
 
 We'll start by moving the CodeScanner stuff to its own view. We'll also give the user a cancellation option so that they can clear the view without scanning.
@@ -94,6 +96,8 @@ struct ScannerView: View {
 ```
 
 Back in the ContentView - we have a function that receives the data and can perform the decoding etc there.
+
+---
 
 ## Persisting the data
 
@@ -216,6 +220,8 @@ var body: some View {
 ```
 
 SwiftUI doesn't like things like "if let x ..." but will happily cope with a simple if/else with a check on nil.
+
+---
 
 ## Summary
 
