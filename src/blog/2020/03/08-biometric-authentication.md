@@ -72,8 +72,8 @@ func authenticateUser(_ callback: @escaping (_ status: AuthStatus) -> Void) {
 
 ### Notes
 
-* We're calling an older Objective-C api here - things like `error: &error` don't really feel so "swift" but they still work.
-* The call to evaluatePolicy happens in a different thread - we need to switch back to our main thread to handle the result
+- We're calling an older Objective-C api here - things like `error: &error` don't really feel so "swift" but they still work.
+- The call to evaluatePolicy happens in a different thread - we need to switch back to our main thread to handle the result
 
 ### Face ID
 
@@ -114,12 +114,12 @@ func askForAuth() {
 
 Note that if authentication is unavailable we're just letting the user in. Here you would need fallback to a login or similar - but for this proof of concept app (and given that my son has a touch ID device) this will do here.
 
-So - when do we call this? 
+So - when do we call this?
 
 I want to call this in two places:
 
-* When the app starts - if we already have configuration
-* When a new config successfully is scanned
+- When the app starts - if we already have configuration
+- When a new config successfully is scanned
 
 ### App Load
 
@@ -128,7 +128,7 @@ Add the if clause after the call to `loadConfig()`:
 ```swift
 .onAppear {
     self.config = Config.loadConfig()
-    
+
     if (self.config != nil && self.authenticated == false) {
         self.askForAuth()
     }
@@ -144,7 +144,7 @@ In newScanData - add the if clause after the line `self.config = config`:
      if let config = Config.decodeConfig(json: code) {
          config.save()
          self.config = config
-         
+
          if (self.authenticated == false) {
              self.askForAuth()
          }
@@ -178,7 +178,7 @@ You can test both Face ID and Touch ID in the simulator if you use the menu `Har
 
 ## Summary
 
-We've now added basic support for biometric authentication. In the next post we'll actually start calling the S'banken API and will start doing something with the view layout.
+We've now added basic support for biometric authentication. In the next post we'll actually start calling the S'banken API and then in further posts we will start doing something with the view layout.
 
 ---
 
