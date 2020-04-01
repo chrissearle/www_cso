@@ -1,7 +1,7 @@
 ---
 title: Account View
 date: 2020-03-30 20:50 +0200
-tags: ios, swift, swiftui, xcode
+tags: ios, swift, swiftui, xcode, s'banken
 series: Revisiting the S'banken API with SwiftUI
 ---
 
