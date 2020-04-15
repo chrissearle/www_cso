@@ -1,0 +1,57 @@
+name: Site Build and Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+    tags:
+      - v*
+
+env:
+  # TODO: Change variable to your image's name.
+  IMAGE_NAME: image
+
+jobs:
+  push:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push'
+
+    steps:
+      - uses: actions/checkout@v2
+    
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+    
+      - name: Build site
+        run: yarn build
+        
+      - name: Static assets
+        run: rm -rf build/site && cp -r public build/site
+        
+      - name: Build image
+        run: docker build -t chrissearle/www_cso:${{ github.sha }} build
+      
+      - name: Tag staging image
+        if: github.ref == 'refs/heads/master'
+        run: docker tag chrissearle/www_cso:${{ github.sha }} chrissearle/www_cso:staging
+
+      - name: Tag release image
+        if: contains(github.ref, 'tag')
+        run: docker tag chrissearle/www_cso:${{ github.sha }} chrissearle/www_cso:latest
+
+      - name: Login to DockerHub Registry
+        run: echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
+        
+      - name: Push sha image
+        run: docker push chrissearle/www_cso:${{ github.sha }}
+      
+      - name: Push staging image
+        if: github.ref == 'refs/heads/master'
+        run: docker push chrissearle/www_cso:staging
+      
+      - name: Push release image
+        if: contains(github.ref, 'tag')
+        run: docker push chrissearle/www_cso:latest
+      
