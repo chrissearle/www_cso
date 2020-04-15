@@ -24,6 +24,9 @@ jobs:
         with:
           node-version: 12
     
+      - name: Dependencies
+        run: yarn
+        
       - name: Build site
         run: yarn build
         
