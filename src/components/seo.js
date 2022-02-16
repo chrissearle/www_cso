@@ -6,7 +6,7 @@ import Helmet from 'react-helmet'
 
 import { lookup } from 'mime-types'
 
-const SEO = ({ data, hideImage }) => {
+const Seo = ({ data, hideImage }) => {
   const siteMetadata = data.site.siteMetadata
 
   const image = siteMetadata.siteUrl + '/logo.png'
@@ -42,7 +42,7 @@ const SEO = ({ data, hideImage }) => {
   )
 }
 
-const WrappedSEO = ({ hideImage }) => {
+const WrappedSeo = ({ hideImage }) => {
   return (
     <StaticQuery
       query={graphql`
@@ -56,9 +56,9 @@ const WrappedSEO = ({ hideImage }) => {
           }
         }
       `}
-      render={data => <SEO data={data} hideImage={hideImage} />}
+      render={(data) => <Seo data={data} hideImage={hideImage} />}
     />
   )
 }
 
-export default WrappedSEO
+export default WrappedSeo

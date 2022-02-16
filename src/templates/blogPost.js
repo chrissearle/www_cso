@@ -20,7 +20,7 @@ import TagsMap from '../components/tagsMap'
 
 import Discussion from '../components/disqusPost'
 
-import SEO from '../components/seo'
+import Seo from '../components/seo'
 
 import { displayDate, metaDate } from '../functions'
 
@@ -114,7 +114,7 @@ const Template = ({ location, data, pageContext }) => {
 
   return (
     <Layout title={title} description={excerpt}>
-      <SEO hideImage={hideImage} />
+      <Seo hideImage={hideImage} />
       <Helmet>
         <meta property="og:description" content={excerpt} />
         <meta property="og:title" content={title} />
@@ -158,7 +158,7 @@ const Template = ({ location, data, pageContext }) => {
 }
 
 export const query = graphql`
-  query($pathSlug: String!) {
+  query ($pathSlug: String!) {
     markdownRemark(fields: { path: { eq: $pathSlug } }) {
       htmlAst
       frontmatter {
