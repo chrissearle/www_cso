@@ -14,7 +14,7 @@ const TopTags = ({ data }) => {
     if (node.frontmatter.tags) {
       const tags = node.frontmatter.tags.split(/, */)
 
-      tags.forEach(tag => {
+      tags.forEach((tag) => {
         if (!postCountByTag[tag]) {
           postCountByTag[tag] = 0
         }
@@ -34,11 +34,14 @@ const TopTags = ({ data }) => {
     <Card className="mb-4">
       <CardHeader>Popular Tags</CardHeader>
       <ListGroup>
-        {tags.map(tag => {
+        {tags.map((tag) => {
           return (
-            <ListGroupItem key={tag}>
+            <ListGroupItem
+              key={tag}
+              className="d-flex justify-content-between align-items-center"
+            >
               <Link to={`/tags/${tag}`}>{tag}</Link>
-              <Badge pill color="dark" className="float-right">
+              <Badge pill color="dark">
                 {postCountByTag[tag]}
               </Badge>
             </ListGroupItem>
@@ -67,7 +70,7 @@ const WrappedTopTags = () => {
           }
         }
       `}
-      render={data => <TopTags data={data} />}
+      render={(data) => <TopTags data={data} />}
     />
   )
 }

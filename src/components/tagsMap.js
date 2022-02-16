@@ -6,8 +6,6 @@ import slugify from 'slugify'
 import { Button } from 'reactstrap'
 
 const TagsMap = ({ tags, series, keyPrefix }) => {
-  //const className = innerClass ? innerClass : 'ml-2'
-
   const seriesPath = series ? `/series/${slugify(series)}`.toLowerCase() : ''
 
   return (
@@ -20,15 +18,14 @@ const TagsMap = ({ tags, series, keyPrefix }) => {
               outline
               color="info"
               size="sm"
-              className="mb-2 mr-2"
+              className="mx-2"
             >
               <Link to={`/tags/${tag}`}>{tag}</Link>
             </Button>
           )
         })}
-      <br />
       {series && (
-        <Button outline color="success" size="sm">
+        <Button outline color="success" size="sm" className="mx-2">
           <Link className="text-success" to={seriesPath}>
             {series}
           </Link>
