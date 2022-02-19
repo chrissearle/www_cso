@@ -2,6 +2,7 @@
 title: Monitoring IP changes
 date: 2020-01-29 11:49 +0100
 tags: ipify, cloudflare, node-red, mqtt, mosquitto, grafana, influx, cron
+image: cron-ip-output.png
 intro: My ISP connection to home does not offer a static IP address. It does maintain a stable IP address - but after a period offline (either a fault or a power failure or similar) then that IP address may change. How to monitor this?
 ---
 
@@ -129,7 +130,7 @@ This then posts a hit to MQTT each time an error occurs calling ipify.
 
 In Node-RED I created a new flow - it subscribes to the MQTT cron/ip topic. Each message there will be a plain text "IP Error" - so it gets passed to a function node that simply wraps it in json:
 
-```js
+```javascript
 msg = {
   payload: {
     reason: msg.payload,
@@ -151,7 +152,10 @@ SELECT count("reason") FROM "ip" WHERE $timeFilter GROUP BY time($__interval) fi
 
 And - that together with a line graph - with a line width of 3 and staircase turned on - gives me the following graph (this was taken after running for about 24 hours):
 
-![Grafana output](cron-ip-output.png)
+<figure class="figure w-100 text-center">
+  <img class="figure-img img-fluid rounded" src="/images/posts/2020/01/cron-ip-output.png" title="Grafana output" alt="Grafana output"/>
+  <figcaption class="figure-caption">Grafana output</figcaption>
+</figure>
 
 You can see that there is only a few hits on the first day and none on the second.
 

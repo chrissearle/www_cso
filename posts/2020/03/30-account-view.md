@@ -4,6 +4,7 @@ date: 2020-03-30 20:50 +0200
 tags: ios, swift, swiftui, xcode, s'banken
 series: Revisiting the S'banken API with SwiftUI
 intro: The app so far has the ability to get an authentication token. The next step is to actually use it.
+image: account.png
 ---
 
 The app so far has the ability to get an authentication token.
@@ -246,7 +247,10 @@ We want to have the outermost part to be a NavigationView with the scan button t
 
 To start with - we will show the account number, and the balance/available figures. Something like this:
 
-![Account View](account.png)
+<figure class="figure w-100 text-center">
+  <img class="figure-img img-fluid rounded" src="/images/posts/2020/03/account.png" title="Account View" alt="Account View"/>
+  <figcaption class="figure-caption">Account View</figcaption>
+</figure>
 
 Disponibelt - available. Saldo - balance.
 

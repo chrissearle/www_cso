@@ -3,6 +3,7 @@ title: Scanning QR codes with SwiftUI
 date: 2020-03-03 11:28 +0100
 tags: ios, swift, swiftui, xcode
 series: Revisiting the S'banken API with SwiftUI
+image: config.png
 intro: So the first thing we want to do is to have a way to scan a QR code to get the relevant IDs for the app.
 ---
 
@@ -63,7 +64,10 @@ qrencode -l H -o config.png < config.json
 
 Here we ask for high error correction (we want to be sure that the code is correct). The command should generate a PNG image of the QR code in config.png.
 
-![Example config.png QR code](config.png)
+<figure class="figure w-100 text-center">
+  <img class="figure-img img-fluid rounded" src="/images/posts/2020/03/config.png" title="Example config.png QR code" alt="title"/>
+  <figcaption class="figure-caption">title</figcaption>
+</figure>
 
 ---
 

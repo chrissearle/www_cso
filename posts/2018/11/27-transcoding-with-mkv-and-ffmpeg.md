@@ -2,6 +2,7 @@
 title: Transcoding with MKV and ffmpeg
 date: 2018-11-27 14:34 +0100
 tags: mkv, matrovska, codec, vc-1, h264, ffmpeg, plex
+intro: Learning ffmpeg unnecessarily :)
 ---
 
 _Update: I should have checked the plex support site to start with - this is already documented on [this support article](https://support.plex.tv/articles/201358273-converting-iso-video-ts-and-other-disk-image-formats/).

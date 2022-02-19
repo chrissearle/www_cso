@@ -2,6 +2,7 @@
 title: Securing pi-hole admin with SSL
 date: 2019-09-22 12:20 +0200
 tags: pi-hole, ssl
+intro: I recently added a running copy of pi-hole onto a spare raspberry pi to test. Moving it to https
 ---
 
 I recently added a running copy of pi-hole onto a spare raspberry pi to test.

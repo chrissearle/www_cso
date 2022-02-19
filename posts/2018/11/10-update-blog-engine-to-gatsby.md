@@ -2,6 +2,7 @@
 title: Update this blog's engine from middlemanapp to gatsby
 date: 2018-10-11 14:38 +0100
 tags: javascript, react, gatsby, middleman
+intro: Moving from middlemanapp to gatsby to get some more flexibility
 ---
 
 This site has for a long time been generated using the [middlemanapp](https://middlemanapp.com) site generator.

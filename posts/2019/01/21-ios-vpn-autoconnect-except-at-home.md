@@ -2,6 +2,7 @@
 title: iOS VPN autoconnect except at home
 date: 2019-01-21 18:19 +0100
 tags: ios, vpn, networking
+intro: How can I get my iPhone to always connect to my VPN except when at home?
 ---
 
 I was recently looking for a solution to the following question:

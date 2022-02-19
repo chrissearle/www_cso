@@ -2,6 +2,7 @@
 title: Internal certificate authority with openssl and caman
 date: 2019-09-18 09:40 +0200
 tags: openssl, ssl
+intro: Running a local/internal certificate authority - even though it is 2019
 ---
 
 It seems a little odd to be looking at running an internal certificate authority (CA) in these days where free certificates are easily available from [LetsEncrypt](https://letsencrypt.org/). However, I have a fully working LetsEncrypt setup using the http callback verification method that I don't really want to fiddle with, so for some small internal machines (pi's etc) I wanted to look again at being my own CA.

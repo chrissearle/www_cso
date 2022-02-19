@@ -2,6 +2,7 @@
 title: Owncloud on docker on Synology NAS behind nginx proxy
 date: 2019-07-14 14:59 +0200
 tags: nginx, docker, synology, owncloud
+intro: I thought that it would be interesting to run up an instance of owncloud on docker. I have several machines I could put this on - but - if I were to use it as a larger server then I want the bigger disk of the NAS.
 ---
 
 I thought that it would be interesting to run up an instance of owncloud on docker. I have several machines I could put this on - but - if I were to use it as a larger server then I want the bigger disk of the NAS.

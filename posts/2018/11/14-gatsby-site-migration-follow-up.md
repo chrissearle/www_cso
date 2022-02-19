@@ -2,6 +2,7 @@
 title: Gatsby site migration - follow up
 date: 2018-11-14 20:51 +0100
 tags: javascript, react, gatsby, middleman
+intro: Nearly finished migrating to gatsby
 ---
 
 So - the migtation [started a few days ago](/2018/11/10/update-blog-engine-to-gatsby/) is now more or less complete.
