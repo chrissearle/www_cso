@@ -1,6 +1,7 @@
 import Head from "next/head";
 
 import PostCard from "components/PostCard";
+import Meta from "components/Meta";
 
 import { loadMarkdown } from "lib/posts";
 import { split } from "utils/pageutils";
@@ -12,6 +13,7 @@ export default function Category({ category, posts }) {
     <>
       <Head>
         <title>Chris Searle - Category: {category}</title>
+        <Meta title={`Category: ${category}`} />
       </Head>
       <div className="pt-4">
         <h1>Category: {category}</h1>

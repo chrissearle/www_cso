@@ -1,6 +1,7 @@
 import Head from "next/head";
 
 import ListList from "./ListList";
+import Meta from "./Meta";
 
 export default function ListView({
   listTitle,
@@ -13,6 +14,7 @@ export default function ListView({
     <>
       <Head>
         <title>Chris Searle - {listTitle}</title>
+        <Meta title={listTitle} />
       </Head>
       <div className="pt-4">
         <h1>{listTitle}</h1>

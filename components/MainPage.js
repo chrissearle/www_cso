@@ -1,5 +1,6 @@
 import Head from "next/head";
 
+import Meta from "./Meta";
 import PostCard from "../components/PostCard";
 import Pagination from "../components/Pagination";
 
@@ -12,6 +13,7 @@ export default function MainPage({ pages, indexes, currentPage }) {
     <>
       <Head>
         <title>Chris Searle</title>
+        <Meta title="Chris Searle" />
       </Head>
 
       <div>

@@ -1,5 +1,7 @@
 import Head from "next/head";
 
+import Meta from "components/Meta";
+
 import { loadMarkdown } from "lib/posts";
 
 function Fingerprint({ title, hash, fingerprint }) {
@@ -18,6 +20,7 @@ export default function Keys() {
     <>
       <Head>
         <title>Chris Searle - Cryptographic Keys</title>
+        <Meta title="Cryptographic Keys" />
       </Head>
       <h2 className="my-4">Cryptographic Keys</h2>
 

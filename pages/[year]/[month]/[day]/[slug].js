@@ -18,6 +18,7 @@ import "prismjs/components/prism-ruby";
 import "prismjs/components/prism-sql";
 import "prismjs/components/prism-xml-doc";
 
+import Meta from "components/Meta";
 import PostTags from "components/PostTags";
 import PostLink from "components/PostLink";
 import DisqusComments from "components/Disqus";
@@ -53,14 +54,9 @@ function PageLinks({ previous, next }) {
   );
 }
 
-export default function PostPage({
-  frontmatter,
-  content,
-  previous,
-  next,
-  path,
-  params,
-}) {
+export default function PostPage(props) {
+  const { frontmatter, content, previous, next, path, params } = props;
+
   useEffect(() => {
     Prism.highlightAll();
   }, []);
@@ -74,6 +70,7 @@ export default function PostPage({
     <>
       <Head>
         <title>Chris Searle - {frontmatter.title}</title>
+        <Meta post={props} />
       </Head>
       <div className="pt-4">
         <h1>{frontmatter.title}</h1>

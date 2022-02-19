@@ -31,10 +31,12 @@ export async function getStaticProps() {
     .map((file) => file.tags)
     .forEach((tags) => {
       tags.forEach((tag) => {
-        if (tagToPosts.hasOwnProperty(tag)) {
-          tagToPosts[tag] = tagToPosts[tag] + 1;
-        } else {
-          tagToPosts[tag] = 1;
+        if (tag !== "") {
+          if (tagToPosts.hasOwnProperty(tag)) {
+            tagToPosts[tag] = tagToPosts[tag] + 1;
+          } else {
+            tagToPosts[tag] = 1;
+          }
         }
       });
     });
