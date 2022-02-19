@@ -1,0 +1,41 @@
+{
+  "figure": {
+    "scope": "markdown,md",
+    "prefix": "fig",
+    "body": [
+      "<figure class=\"figure w-100 text-center\">",
+      "  <img class=\"figure-img img-fluid rounded\" src=\"/images/posts/${TM_FILEPATH/.*\\/posts\\/(\\d+)\\/.*/${1}/}/${TM_FILEPATH/.*\\/posts\\/(\\d+)\\/(\\d+)\\/.*/${2}/}/${1:file}\" title=\"${2:title}\" alt=\"${2:title}\"/>",
+      "  <figcaption class=\"figure-caption\">${2:title}</figcaption>",
+      "</figure>"
+    ],
+    "description": "Create an image figure"
+  },
+  "image_path": {
+    "scope": "markdown,md",
+    "prefix": "impa",
+    "body": [
+      "/images/posts/${TM_FILEPATH/.*\\/posts\\/(\\d+)\\/.*/${1}/}/${TM_FILEPATH/.*\\/posts\\/(\\d+)\\/(\\d+)\\/.*/${2}/}/"
+    ],
+    "description": "Create an image figure"
+  },
+  "youtube": {
+    "scope": "markdown,md",
+    "prefix": "youtube",
+    "body": [
+      "<div class=\"ratio ratio-16x9\">",
+      "  <iframe src=\"https://www.youtube.com/embed/${1:ID}\" title=\"${2:title}\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
+      "</div>"
+    ],
+    "description": "Embed a youtube video"
+  },
+  "flickr": {
+    "scope": "markdown,md",
+    "prefix": "flickr",
+    "body": [
+      "<div class=\"text-center\">",
+      "  Get the embed from https://www.flickr.com/photos/chrissearle/${TM_SELECTED_TEXT}",
+      "</div>"
+    ],
+    "description": "Embed a youtube video"
+  }
+}

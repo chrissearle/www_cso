@@ -1,24 +1,30 @@
 # www.chrissearle.org
 
-Gatsby based site generator for www.chrissearle.org
+NextJS based site generator for www.chrissearle.org
 
 ## Github Actions
 
-Any push of master or a tag v* will trigger github actions to run.
+Any push of main or a tag v\* will trigger github actions to run.
 
-* Master -> will build and push a staging image (:staging)
-* v* tag -> will build and push a promoted image (:latest) - tag name has to start v and since this is not software the format is YYYYMMDDXX where XX is zero padded "release count that day".
+- main -> will build and push a staging image (:staging)
+- v\* tag -> will build and push a promoted image (:latest) - tag name has to start v and since this is not software the format is YYYYMMDDXX where XX is zero padded "release count that day".
 
-## Available tasks
+## NPM
 
-**Note that for package, stage and promote - github actions are set up - so these should not be used in general**
+- dev - run dev server
+- build - build
+- postbuild - build sitemap (runs automatically after build)
+- export - dump the contents as static HTML to out/
+- serve - serve the contents of out/
+- start - serve the contents as built
+- lint - run lint
 
-For all tasks - see Makefile. Some of the most common:
+## Docker
 
-make develop - start gatsby in develop mode
+Local docker build:
 
-make package - build and create docker image
+docker build -t www-cso:latest .
 
-make stage - send package to dockerhub with `:staging`
+Run local build:
 
-make promote - tag the current `:staging` with `:latest`
+docker run --rm -d -p 3000:3000 --name www-cso www-cso:latest

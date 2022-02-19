@@ -1,0 +1,18 @@
+img.post {
+  max-height: 300px;
+  max-width: 300px;
+}
+
+img.logo {
+  height: 25px;
+  margin-right: 10px;
+  padding-bottom: 0;
+}
+
+div.sidebar {
+  width: 320px;
+}
+
+div.ratio {
+  margin-bottom: 30px;
+}
