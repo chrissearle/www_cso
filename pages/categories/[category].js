@@ -13,8 +13,8 @@ export default function Category({ category, posts }) {
     <>
       <Head>
         <title>Chris Searle - Category: {category}</title>
-        <Meta title={`Category: ${category}`} />
       </Head>
+      <Meta title={`Category: ${category}`} />
       <div className="pt-4">
         <h1>Category: {category}</h1>
 

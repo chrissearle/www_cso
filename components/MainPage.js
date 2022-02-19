@@ -13,8 +13,8 @@ export default function MainPage({ pages, indexes, currentPage }) {
     <>
       <Head>
         <title>Chris Searle</title>
-        <Meta title="Chris Searle" />
       </Head>
+      <Meta title="Chris Searle" />
 
       <div>
         {splitPosts.map((row, index) => (

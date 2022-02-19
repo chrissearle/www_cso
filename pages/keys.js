@@ -20,8 +20,8 @@ export default function Keys() {
     <>
       <Head>
         <title>Chris Searle - Cryptographic Keys</title>
-        <Meta title="Cryptographic Keys" />
       </Head>
+      <Meta title="Cryptographic Keys" />
       <h2 className="my-4">Cryptographic Keys</h2>
 
       <div className="card mb-4 border border-primary">

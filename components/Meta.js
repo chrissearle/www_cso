@@ -75,7 +75,7 @@ export default function Meta(props) {
   });
 
   return (
-    <>
+    <Head>
       {fields.name.map((field, index) => (
         <meta key={`name-${index}`} name={field.field} content={field.value} />
       ))}
@@ -86,6 +86,6 @@ export default function Meta(props) {
           content={field.value}
         />
       ))}
-    </>
+    </Head>
   );
 }

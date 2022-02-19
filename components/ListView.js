@@ -14,8 +14,8 @@ export default function ListView({
     <>
       <Head>
         <title>Chris Searle - {listTitle}</title>
-        <Meta title={listTitle} />
       </Head>
+      <Meta title={listTitle} />
       <div className="pt-4">
         <h1>{listTitle}</h1>
 

@@ -8,8 +8,8 @@ export default function ListPostView({ listTitle, items }) {
     <>
       <Head>
         <title>Chris Searle - Posts: {listTitle}</title>
-        <Meta title={`Posts: ${listTitle}`} />
       </Head>
+      <Meta title={`Posts: ${listTitle}`} />
       <div className="pt-4">
         <h1>Posts: {listTitle}</h1>
 
