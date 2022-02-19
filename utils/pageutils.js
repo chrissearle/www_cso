@@ -24,7 +24,7 @@ export function buildListProps(posts, reverse = false) {
 }
 
 export function pagination(files) {
-  const pages = split(files, 20);
+  const pages = split(files, 10);
 
   return {
     pages: pages,
