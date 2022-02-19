@@ -79,7 +79,7 @@ export default function Meta(props) {
       {fields.name.map((field, index) => (
         <meta key={`name-${index}`} name={field.field} content={field.value} />
       ))}
-      {fields.property.map((field) => (
+      {fields.property.map((field, index) => (
         <meta
           key={`property-${index}`}
           property={field.field}
