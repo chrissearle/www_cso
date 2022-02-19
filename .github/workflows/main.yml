@@ -17,26 +17,26 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Build image
-        run: docker build -t chrissearle/www_smu:${{ github.sha }} .
+        run: docker build -t chrissearle/www_cso:${{ github.sha }} .
 
       - name: Tag staging image
         if: github.ref == 'refs/heads/main'
-        run: docker tag chrissearle/www_smu:${{ github.sha }} chrissearle/www_smu:staging
+        run: docker tag chrissearle/www_cso:${{ github.sha }} chrissearle/www_cso:staging
 
       - name: Tag release image
         if: contains(github.ref, 'tag')
-        run: docker tag chrissearle/www_smu:${{ github.sha }} chrissearle/www_smu:latest
+        run: docker tag chrissearle/www_cso:${{ github.sha }} chrissearle/www_cso:latest
 
       - name: Login to DockerHub Registry
         run: echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
 
       - name: Push sha image
-        run: docker push chrissearle/www_smu:${{ github.sha }}
+        run: docker push chrissearle/www_cso:${{ github.sha }}
 
       - name: Push staging image
         if: github.ref == 'refs/heads/main'
-        run: docker push chrissearle/www_smu:staging
+        run: docker push chrissearle/www_cso:staging
 
       - name: Push release image
         if: contains(github.ref, 'tag')
-        run: docker push chrissearle/www_smu:latest
+        run: docker push chrissearle/www_cso:latest
