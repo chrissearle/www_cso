@@ -13,6 +13,7 @@ export async function getStaticPaths() {
         return file.frontmatter.tags.split(", ");
       })
       .flat()
+      .filter((tag) => tag !== "")
   );
 
   return {
