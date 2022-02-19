@@ -2,6 +2,7 @@
 title: Too many open files on OSX/macOS
 date: 2016-10-01 12:18 +0200
 tags: osx, mac, ulimit
+intro: Using launchd to bump max files - similar to sysctl on linux
 ---
 
 I use my macs for development. That means that there's a lot of things running and I usually have a lot of heavy apps open. So I quite often hit the error "Too many open files". On linux - this is fixed using sysctl - but on later OSX/macOS it is done using launchd. Earlier OSX versions could use a /etc/launchd.conf file - but - for the latest versions I've found that this post [from basho docs for riak](https://docs.basho.com/riak/kv/2.1.4/using/performance/open-files-limit/#mac-os-x) works fine.

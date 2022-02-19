@@ -2,6 +2,7 @@
 title: iOS Game Center blank screen/settings hang
 date: 2016-02-05 07:00 +0100
 tags: ios, apple, game center
+intro: Game center hanging on login - how to work around it
 ---
 
 I occasionally see that games using game center for data sync etc stop being able to log in. If I head to the settings app > game center - it can't open the page for the game center settings.

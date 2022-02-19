@@ -2,6 +2,7 @@
 title: Upgrading homebrew postgres
 date: 2016-01-11 09:19 +0100
 tags: postgresql, pg_upgrade, homebrew
+intro: How to deal with upgrading a database after upgrading the engine
 ---
 
 Homebrew postgresql updated from 9.4.x to 9.5.x today.
@@ -10,13 +11,12 @@ This meant that after update it wouldn't start because the database needed upgra
 
 I started with [this article](https://kkob.us/2014/12/20/homebrew-and-postgresql-9-4/) - which in summary would be:
 
-### pg\_upgrade method
+### pg_upgrade method
 
-####  Stop and upgrade
+#### Stop and upgrade
 
     launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
     brew update && brew upgrade postgresql
-    
 
 #### Create empty db
 
@@ -40,9 +40,9 @@ I started with [this article](https://kkob.us/2014/12/20/homebrew-and-postgresql
 
     launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
 
-But - my postgres/template0/template1 databases had different encodings - template1 was in unicode, template0 and postgres in SQL\_ASCII. So pg\_upgrade failed. Couldn't find a configuration to initdb that would work.
+But - my postgres/template0/template1 databases had different encodings - template1 was in unicode, template0 and postgres in SQL_ASCII. So pg_upgrade failed. Couldn't find a configuration to initdb that would work.
 
-### pg\_dumpall method
+### pg_dumpall method
 
 So - time to look at the manual method on [the migration psql doc](http://www.postgresql.org/docs/9.5/static/upgrading.html)
 
@@ -62,7 +62,6 @@ The result was a combination. Note that I'd already performed the installation v
     /usr/local/Cellar/postgresql/9.4.5_2/bin/pg_dumpall > outputfile
     /usr/local/Cellar/postgresql/9.4.5_2/bin/pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log stop
 
-
 #### Create empty db
 
     initdb /usr/local/var/postgres9.5 -E utf8
@@ -80,5 +79,4 @@ The result was a combination. Note that I'd already performed the installation v
 
     psql -d postgres -f outputfile
 
-
-This worked - and now my databases are UTF based across all of them so the pg\_upgrade method should work next time.
+This worked - and now my databases are UTF based across all of them so the pg_upgrade method should work next time.

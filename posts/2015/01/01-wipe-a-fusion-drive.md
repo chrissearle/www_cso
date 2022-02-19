@@ -2,6 +2,7 @@
 title: Wipe a fusion drive
 date: 2015-01-01 12:07 +0100
 tags: osx, fusion, diskutil, mac
+intro: How to wipe a fusion drive and then when it has become two partitions - rebuild it back to a fusion drive
 ---
 
 ### Background

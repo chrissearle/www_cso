@@ -2,6 +2,7 @@
 title: Switching java version on mac
 date: 2015-01-29 15:52 +0100
 tags: java, osx, mac
+intro: Handy aliases for switching between java versions.
 ---
 
 Can't remember where I picked this up - but some handy aliases I use for setting java version (given that you have the required version installed):
