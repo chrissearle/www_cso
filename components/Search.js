@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Script from "next/script";
 
 export default function Search() {
   return (
@@ -20,9 +20,10 @@ export default function Search() {
               value="Search"
             />
           </form>
-          <script
-            async
+
+          <Script
             src="//www.google.com/coop/cse/brand?form=cse-search-box&amp;lang=en"
+            strategy="afterInteractive"
           />
         </div>
       </div>
