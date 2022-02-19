@@ -2,6 +2,7 @@
 title: Monitoring IP changes
 date: 2020-01-29 11:49 +0100
 tags: ipify, cloudflare, node-red, mqtt, mosquitto, grafana, influx, cron
+intro: My ISP connection to home does not offer a static IP address. It does maintain a stable IP address - but after a period offline (either a fault or a power failure or similar) then that IP address may change. How to monitor this?
 ---
 
 My ISP connection to home does not offer a static IP address. It does maintain a stable IP address - but after a period offline (either a fault or a power failure or similar) then that IP address may change.
@@ -36,7 +37,7 @@ My site's main nameserver is ben.ns.cloudflare.com - so we'll use dig to query t
 
 ```shell
  DNS=`dig @BEN.NS.CLOUDFLARE.COM +noall +answer [YOUR_DOMAIN] | sed -e "s/.*A[[:blank:]]*//"`
- ```
+```
 
 ### API
 
@@ -110,7 +111,7 @@ This is still not a very frequent occurrance - I run this call once a minute and
 
 ## MQTT
 
-I already have a raspberry pi running node-red, mqtt (mosquitto), influx DB and grafana - based on this     youtube video by Andreas Spiess [#255 Node-Red, InfluxDB, and Grafana Tutorial on a Raspberry Pi](https://www.youtube.com/watch?v=JdV4x925au0).
+I already have a raspberry pi running node-red, mqtt (mosquitto), influx DB and grafana - based on this youtube video by Andreas Spiess [#255 Node-Red, InfluxDB, and Grafana Tutorial on a Raspberry Pi](https://www.youtube.com/watch?v=JdV4x925au0).
 
 So - if I can post a message when an error occurs - then we can use the same setup to get the information into a graph in grafana.
 
@@ -130,10 +131,10 @@ In Node-RED I created a new flow - it subscribes to the MQTT cron/ip topic. Each
 
 ```js
 msg = {
-    "payload": {
-        "reason": msg.payload        
-    }
-}
+  payload: {
+    reason: msg.payload,
+  },
+};
 
 return msg;
 ```
@@ -155,4 +156,3 @@ And - that together with a line graph - with a line width of 3 and staircase tur
 You can see that there is only a few hits on the first day and none on the second.
 
 So - I'm happy with the ipify service (which is free to use and sets no quota or timing limits) - and yet I also get a nice graph which I likely will never look at after the first week :)
-

@@ -2,6 +2,7 @@
 title: Backup and restore of Unifi Cloud Key Gen2 Plus
 date: 2020-02-22 18:47 +0100
 tags: unifi, unifi controller, unifi protect, unifi cloud key
+intro: After a cloudkey gen2 plus crash - how to get a backup restored when a factory reset installs an older software version.
 ---
 
 My unifi controller and unifi protect software are running on a Cloud Key Gen2 Plus device.
@@ -28,7 +29,7 @@ Now we need to download and install this file.
 
 SSH password: whatever you set up after the reset.
 
-```
+```shell
 ssh ubnt@CLOUD_KEY_IP
 cd /tmp
 wget URL
@@ -44,11 +45,11 @@ There doesn't seem to be a similar way to update protect when the same issue hap
 
 The simplest fix for this was:
 
-* Setup a new NVR with the same name as the old one
-* Give it a new user
-* Start it and login
-* Apply any waiting updates
-* Restore the backup (via import a backup file)
+- Setup a new NVR with the same name as the old one
+- Give it a new user
+- Start it and login
+- Apply any waiting updates
+- Restore the backup (via import a backup file)
 
 ## Backups
 
@@ -64,7 +65,7 @@ I had then created a `backup_to_nas` shell script - ssh to the cloud key and pla
 
 This will use rsync - so we need rsync installed on the cloud key too:
 
-```
+```shell
 apt-get update
 apt-get install rsync
 ```
@@ -73,7 +74,7 @@ You'll need an ssh key on the cloud key and its public key needs to be on the na
 
 Then the script itself is just two rsync calls
 
-```
+```shell
 rsync -qa /etc/unifi-protect/backups/ user@nas-host:/path/to/backup/Unifi/protect/
 
 rsync -qa /srv/unifi/data/backup/autobackup/ user@nas-host:/path/to/backup/Unifi/unifi/

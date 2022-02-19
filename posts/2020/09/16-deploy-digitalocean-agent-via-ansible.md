@@ -1,7 +1,8 @@
 ---
-title: Deploy digitalocean agent via ansible
+title: Deploy digital ocean agent via ansible
 date: 2020-09-16 08:51 +0200
 tags: ansible, linux, debian
+intro: Ansible script for installing the digital ocean metrics agent to get dashboard metrics
 ---
 
 Digital Ocean provide a metrics agent that you can install to provide metrics that can be displayed on their dashboard.

@@ -21,9 +21,19 @@ export default function PostTags({ tags, series = null }) {
           </Link>
         ))}
       {series && (
-        <button className="mx-2 btn btn-outline-success btn-sm">
-          {series}
-        </button>
+        <Link
+          href={{
+            pathname: "/series/[series]",
+            query: {
+              series: series,
+            },
+          }}
+          passHref
+        >
+          <button className="mx-2 btn btn-outline-success btn-sm">
+            {series}
+          </button>
+        </Link>
       )}
     </>
   );

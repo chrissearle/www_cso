@@ -3,6 +3,7 @@ title: Revisiting the S'banken API with SwiftUI
 date: 2020-03-02 20:13 +0100
 tags: s'banken, open banking, ios, swift, swiftui, xcode
 series: Revisiting the S'banken API with SwiftUI
+intro: In this series - we will take a look at creating the app from scratch - but using SwiftUI and some helper libraries.
 ---
 
 Back in September 2018 [I wrote about using the new S'banken API](/2018/09/26/pocket-money-with-the-s-banken-api/) to create a pocket money app for iOS - since they didn't have one at the time.

@@ -8,6 +8,9 @@ import "prismjs/components/prism-ini";
 import "prismjs/components/prism-c";
 import "prismjs/components/prism-cpp";
 import "prismjs/components/prism-bash";
+import "prismjs/components/prism-java";
+import "prismjs/components/prism-yaml";
+import "prismjs/components/prism-swift";
 
 import PostTags from "components/PostTags";
 import PostLink from "components/PostLink";

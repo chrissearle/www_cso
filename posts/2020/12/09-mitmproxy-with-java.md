@@ -2,6 +2,8 @@
 title: mitmproxy with java
 date: 2020-12-09 08:05 +0100
 tags: java, mitmproxy
+image: mitm_curl_response.png
+intro: Using mitmproxy to debug java web calls
 ---
 
 I recently had the need to inspect what a java application was actually sending over the wire including the body content on an https connection.
@@ -32,20 +34,33 @@ curl --proxy 127.0.0.1:8899 --cacert ~/.mitmproxy/mitmproxy-ca-cert.pem https://
 
 In the mitmproxy terminal there should be one flow now shown
 
-![mitmproxy flow from curl](mitm_curl_flow.png)
+<figure class="figure w-100 text-center">
+  <img class="figure-img img-fluid rounded" src="/images/posts/2020/12/mitm_curl_flow.png" title="mitmproxy flow from curl" alt="mitmproxy flow from curl"/>
+  <figcaption class="figure-caption">mitmproxy flow from curl</figcaption>
+</figure>
 
 Using the arrow keys (up/down) to select a line - hitting enter drills down.
 
 There are three views (left/right arrow to navigate).
 
-![mitmproxy curl request](mitm_curl_request.png)
-![mitmproxy curl response](mitm_curl_response.png)
-![mitmproxy curl details](mitm_curl_detail.png)
+<figure class="figure w-100 text-center">
+  <img class="figure-img img-fluid rounded" src="/images/posts/2020/12/mitm_curl_request.png" title="mitmproxy curl request" alt="mitmproxy curl request"/>
+  <figcaption class="figure-caption">mitmproxy curl request</figcaption>
+</figure>
+
+<figure class="figure w-100 text-center">
+  <img class="figure-img img-fluid rounded" src="/images/posts/2020/12/mitm_curl_response.png" title="mitmproxy curl response" alt="mitmproxy curl response"/>
+  <figcaption class="figure-caption">mitmproxy curl response</figcaption>
+</figure>
+
+<figure class="figure w-100 text-center">
+  <img class="figure-img img-fluid rounded" src="/images/posts/2020/12/mitm_curl_detail.png" title="mitmproxy curl details" alt="mitmproxy curl details"/>
+  <figcaption class="figure-caption">mitmproxy curl details</figcaption>
+</figure>
 
 To get back to the flow list - just hit `q`
 
 So - mitmproxy is working as expected. To use this with a real browser just set it as your browser's proxy (remember that the browser will have to trust the mitmproxy CA certificate - more on that on [mitmproxy docs](https://docs.mitmproxy.org/stable/concepts-certificates/))
-
 
 ## Java
 
@@ -68,7 +83,7 @@ public class ProxyTest {
         .build();
 
     HttpClient client = HttpClient.newBuilder().build();
-    
+
     HttpResponse<String> response =
         client.send(request, HttpResponse.BodyHandlers.ofString());
 
@@ -127,7 +142,10 @@ java -Dhttps.proxyHost=localhost -Dhttps.proxyPort=8899 -DProxyTest  -Djavax.net
 
 This time the command should complete and we should now see the call in the mitmproxy flow list
 
-![mitmproxy java httpclient request](mitm_java_httpclient_request.png)
+<figure class="figure w-100 text-center">
+  <img class="figure-img img-fluid rounded" src="/images/posts/2020/12/mitm_java_httpclient_request.png" title="mitmproxy java httpclient request" alt="mitmproxy java httpclient request"/>
+  <figcaption class="figure-caption">mitmproxy java httpclient request</figcaption>
+</figure>
 
 ## Java Spring WebClient proxy (netty)
 
@@ -135,7 +153,7 @@ A fair number of projects I work on are spring boot based, using the reactive we
 
 For this - we will use a maven project generated at https://start.spring.io/ (java 11/maven/spring boot 2.4.0) with one added dependency - Spring Reactive Web.
 
-This generates a [pom file](pom.xml)
+This generates a [pom file](/images/posts/2020/12/pom.xml)
 
 Just to make things simple - we'll make this a command line app and just call the request synchronously in run - first without the proxy:
 
@@ -184,11 +202,14 @@ Now - let's add the proxy to the client instance. Here the host and port are har
 
     System.out.println(page);
   }
-  ```
+```
 
-  Again - if we run this then we get a PKIX path error - so we need to remember to add the truststore `-Djavax.net.ssl.trustStore=cacerts`
+Again - if we run this then we get a PKIX path error - so we need to remember to add the truststore `-Djavax.net.ssl.trustStore=cacerts`
 
-  ![mitmproxy netty request](mitm_netty_request.png)
+<figure class="figure w-100 text-center">
+  <img class="figure-img img-fluid rounded" src="/images/posts/2020/12/mitm_netty_request.png" title="mitmproxy netty request" alt="mitmproxy netty request"/>
+  <figcaption class="figure-caption">mitmproxy netty request</figcaption>
+</figure>
 
 ## Summary
 
