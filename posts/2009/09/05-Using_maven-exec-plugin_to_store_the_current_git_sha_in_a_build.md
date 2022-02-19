@@ -8,6 +8,7 @@ The current version of the maven buildnumber plugin does not yet support the git
 
 However - if all you need is a file somewhere in the deployed artifact that contains the sha then this workaround may help until the git scm is supported by buildnumber:
 
+```xml
     <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>exec-maven-plugin</artifactId>
@@ -30,5 +31,6 @@ However - if all you need is a file somewhere in the deployed artifact that cont
             <outputFile>target/classes/gitsha.txt</outputFile>
         </configuration>
     </plugin>
+```
 
 This will put a file in the artifact containing the sha. You will need git in your path for this to work.

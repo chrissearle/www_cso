@@ -16,25 +16,29 @@ This is a rough guide - it includes files, pipes, tcp connections etc etc - so i
 
 So - here's the plugin code I ended up using:
 
-    #!/bin/sh
-    case $1 in
-       config)
-            cat <<'EOM'
-    graph_title Open file count for glassfish
-    graph_vlabel filecount
-    filecount.label filecount
-    graph_args --base 1000 -l 0
-    graph_category Processes
-    EOM
-            exit 0;;
-    esac
-    echo -n "filecount.value "
-    lsof -u glassfish | wc -l</code></pre>
+```shell
+#!/bin/sh
+case $1 in
+    config)
+        cat <<'EOM'
+graph_title Open file count for glassfish
+graph_vlabel filecount
+filecount.label filecount
+graph_args --base 1000 -l 0
+graph_category Processes
+EOM
+        exit 0;;
+esac
+echo -n "filecount.value "
+lsof -u glassfish | wc -l
+```
 
 This got added as /etc/munin/plugins/glassfish_filecount. I also had to specify in /etc/munin/plugin-conf.d/munin-node (paths are from a debian install):
 
-    [glassfish_filecount]
-    user root
+```ìni
+[glassfish_filecount]
+user root
+```
 
 to avoid errors from lsof.
 

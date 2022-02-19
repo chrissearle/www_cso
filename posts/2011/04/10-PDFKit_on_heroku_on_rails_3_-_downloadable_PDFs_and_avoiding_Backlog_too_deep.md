@@ -1,7 +1,6 @@
 ---
 title: PDFKit on heroku on rails 3 - downloadable PDFs and avoiding Backlog too deep
 date: 2011-04-10 23:14:25 +0200
-published: false
 tags: ruby, rails, heroku, pdfkit
 ---
 
@@ -39,6 +38,8 @@ You can check in your controller (or views) if the current generation is PDF by 
 
 e.g. for setting the Content-Disposition for download (attachment):
 
+```ruby
     if (request.headers['Rack-Middleware-PDFKit'] == 'true')
       headers["Content-Disposition"] = "attachment; filename=filename.pdf"
     end
+```

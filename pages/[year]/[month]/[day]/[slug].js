@@ -15,6 +15,8 @@ import "prismjs/components/prism-javascript";
 import "prismjs/components/prism-json";
 import "prismjs/components/prism-perl";
 import "prismjs/components/prism-ruby";
+import "prismjs/components/prism-sql";
+import "prismjs/components/prism-xml-doc";
 
 import PostTags from "components/PostTags";
 import PostLink from "components/PostLink";

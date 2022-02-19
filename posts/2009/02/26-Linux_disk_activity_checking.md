@@ -14,10 +14,14 @@ This article is basically a copy of that text so that I can find it next time I 
 
 Yes, you can. But first, check that you have modified your syslog.conf to not sync, as described in the last question of the previous section. To debug disk activity, you can do:
 
-    echo 1 > /proc/sys/vm/block_dump
+```shell
+echo 1 > /proc/sys/vm/block_dump
+```
 
 (Warning: you must disable syslogd before you do this, or you must make sure that kernel output is not logged. If you forget this, your system may get into a feedback loop, where syslogd causes disk activity, this causes kernel output, and this causes syslogd to do more disk activity, etcetera!)
 
 This enables file/disk activity debugging in the kernel. You can read the output using dmesg. When you're done, disable block dump using
 
-    echo 0 > /proc/sys/vm/block_dump
+```shell
+echo 0 > /proc/sys/vm/block_dump
+```

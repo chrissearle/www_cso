@@ -1,7 +1,6 @@
 ---
 title: Installing pdf-writer gem for rails
 date: 2010-04-17 09:07:18 +0200
-published: false
 ---
 
 ## Install gem
@@ -29,7 +28,7 @@ published: false
 This is rails 2.3.5
 
      ~/src/rails $ rails test
-      create  
+      create
       create  app/controllers
       create  app/helpers
       create  app/models
@@ -104,7 +103,7 @@ This is rails 2.3.5
       create  log/production.log
       create  log/development.log
       create  log/test.log
-    ~/src/rails $ 
+    ~/src/rails $
 
 ## Config rails
 
@@ -165,11 +164,11 @@ Edit config/environment.rb and add
      script/server:3
      Missing these required gems:
        pdf-writer  = 1.1.8
-     
+
      You're running:
        ruby 1.8.7.174 at /opt/local/bin/ruby
        rubygems 1.3.5 at /Users/chris/.gem/ruby/1.8, /opt/local/lib/ruby/gems/1.8
-     
+
      Run `rake gems:install` to install the missing gems.
 
 ## Check that gem is present

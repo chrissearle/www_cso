@@ -12,9 +12,9 @@ I can only say that there is no sign of it yet on my handset (but then mine took
 
 Regards the network update mentioned in the comments.
 
-MMS: Yes
-Tethinging USB: Yes
-Tethering Bluetooth: Yes
+    MMS: Yes
+    Tethinging USB: Yes
+    Tethering Bluetooth: Yes
 
 So - thanks to NetCom for enabling the service ;)
 

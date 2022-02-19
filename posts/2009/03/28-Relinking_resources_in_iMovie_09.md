@@ -16,14 +16,18 @@ Make sure that iMovie isn't running and you'll probably want to backup the Proje
 
 So at the command line I did:
 
-    cd Movies/iMovie Projects.localized/&lt;ProjectName&gt;.rcproject
-    plutil -convert xml1 Project
+```shell
+cd Movies/iMovie Projects.localized/&lt;ProjectName&gt;.rcproject
+plutil -convert xml1 Project
+```
 
 Project is now an xml plist and you can edit it. I opened it in textmate and then searched for the old path (in my case Downloads) and then replaced with the new one (it didn't like spaces in the path - but - instead of trying different escape syntaxes etc I just used a path with no spaces). I expect you can edit it with the standard plist editor too - but I didn't try.
 
 Then once complete:
 
-    cd Movies/iMovie Projects.localized/&lt;ProjectName&gt;.rcproject
+```shell
+cd Movies/iMovie Projects.localized/&lt;ProjectName&gt;.rcproject
 plutil -convert binary1 Project
+```
 
 This should now allow iMovie when next opened to find the missing resources. At least it did for me.

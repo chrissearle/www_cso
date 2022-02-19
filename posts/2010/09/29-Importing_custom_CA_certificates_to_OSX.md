@@ -12,4 +12,6 @@ Importing via Keychain Access sometimes fails with cryptic error codes.
 
 Here's how to do it via the command line:
 
-    sudo security import <cert file name> -k /Library/Keychains/System.keychain 
+```shell
+sudo security import <cert file name> -k /Library/Keychains/System.keychain
+```

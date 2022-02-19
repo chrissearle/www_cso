@@ -21,6 +21,9 @@ It defaults to showing the Attributes pane - select Access Control at the top.
 
 Add iPhoto to the list of applications (the + symbol):
 
-![Screenshot](password-access.png 'Screenshot')
+<figure class="figure w-100 text-center">
+  <img class="figure-img img-fluid rounded" src="/images/posts/2010/11/password-access.png" title="Screenshot" alt="Screenshot"/>
+  <figcaption class="figure-caption">Screenshot</figcaption>
+</figure>
 
 Save changes and you're done.

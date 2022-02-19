@@ -4,7 +4,7 @@ date: 2008-07-28 14:01:52 +0200
 tags: web, grails
 ---
 
-In the [attached datetest.tar.gz](datetest.tar.gz) demo app that shows date problem.
+In the [attached datetest.tar.gz](/images/posts/2008/07/datetest.tar.gz) demo app that shows date problem.
 
 Browse to .../datecheck/add
 
