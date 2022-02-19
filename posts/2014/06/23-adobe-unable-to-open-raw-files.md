@@ -2,11 +2,12 @@
 title: Adobe - unable to open raw files
 date: 2014-06-23 19:25 +0200
 tags: adobe, lightroom, photoshop, bridge
+intro: Photoshop unable to open raw files from Lightroom
 ---
 
 Some chat with @AdobeCare - see [this update](#update1) to the post. Still not solved though
 
---------
+---
 
 This is an issue I've been having since my previous iMac and Lightroom4/Photoshop CS5.
 
@@ -24,10 +25,10 @@ I also have it on my macbook pro with Lightroom 5, Photoshop CC and Photoshop CC
 
 This affects DNG raw format files that are originally from:
 
-* D700 (Nikon NEF)
-* D4S (Nikon NEF)
-* S100 (Canon CR2)
-* X100S (Fuji RAF)
+- D700 (Nikon NEF)
+- D4S (Nikon NEF)
+- S100 (Canon CR2)
+- X100S (Fuji RAF)
 
 ## Symptom
 
@@ -53,6 +54,7 @@ Last thing I did was to uninstall every adobe app I had on my iMac then reinstal
 
 Currently I have to export from Lightroom as tiff to same folder, sync the folder to get the tiff into Lightroom and then open in Photoshop. Means that you lose a lot of the continuity, and means that the library is getting lots of odd duplicate tiff files.
 Cam
+
 ## Next steps?
 
 No idea :(
@@ -61,20 +63,21 @@ I've tried asking in the forums - no-one could give me a fix.
 
 I've tried today using adobe's support help chat.
 
-* Log in
-* Help
-* Chat
-* Fill out the description in detail
-* Submit
-* Wait
-* Wait
-* Wait
-* Get a "You're now talking to ..." and someone's name
-* Then **instantly** over to "Chat is not currently available".
+- Log in
+- Help
+- Chat
+- Fill out the description in detail
+- Submit
+- Wait
+- Wait
+- Wait
+- Get a "You're now talking to ..." and someone's name
+- Then **instantly** over to "Chat is not currently available".
 
 Rinse & repeat. Tried both chrome and firefox.
 
---------
+---
+
 <a name="update1"></a>
 
 ## Update - 23/06 - 22:00

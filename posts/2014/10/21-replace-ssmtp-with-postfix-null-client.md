@@ -2,6 +2,7 @@
 title: Replace ssmtp with postfix null client
 date: 2014-10-21 09:49 +0200
 tags: mail, gmail, ssmtp, postfix
+intro: ssmtp failing to login to gmail for one machine - replacing with postfix null client
 ---
 
 I've been using ssmtp to provide outgoing mail to two machines. This provides a simple way to send mail out using gmail without having to have a running mail server. It had the restriction that you had to log in to gmail to use it.

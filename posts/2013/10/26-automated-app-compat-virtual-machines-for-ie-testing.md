@@ -12,14 +12,14 @@ So - first step was simply to install virtualbox (or in my case update it).
 
 Then - all you have to do is
 
-~~~ shell
+```shell
 curl -s https://raw.github.com/xdissent/ievms/master/ievms.sh | bash
-~~~
+```
 
 Or if you want specific IE versions (since this is really for IE testing - e.g. IE7 and IE9):
 
-~~~ shell
+```shell
 curl -s https://raw.github.com/xdissent/ievms/master/ievms.sh | env IEVMS_VERSIONS="7 9" bash
-~~~
+```
 
 More details are on the github page - including info on snapshots (which can help you get around the 30 day limit - just revert to the original snapshot).

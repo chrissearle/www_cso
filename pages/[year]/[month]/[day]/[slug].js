@@ -13,6 +13,8 @@ import "prismjs/components/prism-yaml";
 import "prismjs/components/prism-swift";
 import "prismjs/components/prism-javascript";
 import "prismjs/components/prism-json";
+import "prismjs/components/prism-perl";
+import "prismjs/components/prism-ruby";
 
 import PostTags from "components/PostTags";
 import PostLink from "components/PostLink";

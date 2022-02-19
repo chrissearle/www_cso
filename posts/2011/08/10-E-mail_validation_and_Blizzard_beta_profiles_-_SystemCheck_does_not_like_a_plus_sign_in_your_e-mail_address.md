@@ -2,6 +2,7 @@
 title: E-mail validation and Blizzard beta profiles - SystemCheck does not like a plus sign in your e-mail address
 date: 2011-08-10 07:48:39 +0200
 tags: blizzard, email, validation
+image: Battle.net-SystemCheck.png
 ---
 
 I've been annoyed about this for a long time. Forms that simply reject e-mail addresses with a + in them (perfectly valid according to the standards/RFC's - see [RFC 2822](http://www.faqs.org/rfcs/rfc2822.html) 3.2.4 Atom - definition of atext).
@@ -16,7 +17,10 @@ Analysis went fine - but sending the report always failed.
 
 It always gave "There was a problem sending your system information to Battle.net":
 
-![Screenshot](Battle.net-SystemCheck.png 'Screenshot')
+<figure class="figure w-100 text-center">
+  <img class="figure-img img-fluid rounded" src="/images/posts/2011/08/Battle.net-Systemcheck.png" title="Screenshot" alt="Screenshot"/>
+  <figcaption class="figure-caption">Screenshot</figcaption>
+</figure>
 
 Every FAQ on it suggests network issues or similar. This time I even got around to using wireshark to prove that the connection was OK.
 

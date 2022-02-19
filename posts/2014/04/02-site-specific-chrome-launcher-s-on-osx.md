@@ -6,7 +6,7 @@ tags: chrome, osx
 
 I was looking for a chrome based site specific browser (SSB) for mac. This is similar to http://fluidapp.com/ but chrome based.
 
-I ended up using the shell script makeapp.sh - I used the version from [this gist](https://gist.github.com/sanfordredlich/4568525) - which I've also linked locally: [makeapp.sh](makeapp.sh)
+I ended up using the shell script makeapp.sh - I used the version from [this gist](https://gist.github.com/sanfordredlich/4568525) - which I've also linked locally: [makeapp.sh](/images/posts/2014/04/makeapp.sh)
 
 You simply run the script - give it a name (no spaces), a URL and an icon and it will create an app in /Applications.
 

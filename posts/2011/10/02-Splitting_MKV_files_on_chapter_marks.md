@@ -14,7 +14,7 @@ I have no idea how long that option has been there - but it certainly makes life
 
 **Original post**
 
-*The original post shows how to do timecode based splitting which may still be useful for people:*
+_The original post shows how to do timecode based splitting which may still be useful for people:_
 
 I had the need to split some mkv (matroska video) files on chapter marks.
 
@@ -26,6 +26,7 @@ Most tutorials concentrate on mkvmerge gui which I didn't have - just the comman
 
 So - an example:
 
+```
     $ mkvinfo testfile.mkv  | grep ChapterTimeStart
         |   + ChapterTimeStart: 00:00:00.000000000
         |   + ChapterTimeStart: 00:08:45.000000000
@@ -39,10 +40,13 @@ So - an example:
         |   + ChapterTimeStart: 01:03:57.336000000
         |   + ChapterTimeStart: 01:16:19.296000000
         |   + ChapterTimeStart: 01:26:53.456000000
+```
 
 Let's say we want to split off the first chapter:
 
-    $ mkvmerge -o output.mkv --split "timecodes:00:08:45.00" testfile.mkv
+```shell
+$ mkvmerge -o output.mkv --split "timecodes:00:08:45.00" testfile.mkv
+```
 
 timecodes has hh:mm:ss.ss (hours, mins, secs in decimal) as format and can take comma sep list for splitting at several points.
 

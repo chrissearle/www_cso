@@ -10,10 +10,14 @@ Clean upgrade - just followed [the OpenDJ wiki](https://wikis.forgerock.org/conf
 
 Only change I had to make was from
 
-    ./bin/rebuild-index -i dn2id -b "dc=example,dc=com"
+```shell
+./bin/rebuild-index -i dn2id -b "dc=example,dc=com"
+```
 
 to
 
-    ./bin/rebuild-index --rebuildAll -b "dc=example,dc=com"
+```shell
+./bin/rebuild-index --rebuildAll -b "dc=example,dc=com"
+```
 
 Rebuilding the dn2id index only left the sync-conflict index for my root backend in degraded mode.

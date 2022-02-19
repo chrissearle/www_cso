@@ -15,6 +15,7 @@ The reason for this is that the request calls out to wkhtmltopdf which in turn r
 
 From [http://jguimont.com/post/2627758108/pdfkit-and-its-middleware-on-heroku](http://jguimont.com/post/2627758108/pdfkit-and-its-middleware-on-heroku) I changed the pdfkit.rb initializer file (can be in any initializer but since I already have one for pdfkit to set paper layout and size) to include:
 
+```ruby
     ActionController::Base.asset_host = Proc.new { |source, request|
       if request.env["REQUEST_PATH"].include? ".pdf"
         "file://#{Rails.root.join('public')}"
@@ -22,6 +23,7 @@ From [http://jguimont.com/post/2627758108/pdfkit-and-its-middleware-on-heroku](h
         "#{request.protocol}#{request.host_with_port}"
       end
     }
+```
 
 This then retrieves these resources locally as files rather than as web requests when the request path includes ".pdf".
 
@@ -33,7 +35,7 @@ This is controlled by the HTTP response header Content-Disposition.
 
 The PDFKit middleware simply generates the PDF - it doesn't play with the headers beyond that.
 
-You can check in your controller (or views) if the current generation is PDF by checking the request headers. 
+You can check in your controller (or views) if the current generation is PDF by checking the request headers.
 
 e.g. for setting the Content-Disposition for download (attachment):
 

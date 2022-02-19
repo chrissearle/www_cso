@@ -2,6 +2,7 @@
 title: sSMTP and Gmail - authentication suddenly failing
 date: 2014-09-30 12:27 +0200
 tags: mail, gmail, google, smtp, ssmtp
+intro: ssmtp suddenly isn't able to get a valid authentication from gmail
 ---
 
 I've been running sSMTP as my mailer daemon for a long time using my google apps domain as mail server.
@@ -44,5 +45,3 @@ I've turned on two-factor auth and set up an app specific password.
 I've checked that SPF and DKIM are set up on the domain (a bit cargo-culting here - found this on a google help page)
 
 Nothing helps. As far as I can see - everything is correct just that google will no longer accept mail from this ssmtp instance - and I have no idea why :(
-
-

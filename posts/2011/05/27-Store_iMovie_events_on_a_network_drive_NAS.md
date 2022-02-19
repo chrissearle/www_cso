@@ -10,7 +10,9 @@ So [this blog post](http://carryflag.blogspot.com/2010/06/imovie-event-library-o
 
 Short form - you just need to set a default:
 
-    defaults write -app iMovie allowNV -bool true
+```shell
+defaults write -app iMovie allowNV -bool true
+```
 
 And now - when iMovie is opened the network drives are just as available as any other - and you can simply drag to copy or move the events to your NAS from within iMovie - which keeps the links to projects working.
 

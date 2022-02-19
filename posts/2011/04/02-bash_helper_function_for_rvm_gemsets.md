@@ -14,7 +14,7 @@ A small bash function (dump it in .bash_profile) and then when in the projects h
 
 Note - it will not install a missing ruby.
 
-<pre><code>
+```ruby
 function rvmgo {
     ver=1.9.2
     ver=${1-$ver}
@@ -35,5 +35,4 @@ function rvmgo {
         fi
     fi
 }
-</code></pre>
-
+```
