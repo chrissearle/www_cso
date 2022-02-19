@@ -9,7 +9,7 @@ export default function Search() {
             <input
               type="hidden"
               name="cx"
-              value="partner-pub-6208435820744910:5135878443"
+              value={process.env.NEXT_PUBLIC_GOOGLE_CSE}
             />
             <input type="hidden" name="ie" value="UTF-8" />
             <input type="text" name="q" className="form-control" />
