@@ -29,7 +29,7 @@ export default function Header() {
       external: false,
     },
     {
-      href: "https://about.me/chrissearle/",
+      href: process.env.NEXT_PUBLIC_ABOUT,
       title: "Other Sites",
       external: true,
     },

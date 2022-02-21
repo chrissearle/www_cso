@@ -39,7 +39,7 @@ export default function Meta(props) {
     if (frontmatter.updated) {
       metafields["article:modified_time"] = metaDate(frontmatter.updated);
     }
-    metafields["og:author"] = "https://about.me/chrissearle";
+    metafields["og:author"] = process.env.NEXT_PUBLIC_ABOUT;
 
     if (frontmatter.image) {
       const image = frontmatter.image;
