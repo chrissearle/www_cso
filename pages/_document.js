@@ -5,6 +5,18 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          <link
+            rel="alternate"
+            type="application/rss+xml"
+            title={process.env.NEXT_PUBLIC_SITE_NAME}
+            href="rss.xml"
+          />
+          <link
+            rel="alternate"
+            type="application/feed+json"
+            title={process.env.NEXT_PUBLIC_SITE_NAME}
+            href="feed.json"
+          />
           <script
             async
             src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
