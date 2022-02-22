@@ -10,18 +10,24 @@ I fetched the latest spamstats.in file from CVS - this is not ready to run as it
 
 Get the file
 
-    wget 'http://cvs.sourceforge.net/viewcvs.py/*checkout*/munin/munin/node/node.d/spamstats.in'
+```shell
+wget 'http://cvs.sourceforge.net/viewcvs.py/*checkout*/munin/munin/node/node.d/spamstats.in'
+```
 
 Once this is in place
 
-    cd /etc/munin/plugins
-    ln -s /usr/share/munin/plugins/spamstats
+```shell
+cd /etc/munin/plugins
+ln -s /usr/share/munin/plugins/spamstats
+```
 
 Then edit /etc/munin/plugin-conf.d/munin-mode - I'm using exim4 - which logs to /var/log/mail.log - and with root.adm ownership - so I used the following:
 
-    [spamstats]
-    group adm
-    env.logfile mail.log
+```ini
+[spamstats]
+group adm
+env.logfile mail.log
+```
 
 env.logdir and env.logfile are used to specifiy which logfile.
 

@@ -8,4 +8,6 @@ From [this blog](http://blog.chris.de/archives/22_Nokias_3gp_Files.html) informa
 
 In /etc/mplayer/codecs - find the section for the videocodec ffh263 (just search for it) and add:
 
+```none
 format 0x33363273
+```

@@ -18,22 +18,26 @@ In /etc/udev there is also a file called cd-aliases.rules. To get the aliases fo
 
 So, as root (or use sudo)
 
-    # cd /etc/udev/rules.d
-    # ls -l
-    lrwxrwxrwx  1 root  root  13 2004-10-15 12:51 udev.rules -> ../udev.rules
-    # ln -s ../cd-aliases.rules .
-    # ls -l
-    lrwxrwxrwx  1 root  root  13 2004-12-18 12:12 udev.rules -> ../cd-aliases.rules
-    lrwxrwxrwx  1 root  root  13 2004-10-15 12:51 udev.rules -> ../udev.rules
+```shell
+# cd /etc/udev/rules.d
+# ls -l
+lrwxrwxrwx  1 root  root  13 2004-10-15 12:51 udev.rules -> ../udev.rules
+# ln -s ../cd-aliases.rules .
+# ls -l
+lrwxrwxrwx  1 root  root  13 2004-12-18 12:12 udev.rules -> ../cd-aliases.rules
+lrwxrwxrwx  1 root  root  13 2004-10-15 12:51 udev.rules -> ../udev.rules
+```
 
 Restarting udev will (since the ide-cd module is loaded) find the correct info in sysfs (/sys) to correctly generate devices.
 
 For example on my home box:
 
-    $ ls -l /dev/cd*
-    lrwxrwxrwx  1 root root 3 2005-01-20 19:45 /dev/cdrom -> hdc
-    lrwxrwxrwx  1 root root 3 2005-01-20 19:45 /dev/cdrom1 -> hdd
-    lrwxrwxrwx  1 root root 3 2005-01-20 19:45 /dev/cdrw -> hdd
+```shell
+$ ls -l /dev/cd*
+lrwxrwxrwx  1 root root 3 2005-01-20 19:45 /dev/cdrom -> hdc
+lrwxrwxrwx  1 root root 3 2005-01-20 19:45 /dev/cdrom1 -> hdd
+lrwxrwxrwx  1 root root 3 2005-01-20 19:45 /dev/cdrw -> hdd
+```
 
 And it's identified hdc and hdd correctly so that they are members of the cdrom group.
 

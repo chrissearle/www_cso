@@ -10,4 +10,6 @@ Something new learned today:
 
 Example - include an IE specific stylesheet (to correct for IE's CSS border model) without hacking the stylesheet to pieces:
 
-    <!--[if IE]><link rel="stylesheet" type="text/css" href="ie.css"/><![endif]-->
+```xml
+<!--[if IE]><link rel="stylesheet" type="text/css" href="ie.css"/><![endif]-->
+```

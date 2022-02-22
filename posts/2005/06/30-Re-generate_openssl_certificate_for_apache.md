@@ -6,4 +6,6 @@ tags: linux, ssl, apache2
 
 Just a note to self - to generate a new certificate
 
-    openssl req -new -key /etc/ssl/private/keyfile -x509 -days nnn -out /etc/apache2/ssl/certfile
+```shell
+openssl req -new -key /etc/ssl/private/keyfile -x509 -days nnn -out /etc/apache2/ssl/certfile
+```

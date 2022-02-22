@@ -8,8 +8,10 @@ Debian linux running a 2.6 kernel
 
 To disable IPv6 you need both the following lines in your /etc/modprobe.conf file
 
-    alias ipv6 off
-    alias net-pf-10 off
+```none
+alias ipv6 off
+alias net-pf-10 off
+```
 
 Thanks to the guys on the #debian freenode channel for help with this.
 
@@ -21,8 +23,12 @@ Moved the config to /etc/modprobe.d/local
 
 This stopped working on 2.6.18 on debian etch. Now my /etc/modprobe.d/local now contains just
 
-    blacklist ipv6
+```none
+blacklist ipv6
+```
 
 Apparently - in some cases this may still not work - in that case it is possible to try
 
-    install ipv6 /bin/true
+```none
+install ipv6 /bin/true
+```

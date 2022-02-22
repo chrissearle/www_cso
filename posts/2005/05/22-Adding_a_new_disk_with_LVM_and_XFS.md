@@ -12,29 +12,41 @@ All of the required steps are documented [on the LVM HOWTO](http://www.tldp.org/
 
 First - we need to decide if we are going to use the whole disk or a partition. In this case - the whole disk /dev/hdb. To be able to do this - any existing partition table must be removed
 
-    dd if=/dev/zero of=/dev/hdb bs=1k count=1
-    blockdev --rereadpt /dev/hdb
+```shell
+dd if=/dev/zero of=/dev/hdb bs=1k count=1
+blockdev --rereadpt /dev/hdb
+```
 
 Not sure if the blockdev command is needed - it worked without for me.
 
 Now - we can create a physical volume on the device
 
-    pvcreate /dev/hdb
+```shell
+pvcreate /dev/hdb
+```
 
 We want to add this to the existing volume group vg0
 
-    vgextend vg0 /dev/hdb
+```shell
+vgextend vg0 /dev/hdb
+```
 
 So - let's extend an existing logical volume. For testing we'll try /tmp since the contents are not so important. It's currently 512M - lets double that.
 
-    lvextend -L1G /dev/vg0/tmp
+```shell
+lvextend -L1G /dev/vg0/tmp
+```
 
 And then - xfs needs to be told to use the whole area (one of the reasons for choosing xfs is xfs_growfs - since it can be run on a mounted active directory)
 
-    xfs_growfs /tmp
+```shell
+xfs_growfs /tmp
+```
 
 Note - the lvextend command here is told to set the size to 1G - we could have used -L+1G - which would have added 1G to the existing size.
 
 To add a new logical volume newvol to volume group vg0 instead you could use
 
-    lvcreate -L1500 -nnewvol vg0
+```shell
+lvcreate -L1500 -nnewvol vg0
+```

@@ -10,16 +10,18 @@ The affected file is symlinked in at /etc/munin/plugins/exim_mailstats
 
 To not show these as true rejects - in the parseEximfile function change
 
-    elsif ($line=~/rejected/)
-    {
+```none
+elsif ($line=~/rejected/)
+{
+    $rejected++;
+}
+
+elsif ($line=~/rejected/)
+{
+    if ($line!~/greylisted/) {
         $rejected++;
     }
-
-    elsif ($line=~/rejected/)
-    {
-        if ($line!~/greylisted/) {
-            $rejected++;
-        }
-    }
+}
+```
 
 You could probably add a new line on the graph to show greylist entries if you wanted.

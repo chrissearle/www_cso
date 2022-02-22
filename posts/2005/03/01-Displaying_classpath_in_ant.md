@@ -8,9 +8,13 @@ Something I always forget :-)
 
 Given
 
-    <path id="class.path">
+```xml
+<path id="class.path">
+```
 
 use
 
-    <property name="cp" refid="class.path"/>
-    <echo message="Classpath is ${cp}"/>
+```xml
+<property name="cp" refid="class.path"/>
+<echo message="Classpath is ${cp}"/>
+```
