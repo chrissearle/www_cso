@@ -19,7 +19,7 @@
     "marked": "^4.0.12",
     "mime-types": "^2.1.34",
     "moment": "^2.29.1",
-    "moment-timezone": "^0.5.34",
+    "moment-timezone": "^0.5.35",
     "next": "^12.1.0",
     "next-sitemap": "^2.4.3",
     "prismjs": "^1.27.0",
