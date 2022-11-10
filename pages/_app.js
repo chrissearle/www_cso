@@ -1,21 +1,19 @@
-import { useEffect } from "react";
-import { useRouter } from "next/router";
-
-import Layout from "components/Layout";
-
-import { pageview } from "lib/ga";
-
 import "bootstrap/dist/css/bootstrap.css";
 import "prismjs/themes/prism-solarizedlight.css";
-
 import "styles/overrides.css";
+
+import * as gtag from "../lib/ga";
+
+import Layout from "components/Layout";
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
 
   useEffect(() => {
     const handleRouteChange = (url) => {
-      pageview(url);
+      gtag.pageview(url);
     };
 
     router.events.on("routeChangeComplete", handleRouteChange);
