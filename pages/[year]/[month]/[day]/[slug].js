@@ -1,7 +1,3 @@
-import { useEffect } from "react";
-
-import Head from "next/head";
-
 import Prism from "prismjs";
 
 import "prismjs/components/prism-ini";
@@ -9,6 +5,8 @@ import "prismjs/components/prism-c";
 import "prismjs/components/prism-cpp";
 import "prismjs/components/prism-bash";
 import "prismjs/components/prism-java";
+import "prismjs/components/prism-kotlin";
+import "prismjs/components/prism-scala";
 import "prismjs/components/prism-yaml";
 import "prismjs/components/prism-swift";
 import "prismjs/components/prism-javascript";
@@ -19,13 +17,15 @@ import "prismjs/components/prism-sql";
 import "prismjs/components/prism-xml-doc";
 import "prismjs/components/prism-log";
 
-import Meta from "components/Meta";
-import PostTags from "components/PostTags";
-import PostLink from "components/PostLink";
-import DisqusComments from "components/Disqus";
-
-import { displayDate } from "utils/dateutils";
 import { loadMarkdown, loadMarkdownParams } from "lib/posts";
+
+import DisqusComments from "components/Disqus";
+import Head from "next/head";
+import Meta from "components/Meta";
+import PostLink from "components/PostLink";
+import PostTags from "components/PostTags";
+import { displayDate } from "utils/dateutils";
+import { useEffect } from "react";
 
 function PageLinks({ previous, next }) {
   return (
