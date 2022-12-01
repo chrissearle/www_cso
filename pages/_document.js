@@ -36,6 +36,7 @@ export default class MyDocument extends Document {
             gtag('js', new Date());
             gtag('config', '${gtag.GA_TRACKING_ID}', {
               page_path: window.location.pathname,
+              cookie_flags: 'max-age=7200;secure;samesite=none',
             });
           `,
             }}

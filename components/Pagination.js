@@ -14,8 +14,8 @@ function PaginationLink({ indexes, index, currentPage }) {
 
     return (
       <li className={style}>
-        <Link href="/">
-          <a className="page-link">{title}</a>
+        <Link href="/" className="page-link">
+          {title}
         </Link>
       </li>
     );
@@ -34,8 +34,9 @@ function PaginationLink({ indexes, index, currentPage }) {
             page: index,
           },
         }}
+        className="page-link"
       >
-        <a className="page-link">{title}</a>
+        {title}
       </Link>
     </li>
   );

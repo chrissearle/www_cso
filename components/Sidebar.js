@@ -1,4 +1,3 @@
-import AdBar from "./AdBar";
 import Browse from "./Browse";
 import LatestArticles from "./LatestArticles";
 import PopularTags from "./PopularTags";
@@ -11,7 +10,6 @@ export default function Sidebar({ files }) {
       <Browse />
       <PopularTags files={files} />
       <LatestArticles files={files} />
-      <AdBar />
     </div>
   );
 }

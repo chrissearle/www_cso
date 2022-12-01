@@ -1,6 +1,5 @@
-import React from "react";
-
 import Link from "next/link";
+import React from "react";
 
 function NavLink({ href, title, external = false }) {
   return (
@@ -11,8 +10,8 @@ function NavLink({ href, title, external = false }) {
         </a>
       )}
       {!external && (
-        <Link href={href} passHref>
-          <a className="nav-link">{title}</a>
+        <Link href={href} passHref className="nav-link">
+          {title}
         </Link>
       )}
     </li>
@@ -39,10 +38,10 @@ export default function Header() {
     <div>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container">
-          <Link href="/" passHref>
+          <Link href="/" passHref className="navbar-brand">
             <div>
               <img className="logo" src="/logo.png" alt="Logo" />
-              <a className="navbar-brand">Chris Searle</a>
+              Chris Searle
             </div>
           </Link>
           <ul className="navbar-nav">

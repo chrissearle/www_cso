@@ -6,14 +6,14 @@ export default function PostLink({
   heading = false,
   className = null,
 }) {
-  let title = <a>{linkTitle}</a>;
+  let calculatedClass = "";
 
   if (heading) {
-    title = <a className="h5 text-decoration-none">{linkTitle}</a>;
+    calculatedClass = "h5 text-decoration-none";
   }
 
   if (className) {
-    title = <a className={className}>{linkTitle}</a>;
+    calculatedClass = className;
   }
 
   return (
@@ -27,8 +27,9 @@ export default function PostLink({
           slug: params.slug,
         },
       }}
+      className={calculatedClass}
     >
-      {title}
+      {linkTitle}
     </Link>
   );
 }
