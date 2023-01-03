@@ -1,5 +1,4 @@
 import Head from "next/head";
-
 import ListPostList from "./ListPostList";
 import Meta from "./Meta";
 
@@ -7,7 +6,7 @@ export default function ListPostView({ listTitle, items }) {
   return (
     <>
       <Head>
-        <title>Chris Searle - Posts: {listTitle}</title>
+        <title>{`Chris Searle - Posts: ${listTitle}`}</title>
       </Head>
       <Meta title={`Posts: ${listTitle}`} />
       <div className="pt-4">

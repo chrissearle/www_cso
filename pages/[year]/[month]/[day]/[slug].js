@@ -70,7 +70,7 @@ export default function PostPage(props) {
   return (
     <>
       <Head>
-        <title>{`Chris Searle - {frontmatter.title}`}</title>
+        <title>{`Chris Searle - ${frontmatter.title}`}</title>
       </Head>
       <Meta post={props} />
       <div className="pt-4">
