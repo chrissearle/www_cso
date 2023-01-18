@@ -14,14 +14,14 @@
     "bootstrap": "^5.2.3",
     "disqus-react": "^1.1.5",
     "feed": "^4.2.2",
-    "glob": "^8.0.3",
+    "glob": "^8.1.0",
     "gray-matter": "^4.0.3",
-    "marked": "^4.2.5",
+    "marked": "^4.2.12",
     "mime-types": "^2.1.35",
     "moment": "^2.29.4",
     "moment-timezone": "^0.5.40",
-    "next": "^13.1.1",
-    "next-sitemap": "^3.1.44",
+    "next": "^13.1.2",
+    "next-sitemap": "^3.1.45",
     "prismjs": "^1.29.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -29,7 +29,7 @@
     "slugify": "^1.6.5"
   },
   "devDependencies": {
-    "eslint": "^8.31.0",
-    "eslint-config-next": "^13.1.1"
+    "eslint": "^8.32.0",
+    "eslint-config-next": "^13.1.2"
   }
 }
