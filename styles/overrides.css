@@ -16,3 +16,14 @@ div.sidebar {
 div.ratio {
   margin-bottom: 30px;
 }
+
+table {
+  margin: 10px;
+  border: solid 1px lightblue;
+}
+
+td,
+th {
+  padding: 10px;
+  border: solid 1px lightblue;
+}
