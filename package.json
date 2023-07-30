@@ -21,7 +21,7 @@
     "moment": "^2.29.4",
     "moment-timezone": "^0.5.43",
     "next": "^13.4.12",
-    "next-sitemap": "^3.1.45",
+    "next-sitemap": "^4.1.8",
     "prismjs": "^1.29.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
