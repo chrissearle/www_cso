@@ -1,7 +1,5 @@
 import Head from "next/head";
-
 import Meta from "components/Meta";
-
 import { loadMarkdown } from "lib/posts";
 
 function Fingerprint({ title, hash, fingerprint }) {
@@ -27,9 +25,17 @@ export default function Keys() {
       <div className="card mb-4 border border-primary">
         <div className="card-header">Current</div>
         <div className="card-body">
+          <p>Get the public keys direct from the keyservers.</p>
+
           <p>
-            Get the public keys direct from the keyservers or you can find my{" "}
-            <a href="https://keybase.io/chrissearle">keybase.io profile here</a>
+            You can also check the proofs on my{" "}
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://keyoxide.org/116FBA8295065A01C3BC7CC6CF79BF54D4BF0A41"
+            >
+              keyoxide profile
+            </a>
           </p>
 
           <Fingerprint
@@ -57,7 +63,7 @@ export default function Keys() {
           </p>
         </div>
       </div>
-      <div className="card border border-warning">
+      <div className="card mb-4 border border-warning">
         <div className="card-header">Outdated</div>
         <div className="card-body">
           <Fingerprint
@@ -73,6 +79,20 @@ export default function Keys() {
           />
         </div>
         <div className="card-footer">These keys are no longer in use</div>
+      </div>
+      <div className="card border border-warning">
+        <div className="card-header">Keybase</div>
+        <div className="card-body">
+          <p>
+            I am migrating away from keybase - but the{" "}
+            <a href="https://keybase.io/chrissearle">
+              keybase.io profile is here
+            </a>
+          </p>
+        </div>
+        <div className="card-footer">
+          See the keyoxide link above instead for verifications
+        </div>
       </div>
     </>
   );
