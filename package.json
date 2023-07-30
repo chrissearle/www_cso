@@ -16,7 +16,7 @@
     "feed": "^4.2.2",
     "glob": "^8.1.0",
     "gray-matter": "^4.0.3",
-    "marked": "^4.2.12",
+    "marked": "^5.1.2",
     "mime-types": "^2.1.35",
     "moment": "^2.29.4",
     "moment-timezone": "^0.5.43",
