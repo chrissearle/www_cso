@@ -42,9 +42,8 @@ export default function PopularTags({ files }) {
   popular.forEach((tag) => (items[tag.name] = tag.count));
 
   return (
-    <div className="my-2 card">
-      <div className="card-header">Popular Tags</div>
-
+    <div className="bg-base-100 p-4">
+      <h2 className="mb-2 font-bold">Popular Tags</h2>
       <ListList
         names={sortedNames}
         items={items}

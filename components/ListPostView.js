@@ -9,10 +9,13 @@ export default function ListPostView({ listTitle, items }) {
         <title>{`Chris Searle - Posts: ${listTitle}`}</title>
       </Head>
       <Meta title={`Posts: ${listTitle}`} />
-      <div className="pt-4">
-        <h1>Posts: {listTitle}</h1>
 
-        <ListPostList items={items} />
+      <div className="w-full card bg-base-100">
+        <div className="card-body">
+          <h2 className="card-title">Posts: {listTitle}</h2>
+
+          <ListPostList items={items} wide={true} />
+        </div>
       </div>
     </>
   );

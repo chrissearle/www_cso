@@ -1,4 +1,4 @@
-import "bootstrap/dist/css/bootstrap.css";
+import "styles/globals.css";
 import "prismjs/themes/prism-solarizedlight.css";
 import "styles/overrides.css";
 

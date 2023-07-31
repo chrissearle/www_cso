@@ -1,5 +1,4 @@
 import Prism from "prismjs";
-
 import "prismjs/components/prism-ini";
 import "prismjs/components/prism-c";
 import "prismjs/components/prism-cpp";
@@ -30,27 +29,23 @@ import { useEffect } from "react";
 function PageLinks({ previous, next }) {
   return (
     <nav aria-label="Previous/Next">
-      <ul className="pagination justify-content-center my-5">
+      <div className="join flex justify-center space-x-2">
         {previous && (
-          <li className="page-item">
-            <PostLink
-              title={`« ${previous.frontmatter.title}`}
-              params={previous.params}
-              className="page-link"
-            />
-          </li>
+          <PostLink
+            title={`« ${previous.frontmatter.title}`}
+            params={previous.params}
+            className="join-item text-xs"
+          />
         )}
 
         {next && (
-          <li className="page-item">
-            <PostLink
-              title={`${next.frontmatter.title} »`}
-              params={next.params}
-              className="page-link"
-            />
-          </li>
+          <PostLink
+            title={`${next.frontmatter.title} »`}
+            params={next.params}
+            className="join-item text-xs"
+          />
         )}
-      </ul>
+      </div>
     </nav>
   );
 }
@@ -73,19 +68,27 @@ export default function PostPage(props) {
         <title>{`Chris Searle - ${frontmatter.title}`}</title>
       </Head>
       <Meta post={props} />
-      <div className="pt-4">
-        <h1>{frontmatter.title}</h1>
-        <div>
+      <div>
+        <div className="prose">
+          <h1>{frontmatter.title}</h1>
+        </div>
+
+        <h6 className="text-xs text-info">
           Posted: {displayDate(frontmatter.date)}
           {frontmatter.updated && (
-            <>
-              {"/"} Updated: {frontmatter.updated}
-            </>
+            <span className="mx-2 text-accent">
+              Updated: {frontmatter.updated}
+            </span>
           )}
+        </h6>
+
+        <div className="flex space-x-2 justify-end">
           <PostTags {...tags} />
         </div>
 
-        <div dangerouslySetInnerHTML={{ __html: content }}></div>
+        <div className="prose">
+          <div dangerouslySetInnerHTML={{ __html: content }}></div>
+        </div>
 
         <DisqusComments
           path={path}

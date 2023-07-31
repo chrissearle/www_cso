@@ -1,8 +1,6 @@
 import Link from "next/link";
-
-import PostTags from "../components/PostTags";
 import PostLink from "./PostLink";
-
+import PostTags from "../components/PostTags";
 import { displayDate } from "../utils/dateutils";
 
 export default function PostCard({ post }) {
@@ -12,42 +10,48 @@ export default function PostCard({ post }) {
   };
 
   return (
-    <div className="card">
-      <h6 className="card-header">
-        Posted: {displayDate(post.frontmatter.date)}
-        {post.frontmatter.updated && (
-          <div className="small">Updated: {post.frontmatter.updated}</div>
-        )}
-      </h6>
-
-      <div className="card-body">
+    <div className="card sm:w-full lg:w-full xl:w-6/12 2xl:w-4/12 p-4">
+      <div className="bg-base-100 shadow-lg p-2">
         {post.imagePath && (
-          <img
-            src={post.imagePath}
-            className="card-img-top post img-thumbnail float-end"
-            alt=""
-          />
+          <figure>
+            <img src={post.imagePath} alt="" />
+          </figure>
         )}
+
         {post.frontmatter.embedImage && (
-          <img
-            src={post.frontmatter.embedImage}
-            className="card-img-top post img-thumbnail float-end"
-            alt=""
-          />
+          <figure>
+            <img src={post.frontmatter.embedImage} alt="" />
+          </figure>
         )}
-        <div className="card-title">
-          <PostLink
-            title={post.frontmatter.title}
-            params={post.params}
-            heading={true}
-          />
+
+        <div className="card-body">
+          <h6 className="text-xs text-info">
+            Posted: {displayDate(post.frontmatter.date)}
+            {post.frontmatter.updated && (
+              <span className="mx-2 text-accent">
+                Updated: {post.frontmatter.updated}
+              </span>
+            )}
+          </h6>
+
+          <h2 className="card-title">
+            <PostLink
+              title={post.frontmatter.title}
+              params={post.params}
+              heading={true}
+            />
+          </h2>
+
+          {post.frontmatter.intro && (
+            <div className="prose">
+              <p>{post.frontmatter.intro}</p>
+            </div>
+          )}
         </div>
 
-        {post.frontmatter.intro && <p>{post.frontmatter.intro}</p>}
-      </div>
-
-      <div className="card-footer">
-        <PostTags {...tags} />
+        <div className="card-actions justify-end">
+          <PostTags {...tags} />
+        </div>
       </div>
     </div>
   );

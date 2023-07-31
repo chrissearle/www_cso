@@ -1,9 +1,12 @@
 import ListPostView from "components/ListPostView";
-
 import { loadMarkdown } from "lib/posts";
 
 export default function Tags({ tag, posts }) {
-  return <ListPostView listTitle={tag} items={posts} />;
+  return (
+    <div className="w-full">
+      <ListPostView listTitle={tag} items={posts} />
+    </div>
+  );
 }
 
 export async function getStaticPaths() {

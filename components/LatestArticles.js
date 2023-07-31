@@ -14,9 +14,8 @@ export default function LatestArticles({ files }) {
   }
 
   return (
-    <div className="my-2 card">
-      <div className="card-header">Latest Articles</div>
-
+    <div className="bg-base-100 p-4">
+      <h2 className="mb-2 font-bold">Latest Articles</h2>
       <ListPostList items={popular} />
     </div>
   );

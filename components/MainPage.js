@@ -1,14 +1,9 @@
 import Head from "next/head";
-
 import Meta from "./Meta";
-import PostCard from "../components/PostCard";
 import Pagination from "../components/Pagination";
-
-import { split } from "../utils/pageutils";
+import PostCard from "../components/PostCard";
 
 export default function MainPage({ pages, indexes, currentPage }) {
-  const splitPosts = split(pages[currentPage - 1], 2);
-
   return (
     <>
       <Head>
@@ -16,13 +11,9 @@ export default function MainPage({ pages, indexes, currentPage }) {
       </Head>
       <Meta title="Chris Searle" />
 
-      <div>
-        {splitPosts.map((row, index) => (
-          <div className="card-group my-2" key={`row-${index}`}>
-            {row.map((post, index2) => (
-              <PostCard key={`post-${index2}`} post={post} />
-            ))}
-          </div>
+      <div className="flex flex-wrap">
+        {pages[currentPage - 1].map((post, index) => (
+          <PostCard key={`post-${index}`} post={post} />
         ))}
       </div>
 

@@ -15,9 +15,7 @@ export default function PostTags({ tags, series = null }) {
             }}
             passHref
           >
-            <button className="mx-2 my-2 btn btn-outline-info btn-sm">
-              {tag}
-            </button>
+            <div className="badge badge-outline">{tag}</div>
           </Link>
         ))}
       {series && (
@@ -30,9 +28,7 @@ export default function PostTags({ tags, series = null }) {
           }}
           passHref
         >
-          <button className="mx-2 btn btn-outline-success btn-sm">
-            {series}
-          </button>
+          <div className="badge badge-outline badge-secondary">{series}</div>
         </Link>
       )}
     </>

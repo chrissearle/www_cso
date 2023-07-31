@@ -5,6 +5,8 @@ export default function PostLink({
   params,
   heading = false,
   className = null,
+  wide = false,
+  children,
 }) {
   let calculatedClass = "";
 
@@ -14,6 +16,12 @@ export default function PostLink({
 
   if (className) {
     calculatedClass = className;
+  }
+
+  let calculatedSpanClass = "w-48";
+
+  if (wide) {
+    calculatedSpanClass = "";
   }
 
   return (
@@ -29,7 +37,8 @@ export default function PostLink({
       }}
       className={calculatedClass}
     >
-      {linkTitle}
+      <span className={calculatedSpanClass}>{linkTitle}</span>
+      {children}
     </Link>
   );
 }

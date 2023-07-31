@@ -1,10 +1,10 @@
 import Link from "next/link";
 
 function PaginationLink({ indexes, index, currentPage }) {
-  let style = "page-item";
+  let style = "join-item btn-xs";
 
   if (index === currentPage) {
-    style = "page-item active";
+    style = "join-item btn-xs btn-active";
   }
 
   let title = index;
@@ -13,11 +13,9 @@ function PaginationLink({ indexes, index, currentPage }) {
     title = `« ${index}`;
 
     return (
-      <li className={style}>
-        <Link href="/" className="page-link">
-          {title}
-        </Link>
-      </li>
+      <Link href="/" className={style}>
+        {title}
+      </Link>
     );
   }
 
@@ -26,26 +24,24 @@ function PaginationLink({ indexes, index, currentPage }) {
   }
 
   return (
-    <li className={style}>
-      <Link
-        href={{
-          pathname: "/page/[page]/",
-          query: {
-            page: index,
-          },
-        }}
-        className="page-link"
-      >
-        {title}
-      </Link>
-    </li>
+    <Link
+      href={{
+        pathname: "/page/[page]/",
+        query: {
+          page: index,
+        },
+      }}
+      className={style}
+    >
+      {title}
+    </Link>
   );
 }
 
 export default function Pagination({ indexes, currentPage }) {
   return (
     <nav aria-label="Pagination">
-      <ul className="pagination justify-content-center my-5">
+      <div className="join">
         {indexes.map((index, idx) => (
           <PaginationLink
             key={`page-${idx}`}
@@ -54,7 +50,7 @@ export default function Pagination({ indexes, currentPage }) {
             currentPage={currentPage}
           />
         ))}
-      </ul>
+      </div>
     </nav>
   );
 }

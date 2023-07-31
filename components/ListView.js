@@ -15,15 +15,17 @@ export default function ListView({
         <title>{`Chris Searle - ${listTitle}`}</title>
       </Head>
       <Meta title={listTitle} />
-      <div className="pt-4">
-        <h1>{listTitle}</h1>
 
-        <ListList
-          names={sortedItems}
-          items={items}
-          linkPath={linkPath}
-          linkQueryName={linkQueryName}
-        />
+      <div className="w-full card bg-base-100">
+        <div className="card-body">
+          <h2 className="card-title">{listTitle}</h2>
+          <ListList
+            names={sortedItems}
+            items={items}
+            linkPath={linkPath}
+            linkQueryName={linkQueryName}
+          />
+        </div>
       </div>
     </>
   );
