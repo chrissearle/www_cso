@@ -1,6 +1,6 @@
 # www.chrissearle.org
 
-NextJS based site generator for www.chrissearle.org
+NuxtJS based site generator for www.chrissearle.org
 
 ## Github Actions
 
@@ -13,11 +13,7 @@ Any push of main or a tag v\* will trigger github actions to run.
 
 - dev - run dev server
 - build - build
-- postbuild - build sitemap (runs automatically after build)
-- export - dump the contents as static HTML to out/
-- serve - serve the contents of out/
-- start - serve the contents as built
-- lint - run lint
+- preview - preview build
 
 ## Docker
 
