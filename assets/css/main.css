@@ -55,3 +55,19 @@ h5 {
 p {
   @apply text-base leading-base;
 }
+
+.todo {
+  @apply text-red-400 bg-yellow-400 p-2;
+}
+
+.aside-heading {
+  @apply text-h4 md:text-h5;
+}
+
+.aside-block {
+  @apply mb-4 text-typography_primary w-full;
+}
+
+.aside-item {
+  @apply text-blue-400 hover:underline block;
+}

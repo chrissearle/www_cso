@@ -1,0 +1,13 @@
+{
+    "Chris Searle": {
+        "@context": "http://www.schema.org",
+        "@type": "Person",
+        "@id": "https://www.chrissearle.org/",
+        "name": "Chris Searle",
+        "url": "https://www.chrissearle.org/",
+        "image": "https://www.chrissearle.org/logo.png",
+        "sameAs": [
+            "https://chrissearle.org/"
+        ]
+    }
+}

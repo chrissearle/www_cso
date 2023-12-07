@@ -3,7 +3,7 @@ title: Kafka - java to scala - java
 date: 2019-04-25 12:14 +0200
 tags: kafka, java, producer, consumer
 series: Kafka - java to scala
-updated: 2020-01-23 00:00
+updated: 2020-01-23 00:00 +0200
 intro: Basic producer and consumer in java
 ---
 
