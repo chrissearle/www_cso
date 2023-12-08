@@ -21,7 +21,7 @@ const { data } = await useAsyncData(`content-/articles`, async () => {
       :limit="5"
       v-slot="{ data }"
     >
-      <div class="mb-10" v-for="article in data" :key="tag">
+      <div class="mb-10" v-for="article in data" :key="article">
         <NuxtLink
           class="text-blue-400 hover:underline"
           :to="$articleLink(article._path)"
