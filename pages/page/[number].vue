@@ -49,7 +49,7 @@ try {
       :limit="blogCountLimit"
     >
       <template v-slot="{ data }">
-        <Section id="main" class="!pt-0">
+        <section id="main" class="!pt-0">
           <BlogList :data="data" />
           <ContentQuery path="/" :where="{ _type: 'markdown' }">
             <template v-slot="{ data }">
@@ -65,16 +65,16 @@ try {
             </template>
             <template #not-found> </template>
           </ContentQuery>
-        </Section>
+        </section>
       </template>
 
       <template #not-found>
-        <Section id="main" class="!pt-0">
+        <section id="main" class="!pt-0">
           <BlogList
             :data="[]"
             message="There are no posts in this page, maybe try searching on another one."
           />
-        </Section>
+        </section>
       </template>
     </ContentQuery>
   </main>

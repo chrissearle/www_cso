@@ -71,3 +71,7 @@ p {
 .aside-item {
   @apply text-blue-400 hover:underline block;
 }
+
+section {
+  @apply px-section_x_sm py-section_y_sm sm:px-section_x sm:py-section_y relative;
+}

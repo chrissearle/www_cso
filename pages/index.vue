@@ -12,7 +12,7 @@ const { data } = await useAsyncData(`content-/blog`, async () => {
     <Title>Chris Searle</Title>
   </Head>
   <main>
-    <Section id="main" class="!pt-0">
+    <section id="main" class="!pt-0">
       <ContentQuery
         path="/"
         :where="{ _type: 'markdown' }"
@@ -43,6 +43,6 @@ const { data } = await useAsyncData(`content-/blog`, async () => {
         baseUrl="/"
         pageUrl="/page/"
       />
-    </Section>
+    </section>
   </main>
 </template>

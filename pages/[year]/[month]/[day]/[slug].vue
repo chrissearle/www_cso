@@ -2,7 +2,7 @@
   <main class="blog-post-text">
     <ContentDoc>
       <template v-slot="{ doc }">
-        <Section id="blog-title" type="header">
+        <section id="blog-title" type="header">
           <div
             class="border-t-2 pt-8 border-typography_primary flex flex-col md:flex-row items-center md:justify-between md:text-right mb-12 md:mb-8"
           >
@@ -91,9 +91,9 @@
               />
             </div>
           </div>
-        </Section>
+        </section>
         <!-- Content -->
-        <Section
+        <section
           id="main"
           class="!pt-0 relative grid grid-cols-10 gap-8 lg:gap-12"
         >
@@ -132,7 +132,7 @@
               />
             </div>
           </aside>
-        </Section>
+        </section>
         <!-- Scroll to top -->
         <NavScrollTopIcon />
       </template>

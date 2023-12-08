@@ -19,9 +19,7 @@ const countTags = (tags) => {
 
   const slicedMap = new Map();
 
-  mapArray
-    .slice(0, 5)
-    .forEach((tag) => slicedMap.set(tag[0], tag[1].toString()));
+  mapArray.slice(0, 5).forEach((tag) => slicedMap.set(tag[0], tag[1]));
 
   return slicedMap;
 };

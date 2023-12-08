@@ -18,7 +18,7 @@ const { data } = await useAsyncData(`content-/all`, async () => {
     >
       All Articles
     </h2>
-    <Section id="main" class="!pt-0 !px-0">
+    <section id="main" class="!pt-0 !px-0">
       <ContentQuery
         path="/"
         :where="{ _type: 'markdown' }"
@@ -30,6 +30,6 @@ const { data } = await useAsyncData(`content-/all`, async () => {
       >
         <BlogShortItem :data="data" />
       </ContentQuery>
-    </Section>
+    </section>
   </main>
 </template>

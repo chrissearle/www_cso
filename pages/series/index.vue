@@ -16,7 +16,7 @@ const { data } = await useAsyncData(`content-/series`, async () => {
     >
       All Series
     </h2>
-    <Section id="main" class="!pt-0 !px-0">
+    <ection id="main" class="!pt-0 !px-0">
       <ContentQuery
         path="/"
         :where="{ _type: 'markdown' }"
@@ -28,6 +28,6 @@ const { data } = await useAsyncData(`content-/series`, async () => {
       >
         <SeriesList :series="data" />
       </ContentQuery>
-    </Section>
+    </ection>
   </main>
 </template>
