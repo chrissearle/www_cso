@@ -26,7 +26,7 @@ try {
 
 <template>
   <Head>
-    <Title>Chris Searle</Title>
+    <Title>Chris Searle - Page {{ params.number }}</Title>
   </Head>
   <main>
     <ContentQuery

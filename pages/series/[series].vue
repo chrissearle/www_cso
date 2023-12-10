@@ -9,7 +9,7 @@ const { data } = await useAsyncData(`content-/seris`, async () => {
 
 <template>
   <Head>
-    <Title>Chris Searle - {{ params.series }}</Title>
+    <Title>Chris Searle - Series: {{ params.series }}</Title>
   </Head>
 
   <main class="container mx-auto">

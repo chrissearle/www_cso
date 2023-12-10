@@ -9,7 +9,7 @@ const { data } = await useAsyncData(`content-/tags`, async () => {
 
 <template>
   <Head>
-    <Title>Chris Searle - {{ params.tag }}</Title>
+    <Title>Chris Searle - Articles with tag: {{ params.tag }}</Title>
   </Head>
 
   <main class="container mx-auto">
