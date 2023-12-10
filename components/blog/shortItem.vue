@@ -5,7 +5,7 @@ const props = defineProps({
     required: true,
   },
 });
-const { $displayDate } = useNuxtApp();
+const { $displayDate, $articleLink } = useNuxtApp();
 </script>
 
 <template>
@@ -16,7 +16,9 @@ const { $displayDate } = useNuxtApp();
       :key="idx"
     >
       <div class="grid-col">
-        {{ article.title }}
+        <NuxtLink :to="$articleLink(article._path)" class="hover:underline">
+          {{ article.title }}
+        </NuxtLink>
       </div>
       <Pill class="grid-col" :pill="$displayDate(article.date)" />
     </div>
