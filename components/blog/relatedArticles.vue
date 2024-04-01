@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <span class="blog-aside-title mb-2 block">Continue Reading</span>
+  <div v-if="surround.length > 0">
+    <span class="font-bold mb-2 block">Previous/Next</span>
     <ul class="list-none">
       <template v-for="(other, index) in surround" :key="index">
         <li v-if="other" class="first:mt-0 mt-4 md:mt-1">

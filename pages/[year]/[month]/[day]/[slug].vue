@@ -36,7 +36,10 @@
           class="!pt-0 relative grid grid-cols-10 gap-8 lg:gap-12"
         >
           <!-- Table of Contents -->
-          <aside class="col-span-full md:col-span-3 md:hidden">
+          <aside
+            class="col-span-full md:col-span-3 md:hidden"
+            v-if="doc.body?.toc?.links?.length > 0"
+          >
             <div class="blog-post-text blog-aside-wrapper mb-2">
               <BlogTableOfContents :links="doc.body?.toc?.links" />
             </div>
@@ -50,7 +53,10 @@
 
           <aside class="col-span-full md:col-span-3 blog-aside h-fit">
             <!-- Mobile Table of Content -->
-            <div class="!hidden blog-aside-wrapper md:!flex mb-4">
+            <div
+              class="!hidden blog-aside-wrapper md:!flex mb-4"
+              v-if="doc.body?.toc?.links?.length > 0"
+            >
               <BlogTableOfContents
                 :links="doc.body?.toc?.links"
                 class="blog-post-text"
@@ -144,6 +150,7 @@ const jsonScripts = [
   },
 ];
 
+/*
 console.log({
   "@context": "https://schema.org",
   "@type": "BlogPosting",
@@ -160,6 +167,7 @@ console.log({
   author: authorData.value[data.value?.article?.author],
   publisher: authorData.value["Gonzalo Hirsch"],
 });
+*/
 
 useHead({
   title: data.value?.article?.title,
