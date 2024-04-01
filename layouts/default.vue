@@ -26,8 +26,4 @@
 .aside-block {
   @apply mb-4;
 }
-
-li {
-  @apply text-blue-400 hover:underline;
-}
 </style>

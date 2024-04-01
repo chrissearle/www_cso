@@ -34,29 +34,17 @@ curl --proxy 127.0.0.1:8899 --cacert ~/.mitmproxy/mitmproxy-ca-cert.pem https://
 
 In the mitmproxy terminal there should be one flow now shown
 
-<figure class="figure w-100 text-center">
-  <img class="figure-img img-fluid rounded" src="/images/posts/2020/12/mitm_curl_flow.png" title="mitmproxy flow from curl" alt="mitmproxy flow from curl"/>
-  <figcaption class="figure-caption">mitmproxy flow from curl</figcaption>
-</figure>
+![mitmproxy flow from curl](/images/posts/2020/12/mitm_curl_flow.png)
 
 Using the arrow keys (up/down) to select a line - hitting enter drills down.
 
 There are three views (left/right arrow to navigate).
 
-<figure class="figure w-100 text-center">
-  <img class="figure-img img-fluid rounded" src="/images/posts/2020/12/mitm_curl_request.png" title="mitmproxy curl request" alt="mitmproxy curl request"/>
-  <figcaption class="figure-caption">mitmproxy curl request</figcaption>
-</figure>
+![mitmproxy curl request](/images/posts/2020/12/mitm_curl_request.png)
 
-<figure class="figure w-100 text-center">
-  <img class="figure-img img-fluid rounded" src="/images/posts/2020/12/mitm_curl_response.png" title="mitmproxy curl response" alt="mitmproxy curl response"/>
-  <figcaption class="figure-caption">mitmproxy curl response</figcaption>
-</figure>
+![mitmproxy curl response](/images/posts/2020/12/mitm_curl_response.png)
 
-<figure class="figure w-100 text-center">
-  <img class="figure-img img-fluid rounded" src="/images/posts/2020/12/mitm_curl_detail.png" title="mitmproxy curl details" alt="mitmproxy curl details"/>
-  <figcaption class="figure-caption">mitmproxy curl details</figcaption>
-</figure>
+![mitmproxy curl details](/images/posts/2020/12/mitm_curl_detail.png)
 
 To get back to the flow list - just hit `q`
 
@@ -142,10 +130,7 @@ java -Dhttps.proxyHost=localhost -Dhttps.proxyPort=8899 -DProxyTest  -Djavax.net
 
 This time the command should complete and we should now see the call in the mitmproxy flow list
 
-<figure class="figure w-100 text-center">
-  <img class="figure-img img-fluid rounded" src="/images/posts/2020/12/mitm_java_httpclient_request.png" title="mitmproxy java httpclient request" alt="mitmproxy java httpclient request"/>
-  <figcaption class="figure-caption">mitmproxy java httpclient request</figcaption>
-</figure>
+![mitmproxy java httpclient request](/images/posts/2020/12/mitm_java_httpclient_request.png)
 
 ## Java Spring WebClient proxy (netty)
 
@@ -206,10 +191,7 @@ Now - let's add the proxy to the client instance. Here the host and port are har
 
 Again - if we run this then we get a PKIX path error - so we need to remember to add the truststore `-Djavax.net.ssl.trustStore=cacerts`
 
-<figure class="figure w-100 text-center">
-  <img class="figure-img img-fluid rounded" src="/images/posts/2020/12/mitm_netty_request.png" title="mitmproxy netty request" alt="mitmproxy netty request"/>
-  <figcaption class="figure-caption">mitmproxy netty request</figcaption>
-</figure>
+![mitmproxy netty request](/images/posts/2020/12/mitm_netty_request.png)
 
 ## Summary
 

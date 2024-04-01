@@ -5,15 +5,13 @@ tags: ktor, kotlin, spring, spring security, bcrypt, password
 intro: When moving a spring boot project to ktor - how to handle existing password hashes in the database?
 ---
 
-Spring boot stores passwords hashed - which is good.
-
-But - when moving to a new framework - how does that play out?
+Spring boot stores passwords hashed - which is good. But - when moving to a new framework - how does that play out?
 
 ## Spring Password Encoders
 
 Spring boot requires some sort of PasswordEncoder.
 
-If you look at PasswordEncoderFactories.createDelegatingPasswordEncoder() you can see that it can handle lots of different encoders - including out of date ones (so that you can still verify older hashes) - and that the default is bcrypt.
+If you look at `PasswordEncoderFactories.createDelegatingPasswordEncoder()` you can see that it can handle lots of different encoders - including out of date ones (so that you can still verify older hashes) - and that the default is bcrypt.
 
 So - how does spring know what sort of hash you have?
 
@@ -21,11 +19,15 @@ This is stored in the database as part of the hash itself.
 
 For example - with defaults - the values in the database look something like:
 
-`{bcrypt}$2a$10$....`
+```
+{bcrypt}$2a$10$....
+```
 
 The actual format of the bcrypt part is:
 
-`$2<a/b/x/y>$[cost]$[22 character salt][31 character hash]`
+```
+$2<a/b/x/y>$[cost]$[22 character salt][31 character hash]
+```
 
 So - here we have $2a with a cost of 10.
 
@@ -43,7 +45,7 @@ So - users will still be able to login after a migration with the same password.
 
 ## Updating the hash
 
-However - password4j [recommends](https://github.com/Password4j/password4j/wiki/BCrypt) $2b and cost 12.
+However - password4j [recommends](https://github.com/Password4j/password4j/wiki/BCrypt) `$2b` and cost `12`.
 
 How can we update this hash when we don't know the user's password?
 
@@ -53,7 +55,7 @@ We can actually use password4j to provide us the new hash at check time.
 
 Add psw4j.properties to the classpath (src/main/resources)
 
-```ini
+```properties
 global.banner=false
 hash.bcrypt.minor=b
 hash.bcrypt.rounds=12

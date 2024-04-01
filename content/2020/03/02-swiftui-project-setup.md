@@ -19,10 +19,7 @@ In Xcode - start a new project. Choose iOS and a single view app.
 
 Fill out the project details. In my case - I will end up keeping the same details as the [previous version of the app](https://github.com/chrissearle/Lommepenger/tree/63a3bda3183926a18e821d90c62dc33b807c7e33). Make sure to choose Swift as the language and SwiftUI as the User Interface.
 
-<figure class="figure w-100 text-center">
-  <img class="figure-img img-fluid rounded" src="/images/posts/2020/03/project-setup.png" title="Project Setup" alt="Project Setup"/>
-  <figcaption class="figure-caption">Project Setup</figcaption>
-</figure>
+![Project Setup](/images/posts/2020/03/project-setup.png)
 
 Choose a place to save the project and enable git repository generation.
 
@@ -54,10 +51,7 @@ For version rule - keep `Up to next major` and next again.
 
 In the final window - make sure that the package is checked off for your app's target and hit finish.
 
-<figure class="figure w-100 text-center">
-  <img class="figure-img img-fluid rounded" src="/images/posts/2020/03/add-package.png" title="Add package confirmation" alt="Add package confirmation"/>
-  <figcaption class="figure-caption">Add package confirmation</figcaption>
-</figure>
+![Add package confirmation](/images/posts/2020/03/add-package.png)
 
 Now do the same with https://github.com/twostraws/CodeScanner.git
 

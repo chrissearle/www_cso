@@ -78,9 +78,6 @@ show:
 
 Given my actual hostnames - this generates the following graph:
 
-<figure class="figure w-100 text-center">
-  <img class="figure-img img-fluid rounded" src="/images/posts/2023/01/temperatures.png" title="Home assistant dashboard card showing CPU temperatures" alt="Home assistant dashboard card showing CPU temperatures"/>
-  <figcaption class="figure-caption">Home assistant dashboard card showing CPU temperatures</figcaption>
-</figure>
+![Home assistant dashboard card showing CPU temperatures](/images/posts/2023/01/temperatures.png)
 
 The NUC with the new fan is holding at approx 40C which is fine.

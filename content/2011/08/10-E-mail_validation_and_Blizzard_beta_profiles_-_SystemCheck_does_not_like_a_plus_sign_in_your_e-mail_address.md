@@ -17,10 +17,7 @@ Analysis went fine - but sending the report always failed.
 
 It always gave "There was a problem sending your system information to Battle.net":
 
-<figure class="figure w-100 text-center">
-  <img class="figure-img img-fluid rounded" src="/images/posts/2011/08/Battle.net-Systemcheck.png" title="Screenshot" alt="Screenshot"/>
-  <figcaption class="figure-caption">Screenshot</figcaption>
-</figure>
+![Screenshot](/images/posts/2011/08/Battle.net-Systemcheck.png)
 
 Every FAQ on it suggests network issues or similar. This time I even got around to using wireshark to prove that the connection was OK.
 

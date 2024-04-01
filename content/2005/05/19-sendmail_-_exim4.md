@@ -48,16 +48,16 @@ An addition that I discovered - you need to edit /etc/default/spamassassin and s
 
 Add the following to your /etc/exim4/conf.d/main/01_exim4-config_listmacrosdefs file:
 
-```none
+```
 # This tells what virus scanner to user
 av_scanner = clamd:/var/run/clamav/clamd.ctl
 # Slowing spammers down by holding their connection a bit
-TEERGRUBE = 60s</code>
+TEERGRUBE = 60s
 ```
 
 Edit /etc/exim4/conf.d/acl/40_exim4-config_check_data to inlude the following before the "# accept otherwise" line:
 
-```none
+```
 # Reject messages that have serious MIME errors.
 # This calls the demime condition again, but it
 # will return cached results.
@@ -88,7 +88,7 @@ malware = *
 
 Then, you also need to set access for ClamAV. The best way to handle this is to add the clamav user to the Debian-exim group and be sure that /etc/clamav/clamd.conf contains the following lines (on a fresh sarge install the clamd.conf part was already in place):
 
-```none
+```
 User clamav
 AllowSupplementaryGroups
 ```
@@ -101,13 +101,13 @@ This section is taken mostly verbatim from [Debian Administration](http://www.de
 
 - mkdir /etc/exim4/virtual
 - For each domain - create a file named after that domain - for example - for this domain I created a file called chrissearle.org
-- In each file - for each local user to be recognised - add <code>user : user@localhost</code>
+- In each file - for each local user to be recognised - add `user : user@localhost`
 - In each file - for each remote user to be recognised (mail forwarding) - add user : user@remote.host.tld
 - At the end of each file - add a catchall address - \* : catchalluser@localhost
 - In /etc/exim4/conf.d/main/01_exim4-config_listmacrosdef change the line starting domainlist list_domains with domainlist local_domains = @:localhost:dsearch;/etc/exim4/virtual
 - Add /etc/exim4/conf.d/router/350_exim4-config_vdom_aliases containing
 
-```none
+```
 vdom_aliases:
 driver = redirect
 allow_defer
@@ -152,7 +152,7 @@ Add to a new file /etc/exim4/conf.d/auth/15_exim4-config
 
 Update - it seems that the conf.d files are read in alphabetical order across the conf.d subdirectories - not within - it may be that this file would be better named 30_exim4-config or similar. You could always edit these sections into the examples file - but - I felt that examples were examples :)
 
-```none
+```
 # Unix clients
 plain:
     driver = plaintext
@@ -208,7 +208,7 @@ You'll need to edit /etc/exim4/conf.d/acl/30_exim4-config_check_rcpt
 
 Find the section with the text
 
-```none
+```
 #############################################################################
 # There are no checks on DNS "black" lists because the domains that contain
 # these lists are changing all the time. You can find examples of
@@ -218,7 +218,7 @@ Find the section with the text
 
 And look in the example file in the directory listed for examples. Simple :) However - this is just warnings. My old server is stricter - and rejects. This can be done by adding acl rules of the form
 
-```none
+```
 deny dnslists = dnsbl.njabl.org
 ```
 

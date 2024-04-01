@@ -63,7 +63,7 @@ module.exports = {
         section_y: "5rem",
       },
       spacing: {
-        nav: "4rem",
+        nav: "2rem",
         section_x: "5rem",
       },
     },

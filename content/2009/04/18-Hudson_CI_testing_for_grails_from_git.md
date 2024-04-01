@@ -15,10 +15,7 @@ This was extremely simple - I just grabbed the hudson.war file from the hudson s
 
 This was a bit more complex. Under Manage Hudson > Configure System
 
-<figure class="figure w-100 text-center">
-  <img class="figure-img img-fluid rounded" src="/images/posts/2009/04/hudson_ldap.png" title="Hudson LDAP config" alt="Hudson LDAP config"/>
-  <figcaption class="figure-caption">Hudson LDAP config</figcaption>
-</figure>
+![Hudson LDAP config](/images/posts/2009/04/hudson_ldap.png)
 
 Note the User/Group names - <code>ROLE*ADMIN</code> and <code>ROLE_HUDSON</code>. For this to work you need <code>groupOfUniqueNames</code> entries directly under the group search base (here <code>ou=groups,dc=chrissearle,dc=net</code>) with the names <code>cn=admin</code> and <code>cn=hudson</code>. Hudson will match this by removing ROLE* and lowercasing the rolename. This was unclear in the hudson docs I was reading but google came to the rescue.
 
@@ -30,19 +27,13 @@ Each plugin will add a config section under Manage Hudson > Configure System.
 
 For git:
 
-<figure class="figure w-100 text-center">
-  <img class="figure-img img-fluid rounded" src="/images/posts/2009/04/hudson_git" title="Hudson - git" alt="Hudson - git"/>
-  <figcaption class="figure-caption">Hudson - git</figcaption>
-</figure>
+![Hudson - git](/images/posts/2009/04/hudson_git.png)
 
 Since git is in the path this is OK - otherwise set the full path.
 
 For grails:
 
-<figure class="figure w-100 text-center">
-  <img class="figure-img img-fluid rounded" src="/images/posts/2009/04/hudson_grails" title="Hudson - grails" alt="Hudson - grails"/>
-  <figcaption class="figure-caption">Hudson - grails</figcaption>
-</figure>
+![Hudson - grails](/images/posts/2009/04/hudson_grails.png)
 
 Here only grails 1.0.4 is configured - but you can add several different versions.
 
@@ -52,10 +43,7 @@ Now lets add a grails project.
 
 Choose New Job from the main menu.
 
-<figure class="figure w-100 text-center">
-  <img class="figure-img img-fluid rounded" src="/images/posts/2009/04/hudson_build.png" title="Hudson - build" alt="Hudson - build"/>
-  <figcaption class="figure-caption">Hudson - build</figcaption>
-</figure>
+![Hudson - build](/images/posts/2009/04/hudson_build.png)
 
 Add a name and choose free-style.
 

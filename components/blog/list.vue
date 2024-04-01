@@ -10,6 +10,7 @@ const props = defineProps({
       "There are no posts right now, but stay tuned for newer releases in the future.",
   },
 });
+
 const { $displayDate, $splitList, $imagePrefix, $articleLink } = useNuxtApp();
 </script>
 

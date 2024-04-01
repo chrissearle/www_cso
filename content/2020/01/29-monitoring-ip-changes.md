@@ -152,10 +152,7 @@ SELECT count("reason") FROM "ip" WHERE $timeFilter GROUP BY time($__interval) fi
 
 And - that together with a line graph - with a line width of 3 and staircase turned on - gives me the following graph (this was taken after running for about 24 hours):
 
-<figure class="figure w-100 text-center">
-  <img class="figure-img img-fluid rounded" src="/images/posts/2020/01/cron-ip-output.png" title="Grafana output" alt="Grafana output"/>
-  <figcaption class="figure-caption">Grafana output</figcaption>
-</figure>
+![Grafana output](/images/posts/2020/01/cron-ip-output.png)
 
 You can see that there is only a few hits on the first day and none on the second.
 

@@ -247,10 +247,7 @@ We want to have the outermost part to be a NavigationView with the scan button t
 
 To start with - we will show the account number, and the balance/available figures. Something like this:
 
-<figure class="figure w-100 text-center">
-  <img class="figure-img img-fluid rounded" src="/images/posts/2020/03/account.png" title="Account View" alt="Account View"/>
-  <figcaption class="figure-caption">Account View</figcaption>
-</figure>
+![Account View](/images/posts/2020/03/account.png)
 
 Disponibelt - available. Saldo - balance.
 

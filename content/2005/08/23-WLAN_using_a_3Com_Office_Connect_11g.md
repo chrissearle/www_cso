@@ -47,4 +47,4 @@ wireless-essid <MYSSID>
 wireless-key restricted <MYWEP>
 ```
 
-Now - a simple <code>ifup wlan0</code> brings me online via the wireless net - and it all works (as long as eth0 is ifdown'd). All I need to do now is find a good way to auto eth0 at work and auto wlan0 at home.
+Now - a simple `ifup wlan0` brings me online via the wireless net - and it all works (as long as eth0 is ifdown'd). All I need to do now is find a good way to auto eth0 at work and auto wlan0 at home.

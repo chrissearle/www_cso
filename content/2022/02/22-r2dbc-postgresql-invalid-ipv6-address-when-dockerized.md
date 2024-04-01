@@ -19,7 +19,7 @@ And suddenly - although flyway could talk to the database via jdbc - the r2dbc c
 
 The connection string looked like this:
 
-```none
+```
 r2dbc:pool:postgresql://${DB_HOST}:${DB_PORT}/db_name
 ```
 
@@ -74,13 +74,13 @@ docker-compose -f docker-compose-test-2.yml up --force-recreate -V
 
 This time the logs show postgresql starting then the app - which then errors:
 
-```none
+```
 Cannot connect to app_db:5432/<unresolved>:5432
 ```
 
 and deeper in the stacktrace:
 
-```none
+```
 Caused by: java.net.UnknownHostException: app_db:5432: invalid IPv6 address
 ```
 
@@ -102,7 +102,7 @@ What does seem to work however - is removing the port from the r2dbc URL.
 
 In application.yml - change:
 
-```yml
+```yaml
 spring:
   r2dbc:
     url: r2dbc:pool:postgresql://${DB_HOST}:${DB_PORT}/test_db
@@ -110,7 +110,7 @@ spring:
 
 to
 
-```yml
+```yaml
 spring:
   r2dbc:
     url: r2dbc:pool:postgresql://${DB_HOST}/test_db

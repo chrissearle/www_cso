@@ -24,35 +24,23 @@ I wanted to use LDAP to give access to the nexus repository manager from sonatyp
 
 #### Connection
 
-<figure class="figure w-100 text-center">
-  <img class="figure-img img-fluid rounded" src="/images/posts/2010/09/nexus-ss1.png" title="Sonatype Nexus Maven Repository Manager" alt="Sonatype Nexus Maven Repository Manager"/>
-  <figcaption class="figure-caption">Sonatype Nexus Maven Repository Manager</figcaption>
-</figure>
+![Sonatype Nexus Maven Repository Manager](/images/posts/2010/09/nexus-ss1.png)
 
 #### Authentication
 
-<figure class="figure w-100 text-center">
-  <img class="figure-img img-fluid rounded" src="/images/posts/2010/09/nexus-ss2.png" title="Sonatype Nexus Maven Repository Manager" alt="Sonatype Nexus Maven Repository Manager"/>
-  <figcaption class="figure-caption">Sonatype Nexus Maven Repository Manager</figcaption>
-</figure>
+![Sonatype Nexus Maven Repository Manager](/images/posts/2010/09/nexus-ss2.png)
 
 Make sure the Check Authentication button is OK
 
 #### User Element Mapping
 
-<figure class="figure w-100 text-center">
-  <img class="figure-img img-fluid rounded" src="/images/posts/2010/09/nexus-ss3.png" title="Sonatype Nexus Maven Repository Manager" alt="Sonatype Nexus Maven Repository Manager"/>
-  <figcaption class="figure-caption">Sonatype Nexus Maven Repository Manager</figcaption>
-</figure>
+![Sonatype Nexus Maven Repository Manager](/images/posts/2010/09/nexus-ss3.png)
 
 Since the password field is blank it will actually perform a bind on ldap to test.
 
 #### Group Element Mapping
 
-<figure class="figure w-100 text-center">
-  <img class="figure-img img-fluid rounded" src="/images/posts/2010/09/nexus-ss4.png" title="Sonatype Nexus Maven Repository Manager" alt="Sonatype Nexus Maven Repository Manager"/>
-  <figcaption class="figure-caption">Sonatype Nexus Maven Repository Manager</figcaption>
-</figure>
+![Sonatype Nexus Maven Repository Manager](/images/posts/2010/09/nexus-ss4.png)
 
 Here I had to change the default Group Member Format from ${username} to${dn} because I map the full dn in my group of unique names objects.
 
@@ -60,27 +48,18 @@ Hit the Check User Mapping button:
 
 You should see all your users with their groups
 
-<figure class="figure w-100 text-center">
-  <img class="figure-img img-fluid rounded" src="/images/posts/2010/09/nexus-ss5.png" title="Sonatype Nexus Maven Repository Manager" alt="Sonatype Nexus Maven Repository Manager"/>
-  <figcaption class="figure-caption">Sonatype Nexus Maven Repository Manager</figcaption>
-</figure>
+![Sonatype Nexus Maven Repository Manager](/images/posts/2010/09/nexus-ss5.png)
 
 ### Security > Roles
 
 Add an external role mapping. For example - here we map the LDAP group nexusadmin to the Nexus Administration Role
 
-<figure class="figure w-100 text-center">
-  <img class="figure-img img-fluid rounded" src="/images/posts/2010/09/nexus-ss6.png" title="Sonatype Nexus Maven Repository Manager" alt="Sonatype Nexus Maven Repository Manager"/>
-  <figcaption class="figure-caption">Sonatype Nexus Maven Repository Manager</figcaption>
-</figure>
+![Sonatype Nexus Maven Repository Manager](/images/posts/2010/09/nexus-ss6.png)
 
 ### Administration > Server
 
 Head down the page to security settings and make sure that LDAP is selected. Without this LDAP users will not be able to log in but they will look fine in the Security > Users list.
 
-<figure class="figure w-100 text-center">
-  <img class="figure-img img-fluid rounded" src="/images/posts/2010/09/nexus-ss7.png" title="Sonatype Nexus Maven Repository Manager" alt="Sonatype Nexus Maven Repository Manager"/>
-  <figcaption class="figure-caption">Sonatype Nexus Maven Repository Manager</figcaption>
-</figure>
+![Sonatype Nexus Maven Repository Manager](/images/posts/2010/09/nexus-ss7.png)
 
 That should be enough to give your LDAP users a working login.

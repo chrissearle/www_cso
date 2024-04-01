@@ -55,7 +55,6 @@ h5 {
 p {
   @apply text-base leading-base;
 }
-
 .todo {
   @apply text-red-400 bg-yellow-400 p-2;
 }
@@ -74,4 +73,46 @@ p {
 
 section {
   @apply px-section_x_sm py-section_y_sm sm:px-section_x sm:py-section_y relative;
+}
+
+.mainbody {
+  h2 {
+    margin: 1rem 0;
+  }
+
+  h3 {
+    margin: 1rem 0;
+  }
+
+  h4 {
+    margin: 1rem 0;
+  }
+
+  p {
+    margin-bottom: 1rem;
+  }
+
+  ul {
+    list-style: disc inside;
+    margin-bottom: 1rem;
+  }
+
+  ol {
+    list-style: decimal inside;
+    margin-bottom: 1rem;
+  }
+
+  table {
+    border-collapse: collapse;
+    border-width: 1px;
+    border-color: silver;
+
+    th,
+    td {
+      text-align: left;
+      padding: 8px;
+      border-width: 1px;
+      border-color: silver;
+    }
+  }
 }

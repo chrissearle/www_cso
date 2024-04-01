@@ -17,57 +17,37 @@ First - get to the correct configuration:
 
 Now - fill out
 
-<table class="table table-striped">
-  <tr>
-    <th colspan="4">Basic Tab</th>
-  </tr>
-  <tr>
-    <td>Account Name</td><td>*mac*</td>
-  </tr>
-  <tr>
-    <td>Your Name</td><td>*Your full name*</td>
-  </tr>
-  <tr>
-    <td>Email Address</td><td>*Your .mac email address*</td>
-  </tr>
-  <tr>
-    <td>Connection Type</td><td>*IMAP*</td>
-  </tr>
-  <tr>
-    <th colspan="2">Inbox Tab</th>
-  </tr>
-  <tr>
-    <td>Incoming Server Address</td><td>*mail.mac.com*</td>
-  </tr>
-  <tr>
-    <td>Username</td><td>*Your .mac account name*</td>
-  </tr>
-  <tr>
-    <td>Password</td><td>*Your .mac account password*</td>
-  </tr>
-  <tr>
-    <th colspan="2">Outbox Tab</th>
-  </tr>
-  <tr>
-    <td>Outgoing server address</td><td>*smtp.mac.com*</td>
-  </tr>
-  <tr>
-    <td>Use SMTP auth</td><td>*checked*</td>
-  </tr>
-  <tr>
-    <td>Use Inbox login details</td><td>*checked*</td>
-  </tr>
-  <tr>
-    <th colspan="2">Outgoing tab</th>
-  </tr>
-  <tr>
-    <td>Secure Connection</td><td>*TLS*</td>
-  </tr>
-  <tr>
-    <td>Outgoing port</td><td>*25*</td>
-  </tr>
-</table>
+### Basic Tab
 
-Finally Save, Save and then Done.
+| field           | value                     |
+| --------------- | ------------------------- |
+| Account Name    | _mac_                     |
+| Your Name       | _your full name_          |
+| Email Address   | _your .mac email address_ |
+| Connection Type | _IMAP_                    |
+
+### Inbox Tab
+
+| field                   | value                        |
+| ----------------------- | ---------------------------- |
+| Incoming Server Address | _mail.mac.com_               |
+| Username                | _your .mac account name_     |
+| Password                | _your .mac account password_ |
+
+### Outbox Tab
+
+| field                   | value          |
+| ----------------------- | -------------- |
+| Outgoing server address | _smtp.mac.com_ |
+| Use SMTP auth           | _checked_      |
+| Use Inbox login details | _checked_      |
+
+### Outgoing Tab
+
+| field             | value |
+| ----------------- | ----- |
+| Secure Connection | _TLS_ |
+| Outgoing port     | _25_  |
 
 Now .mac mail should be available in your messages app.
+

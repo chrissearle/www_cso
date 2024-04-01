@@ -23,7 +23,7 @@ ln -s /usr/share/munin/plugins/spamstats
 
 Then edit /etc/munin/plugin-conf.d/munin-mode - I'm using exim4 - which logs to /var/log/mail.log - and with root.adm ownership - so I used the following:
 
-```ini
+```properties
 [spamstats]
 group adm
 env.logfile mail.log

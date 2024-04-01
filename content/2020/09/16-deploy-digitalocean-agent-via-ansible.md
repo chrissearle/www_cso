@@ -13,7 +13,7 @@ The script does provide support for detecing apt vs yum etc - but I only need th
 
 I try to keep my droplets provisioned by ansible - so for debian at least the following ansible snippet works fine.
 
-```yml
+```yaml
 ---
 - name: add apt key
   apt_key:

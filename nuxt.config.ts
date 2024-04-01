@@ -13,9 +13,9 @@ export default defineNuxtConfig({
   sourcemap: false,
   content: {
     highlight: {
-      theme: "github-dark",
+      theme: "github-light",
       // Define languages you expect to use
-      preload: [
+      langs: [
         "diff",
         "ts",
         "js",
@@ -27,12 +27,14 @@ export default defineNuxtConfig({
         "json",
         "kotlin",
         "scala",
-        "ini",
         "c",
         "lua",
         "ruby",
         "perl",
         "swift",
+        "ini",
+        "shell",
+        "yaml",
       ],
     },
     markdown: {

@@ -1,35 +1,97 @@
 <template>
   <main class="blog-post-text">
-    <ContentDoc :path="cleanPath">
+    <ContentDoc>
       <template v-slot="{ doc }">
         <section id="blog-title" type="header">
           <div
-            class="border-typography_primary flex flex-col md:flex-row items-center md:justify-start md:text-right mb-12 md:mb-8 gap-4"
+            class="border-t-2 pt-8 border-typography_primary flex flex-col md:flex-row items-center md:justify-between md:text-right mb-12 md:mb-8"
           >
-            <span
-              class="font-light text-typography_primary/75 dark:text-typography_primary_dark/75 pr-2"
+            <!-- Breadcrumbs -->
+            <ol
+              itemscope
+              itemtype="https://schema.org/BreadcrumbList"
+              class="blog-breadcrumb"
             >
-              {{ $displayDate(doc.date) }}
-
-              <span v-if="doc.updated">
-                (Updated: {{ $displayDate(doc.updated) }})
-              </span>
-            </span>
-
-            <span v-for="tag in $splitList(doc.tags)" :key="tag">
-              <TagsButton :tag="tag" />
-            </span>
-
-            <span v-if="doc.series"><SeriesButton :series="doc.series" /></span>
+              <li
+                itemprop="itemListElement"
+                itemscope
+                itemtype="https://schema.org/ListItem"
+              >
+                <a itemprop="item" href="/">
+                  <span itemprop="name">Home</span></a
+                >
+                <meta itemprop="position" content="1" />
+              </li>
+              <li class="separator">/</li>
+              <li
+                itemprop="itemListElement"
+                itemscope
+                itemtype="https://schema.org/ListItem"
+              >
+                <a
+                  itemscope
+                  itemtype="https://schema.org/WebPage"
+                  itemprop="item"
+                  itemid="/blog/"
+                  href="/blog/"
+                >
+                  <span itemprop="name">Blog</span></a
+                >
+                <meta itemprop="position" content="2" />
+              </li>
+              <li class="separator">/</li>
+              <li
+                itemprop="itemListElement"
+                itemscope
+                itemtype="https://schema.org/ListItem"
+              >
+                <span itemprop="name">{{ doc.headline }}</span>
+                <meta itemprop="position" content="3" />
+              </li>
+            </ol>
+            <!-- Publish date -->
+            <span
+              class="font-light text-typography_primary/75 dark:text-typography_primary_dark/75 mt-2 md:mt-0"
+              >{{ $formatDate(doc.date) }}</span
+            >
           </div>
-
+          <!-- Headline -->
           <h1
             class="blog-post-text font-bold mb-4 md:mb-6 text-h3 leading-h3 md:text-h1 md:leading-h1 text-center md:text-left"
           >
-            {{ doc.title }}
+            {{ doc.headline }}
           </h1>
+          <p
+            class="blog-post-text mb-8 md:w-8/12 md:text-lg md:leading-lg text-center md:text-left"
+          >
+            {{ doc.excerpt }}
+          </p>
+          <div
+            class="border-b-2 pb-8 border-typography_primary dark:border-typography_primary_dark flex flex-col md:flex-row items-center md:justify-between mt-12 md:mt-4"
+          >
+            <!-- Author -->
+            <div class="flex flex-row items-center justify-center">
+              <span class="blog-post-text text-lg leading-lg font-light"
+                >By
+                <a
+                  class="hover:underline italic"
+                  :href="doc.authorUrl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >{{ doc.author }}</a
+                ></span
+              >
+            </div>
+            <!-- Social Share -->
+            <div class="mt-6 md:mt-0">
+              <NavShareIcons
+                :headline="doc.headline"
+                :excerpt="doc.excerpt"
+                :path="doc._path + '/'"
+              />
+            </div>
+          </div>
         </section>
-
         <!-- Content -->
         <section
           id="main"
@@ -41,13 +103,16 @@
               <BlogTableOfContents :links="doc.body?.toc?.links" />
             </div>
           </aside>
-          <article class="mainbody col-span-full md:col-span-7 relative">
+          <article class="prose col-span-full md:col-span-7 relative">
             <!-- Update date -->
-
+            <span
+              v-show="doc.dateUpdated"
+              class="italic absolute -top-8 text-sm leading-sm font-light text-typography_primary/75 dark:text-typography_primary_dark/75"
+              >(Updated: {{ $formatDate(doc.dateUpdated) }})</span
+            >
             <!-- Blog content -->
             <ContentRenderer :value="doc" class="blog-content blog-post-text" />
           </article>
-
           <aside class="col-span-full md:col-span-3 blog-aside h-fit">
             <!-- Mobile Table of Content -->
             <div class="!hidden blog-aside-wrapper md:!flex mb-4">
@@ -56,7 +121,6 @@
                 class="blog-post-text"
               />
             </div>
-
             <!-- Related articles -->
             <div
               v-if="data?.surround?.filter((elem) => elem !== null)?.length > 0"
@@ -74,7 +138,6 @@
       </template>
       <!-- Error in case not found -->
       <template #not-found>
-        {{ data }}
         <SectionsError />
       </template>
     </ContentDoc>
@@ -82,26 +145,19 @@
 </template>
 
 <script setup>
-const { $displayDate } = useNuxtApp();
-const { path, params } = useRoute();
-
-const cleanPath =
-  "/" + params.year + "/" + params.month + "/" + params.day + "-" + params.slug;
-
+const { $formatDate } = useNuxtApp();
+const { path } = useRoute();
+const cleanPath = path.replace(/\/+$/, "");
 const { data, error } = await useAsyncData(`content-${cleanPath}`, async () => {
   // Remove a trailing slash in case the browser adds it, it might break the routing
   // fetch document where the document path matches with the cuurent route
-  let article = queryContent("/").where({ _path: cleanPath }).findOne();
+  let article = queryContent("/blog").where({ _path: cleanPath }).findOne();
   // get the surround information,
   // which is an array of documeents that come before and after the current document
-  let surround = queryContent("/")
-    .where({ _type: "markdown" })
+  let surround = queryContent("/blog")
     .sort({ date: -1 })
-    .only(["_path", "title", "intro"])
+    .only(["_path", "headline", "excerpt"])
     .findSurround(cleanPath, { before: 1, after: 1 });
-
-  console.log(surround);
-
   return {
     article: await article,
     surround: await surround,
@@ -113,12 +169,11 @@ const { data: authorData } = await useAsyncData("home", () =>
   queryContent("/authors").findOne()
 );
 
-const doc = data.article;
-
 // Set the meta
-const baseUrl = "https://www.chrissearle.org";
+const baseUrl = "https://example.com";
 const canonicalPath = baseUrl + (path + "/").replace(/\/+$/, "/");
-const image = baseUrl + data.value?.article?.image;
+const image =
+  baseUrl + (data.value?.article?.socialImage.src || "/sample.webp");
 
 // JSON+LD
 const jsonScripts = [
@@ -143,27 +198,9 @@ const jsonScripts = [
     }),
   },
 ];
-
-console.log({
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  mainEntityOfPage: {
-    "@type": "WebPage",
-    "@id": "https://example.com/",
-  },
-  url: canonicalPath,
-  image: image,
-  headline: data.value?.article?.headline,
-  abstract: data.value?.article?.excerpt,
-  datePublished: data.value?.article?.date,
-  dateModified: data.value?.article?.dateUpdated || data.value?.article?.date,
-  author: authorData.value[data.value?.article?.author],
-  publisher: authorData.value["Gonzalo Hirsch"],
-});
-
 useHead({
   title: data.value?.article?.title,
-  /* meta: [
+  meta: [
     { name: "author", content: data.value?.article?.author },
     { name: "description", content: data.value?.article?.description },
     {
@@ -223,10 +260,8 @@ useHead({
       name: "twitter:image:alt",
       content: data.value?.article?.socialImage.alt,
     },
-    
   ],
-  */
-  /*  link: [
+  link: [
     {
       hid: "canonical",
       rel: "canonical",
@@ -234,7 +269,6 @@ useHead({
     },
   ],
   script: jsonScripts,
-  */
 });
 </script>
 

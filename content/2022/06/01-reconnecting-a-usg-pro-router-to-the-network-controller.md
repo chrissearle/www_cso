@@ -8,10 +8,7 @@ image: unifi.png
 
 In the Unifi controller/network application - the router was showing as "offline".
 
-<figure class="figure w-100 text-center">
-  <img class="figure-img img-fluid rounded" src="/images/posts/2022/06/unifi.png" title="Unifi Network Application - router showing offline" alt="Unifi Network Application - router showing offline"/>
-  <figcaption class="figure-caption">Unifi Network Application - router showing offline</figcaption>
-</figure>
+![Unifi Network Application - router showing offline](/images/posts/2022/06/unifi.png)
 
 It was also not available via Ubiquiti's [online proxy](https://unifi.ui.com/) - so something was not working well.
 
@@ -19,7 +16,7 @@ However - since it was routing just fine - and the network was in use - was it p
 
 First step was to ssh to the router and run the info command:
 
-```text
+```
 admin@MainRouter:~$ info
 Model: UniFi-Gateway-4
 Version: 4.4.55.5377109
