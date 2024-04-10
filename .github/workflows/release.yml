@@ -1,0 +1,26 @@
+name: Site Build and Deploy
+
+on:
+  push:
+    tags:
+      - v*
+
+jobs:
+  push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Login to DockerHub Registry
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Get current
+        run: docker pull chrissearle/www_cso:staging
+
+      - name: Tag release
+        run: docker tag chrissearle/www_cso:staging chrissearle/www_cso:release
+
+      - name: Push release image
+        run: docker push chrissearle/www_cso:release
