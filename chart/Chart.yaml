@@ -1,0 +1,8 @@
+apiVersion: v2
+name: www-cso
+description: Copy of www.chrissearle.org
+
+type: application
+version: 0.1.0
+
+appVersion: "0.0.0"
