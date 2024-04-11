@@ -32,6 +32,10 @@ jobs:
           push: true
           tags: chrissearle/www_cso:${{ github.sha }},chrissearle/www_cso:latest
 
+      - name: Get latest to local docker
+        if: github.ref == 'refs/heads/main'
+        run: docker pull chrissearle/www_cso:latest
+
       - name: Tag staging
         if: github.ref == 'refs/heads/main'
         run: docker tag chrissearle/www_cso:latest chrissearle/www_cso:staging
