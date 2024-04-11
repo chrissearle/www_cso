@@ -17,10 +17,10 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Get current
-        run: docker pull chrissearle/www_cso:staging
+        run: docker pull ${{ secrets.DOCKERHUB_USERNAME }}/www_cso:staging
 
       - name: Tag release
-        run: docker tag chrissearle/www_cso:staging chrissearle/www_cso:release
+        run: docker tag ${{ secrets.DOCKERHUB_USERNAME }}/www_cso:staging ${{ secrets.DOCKERHUB_USERNAME }}/www_cso:release
 
       - name: Push release image
-        run: docker push chrissearle/www_cso:release
+        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/www_cso:release
