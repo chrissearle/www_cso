@@ -3,7 +3,7 @@ name: Build
 on:
   push:
     branches:
-      - main
+      - '*'
 
 jobs:
   push:
@@ -30,7 +30,15 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: chrissearle/www_cso:${{ github.sha }},chrissearle/www_cso:staging,chrissearle/www_cso:latest
+          tags: chrissearle/www_cso:${{ github.sha }},chrissearle/www_cso:latest
+
+      - name: Tag staging
+        if: contains(github.ref, "main")
+        run: docker tag chrissearle/www_cso:latest chrissearle/www_cso:staging
+
+      - name: Push staging image
+        if: contains(github.ref, "main")
+        run: docker push chrissearle/www_cso:staging
 
       - name: Generate summary
         run: |
