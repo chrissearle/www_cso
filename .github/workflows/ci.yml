@@ -33,11 +33,11 @@ jobs:
           tags: chrissearle/www_cso:${{ github.sha }},chrissearle/www_cso:latest
 
       - name: Tag staging
-        if: contains(github.ref, "main")
+        if: github.ref == 'refs/heads/main'
         run: docker tag chrissearle/www_cso:latest chrissearle/www_cso:staging
 
       - name: Push staging image
-        if: contains(github.ref, "main")
+        if: github.ref == 'refs/heads/main'
         run: docker push chrissearle/www_cso:staging
 
       - name: Generate summary
