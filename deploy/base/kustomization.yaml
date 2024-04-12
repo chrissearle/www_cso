@@ -13,15 +13,15 @@ labels:
     app.kubernetes.io/name: www-cso
     app.kubernetes.io/version: latest
 
-secretGenerator:
-  - name: regcred
-    type: kubernetes.io/dockerconfigjson
-    files:
-      - secrets/.dockerconfigjson
-  - name: tls
-    files:
-      - secrets/tls.crt
-      - secrets/tls.key
+#secretGenerator:
+#  - name: regcred
+#    type: kubernetes.io/dockerconfigjson
+#    files:
+#      - secrets/.dockerconfigjson
+#  - name: tls
+#    files:
+#      - secrets/tls.crt
+#      - secrets/tls.key
 
 generatorOptions:
   disableNameSuffixHash: true
