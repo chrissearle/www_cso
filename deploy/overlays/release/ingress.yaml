@@ -1,0 +1,3 @@
+- op: replace
+  path: /spec/rules/0/host
+  value: www-cso.k3s.home.chrissearle.org
