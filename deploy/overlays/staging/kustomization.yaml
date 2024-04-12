@@ -15,6 +15,9 @@ patches:
     path: ingress.yaml
   - target:
       kind: Deployment
+    path: replicas-patch.yaml
+  - target:
+      kind: Deployment
     path: namespace-patch.yaml
   - target:
       kind: Service
