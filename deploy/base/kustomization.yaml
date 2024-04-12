@@ -5,6 +5,8 @@ resources:
 - deployment.yaml
 - service.yaml
 - ingress.yaml
+- tls-sealed.yaml
+- regcred-sealed.yaml
 
 labels:
 - includeSelectors: true
@@ -12,16 +14,3 @@ labels:
     app.kubernetes.io/instance: www-cso
     app.kubernetes.io/name: www-cso
     app.kubernetes.io/version: latest
-
-#secretGenerator:
-#  - name: regcred
-#    type: kubernetes.io/dockerconfigjson
-#    files:
-#      - secrets/.dockerconfigjson
-#  - name: tls
-#    files:
-#      - secrets/tls.crt
-#      - secrets/tls.key
-
-generatorOptions:
-  disableNameSuffixHash: true

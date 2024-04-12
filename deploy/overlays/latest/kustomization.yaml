@@ -28,3 +28,9 @@ patches:
   - target:
       kind: Secret
     path: namespace-patch.yaml
+  - target:
+      kind: SealedSecret
+    path: namespace-patch.yaml
+  - target:
+      kind: SealedSecret
+    path: sealed-secret-patch.yaml
