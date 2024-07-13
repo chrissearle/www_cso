@@ -4,7 +4,7 @@
   </Head>
   <div class="container mx-auto mt-10">
     <h1
-      class="text-typography_primary font-bold mb-4 md:mb-6 text-h3 leading-h3 md:text-h2 md:leading-h2 text-center md:text-left"
+        class="text-typography_primary font-bold mb-4 md:mb-6 text-h3 leading-h3 md:text-h2 md:leading-h2 text-center md:text-left"
     >
       Cryptographic Keys
     </h1>
@@ -16,10 +16,10 @@
         Get the public keys direct from the keyservers. You can also check the
         proofs on my
         <a
-          href="https://keyoxide.org/116FBA8295065A01C3BC7CC6CF79BF54D4BF0A41"
-          target="_blank"
-          rel="noopener noreferer"
-          >keyoxide profile</a
+            href="https://keyoxide.org/116FBA8295065A01C3BC7CC6CF79BF54D4BF0A41"
+            target="_blank"
+            rel="noopener noreferer"
+        >keyoxide profile</a
         >
       </p>
 
@@ -40,9 +40,9 @@
           These replace the older two keys and are both using a larger key size
           and SHA-256 instead of SHA-1.
           <a
-            href="http://ekaia.org/blog/2009/05/10/creating-new-gpgkey/"
-            target="_blank"
-            rel="noopener noreferer"
+              href="http://ekaia.org/blog/2009/05/10/creating-new-gpgkey/"
+              target="_blank"
+              rel="noopener noreferer"
           >
             This blog post by Ana Beatriz Guerrero López</a
           >
@@ -72,9 +72,9 @@
       <p>
         I am migrating away from keybase - but the
         <a
-          href="https://keybase.io/chrissearle"
-          target="_blank"
-          rel="noopener noreferer"
+            href="https://keybase.io/chrissearle"
+            target="_blank"
+            rel="noopener noreferer"
         >
           keybase.io profile is here </a
         >. See the keyoxide link above instead for verifications.

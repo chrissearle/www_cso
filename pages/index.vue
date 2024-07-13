@@ -1,8 +1,8 @@
 <script setup>
 const blogCountLimit = 12;
 
-const { data } = await useAsyncData(`content-/blog`, async () => {
-  const _posts = await queryContent("/").where({ _type: "markdown" }).find();
+const {data} = await useAsyncData(`content-/blog`, async () => {
+  const _posts = await queryContent("/").where({_type: "markdown"}).find();
   return Math.ceil(_posts.length / blogCountLimit);
 });
 </script>
@@ -14,9 +14,9 @@ const { data } = await useAsyncData(`content-/blog`, async () => {
   <main>
     <section id="main" class="!pt-0">
       <ContentQuery
-        path="/"
-        :where="{ _type: 'markdown' }"
-        :only="[
+          path="/"
+          :where="{ _type: 'markdown' }"
+          :only="[
           'title',
           'intro',
           'date',
@@ -26,11 +26,11 @@ const { data } = await useAsyncData(`content-/blog`, async () => {
           'series',
           'updated',
         ]"
-        :sort="{
+          :sort="{
           date: -1,
         }"
-        :limit="blogCountLimit"
-        v-slot="{ data }"
+          :limit="blogCountLimit"
+          v-slot="{ data }"
       >
         <div class="m-4 md:hidden">
           <NuxtLink to="/tags" class="md:hidden mx-4">Tags</NuxtLink>
@@ -38,16 +38,16 @@ const { data } = await useAsyncData(`content-/blog`, async () => {
           <NuxtLink to="/series" class="md:hidden mx-4">Series</NuxtLink>
         </div>
 
-        <BlogList :data="data" />
+        <BlogList :data="data"/>
       </ContentQuery>
       <BlogPagination
-        v-if="data > 1"
-        class="mt-8"
-        :currentPage="1"
-        :totalPages="data"
-        :nextPage="data > 1"
-        baseUrl="/"
-        pageUrl="/page/"
+          v-if="data > 1"
+          class="mt-8"
+          :currentPage="1"
+          :totalPages="data"
+          :nextPage="data > 1"
+          baseUrl="/"
+          pageUrl="/page/"
       />
     </section>
   </main>

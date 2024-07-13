@@ -1,18 +1,18 @@
 <template>
   <div>
-    <NavBar />
+    <NavBar/>
 
     <div
-      class="grid min-h-screen grid-cols-[1fr_auto] justify-center gap-4 overflow-hidden p-4"
+        class="grid min-h-screen grid-cols-[1fr_auto] justify-center gap-4 overflow-hidden p-4"
     >
-      <slot />
+      <slot/>
 
       <aside class="md:flex hidden h-[calc(100vh_-_2rem)] w-40 flex-col items-start py-6">
-        <NavBrowse />
+        <NavBrowse/>
 
-        <NavTags />
+        <NavTags/>
 
-        <NavLatest />
+        <NavLatest/>
       </aside>
     </div>
   </div>

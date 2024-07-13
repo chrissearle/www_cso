@@ -88,7 +88,7 @@
 </template>
 
 <script setup>
-const {$displayDate} = useNuxtApp();
+const {$displayDate, $splitList} = useNuxtApp();
 const {path, params} = useRoute();
 
 const cleanPath =

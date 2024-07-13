@@ -1,8 +1,8 @@
 <script setup>
-const { params } = useRoute();
+const {params} = useRoute();
 
-const { data } = await useAsyncData(`content-/seris`, async () => {
-  const _posts = await queryContent("/").where({ _type: "markdown" }).find();
+const {data} = await useAsyncData(`content-/series`, async () => {
+  const _posts = await queryContent("/").where({_type: "markdown"}).find();
   return _posts.length;
 });
 </script>
@@ -14,21 +14,21 @@ const { data } = await useAsyncData(`content-/seris`, async () => {
 
   <main class="container mx-auto">
     <h2
-      class="text-typography_primary text-h2 leading-h2 md:text-h3 md:leading-h3"
+        class="text-typography_primary text-h2 leading-h2 md:text-h3 md:leading-h3"
     >
       Series: {{ params.series }}
     </h2>
     <section id="main" class="!pt-0 !px-0">
       <ContentQuery
-        path="/"
-        :where="{ series: params.series }"
-        :only="['_path', 'title', 'date']"
-        :sort="{
+          path="/"
+          :where="{ series: params.series }"
+          :only="['_path', 'title', 'date']"
+          :sort="{
           date: -1,
         }"
-        v-slot="{ data }"
+          v-slot="{ data }"
       >
-        <BlogShortItem :data="data" />
+        <BlogShortItem :data="data"/>
       </ContentQuery>
     </section>
   </main>

@@ -13,8 +13,8 @@ const props = defineProps({
 
 <template>
   <div
-    v-if="pill || count"
-    class="bg-blue-400 text-blue-100 py-1 px-2 rounded-full text-xs font-bold font-mono"
+      v-if="pill || count"
+      class="bg-blue-400 text-blue-100 py-1 px-2 rounded-full text-xs font-bold font-mono"
   >
     <span v-if="pill">
       {{ pill }}

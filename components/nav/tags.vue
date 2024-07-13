@@ -1,16 +1,16 @@
 <script setup>
-const { $countSplitList } = useNuxtApp();
+const {$countSplitList} = useNuxtApp();
 
-const { data } = await useAsyncData(`content-/tags`, async () => {
-  const _posts = await queryContent("/").where({ _type: "markdown" }).find();
+const {data} = await useAsyncData(`content-/tags`, async () => {
+  const _posts = await queryContent("/").where({_type: "markdown"}).find();
   return _posts.length;
 });
 
 const countTags = (tags) => {
   const tagMap = $countSplitList(
-    tags
-      .map((element) => element.tags)
-      .filter((element) => element !== undefined)
+      tags
+          .map((element) => element.tags)
+          .filter((element) => element !== undefined)
   );
 
   const sortedMap = new Map([...tagMap].sort((a, b) => b[1] - a[1]));
@@ -30,21 +30,21 @@ const countTags = (tags) => {
     <h4 class="aside-heading">Popular Tags</h4>
 
     <ContentQuery
-      path="/"
-      :where="{ _type: 'markdown' }"
-      :only="['tags']"
-      :sort="{
+        path="/"
+        :where="{ _type: 'markdown' }"
+        :only="['tags']"
+        :sort="{
         date: -1,
       }"
-      v-slot="{ data }"
+        v-slot="{ data }"
     >
       <div
-        class="grid grid-cols-[1fr_auto] justify-between items-center mb-2"
-        v-for="[tag, tagCount] in countTags(data)"
-        :key="tag"
+          class="grid grid-cols-[1fr_auto] justify-between items-center mb-2"
+          v-for="[tag, tagCount] in countTags(data)"
+          :key="tag"
       >
-        <TagsButton class="grid-col" :tag="tag" />
-        <Pill class="grid-col" :count="tagCount" />
+        <TagsButton class="grid-col" :tag="tag"/>
+        <Pill class="grid-col" :count="tagCount"/>
       </div>
     </ContentQuery>
   </div>
