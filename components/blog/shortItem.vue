@@ -11,7 +11,7 @@ const { $displayDate, $articleLink } = useNuxtApp();
 <template>
   <div class="flex flex-wrap gap-4">
     <div
-      class="p-6 shadow hover:bg-slate-300 grid grid-cols-[1fr_auto] justify-between items-center w-[500px]"
+      class="p-6 shadow hover:bg-slate-300 grid grid-cols-[1fr_auto] justify-between items-center w-[400px] md:w-[500px]"
       v-for="(article, idx) in data"
       :key="idx"
     >

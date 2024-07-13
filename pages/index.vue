@@ -32,6 +32,12 @@ const { data } = await useAsyncData(`content-/blog`, async () => {
         :limit="blogCountLimit"
         v-slot="{ data }"
       >
+        <div class="m-4 md:hidden">
+          <NuxtLink to="/tags" class="md:hidden mx-4">Tags</NuxtLink>
+          <NuxtLink to="/articles" class="md:hidden mx-4">Articles</NuxtLink>
+          <NuxtLink to="/series" class="md:hidden mx-4">Series</NuxtLink>
+        </div>
+
         <BlogList :data="data" />
       </ContentQuery>
       <BlogPagination

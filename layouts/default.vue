@@ -7,7 +7,7 @@
     >
       <slot />
 
-      <aside class="flex h-[calc(100vh_-_2rem)] w-40 flex-col items-start py-6">
+      <aside class="md:flex hidden h-[calc(100vh_-_2rem)] w-40 flex-col items-start py-6">
         <NavBrowse />
 
         <NavTags />
@@ -27,3 +27,5 @@
   @apply mb-4;
 }
 </style>
+<script setup lang="ts">
+</script>
