@@ -12,7 +12,7 @@ const { data } = await useAsyncData(`content-/tags`, async () => {
 
   <main class="container mx-auto">
     <h2
-      class="text-typography_primary text-h2 leading-h2 md:text-h3 md:leading-h3"
+      class="text-typography_primary text-h2 leading-h2 md:text-h3 md:leading-h3 md:m-0 mx-1"
     >
       All Tags
     </h2>
