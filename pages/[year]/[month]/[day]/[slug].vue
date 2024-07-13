@@ -4,7 +4,7 @@
       <template v-slot="{ doc }">
         <section id="blog-title" type="header">
           <div
-              class="border-typography_primary flex flex-col md:flex-row items-center md:justify-start md:text-right mb-12 md:mb-8 gap-4"
+              class="border-typography_primary flex flex-col md:flex-row items-start md:items-center md:justify-start md:text-right mb-2 lg:mb-12 md:mb-8 gap-1 md:gap-4"
           >
             <span
                 class="font-light text-typography_primary/75 dark:text-typography_primary_dark/75 pr-2"
