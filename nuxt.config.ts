@@ -49,4 +49,10 @@ export default defineNuxtConfig({
       ],
     },
   },
+  // currently generate isn't creating index.html - https://github.com/nuxt/nuxt/issues/28042
+  nitro: {
+    prerender: {
+      routes: ['/']
+    }
+  },
 });
