@@ -1,4 +1,0 @@
-exclude:
-  global:
-    -  public/images/posts/2020/12/pom.xml
-

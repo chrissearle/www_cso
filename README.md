@@ -1,30 +1,75 @@
-# www.chrissearle.org
+# Nuxt 3 Minimal Starter
 
-NextJS based site generator for www.chrissearle.org
+Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
-## Github Actions
+## Setup
 
-Any push of main or a tag v\* will trigger github actions to run.
+Make sure to install the dependencies:
 
-- main -> will build and push a staging image (:staging)
-- v\* tag -> will build and push a promoted image (:latest) - tag name has to start v and since this is not software the format is YYYYMMDDXX where XX is zero padded "release count that day".
+```bash
+# npm
+npm install
 
-## NPM
+# pnpm
+pnpm install
 
-- dev - run dev server
-- build - build
-- postbuild - build sitemap (runs automatically after build)
-- export - dump the contents as static HTML to out/
-- serve - serve the contents of out/
-- start - serve the contents as built
-- lint - run lint
+# yarn
+yarn install
 
-## Docker
+# bun
+bun install
+```
 
-Local docker build:
+## Development Server
 
-docker build -t www-cso:latest .
+Start the development server on `http://localhost:3000`:
 
-Run local build:
+```bash
+# npm
+npm run dev
 
-docker run --rm -d -p 3000:3000 --name www-cso www-cso:latest
+# pnpm
+pnpm run dev
+
+# yarn
+yarn dev
+
+# bun
+bun run dev
+```
+
+## Production
+
+Build the application for production:
+
+```bash
+# npm
+npm run build
+
+# pnpm
+pnpm run build
+
+# yarn
+yarn build
+
+# bun
+bun run build
+```
+
+Locally preview production build:
+
+```bash
+# npm
+npm run preview
+
+# pnpm
+pnpm run preview
+
+# yarn
+yarn preview
+
+# bun
+bun run preview
+```
+
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
