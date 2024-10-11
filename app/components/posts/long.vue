@@ -3,6 +3,7 @@ import type {ParsedContent} from '@nuxt/content'
 
 const {dateFormat} = useDates()
 const {seriesLink, categoryLink} = useLinks()
+const {splitList} = useStrings()
 
 const props = defineProps<{
   post: ParsedContent
@@ -23,6 +24,8 @@ if (props.post.intro) {
 }
 
 useSeoMeta(opts)
+
+const categories = splitList(props.post.category)
 </script>
 
 <template>
@@ -30,10 +33,10 @@ useSeoMeta(opts)
     <v-card>
       <v-card-title>{{ props.post.title }}</v-card-title>
 
-      <v-card-subtitle>
+      <v-card-subtitle class="d-flex flex-wrap flex align-center">
         {{ dateFormat(props.post.date) }}
-        <v-btn class="mx-5" v-if="post.series" :to="seriesLink(post.series)" prepend-icon="mdi-group">{{ post.series }}</v-btn>
-        <v-btn class="mx-5" v-if="post.category" :to="categoryLink(post.category)" prepend-icon="mdi-shape">{{ post.category }}</v-btn>
+        <v-btn class="mx-5" v-if="props.post.series" :to="seriesLink(props.post.series)" prepend-icon="mdi-group">{{ props.post.series }}</v-btn>
+        <v-btn class="mx-5" v-for="category in categories" :to="categoryLink(category)" prepend-icon="mdi-shape">{{ category }}</v-btn>
       </v-card-subtitle>
 
       <v-card-text>

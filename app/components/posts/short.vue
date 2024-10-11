@@ -3,10 +3,13 @@ import type {ParsedContent} from '@nuxt/content'
 
 const {seriesLink, categoryLink} = useLinks()
 const {dateFormat} = useDates()
+const {splitList} = useStrings()
 
 const props = defineProps<{
   post: Pick<ParsedContent, "image" | "title" | "date" | "tags" | "embedImage" | "intro" | "_path" | "category" | "series">
 }>()
+
+const categories = splitList(props.post.category)
 </script>
 
 <template>
@@ -20,7 +23,7 @@ const props = defineProps<{
     <v-card-subtitle class="d-flex flex-column ga-3 align-start">
       {{ dateFormat(props.post.date) }}
       <v-btn v-if="post.series" :to="seriesLink(post.series)" prepend-icon="mdi-group">{{ post.series }}</v-btn>
-      <v-btn v-if="post.category" :to="categoryLink(post.category)" prepend-icon="mdi-shape">{{ post.category }}</v-btn>
+      <v-btn v-for="category in categories" :to="categoryLink(category)" prepend-icon="mdi-shape">{{ category }}</v-btn>
     </v-card-subtitle>
 
     <v-card-text>

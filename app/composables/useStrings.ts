@@ -1,8 +1,17 @@
 export const useStrings = () => {
-    const splitList = (items: string) =>
-        (items ? items.split(",").map((item) => item.trim()) : []).sort();
+    const splitList = (items: string | string[] | undefined): string[] => {
+        let list: string[] = []
 
-    const countSplitList = (items: string[]) =>
+        if (Array.isArray(items)) {
+            list = items
+        } else if (items !== undefined) {
+            list = items.split(",")
+        }
+
+        return list.sort();
+    };
+
+    const countSplitList = (items: string[]): string[]  =>
         items
             .map((tags) => {
                 if (Array.isArray(tags)) {

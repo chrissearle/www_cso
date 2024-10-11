@@ -7,7 +7,12 @@ const uniqueFilter = (value: string, index: number, self: string[]) => {
   return self.indexOf(value) === index;
 }
 
-const categories = data.value?.map((c) => c.category.split(",")).flat().map((c) => c.trim()).filter(uniqueFilter).sort()
+const categories = data.value?.map((c) => {
+  if (Array.isArray(c.category)) {
+    return c.category;
+  }
+  return c.category.split(",");
+}).flat().map((c) => c.trim()).filter(uniqueFilter).sort()
 </script>
 
 <template>
