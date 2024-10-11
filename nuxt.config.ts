@@ -22,7 +22,7 @@ export default defineNuxtConfig({
         }
     },
     site: {
-        url: 'https://www.searle.me.uk',
+        url: 'https://www.chrissearle.org',
         name: 'Chris Searle',
         trailingSlash: true
     },
