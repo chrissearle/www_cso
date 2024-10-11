@@ -1,8 +1,8 @@
 ---
 title: Fetching the token
 date: 2020-03-18 09:21 +0100
-tags: ios, swift, swiftui, xcode, s'banken
-series: Revisiting the S'banken API with SwiftUI
+tags: ios, swift, swiftui, xcode, sbanken
+series: Revisiting the Sbanken API with SwiftUI
 intro: The app so far has the ability to read its configuration and to check that you are who you say you are on devices that support touch or face id. The next step is to get an access token from the S'banken API.
 ---
 

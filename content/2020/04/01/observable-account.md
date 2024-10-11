@@ -1,8 +1,8 @@
 ---
 title: Observable account
 date: 2020-04-01 08:15 +0200
-tags: ios, swift, swiftui, xcode, s'banken
-series: Revisiting the S'banken API with SwiftUI
+tags: ios, swift, swiftui, xcode, sbanken
+series: Revisiting the S<banken API with SwiftUI
 intro: So far we are showing the account balances - and the next step is really to sort out the transaction view.
 ---
 

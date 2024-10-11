@@ -8,8 +8,8 @@ export default defineNuxtConfig({
       'vuetify-nuxt-module',
       '@nuxt/content',
       "@nuxt/image",
-      "@nuxtjs/sitemap",
-      "nuxt-disqus"
+      "nuxt-disqus",
+      "@nuxtjs/seo"
     ],
     vuetify: {
         moduleOptions: {
@@ -26,7 +26,7 @@ export default defineNuxtConfig({
         name: 'Chris Searle',
         trailingSlash: true
     },
-    ssr: false,
+    ssr: true,
     content: {
         highlight: {
             theme: "github-dark",
@@ -70,7 +70,8 @@ export default defineNuxtConfig({
         experimental: {
             clientDB: true
         },
-        respectPathCase: true
+        respectPathCase: true,
+        contentHead: false
     },
     sitemap: {
         strictNuxtContentPaths: true

@@ -1,8 +1,8 @@
 ---
 title: Revisiting the S'banken API with SwiftUI
 date: 2020-03-02 20:13 +0100
-tags: s'banken, open banking, ios, swift, swiftui, xcode
-series: Revisiting the S'banken API with SwiftUI
+tags: sbanken, open banking, ios, swift, swiftui, xcode
+series: Revisiting the Sbanken API with SwiftUI
 intro: In this series - we will take a look at creating the app from scratch - but using SwiftUI and some helper libraries.
 ---
 

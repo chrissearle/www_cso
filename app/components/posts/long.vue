@@ -7,6 +7,22 @@ const {seriesLink, categoryLink} = useLinks()
 const props = defineProps<{
   post: ParsedContent
 }>()
+
+let opts = {
+  title: props.post.title,
+  ogTitle: props.post.title,
+  ogType: 'article'
+};
+
+if (props.post.image) {
+  opts.ogImage = useSiteConfig().url + props.post.image
+}
+
+if (props.post.intro) {
+  opts.ogDescription = props.post.intro
+}
+
+useSeoMeta(opts)
 </script>
 
 <template>

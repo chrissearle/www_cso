@@ -1,7 +1,7 @@
 ---
 title: Pocket money with the S'banken API
 date: 2018-09-26 10:54 +0200
-tags: s'banken, open banking, ios
+tags: sbanken, open banking, ios
 ---
 
 S'banken has support for giving a child/teenager a card connected to a bank account in the parent's customer account.

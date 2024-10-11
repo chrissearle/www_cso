@@ -138,7 +138,7 @@ A fair number of projects I work on are spring boot based, using the reactive we
 
 For this - we will use a maven project generated at https://start.spring.io/ (java 11/maven/spring boot 2.4.0) with one added dependency - Spring Reactive Web.
 
-This generates a [pom file](/images/posts/2020/12/pom.xml)
+This generates a ::download{title="pom file" path="/files/posts/2020/12/pom.xml"}
 
 Just to make things simple - we'll make this a command line app and just call the request synchronously in run - first without the proxy:
 

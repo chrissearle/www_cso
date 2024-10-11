@@ -2,7 +2,7 @@
 title: SwiftUI project setup
 date: 2020-03-02 20:54 +0100
 tags: ios, swift, swiftui, xcode
-series: Revisiting the S'banken API with SwiftUI
+series: Revisiting the Sbanken API with SwiftUI
 image: /images/posts/2020/03/project-setup.png
 intro: Let's start by getting the correct project setup.
 ---
