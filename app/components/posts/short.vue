@@ -17,10 +17,10 @@ const props = defineProps<{
       </NuxtLink>
     </v-card-title>
 
-    <v-card-subtitle>
+    <v-card-subtitle class="d-flex flex-column ga-3 align-start">
       {{ dateFormat(props.post.date) }}
-      <v-btn class="mx-5" v-if="post.series" :to="seriesLink(post.series)" prepend-icon="mdi-group">{{ post.series }}</v-btn>
-      <v-btn class="mx-5" v-if="post.category" :to="categoryLink(post.category)" prepend-icon="mdi-shape">{{ post.category }}</v-btn>
+      <v-btn v-if="post.series" :to="seriesLink(post.series)" prepend-icon="mdi-group">{{ post.series }}</v-btn>
+      <v-btn v-if="post.category" :to="categoryLink(post.category)" prepend-icon="mdi-shape">{{ post.category }}</v-btn>
     </v-card-subtitle>
 
     <v-card-text>
@@ -43,7 +43,7 @@ const props = defineProps<{
 
 <style scoped>
 .post {
-  width: 45%
+  width: 47%
 }
 
 .postImg {

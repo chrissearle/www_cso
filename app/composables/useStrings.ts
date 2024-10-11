@@ -4,7 +4,12 @@ export const useStrings = () => {
 
     const countSplitList = (items: string[]) =>
         items
-            .map((element) => splitList(element))
+            .map((tags) => {
+                if (Array.isArray(tags)) {
+                    return tags;
+                }
+                return splitList(tags);
+            })
             .flat()
             .reduce((acc, e) => acc.set(e, (acc.get(e) || 0) + 1), new Map())
 
