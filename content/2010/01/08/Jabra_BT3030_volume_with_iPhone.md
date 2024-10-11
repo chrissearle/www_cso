@@ -1,7 +1,7 @@
 ---
 title: Jabra BT3030 volume with iPhone
 date: 2010-01-08 16:20:21 +0100
-tags: bluetooth, iphone, jabra
+tags: [bluetooth, iphone, jabra]
 ---
 
 The BT3030 bluetooth headset is a nice headset but with the iphone the minimum volume is too high.

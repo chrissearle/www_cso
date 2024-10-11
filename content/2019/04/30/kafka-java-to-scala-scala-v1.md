@@ -1,7 +1,7 @@
 ---
 title: Kafka - java to scala - scala v1 - basic
 date: 2019-04-30 12:08 +0200
-tags: kafka, scala, producer, consumer
+tags: [kafka, scala, producer, consumer]
 series: Kafka - java to scala
 updated: 2020-01-23 00:00
 intro: In the previous step we created a basic producer and consumer in java. Let's try for a direct conversion (almost line by line) to scala as a first step.

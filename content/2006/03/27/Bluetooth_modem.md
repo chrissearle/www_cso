@@ -1,7 +1,7 @@
 ---
 title: Bluetooth modem
 date: 2006-03-27 17:12:28 +0200
-tags: mac, bluetooth, p990i
+tags: [mac, bluetooth, p990i]
 ---
 
 Well - having got the mac mini - time to get bluetooth net access running - just for the fun of it.

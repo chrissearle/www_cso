@@ -1,7 +1,7 @@
 ---
 title: mitmproxy with java
 date: 2020-12-09 08:05 +0100
-tags: java, mitmproxy
+tags: [java, mitmproxy]
 image: /images/posts/2020/12/mitm_curl_response.png
 intro: Using mitmproxy to debug java web calls
 ---

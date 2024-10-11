@@ -1,7 +1,7 @@
 ---
 title: Ktor 2 route withRole for JWT
 date: 2023-04-18 22:49 +0200
-tags: ktor, jwt, kotlin, route
+tags: [ktor, jwt, kotlin, route]
 intro: Adding support for withRole() {} to routing in ktor2
 ---
 

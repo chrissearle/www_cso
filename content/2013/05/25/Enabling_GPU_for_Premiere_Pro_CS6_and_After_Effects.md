@@ -1,7 +1,7 @@
 ---
 title: Enabling GPU for Premiere Pro CS6 and After Effects
 date: 2013-05-25 17:50:28 +0200
-tags: mac, adobe, premiere, after effects, nvidia, cuda
+tags: [mac, adobe, premiere, after effects, nvidia, cuda]
 ---
 
 Got a modern mac with a good nvidia graphics card but premiere and after effects won't use your GPU?

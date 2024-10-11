@@ -1,7 +1,7 @@
 ---
 title: LILO to grub the debian way
 date: 2005-05-23 22:30:54 +0200
-tags: debian, lilo, grub
+tags: [debian, lilo, grub]
 ---
 
 Full details on

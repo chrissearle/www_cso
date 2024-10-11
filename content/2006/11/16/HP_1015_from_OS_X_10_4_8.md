@@ -1,7 +1,7 @@
 ---
 title: HP 1015 from OS X 10.4.8
 date: 2006-11-16 19:45:00 +0100
-tags: mac, printing
+tags: [mac, printing]
 ---
 
 Two machines - a MB Pro and a Mac Mini. One printer - an HP 1015 LaserJet.

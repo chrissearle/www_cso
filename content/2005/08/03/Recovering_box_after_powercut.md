@@ -1,7 +1,7 @@
 ---
 title: Recovering box after powercut
 date: 2005-08-03 07:28:16 +0200
-tags: debian, lvm2
+tags: [debian, lvm2]
 ---
 
 Had a powercut over most of Oslo. When this box came up the partition table on /dev/hdb was totally gone.

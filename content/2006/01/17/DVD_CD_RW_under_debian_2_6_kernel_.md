@@ -1,7 +1,7 @@
 ---
 title: DVD/CD RW under debian (2.6 kernel)
 date: 2006-01-17 10:14:01 +0100
-tags: debian, dvd, cd-rom, ide-cd
+tags: [debian, dvd, cd-rom, ide-cd]
 ---
 
 This is a shortened version of [udev and DVD/CD RW under debian unstable](/2005/02/12/udev_and_DVD_CD_RW_under_debian_unstable/) for non-udev systems.

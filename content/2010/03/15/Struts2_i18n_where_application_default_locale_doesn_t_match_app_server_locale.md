@@ -1,7 +1,7 @@
 ---
 title: Struts2 i18n where application default locale doesn't match app server locale
 date: 2010-03-15 20:45:42 +0100
-tags: java, glassfish, struts2, struts 2.1.6
+tags: [java, glassfish, struts2, struts 2.1.6]
 ---
 
 I have a struts2 (2.1.6) based webapp which has two languages - english and norwegian. The default language for the app is norwegian - the application server (glassfish 2.1) is running under the english locale.

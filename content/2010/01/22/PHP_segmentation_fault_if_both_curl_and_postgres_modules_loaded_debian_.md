@@ -1,7 +1,7 @@
 ---
 title: PHP segmentation fault if both curl and postgres modules loaded (debian)
 date: 2010-01-22 07:24:55 +0100
-tags: debian, php
+tags: [debian, php]
 ---
 
 Running some porting scripts (command line PHP) for drupal yesterday - and for the first time trying out postgres.

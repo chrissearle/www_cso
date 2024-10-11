@@ -1,7 +1,7 @@
 ---
 title: Increase entropy on a 2.6 kernel linux box
 date: 2008-10-13 17:35:14 +0200
-tags: linux, debian, entropy, rng-tools
+tags: [linux, debian, entropy, rng-tools]
 ---
 
 A good source of entropy is needed for random number generation. This affects services that go via SSL amongst other things.

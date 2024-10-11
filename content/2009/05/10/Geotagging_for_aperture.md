@@ -1,7 +1,7 @@
 ---
 title: Geotagging for aperture
 date: 2009-05-10 21:31:32 +0200
-tags: aperture, gps, photography, geotagging, gpsphotolinker, houdahgeo, maperture
+tags: [aperture, gps, photography, geotagging, gpsphotolinker, houdahgeo, maperture]
 ---
 
 ## What is geotagging?

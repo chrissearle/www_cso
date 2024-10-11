@@ -1,7 +1,7 @@
 ---
 title: Resize google map to show all points
 date: 2008-03-10 20:45:52 +0100
-tags: web, google maps, maps, javascript
+tags: [web, google maps, maps, javascript]
 ---
 
 I needed to get a google map to center and scale based on the added points.

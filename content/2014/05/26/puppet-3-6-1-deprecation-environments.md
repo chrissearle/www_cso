@@ -1,7 +1,7 @@
 ---
 title: "Puppet 3.6.1 - deprecation: environments"
 date: 2014-05-26 08:18 +0200
-tags: puppet, debian
+tags: [puppet, debian]
 intro: Dealing with deprecations when migrating from puppet 3.6.0 to 3.6.1
 ---
 

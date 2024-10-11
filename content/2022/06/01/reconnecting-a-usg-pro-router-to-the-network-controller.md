@@ -1,7 +1,7 @@
 ---
 title: Reconnecting a USG Pro router to the network controller
 date: 2022-06-01 08:37 +0200
-tags: unifi, unifi controller, ubiquiti, unifi gateway
+tags: [unifi, unifi controller, ubiquiti, unifi gateway]
 intro: Unifi gateway (USG-Pro-4) was showing as disconnected in the network application/controller - but had a fully functioning inform url. However it was routing correctly - was it possible to fix this without a restart?
 image: /images/posts/2022/06/unifi.png
 ---

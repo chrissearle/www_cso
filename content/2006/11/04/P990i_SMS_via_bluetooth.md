@@ -1,7 +1,7 @@
 ---
 title: P990i SMS via bluetooth
 date: 2006-11-04 14:44:29 +0100
-tags: mac, bluetooth, p990i
+tags: [mac, bluetooth, p990i]
 ---
 
 The changes from [this post](/2006/03/27/Bluetooth_modem) about the S700i also work for the P990i (the string is P900).

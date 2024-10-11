@@ -1,7 +1,7 @@
 ---
 title: Linux disk activity checking
 date: 2009-02-26 12:33:04 +0100
-tags: linux, debian, firewall
+tags: [linux, debian, firewall]
 ---
 
 As part of [Building a debian firewall on a CF card](/2008/04/05/Building_a_debian_firewall_on_a_CF_card) I was trying to make sure that disk writes to the firewall CF card were kept to a minimum.

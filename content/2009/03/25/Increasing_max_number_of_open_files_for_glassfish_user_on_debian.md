@@ -1,7 +1,7 @@
 ---
 title: Increasing max number of open files for glassfish user on debian
 date: 2009-03-25 09:31:30 +0100
-tags: linux, debian, glassfish, ulimit
+tags: [linux, debian, glassfish, ulimit]
 ---
 
 My glassfish process kept dying with "Too many open files" in the log.

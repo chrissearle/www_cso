@@ -1,7 +1,7 @@
 ---
 title: Apache2, NameVirtualHosts, SSL and SERVER_PORT
 date: 2008-02-29 22:53:22 +0100
-tags: ssl, apache2, namevirtualhost, php
+tags: [ssl, apache2, namevirtualhost, php]
 ---
 
 I was experiencing odd things integrating to google maps - although I have both an API key for http and https - only https was working.

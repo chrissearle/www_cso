@@ -1,7 +1,7 @@
 ---
 title: New firewall?
 date: 2005-01-11 17:36:12 +0100
-tags: openbsd, firewall
+tags: [openbsd, firewall]
 ---
 
 Currently running an OpenBSD box as firewall on an old slow desktop box that's very noisy. Thinking of changing to mini-itx format.

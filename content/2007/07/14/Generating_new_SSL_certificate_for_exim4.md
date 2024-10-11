@@ -1,7 +1,7 @@
 ---
 title: Generating new SSL certificate for exim4
 date: 2007-07-14 11:36:24 +0200
-tags: ssl, exim4
+tags: [ssl, exim4]
 ---
 
 Cargo culted direct from the exim site.

@@ -1,7 +1,7 @@
 ---
 title: Playstation 3 lost wireless contact to controllers/BD remote after 3.30 update
 date: 2010-04-26 21:21:12 +0200
-tags: bluetooth, playstation, firmware, update, 3.30, wireless, ps3
+tags: [bluetooth, playstation, firmware, update, 3.30, wireless, ps3]
 ---
 
 Just updated the 120Gb slim PS3 to the latest 3.30 update.

@@ -1,7 +1,7 @@
 ---
 title: Drupal track module
 date: 2009-02-19 19:11:31 +0100
-tags: drupal, gps
+tags: [drupal, gps]
 ---
 
 The [track module](http://drupal.org/project/track) seems to have woken up ;)

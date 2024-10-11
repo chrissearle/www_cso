@@ -1,7 +1,7 @@
 ---
 title: iPhone 3.0 firmware release and stereo bluetooth - missing AVRCP
 date: 2009-06-25 08:08:30 +0200
-tags: bluetooth, iphone, stereo bluetooth, a2dp, avrcp
+tags: [bluetooth, iphone, stereo bluetooth, a2dp, avrcp]
 ---
 
 Wildly irritating.

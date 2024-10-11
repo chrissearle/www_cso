@@ -1,7 +1,7 @@
 ---
 title: Gnome default browser - under xfce4
 date: 2005-06-06 12:22:01 +0200
-tags: linux, gnome, xfce
+tags: [linux, gnome, xfce]
 ---
 
 Running xfce4 - and have no gnome control panel - but I needed to change the default browser.

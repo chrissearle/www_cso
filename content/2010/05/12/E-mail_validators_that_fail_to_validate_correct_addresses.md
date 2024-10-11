@@ -1,7 +1,7 @@
 ---
 title: E-mail validators that fail to validate correct addresses
 date: 2010-05-12 07:14:16 +0200
-tags: web, mail, e-mail, validation, web form
+tags: [web, mail, e-mail, validation, web form]
 ---
 
 This drives me nuts. Forms that simply reject e-mail addresses with a + in them (perfectly valid according to the standards/RFC's - see [RFC 2822](http://www.faqs.org/rfcs/rfc2822.html) 3.2.4 Atom - definition of atext).

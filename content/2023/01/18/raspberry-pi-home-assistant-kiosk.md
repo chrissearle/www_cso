@@ -1,7 +1,7 @@
 ---
 title: Raspberry Pi - Home Assistant Kiosk
 date: 2023-01-18 21:19 +0100
-tags: raspberry pi, homeassistant
+tags: [raspberry pi, homeassistant]
 intro: Setup of a simple pi + touch screen home assistant kiosk
 ---
 

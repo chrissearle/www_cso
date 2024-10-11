@@ -1,7 +1,7 @@
 ---
 title: Booting from grub shell
 date: 2008-08-13 12:11:23 +0200
-tags: debian, grub
+tags: [debian, grub]
 ---
 
 When you install grub to debian and forget to run update-grub the first time before you reboot then there is no menu.lst file in /boot/grub so you boot to the grub shell

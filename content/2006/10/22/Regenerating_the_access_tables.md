@@ -1,7 +1,7 @@
 ---
 title: Regenerating the access tables
 date: 2006-10-22 20:25:42 +0200
-tags: drupal
+tags: [drupal]
 ---
 
 After trying to run both Taxonomy Access and Simple Access - and finding that this didn't play well together (drupal 5 is supposed to be able to handle this better) the taxonomy access details were hosed. The actual taxonomies were hidden - but the nodes were displayed.

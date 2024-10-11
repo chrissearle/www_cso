@@ -1,7 +1,7 @@
 ---
 title: Sarge - munin - spamstats
 date: 2005-06-14 07:33:31 +0200
-tags: debian, munin
+tags: [debian, munin]
 ---
 
 For some reason the munin packages in debian sarge don't seem to include the spamstats plugin.

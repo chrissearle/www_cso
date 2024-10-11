@@ -1,7 +1,7 @@
 ---
 title: Account View
 date: 2020-03-30 20:50 +0200
-tags: ios, swift, swiftui, xcode, sbanken
+tags: [ios, swift, swiftui, xcode, sbanken]
 series: Revisiting the Sbanken API with SwiftUI
 intro: The app so far has the ability to get an authentication token. The next step is to actually use it.
 image: /images/posts/2020/03/account.png

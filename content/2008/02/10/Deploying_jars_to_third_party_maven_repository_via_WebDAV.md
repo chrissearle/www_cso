@@ -1,7 +1,7 @@
 ---
 title: Deploying jars to third party maven repository via WebDAV
 date: 2008-02-10 16:21:43 +0100
-tags: java, maven, webdav
+tags: [java, maven, webdav]
 ---
 
 Normally you deploy to a third party repository with a command similar to:

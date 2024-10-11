@@ -1,7 +1,7 @@
 ---
 title: SSL certificate based login with myopenid.com and safari
 date: 2009-03-14 18:39:57 +0100
-tags: ssl, openid, myopenid.com
+tags: [ssl, openid, myopenid.com]
 ---
 
 I delegate my domains OpenID logins to myopenid.com - but I was having issues getting SSL certificate based login to work in safari.

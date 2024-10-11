@@ -1,7 +1,7 @@
 ---
 title: IE Conditional Comments
 date: 2005-06-30 11:27:38 +0200
-tags: design, internet explorer
+tags: [design, internet explorer]
 ---
 
 Something new learned today:

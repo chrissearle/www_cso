@@ -1,7 +1,7 @@
 ---
 title: Relinking resources in iMovie 09
 date: 2009-03-28 12:18:21 +0100
-tags: imovie, imovie09
+tags: [imovie, imovie09]
 ---
 
 During a disk tidy I moved a whole load of iMovie Events from one disk to another (from within iMovie). This worked fine.

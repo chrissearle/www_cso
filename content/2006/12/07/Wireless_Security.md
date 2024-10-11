@@ -1,7 +1,7 @@
 ---
 title: Wireless Security
 date: 2006-12-07 08:29:01 +0100
-tags: networking
+tags: [networking]
 image: /images/posts/2006/12/network-dialog.png
 ---
 

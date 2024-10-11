@@ -1,7 +1,7 @@
 ---
 title: Resizing boot/root partition
 date: 2005-12-29 17:14:25 +0100
-tags: debian
+tags: [debian]
 ---
 
 Background: A debian machine (unstable) with a 100Mb root/boot ext3 partition (hda1), a 500Mb swap space (hda2) and the rest of the disk under lvm2 (hda3).

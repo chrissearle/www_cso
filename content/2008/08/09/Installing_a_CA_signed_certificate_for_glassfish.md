@@ -1,7 +1,7 @@
 ---
 title: Installing a CA signed certificate for glassfish
 date: 2008-08-09 11:31:38 +0200
-tags: ssl, keystore, keytool, glassfish, openssl
+tags: [ssl, keystore, keytool, glassfish, openssl]
 ---
 
 Instead of using a self-signed certificate with glassfish - we want to use one that is signed by a certificate authority.

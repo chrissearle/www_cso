@@ -1,7 +1,7 @@
 ---
 title: Git commit mail (debian)
 date: 2009-01-04 13:34:00 +0100
-tags: debian, mail, git, git 1.6, commit, email, commit e-mail
+tags: [debian, mail, git, git 1.6, commit, email, commit e-mail]
 ---
 
 With the backported git 1.6 packages installed - to add mailing lists for commits/tags:

@@ -1,7 +1,7 @@
 ---
 title: Migrating to chruby
 date: 2016-03-09 08:54 +0100
-tags: ruby, rvm, rbenv, chruby, ruby-build, ruby-install, bundler
+tags: [ruby, rvm, rbenv, chruby, ruby-build, ruby-install, bundler]
 intro: Moving from rbenv to chruby
 ---
 

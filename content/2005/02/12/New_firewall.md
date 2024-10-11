@@ -1,7 +1,7 @@
 ---
 title: New firewall
 date: 2005-02-12 18:59:54 +0100
-tags: openbsd, firewall
+tags: [openbsd, firewall]
 ---
 
 The new firewall box is now bootable to OpenBSD 3.6. It boots from compact flash to mfs.

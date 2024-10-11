@@ -1,7 +1,7 @@
 ---
 title: Adding a new disk with LVM and XFS
 date: 2005-05-22 11:41:53 +0200
-tags: linux, lvm2
+tags: [linux, lvm2]
 ---
 
 This machine is a debian sarge install (2.6 kernel). During installation - it was set up with root as ext3, some swap - and the rest of the disk as an lvm area. All partitions within this area are xfs. All the work was done by the debian installer. Now - we have a new disk which I needed to add.

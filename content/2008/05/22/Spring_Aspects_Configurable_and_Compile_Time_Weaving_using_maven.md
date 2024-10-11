@@ -1,7 +1,7 @@
 ---
 title: Spring, Aspects, @Configurable and Compile Time Weaving using maven
 date: 2008-05-22 10:09:16 +0200
-tags: java, spring, maven, @configurable, aspectj, compile time weaving
+tags: [java, spring, maven, '@configurable', aspectj, compile time weaving]
 ---
 
 Why do most people use Load Time Weaving (LTW)? It requires replacing the javaagent/classloader of your JVM which can lead to all sorts of issues.

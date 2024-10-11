@@ -1,7 +1,7 @@
 ---
 title: Automated App Compat virtual machines for IE testing
 date: 2013-10-26 12:33 +0200
-tags: virtualbox, microsoft, ie, ievms, testing
+tags: [virtualbox, microsoft, ie, ievms, testing]
 ---
 
 I very very very rarely need a windows install for anything. However - today I needed to talk to something that only has a windows driver.

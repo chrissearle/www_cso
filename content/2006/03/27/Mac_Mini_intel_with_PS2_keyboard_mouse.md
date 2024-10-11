@@ -1,7 +1,7 @@
 ---
 title: Mac Mini (intel) with PS2 keyboard/mouse
 date: 2006-03-27 14:02:49 +0200
-tags: mac
+tags: [mac]
 ---
 
 The new intel based mac mini supports only USB - not PS2.

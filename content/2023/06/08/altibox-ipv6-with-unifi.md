@@ -1,7 +1,7 @@
 ---
 title: Altibox IPv6 with Unifi
 date: 2023-06-08 21:58 +0200
-tags: altibox, ipv6, unifi, unifi gateway, unifi controller, dhcpv6
+tags: [altibox, ipv6, unifi, unifi gateway, unifi controller, dhcpv6]
 intro: How to get IPv6 from altibox with a modem in bridge mode and a unifi network
 ---
 

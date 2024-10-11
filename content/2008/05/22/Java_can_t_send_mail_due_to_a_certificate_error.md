@@ -1,7 +1,7 @@
 ---
 title: Java can't send mail due to a certificate error
 date: 2008-05-22 08:35:02 +0200
-tags: java, ssl, aperture, keystore, google, gmail, cacerts, jssecacerts, aperture2gmail
+tags: [java, ssl, aperture, keystore, google, gmail, cacerts, jssecacerts, aperture2gmail]
 ---
 
 I use a plugin to Aperture to send mail to gmail. It was failing due to a 

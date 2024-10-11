@@ -1,7 +1,7 @@
 ---
 title: Using self generated SSL (exim4 TLS/courier IMAPS) with Mail.app
 date: 2006-07-14 14:52:00 +0200
-tags: mac, ssl, courier, imap, exim4, tls
+tags: [mac, ssl, courier, imap, exim4, tls]
 ---
 
 Mail.app wouldn't stop asking about the certificates.

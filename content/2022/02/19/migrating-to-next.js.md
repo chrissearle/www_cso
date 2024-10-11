@@ -1,7 +1,7 @@
 ---
 title: Migrating to next.js
 date: 2022-02-19 12:23 +0100
-tags: javascript, react, gatsby, next.js
+tags: [javascript, react, gatsby, next.js]
 intro: Moving platform for a static site from gatsby to next.js
 ---
 

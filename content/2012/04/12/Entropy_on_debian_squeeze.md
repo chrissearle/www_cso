@@ -1,7 +1,7 @@
 ---
 title: Entropy on debian squeeze
 date: 2012-04-12 13:51:26 +0200
-tags: debian, entropy, squeeze, haveged
+tags: [debian, entropy, squeeze, haveged]
 ---
 
 Struggling again to get a decent amount of entropy on a headless squeeze server.

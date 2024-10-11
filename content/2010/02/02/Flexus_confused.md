@@ -1,7 +1,7 @@
 ---
 title: Flexus confused
 date: 2010-02-02 20:23:07 +0100
-tags: flexus, electronic ticketing, ruter
+tags: [flexus, electronic ticketing, ruter]
 ---
 
 Steps to confuse a flexus card.

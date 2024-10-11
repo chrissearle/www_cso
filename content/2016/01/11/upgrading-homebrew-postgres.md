@@ -1,7 +1,7 @@
 ---
 title: Upgrading homebrew postgres
 date: 2016-01-11 09:19 +0100
-tags: postgresql, pg_upgrade, homebrew
+tags: [postgresql, pg_upgrade, homebrew]
 intro: How to deal with upgrading a database after upgrading the engine
 ---
 

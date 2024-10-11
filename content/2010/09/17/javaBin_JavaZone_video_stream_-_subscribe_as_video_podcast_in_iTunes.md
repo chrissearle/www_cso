@@ -1,7 +1,7 @@
 ---
 title: javaBin/JavaZone video stream - subscribe as video podcast in iTunes
 date: 2010-09-17 18:01:31 +0200
-tags: itunes, javabin, javazone, podcast
+tags: [itunes, javabin, javazone, podcast]
 ---
 
 ## Update

@@ -1,7 +1,7 @@
 ---
 title: Time-based One-Time Password (TOTP) authentication for Google and more on iOS7
 date: 2013-08-14 13:24 +0200
-tags: TOTP, google authenticator, duo mobile, two-step authentication, ios7, dropbox, google
+tags: [TOTP, google authenticator, duo mobile, two-step authentication, ios7, dropbox, google]
 ---
 
 I use two-step authentication for both my GMail and Google Apps accounts as well as dropbox.

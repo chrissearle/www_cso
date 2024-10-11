@@ -1,7 +1,7 @@
 ---
 title: SSL certificates (apache2)
 date: 2006-01-30 21:34:50 +0100
-tags: debian, ssl, apache2
+tags: [debian, ssl, apache2]
 ---
 
 There are two kinds of certificates available - self-certified (free - but people will have to either accept the certificate or manually install it) or paid for (you buy it from a Certificate Authority and as long as that CA is a common one then it will just work in most browsers).

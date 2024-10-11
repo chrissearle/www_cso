@@ -1,7 +1,7 @@
 ---
 title: libapache-mod-jk under sarge
 date: 2005-05-22 14:44:09 +0200
-tags: java, debian, apache, tomcat, ajp13
+tags: [java, debian, apache, tomcat, ajp13]
 ---
 
 Sarge installation. Apache is 1.3.x (packaged). JBoss is 3.2.7 with tomcat.

@@ -1,7 +1,7 @@
 ---
 title: fink selfupdate fails due to cc1plus update
 date: 2007-03-07 08:45:00 +0100
-tags: mac, fink, lwp, head
+tags: [mac, fink, lwp, head]
 ---
 
 [fink](http://fink.sf.net) update was failing with the following error about head missing a -n option:

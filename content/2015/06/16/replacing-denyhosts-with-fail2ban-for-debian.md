@@ -1,7 +1,7 @@
 ---
 title: Replacing denyhosts with fail2ban for debian
 date: 2015-06-16 22:39 +0200
-tags: debian, ssh, denyhosts, fail2ban
+tags: [debian, ssh, denyhosts, fail2ban]
 intro: Migration from wheezy to jessie and a package I use is no longer available
 ---
 

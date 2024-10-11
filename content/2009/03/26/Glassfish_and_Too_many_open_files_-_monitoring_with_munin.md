@@ -1,7 +1,7 @@
 ---
 title: Glassfish and Too many open files - monitoring with munin
 date: 2009-03-26 09:39:43 +0100
-tags: munin, glassfish, monitoring
+tags: [munin, glassfish, monitoring]
 ---
 
 One of the systems that can be used for monitoring trends on a system is [munin](http://munin-monitoring.org/). It turns out that adding a graph to munin is reasonably simple.

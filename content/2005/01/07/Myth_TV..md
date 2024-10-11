@@ -1,7 +1,7 @@
 ---
 title: Myth TV
 date: 2005-01-07 12:04:18 +0100
-tags: linux, mythtv
+tags: [linux, mythtv]
 ---
 
 Looking at setting up a MythTV box ([MythTV](http://www.mythtv.org))

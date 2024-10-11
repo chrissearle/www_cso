@@ -1,7 +1,7 @@
 ---
 title: Using git for handling drupal contrib CVS
 date: 2008-12-31 13:39:08 +0100
-tags: drupal, git, cvs
+tags: [drupal, git, cvs]
 ---
 
 Using git for handling CVS checkouts for drupal contrib

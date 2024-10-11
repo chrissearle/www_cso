@@ -1,7 +1,7 @@
 ---
 title: A + in an e-mail is valid. Can't we stop using validators that don't follow the standard?
 date: 2011-03-16 06:53:59 +0100
-tags: email, rfc
+tags: [email, rfc]
 ---
 
 This is something that has long irritated. Websites that use form validation or similar that rejects e-mail with a + sign in the left part.

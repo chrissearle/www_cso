@@ -1,7 +1,7 @@
 ---
 title: Transcoding with MKV and ffmpeg
 date: 2018-11-27 14:34 +0100
-tags: mkv, matrovska, codec, vc-1, h264, ffmpeg, plex
+tags: [mkv, matrovska, codec, vc-1, h264, ffmpeg, plex]
 intro: Learning ffmpeg unnecessarily :)
 ---
 

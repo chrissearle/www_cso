@@ -1,7 +1,7 @@
 ---
 title: Illegal type in constant pool
 date: 2007-09-03 10:03:42 +0200
-tags: java, tomcat, aspectj, log4j, commons-logging
+tags: [java, tomcat, aspectj, log4j, commons-logging]
 ---
 
 After adding

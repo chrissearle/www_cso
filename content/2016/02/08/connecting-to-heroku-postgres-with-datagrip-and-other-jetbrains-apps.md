@@ -1,7 +1,7 @@
 ---
 title: Connecting to heroku postgres with DataGrip (and other jetbrains apps)
 date: 2016-02-08 18:22 +0100
-tags: heroku, postgresql, datagrip, jetbrains, intellij
+tags: [heroku, postgresql, datagrip, jetbrains, intellij]
 intro: jetbrains apps can only connect to heroku postgres if you disable ssl certificate validation
 ---
 

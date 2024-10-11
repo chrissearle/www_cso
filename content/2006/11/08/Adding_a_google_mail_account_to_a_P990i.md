@@ -1,7 +1,7 @@
 ---
 title: Adding a google mail account to a P990i
 date: 2006-11-08 19:25:16 +0100
-tags: p990i
+tags: [p990i]
 ---
 
 

@@ -1,7 +1,7 @@
 ---
 title: Nokia n95 email configuration (google, mac and personal)
 date: 2007-07-07 16:34:53 +0200
-tags: imap, pop3, smtp, n95, nokia
+tags: [imap, pop3, smtp, n95, nokia]
 ---
 
 OK - Google confiig is  based on the page: 

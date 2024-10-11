@@ -1,7 +1,7 @@
 ---
 title: Scroll wheel in debian guest after updating virtualbox from 3.x to 4.x
 date: 2011-03-08 12:43:52 +0100
-tags: linux, debian, virtualbox, xorg, scrollwheel, zaxismapping
+tags: [linux, debian, virtualbox, xorg, scrollwheel, zaxismapping]
 ---
 
 After update from virtualbox 3.x to 4.x the scroll wheel of my mouse stopped working - just behaved as a three button mouse.

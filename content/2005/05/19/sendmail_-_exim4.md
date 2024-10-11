@@ -1,7 +1,7 @@
 ---
 title: sendmail -> exim4
 date: 2005-05-19 12:18:29 +0200
-tags: debian, exim4, sendmail, clamav, spamassassin
+tags: [debian, exim4, sendmail, clamav, spamassassin]
 ---
 
 Have been running sendmail for a long time on woody. However - with the upgrade to sarge I've been taking a look at exim's configuration - since the sendmail config is a nightmare :)

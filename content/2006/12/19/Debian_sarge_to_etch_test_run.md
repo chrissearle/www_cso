@@ -1,7 +1,7 @@
 ---
 title: Debian sarge to etch test run
 date: 2006-12-19 12:38:20 +0100
-tags: debian
+tags: [debian]
 ---
 
 I have two servers running debian sarge (stable). Etch is nearly ready to go stable (in hard freeze) so I decided to test the upgrade on the least important box.

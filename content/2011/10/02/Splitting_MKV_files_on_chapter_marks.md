@@ -1,7 +1,7 @@
 ---
 title: Splitting MKV files on chapter marks
 date: 2011-10-02 17:49:10 +0200
-tags: mkv, mkvtoolsnix, mkvmerge, mkvinfo, matroska
+tags: [mkv, mkvtoolsnix, mkvmerge, mkvinfo, matroska]
 ---
 
 **Update - 2014-04-16**

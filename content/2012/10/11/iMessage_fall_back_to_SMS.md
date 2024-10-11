@@ -1,7 +1,7 @@
 ---
 title: iMessage fall back to SMS
 date: 2012-10-11 18:49:55 +0200
-tags: ios, imessage, sms
+tags: [ios, imessage, sms]
 ---
 
 iMessage has a setting whereby you can tell it to fall back to SMS if it isn't able to reach a data network or if the recipient isn't available via a data network.

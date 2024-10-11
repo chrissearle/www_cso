@@ -1,7 +1,7 @@
 ---
 title: iPhone 3.0 firmware release and stereo bluetooth - it does support AVRCP - just not all of it
 date: 2009-07-09 08:21:04 +0200
-tags: bluetooth, iphone, stereo bluetooth, a2dp, avrcp
+tags: [bluetooth, iphone, stereo bluetooth, a2dp, avrcp]
 ---
 
 An update to [iPhone 3.0 firmware release and stereo bluetooth - missing AVRCP](/2009/06/25/iPhone_3_0_firmware_release_and_stereo_bluetooth_-_missing_AVRCP)

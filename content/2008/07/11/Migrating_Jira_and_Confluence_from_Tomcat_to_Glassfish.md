@@ -1,7 +1,7 @@
 ---
 title: Migrating Jira and Confluence from Tomcat to Glassfish
 date: 2008-07-11 09:21:58 +0200
-tags: apache, tomcat, jira, confluence, atlassian, glassfish, mod_jk, mod_proxy
+tags: [apache, tomcat, jira, confluence, atlassian, glassfish, mod_jk, mod_proxy]
 ---
 
 I have had jira and confluence running under tomcat 5.5.23 (behind apache over AJP13/mod_jk) for a while now. The aim is to migrate them over to glassfish (behind the same apache but with mod_proxy).

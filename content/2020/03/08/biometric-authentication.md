@@ -1,7 +1,7 @@
 ---
 title: Biometric authentication
 date: 2020-03-08 21:00 +0100
-tags: ios, swift, swiftui, xcode
+tags: [ios, swift, swiftui, xcode]
 series: Revisiting the Sbanken API with SwiftUI
 intro: So far we have an ap that can scan its config from a QR code and persist it in the keychain on the device. Today we'll add support for using biometric unlock (Face ID or Touch ID depending on the device).
 ---

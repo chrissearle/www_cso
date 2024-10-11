@@ -1,7 +1,7 @@
 ---
 title: Upgrading drupal from 4.7 to 5.0
 date: 2007-01-07 22:53:11 +0100
-tags: drupal
+tags: [drupal]
 ---
 
 To upgrade a site from drupal 4.7 to 5.0:

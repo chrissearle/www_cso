@@ -1,7 +1,7 @@
 ---
 title: Kafka - java to scala - introduction
 date: 2019-04-25 12:02 +0200
-tags: kafka, java, scala
+tags: [kafka, java, scala]
 series: Kafka - java to scala
 updated: 2020-01-23 00:00
 intro: This series will work through converting java from the confluent on-premesis course to scala

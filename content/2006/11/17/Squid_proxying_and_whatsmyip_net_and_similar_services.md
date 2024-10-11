@@ -1,7 +1,7 @@
 ---
 title: Squid proxying and whatsmyip.net and similar services
 date: 2006-11-17 19:42:55 +0100
-tags: mac, networking, internet
+tags: [mac, networking, internet]
 ---
 
 Just a quick note.

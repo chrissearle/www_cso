@@ -1,7 +1,7 @@
 ---
 title: Building a debian firewall on a CF card
 date: 2008-04-05 20:56:53 +0200
-tags: linux, debian, firewall, dns, bind, bind9, dhcp, iptables
+tags: [linux, debian, firewall, dns, bind, bind9, dhcp, iptables]
 ---
 
 I currently have an OpenBSD firewall running on an ancient 586. I have a mini-itx board, CF/IDE converter and a CF card and have been intending to upgrade.

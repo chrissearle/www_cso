@@ -1,7 +1,7 @@
 ---
 title: Re-generate openssl certificate for apache
 date: 2005-06-30 09:09:36 +0200
-tags: linux, ssl, apache2
+tags: [linux, ssl, apache2]
 ---
 
 Just a note to self - to generate a new certificate

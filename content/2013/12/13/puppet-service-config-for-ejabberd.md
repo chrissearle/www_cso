@@ -1,7 +1,7 @@
 ---
 title: Puppet service config for ejabberd
 date: 2013-12-13 09:29 +0100
-tags: puppet, ejabberd
+tags: [puppet, ejabberd]
 ---
 
 I have an issue getting a working puppet service config for ejabberd on debian.

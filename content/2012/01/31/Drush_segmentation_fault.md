@@ -1,7 +1,7 @@
 ---
 title: Drush segmentation fault
 date: 2012-01-31 09:09:45 +0100
-tags: debian, php, drush, postgresql, curl
+tags: [debian, php, drush, postgresql, curl]
 ---
 
 Have been seeing segmentation faults coming from "drush cron" runs recently.

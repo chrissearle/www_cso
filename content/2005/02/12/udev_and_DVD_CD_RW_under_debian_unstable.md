@@ -1,7 +1,7 @@
 ---
 title: udev and DVD/CD RW under debian unstable
 date: 2005-02-12 16:18:15 +0100
-tags: debian, dvd, cd-rom, ide-cd, udev
+tags: [debian, dvd, cd-rom, ide-cd, udev]
 ---
 
 To get CD and DVD burning running under debian unstable on a 2.6.x kernel

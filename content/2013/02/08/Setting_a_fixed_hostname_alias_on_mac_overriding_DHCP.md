@@ -1,7 +1,7 @@
 ---
 title: Setting a fixed hostname alias on mac overriding DHCP
 date: 2013-02-08 11:05:34 +0100
-tags: java, mac, tomcat, dhcp, hostname
+tags: [java, mac, tomcat, dhcp, hostname]
 ---
 
 This turned up as an issue when developing webapps.

@@ -1,7 +1,7 @@
 ---
 title: Internal certificate authority with openssl and caman
 date: 2019-09-18 09:40 +0200
-tags: openssl, ssl
+tags: [openssl, ssl]
 intro: Running a local/internal certificate authority - even though it is 2019
 ---
 

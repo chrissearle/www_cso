@@ -1,7 +1,7 @@
 ---
 title: Drupal cron script
 date: 2007-01-21 12:36:06 +0100
-tags: drupal, ruby, cron
+tags: [drupal, ruby, cron]
 ---
 
 To avoid having to set up multiple cron lines - here's a script that will read your drupal install(s) and call cron on each one found.

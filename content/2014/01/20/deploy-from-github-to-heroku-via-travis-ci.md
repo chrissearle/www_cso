@@ -1,7 +1,7 @@
 ---
 title: Deploy from github to heroku via travis-ci
 date: 2014-01-20 10:47 +0100
-tags: maven, java, travis-ci, heroku, continuous integration, continuous deployment, github
+tags: [maven, java, travis-ci, heroku, continuous integration, continuous deployment, github]
 ---
 
 A small test of using travis-ci to build a github project and auto deploy it to heroku.

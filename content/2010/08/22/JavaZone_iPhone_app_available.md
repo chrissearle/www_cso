@@ -1,7 +1,7 @@
 ---
 title: JavaZone iPhone app available
 date: 2010-08-22 08:05:28 +0200
-tags: java, javabin, javazone, iphone, objectivec
+tags: [java, javabin, javazone, iphone, objectivec]
 ---
 
 My first iPhone app - for [JavaZone 2010](http://jz10.java.no) is now available via the [app store](http://itunes.apple.com/app/javazone/id384888388?mt=8).

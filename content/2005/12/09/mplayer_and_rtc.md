@@ -1,7 +1,7 @@
 ---
 title: mplayer and rtc
 date: 2005-12-09 09:15:27 +0100
-tags: linux, mplayer, sysctl
+tags: [linux, mplayer, sysctl]
 ---
 
 mplayer works best with the real time clock (rtc) device /dev/rtc. It also wants to be able to set frequency up to 1024 as a user.

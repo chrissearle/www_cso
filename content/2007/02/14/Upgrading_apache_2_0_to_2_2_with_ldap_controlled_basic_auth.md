@@ -1,7 +1,7 @@
 ---
 title: Upgrading apache 2.0 to 2.2 with ldap controlled basic auth
 date: 2007-02-14 22:33:32 +0100
-tags: debian, apache2, ldap
+tags: [debian, apache2, ldap]
 ---
 
 LDAP authentication started giving:

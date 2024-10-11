@@ -1,7 +1,7 @@
 ---
 title: Kafka - java to scala - akka streams kafka
 date: 2019-05-15 12:10 +0200
-tags: scala, akka, akka streams, kafka, producer, consumer
+tags: [scala, akka, akka streams, kafka, producer, consumer]
 series: Kafka - java to scala
 updated: 2020-01-23 00:00
 intro: In the previous post we took a look at akka streams in general. Let's apply that to our producer and consumer.

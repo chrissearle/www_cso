@@ -1,7 +1,7 @@
 ---
 title: Adding self-signed https certificates to java keystore
 date: 2007-10-25 11:57:37 +0200
-tags: java, ssl, maven, keystore, webdav, keytool
+tags: [java, ssl, maven, keystore, webdav, keytool]
 ---
 
 There are several reasons you may need to add a self-signed https ssl certificate to your local java keystore.

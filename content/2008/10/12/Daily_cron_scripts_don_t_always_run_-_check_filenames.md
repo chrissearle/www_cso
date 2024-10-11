@@ -1,7 +1,7 @@
 ---
 title: Daily cron scripts don't always run - check filenames
 date: 2008-10-12 08:54:10 +0200
-tags: debian, cron, cron.daily
+tags: [debian, cron, cron.daily]
 ---
 
 I noticed that some of my scripts in <code>/etc/cron.daily</code> were not running.

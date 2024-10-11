@@ -1,7 +1,7 @@
 ---
 title: Site converted to use middleman static site generator
 date: 2013-08-10 12:02 +0200
-tags: drupal, middleman, site generation
+tags: [drupal, middleman, site generation]
 ---
 
 I've had this site running drupal since [august 2006](/2006/08/17/Migration_to_drupal) but over time I've reduced the modules in use to almost nothing. There's nothing on the site that needs to be dynamic any more.

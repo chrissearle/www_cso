@@ -1,7 +1,7 @@
 ---
 title: Syncing secondary google apps calendars to iPhone
 date: 2011-05-13 00:36:00 +0100
-tags: google, googleapps, ios
+tags: [google, googleapps, ios]
 ---
 
 ## Update

@@ -1,7 +1,7 @@
 ---
 title: Patching denyhosts to allow correct plugin reporting
 date: 2008-07-21 12:16:40 +0200
-tags: debian, denyhosts, abuse, dpkg-buildpackage
+tags: [debian, denyhosts, abuse, dpkg-buildpackage]
 ---
 
 This is a copy of an article I have recently had published on [www.debian-administration.org](http://www.debian-administration.org/articles/608)

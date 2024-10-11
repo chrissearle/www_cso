@@ -1,7 +1,7 @@
 ---
 title: Using maven-exec-plugin to store the current git sha in a build
 date: 2009-09-05 11:52:27 +0200
-tags: maven, git, buildnumber-maven-plugin, exec-maven-plugin
+tags: [maven, git, buildnumber-maven-plugin, exec-maven-plugin]
 ---
 
 The current version of the maven buildnumber plugin does not yet support the git scm backend. This makes it harder to get the git sha for the current build (often a snapshot build) into the MANIFEST.MF file.

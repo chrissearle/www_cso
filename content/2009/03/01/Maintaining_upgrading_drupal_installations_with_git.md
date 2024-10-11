@@ -1,7 +1,7 @@
 ---
 title: Maintaining/upgrading drupal installations with git
 date: 2009-03-01 09:32:37 +0100
-tags: drupal, git
+tags: [drupal, git]
 ---
 
 This is based on http://www.versioncontrolblog.com/2007/08/02/upgrading-drupal-52-with-git/

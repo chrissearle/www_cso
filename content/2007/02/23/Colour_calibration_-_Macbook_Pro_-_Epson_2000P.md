@@ -1,7 +1,7 @@
 ---
 title: Colour calibration - Macbook Pro -> Epson 2000P
 date: 2007-02-23 09:23:34 +0100
-tags: mac, printing, aperture, colour profile, epson, 2000p, screen calibration, spyder2
+tags: [mac, printing, aperture, colour profile, epson, 2000p, screen calibration, spyder2]
 ---
 
 I finally managed to get consistent colour right from the screen through to the printer. Here's what I needed to do.

@@ -1,7 +1,7 @@
 ---
 title: Kafka - java to scala - scala v2 - config
 date: 2019-05-03 11:33 +0200
-tags: kafka, scala, producer, consumer, pureconfig
+tags: [kafka, scala, producer, consumer, pureconfig]
 series: Kafka - java to scala
 updated: 2020-01-23 00:00
 intro: In the previous step we created a basic producer and consumer in scala but it was very close to a line by line conversion. Let's try for something that is closer to normal scala - and let's get the config values out to a configuration file.

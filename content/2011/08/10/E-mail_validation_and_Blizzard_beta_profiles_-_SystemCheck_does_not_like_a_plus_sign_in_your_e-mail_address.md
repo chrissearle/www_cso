@@ -1,7 +1,7 @@
 ---
 title: E-mail validation and Blizzard beta profiles - SystemCheck does not like a plus sign in your e-mail address
 date: 2011-08-10 07:48:39 +0200
-tags: blizzard, email, validation
+tags: [blizzard, email, validation]
 image: /images/posts/2011/08/Battle.net-Systemcheck.png
 ---
 

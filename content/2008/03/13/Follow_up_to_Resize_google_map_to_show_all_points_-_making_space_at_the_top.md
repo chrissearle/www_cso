@@ -1,7 +1,7 @@
 ---
 title: Follow up to Resize google map to show all points - making space at the top
 date: 2008-03-13 07:32:29 +0100
-tags: web, google maps, maps, javascript
+tags: [web, google maps, maps, javascript]
 ---
 
 In [Resize google map to show all points](/2008/03/10/Resize_google_map_to_show_all_points/) it shows how to rescale the map based on added overlays. But - it sometimes puts points a little too close to the top. The point is shown but since the icon has size - this disappears out of the visible frame.

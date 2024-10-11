@@ -1,7 +1,7 @@
 ---
 title: evms patched kernel
 date: 2006-01-27 08:17:46 +0100
-tags: debian, kernel, evms
+tags: [debian, kernel, evms]
 ---
 
 The 2.6 series kernel only allows one owner of a block device ([http://evms.sourceforge.net/install/kernel.html](http://evms.sourceforge.net/install/kernel.html)). I need to use the BD Claim patch.

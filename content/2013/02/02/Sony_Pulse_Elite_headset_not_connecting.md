@@ -1,7 +1,7 @@
 ---
 title: Sony Pulse Elite headset not connecting
 date: 2013-02-02 21:36:46 +0100
-tags: playstation, ps3, sony, elite, pulse
+tags: [playstation, ps3, sony, elite, pulse]
 ---
 
 Hmm - found today that my pulse elite headset wouldn't connect to the PS3. I don't use it often - so no idea when it last worked.

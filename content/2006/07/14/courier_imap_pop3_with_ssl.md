@@ -1,7 +1,7 @@
 ---
 title: courier imap/pop3 with ssl
 date: 2006-07-14 09:35:59 +0200
-tags: debian, ssl, courier, imap, pop3
+tags: [debian, ssl, courier, imap, pop3]
 ---
 
 I was using courier-imap and courier-pop until today. I've just installed the -ssl versions of both.

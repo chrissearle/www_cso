@@ -1,7 +1,7 @@
 ---
 title: Printing to HP 1015 via Synology USB Station
 date: 2006-11-16 19:49:00 +0100
-tags: mac, printing
+tags: [mac, printing]
 ---
 
 The USB Synlogy print server works just fine with Windows. The documentation states that it can only print to a Postscript printer from Mac OS X.

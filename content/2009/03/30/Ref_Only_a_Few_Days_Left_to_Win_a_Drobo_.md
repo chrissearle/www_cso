@@ -1,7 +1,7 @@
 ---
 title: "Ref: Only a Few Days Left to Win a Drobo!"
 date: 2009-03-30 08:10:15 +0200
-tags: drobo
+tags: [drobo]
 ---
 
 Well - who knows - has to be worth a try ;)

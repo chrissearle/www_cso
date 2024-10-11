@@ -1,7 +1,7 @@
 ---
 title: Amanda backup for OSX
 date: 2006-12-26 15:07:20 +0100
-tags: mac, backup, amanda
+tags: [mac, backup, amanda]
 ---
 
 I needed to get both my Mac machines (mac mini intel and macbook pro) to be included in the amanda backup I run.

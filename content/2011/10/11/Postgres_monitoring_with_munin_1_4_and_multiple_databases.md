@@ -1,7 +1,7 @@
 ---
 title: Postgres monitoring with munin 1.4 and multiple databases
 date: 2011-10-11 11:26:59 +0200
-tags: munin, postgresql
+tags: [munin, postgresql]
 ---
 
 In munin 1.4 the number of plugins for postgres has increased. They are all based on the same perl module - Munin::Plugin::Pgsql

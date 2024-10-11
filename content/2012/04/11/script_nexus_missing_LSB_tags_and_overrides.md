@@ -1,7 +1,7 @@
 ---
 title: script 'nexus' missing LSB tags and overrides
 date: 2012-04-11 20:51:20 +0200
-tags: nexus
+tags: [nexus]
 ---
 
 Was getting the error

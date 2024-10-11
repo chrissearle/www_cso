@@ -1,7 +1,7 @@
 ---
 title: Bluetooth triggered activity for the mac
 date: 2007-07-14 00:30:15 +0200
-tags: mac, bluetooth
+tags: [mac, bluetooth]
 ---
 
 [http://metaquark.de/homezone/](http://metaquark.de/homezone/)

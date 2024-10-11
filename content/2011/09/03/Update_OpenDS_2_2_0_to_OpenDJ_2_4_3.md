@@ -1,7 +1,7 @@
 ---
 title: Update OpenDS 2.2.0 to OpenDJ 2.4.3
 date: 2011-09-03 11:59:34 +0200
-tags: ldap, opends, opendj
+tags: [ldap, opends, opendj]
 ---
 
 Finally got around to upgrading my OpenDS 2.2.0 to OpenDJ 2.4.3.

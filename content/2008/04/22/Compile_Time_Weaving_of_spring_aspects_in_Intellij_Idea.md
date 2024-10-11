@@ -1,7 +1,7 @@
 ---
 title: Compile Time Weaving of spring aspects in Intellij Idea
 date: 2008-04-22 13:41:54 +0200
-tags: java, spring, aspectj, intellij idea
+tags: [java, spring, aspectj, intellij idea]
 ---
 
 To enable compile time weaving of the spring aspects (spring-aspects.jar) in Intellij IDEA (I am using 7.0.3 - but I assume this to be similar for other versions):

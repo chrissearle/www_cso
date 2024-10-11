@@ -1,7 +1,7 @@
 ---
 title: Installing apt keys
 date: 2006-01-04 08:31:46 +0100
-tags: debian, apt, gnupg
+tags: [debian, apt, gnupg]
 ---
 
 Taken from the dpkg bot on #debian:

@@ -1,7 +1,7 @@
 ---
 title: Logging in to drupal 5 using perl
 date: 2007-11-04 10:53:46 +0100
-tags: drupal, cron, lwp, perl
+tags: [drupal, cron, lwp, perl]
 ---
 
 Normally you can call the drupal cron page (/cron.php) as the anonymous user - but - to work around an issue with the simplenews module and taxonomy access control I need to run the cron script as a logged in user.

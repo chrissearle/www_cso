@@ -1,7 +1,7 @@
 ---
 title: exim4 - dnslookup - ignore_target_hosts
 date: 2005-06-07 11:33:05 +0200
-tags: linux, exim4, dns
+tags: [linux, exim4, dns]
 ---
 
 The dnslookup section of the exim4 config contains

@@ -1,7 +1,7 @@
 ---
 title: Migration to drupal
 date: 2006-08-17 18:34:38 +0200
-tags: drupal
+tags: [drupal]
 ---
 
 For a long while this site has been running a combination of wordpress with embedded gallery2 (using the wpg2 plugin).

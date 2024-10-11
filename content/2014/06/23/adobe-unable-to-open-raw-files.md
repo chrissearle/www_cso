@@ -1,7 +1,7 @@
 ---
 title: Adobe - unable to open raw files
 date: 2014-06-23 19:25 +0200
-tags: adobe, lightroom, photoshop, bridge
+tags: [adobe, lightroom, photoshop, bridge]
 intro: Photoshop unable to open raw files from Lightroom
 ---
 

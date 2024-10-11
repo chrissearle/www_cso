@@ -1,7 +1,7 @@
 ---
 title: Mollom spam blocking
 date: 2009-01-14 13:01:34 +0100
-tags: drupal, mollom, spam, captcha
+tags: [drupal, mollom, spam, captcha]
 image: /images/posts/2009/01/mollom.png
 ---
 

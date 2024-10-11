@@ -1,7 +1,7 @@
 ---
 title: Kafka - java to scala - akka streams basics
 date: 2019-05-08 12:41 +0200
-tags: scala, akka, akka streams
+tags: [scala, akka, akka streams]
 series: Kafka - java to scala
 updated: 2020-01-23 00:00
 intro: In the previous post we updated our clients to use a configuration library and to make them somewhat more scala-like. Moving forward - we will look at using them together with akka streams but before we can do that - we'll take a very quick trip on akka streams in general.

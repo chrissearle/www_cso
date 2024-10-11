@@ -1,7 +1,7 @@
 ---
 title: bash helper function for rvm gemsets
 date: 2011-04-02 11:23:20 +0200
-tags: ruby, rvm, bash
+tags: [ruby, rvm, bash]
 ---
 
 By convention I use an rvm gemset per project - named after the directory that the project lives in.

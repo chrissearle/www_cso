@@ -1,7 +1,7 @@
 ---
 title: Switching between java JDK's on debian
 date: 2007-01-15 12:01:17 +0100
-tags: java, debian, alternatives
+tags: [java, debian, alternatives]
 ---
 
 I use the java-package make-jpkg to install java JVM's. I have mostly used sun's JVM's up to now.

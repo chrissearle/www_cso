@@ -1,7 +1,7 @@
 ---
 title: Setting outgoing IP address for domain in exim4
 date: 2007-11-26 17:29:13 +0100
-tags: exim4, smtp
+tags: [exim4, smtp]
 ---
 
 Thanks to Dave Evans on the exim4 users list for this.

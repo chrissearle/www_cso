@@ -1,7 +1,7 @@
 ---
 title: Flexus follow up
 date: 2010-06-08 21:53:33 +0200
-tags: flexus
+tags: [flexus]
 ---
 
 I was down at Trafikanten today to discuss [Flexus ticket payment - money taken but no ticket :(](/2010/06/07/Flexus_ticket_payment_-_money_taken_but_no_ticket_)

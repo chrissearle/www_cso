@@ -1,7 +1,7 @@
 ---
 title: Bluetooth/GPRS
 date: 2005-03-15 12:33:34 +0100
-tags: linux, bluetooth
+tags: [linux, bluetooth]
 ---
 
 Running a dial-up over bluetooth to a S700i.

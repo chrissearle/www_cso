@@ -1,7 +1,7 @@
 ---
 title: Using continuum to build maven 2 projects that are in mercurial
 date: 2008-05-31 11:27:43 +0200
-tags: maven, mercurial, continuum
+tags: [maven, mercurial, continuum]
 ---
 
 Given that the pom has a correctly configured scm tag section then it's just a case of finding the browsable file.

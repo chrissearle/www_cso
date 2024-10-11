@@ -1,7 +1,7 @@
 ---
 title: iPhone 3.0 firmware release and tethering for NetCom
 date: 2009-06-18 09:47:45 +0200
-tags: iphone, tethering, netcom
+tags: [iphone, tethering, netcom]
 ---
 
 I have to say I'm disappointed in NetCom today.

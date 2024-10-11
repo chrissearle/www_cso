@@ -1,7 +1,7 @@
 ---
 title: The Mac OSX menu with dual screens
 date: 2007-05-30 10:32:52 +0200
-tags: mac
+tags: [mac]
 ---
 
 The menu on a mac is always shown on the primary display - something which is awkward when you have dual monitors and are working on the secondary display.

@@ -1,7 +1,7 @@
 ---
 title: Fun with Flexus
 date: 2009-11-02 17:47:46 +0100
-tags: flexus, ticketing, electronic ticketing
+tags: [flexus, ticketing, electronic ticketing]
 ---
 
 Doesn't it seem strange that the new ticket system in Oslo seems to have parts that don't talk to each other?

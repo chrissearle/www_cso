@@ -1,7 +1,7 @@
 ---
 title: spring-ldap and NoClassDefFoundError com.sun.jndi.ldap.ctl.ResponseControlFactory
 date: 2007-08-30 22:06:50 +0200
-tags: java, ldap, spring, maven, spring-ldap
+tags: [java, ldap, spring, maven, spring-ldap]
 ---
 
 When using spring-ldap - if you get a NoClassDefFoundError for com.sun.jndi.ldap.ctl.ResponseControlFactory then you need the ldap booster pack (currently 1.0).

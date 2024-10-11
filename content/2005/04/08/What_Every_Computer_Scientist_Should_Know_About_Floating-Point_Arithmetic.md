@@ -1,7 +1,7 @@
 ---
 title: What Every Computer Scientist Should Know About Floating-Point Arithmetic
 date: 2005-04-08 07:44:27 +0200
-tags: programming, floating point arithmetic
+tags: [programming, floating point arithmetic]
 ---
 
 Sitting up on Sun's site - an article that every programmer who has written

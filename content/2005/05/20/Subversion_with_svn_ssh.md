@@ -1,7 +1,7 @@
 ---
 title: Subversion with svn+ssh
 date: 2005-05-20 20:34:29 +0200
-tags: debian, subversion, ssh
+tags: [debian, subversion, ssh]
 ---
 
 Setting up subversion with svn+ssh access (non-DAV) on unstable.

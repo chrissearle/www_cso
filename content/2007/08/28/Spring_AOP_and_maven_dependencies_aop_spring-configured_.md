@@ -1,7 +1,7 @@
 ---
 title: "Spring AOP and maven dependencies"
 date: 2007-08-28 13:31:17 +0200
-tags: java, aop, spring, maven, @configurable, aspectj
+tags: [java, aop, spring, maven, '@configurable', aspectj]
 ---
 
 Or - why does it say my spring context xml is invalid on <code><aop:<spring-configured/></code>

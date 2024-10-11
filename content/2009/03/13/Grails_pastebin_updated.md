@@ -1,7 +1,7 @@
 ---
 title: Grails pastebin updated
 date: 2009-03-13 23:28:11 +0100
-tags: java, pastebin, grails, groovy
+tags: [java, pastebin, grails, groovy]
 ---
 
 Just updated the [grails based pastebin](http://dev.chrissearle.net/paste/).

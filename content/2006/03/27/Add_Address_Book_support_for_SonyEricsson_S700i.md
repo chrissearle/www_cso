@@ -1,7 +1,7 @@
 ---
 title: Add Address Book support for SonyEricsson S700i
 date: 2006-03-27 17:56:54 +0200
-tags: mac, bluetooth, s700i
+tags: [mac, bluetooth, s700i]
 ---
 
 The Address Book was showing that the phone was connected - but incoming SMS never reached the mac, outgoing SMS disappeared into thin air and incoming calls always showed as Unknown.

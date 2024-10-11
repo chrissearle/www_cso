@@ -1,7 +1,7 @@
 ---
 title: "A really weird #NextGenTel router issue"
 date: 2010-02-17 07:28:15 +0100
-tags: mac, isp, adsl, nextgentel, ngt, xmpp, jabber
+tags: [mac, isp, adsl, nextgentel, ngt, xmpp, jabber]
 ---
 
 ### Router trouble

@@ -1,7 +1,7 @@
 ---
 title: iPhone 3.0 firmware release and tethering for NetCom - official support
 date: 2009-08-01 08:17:19 +0200
-tags: iphone, tethering, netcom
+tags: [iphone, tethering, netcom]
 ---
 
 Two different sources have stated that NetCom would launch tethering support as of yesterday (to coincide with the iPhone 3GS launch). I can't see anything on the NetCom site itself though.

@@ -1,7 +1,7 @@
 ---
 title: Myth TV - further hardware ramblings
 date: 2005-01-16 16:40:14 +0100
-tags: linux, mythtv
+tags: [linux, mythtv]
 ---
 
 * At least 2GHz CPU

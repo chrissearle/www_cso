@@ -1,7 +1,7 @@
 ---
 title: Ruby on Rails and IE 8 - respond_to and HTTP accept headers
 date: 2010-03-18 23:35:15 +0100
-tags: rails, ruby on rails, respond_to, http_accept, ie8
+tags: [rails, ruby on rails, respond_to, http_accept, ie8]
 ---
 
 Ruby on Rails offers the ability to respond to a given request with different types depending on the URL.

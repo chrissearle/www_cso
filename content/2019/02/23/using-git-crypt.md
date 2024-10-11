@@ -1,7 +1,7 @@
 ---
 title: Using git-crypt
 date: 2019-02-23 12:18 +0100
-tags: git, encryption, github, git-crypt, gnupg
+tags: [git, encryption, github, git-crypt, gnupg]
 intro: git-crypt can be used to safely and transparently encrypt secrets so that they can be stored in git
 ---
 

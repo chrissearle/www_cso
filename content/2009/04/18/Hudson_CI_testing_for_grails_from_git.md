@@ -1,7 +1,7 @@
 ---
 title: Hudson CI testing for grails from git
 date: 2009-04-18 13:19:38 +0200
-tags: glassfish, grails, git, hudson, ci, continuous integration
+tags: [glassfish, grails, git, hudson, ci, continuous integration]
 image: /images/posts/2009/04/hudson_ldap.png
 ---
 

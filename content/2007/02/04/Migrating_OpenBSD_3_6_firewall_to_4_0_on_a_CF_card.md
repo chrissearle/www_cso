@@ -1,7 +1,7 @@
 ---
 title: Migrating OpenBSD 3.6 firewall to 4.0 on a CF card
 date: 2007-02-04 17:12:38 +0100
-tags: openbsd, firewall, compact flash
+tags: [openbsd, firewall, compact flash]
 ---
 
 I have an OpenBSD 3.6 machine as my home firewall. I also have a mini-itx machine with IDE-CF converter card waiting to replace it. This is the state of play

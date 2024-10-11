@@ -1,7 +1,7 @@
 ---
 title: Rescuing a dead lvm install
 date: 2006-04-18 18:59:44 +0200
-tags: debian, lvm2
+tags: [debian, lvm2]
 ---
 
 One of my machines has an lvm2 volume group spread across three disks. One died - here's how I rescued some of the data

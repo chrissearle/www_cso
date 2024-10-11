@@ -1,7 +1,7 @@
 ---
 title: Geotagging photos on the mac
 date: 2007-07-12 15:52:33 +0200
-tags: mac, gps, photography, geotagging, gpsbabel, gpsphotolinker
+tags: [mac, gps, photography, geotagging, gpsbabel, gpsphotolinker]
 ---
 
 With a couple of bits of free software you can simply geotag (add longitude/latitude to a photos EXIF data) your pictures. These can then be shown on flickr's map, google maps etc.

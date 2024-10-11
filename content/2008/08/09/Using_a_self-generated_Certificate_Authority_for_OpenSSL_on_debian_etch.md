@@ -1,7 +1,7 @@
 ---
 title: Using a self-generated Certificate Authority for OpenSSL on debian etch
 date: 2008-08-09 09:40:47 +0200
-tags: debian, ssl, openssl, ca.pl
+tags: [debian, ssl, openssl, ca.pl]
 ---
 
 I've been using self-signed certificates for a while - but - that means getting the users to approve them each time they change. Instead - lets generate a Certificate Authority (CA) certificate with a reasonably long life - get them to install that and then new certificates signed with that will be valid for them.

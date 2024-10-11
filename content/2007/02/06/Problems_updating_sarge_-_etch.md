@@ -1,7 +1,7 @@
 ---
 title: Problems updating sarge -> etch
 date: 2007-02-06 15:11:50 +0100
-tags: debian, upgrade
+tags: [debian, upgrade]
 ---
 
 The following problems:

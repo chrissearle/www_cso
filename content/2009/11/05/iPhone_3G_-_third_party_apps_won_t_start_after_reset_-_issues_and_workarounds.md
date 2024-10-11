@@ -1,7 +1,7 @@
 ---
 title: iPhone 3G - third party apps won't start after reset - issues and workarounds
 date: 2009-11-05 18:26:17 +0100
-tags: iphone, apple, third party apps, restore, reboot, reset
+tags: [iphone, apple, third party apps, restore, reboot, reset]
 ---
 
 Twice in the last two days my iPhone 3G has not started properly (it gets to the white apple logo and no further).

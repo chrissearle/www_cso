@@ -1,7 +1,7 @@
 ---
 title: Grails pastebin 2.0/2.1 released
 date: 2008-07-29 15:32:04 +0200
-tags: software, pastebin, grails
+tags: [software, pastebin, grails]
 ---
 
 Version 2.0 and 2.1 (small bugfix release of 2.0) of the [grails](http://grails.org/) [pastebin](http://en.wikipedia.org/wiki/Pastebin) was released today. Features include:

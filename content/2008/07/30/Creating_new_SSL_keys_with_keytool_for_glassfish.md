@@ -1,7 +1,7 @@
 ---
 title: Creating new SSL keys with keytool for glassfish
 date: 2008-07-30 10:19:04 +0200
-tags: java, ssl, keystore, keytool, glassfish
+tags: [java, ssl, keystore, keytool, glassfish]
 ---
 
 I needed to generate a new certificate for glassfish's admin pages.

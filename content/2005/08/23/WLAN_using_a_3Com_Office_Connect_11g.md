@@ -1,7 +1,7 @@
 ---
 title: WLAN using a 3Com Office Connect 11g
 date: 2005-08-23 16:16:05 +0200
-tags: debian, 3com, ndiswrapper
+tags: [debian, 3com, ndiswrapper]
 ---
 
 I have a 3Com OfficeConnect Wireless 11g PCMCIA card lying around - 3CRWE154G72.

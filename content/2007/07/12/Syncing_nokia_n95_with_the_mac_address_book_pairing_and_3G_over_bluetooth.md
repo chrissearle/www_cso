@@ -1,7 +1,7 @@
 ---
 title: Syncing nokia n95 with the mac, address book pairing and 3G over bluetooth
 date: 2007-07-12 10:42:15 +0200
-tags: mac, bluetooth, n95, nokia, sync
+tags: [mac, bluetooth, n95, nokia, sync]
 ---
 
 The n95 from nokia is not directly supported by mac osx. However - there are two additions that will help.

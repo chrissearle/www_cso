@@ -1,7 +1,7 @@
 ---
 title: Generating twitter auth tokens for non-web clients
 date: 2013-02-25 12:15:04 +0100
-tags: ruby, twitter, oauth
+tags: [ruby, twitter, oauth]
 ---
 
 I use twitter for various system stuff - and needed a way to get auth tokens for users for twitter oauth based apps.

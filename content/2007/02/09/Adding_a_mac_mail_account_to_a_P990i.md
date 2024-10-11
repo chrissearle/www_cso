@@ -1,7 +1,7 @@
 ---
 title: Adding a .mac mail account to a P990i
 date: 2007-02-09 10:12:25 +0100
-tags: p990i, imap, smtp
+tags: [p990i, imap, smtp]
 ---
 
 To add a .mac mail account to a P990i.

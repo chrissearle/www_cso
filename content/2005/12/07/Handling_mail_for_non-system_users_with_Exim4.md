@@ -1,7 +1,7 @@
 ---
 title: Handling mail for non-system users with Exim4
 date: 2005-12-07 23:03:33 +0100
-tags: debian, courier, exim4, dovecot, smtp
+tags: [debian, courier, exim4, dovecot, smtp]
 ---
 
 An article popped up on debian-administration.org. I'm going to have to take a closer look at one of the comments:

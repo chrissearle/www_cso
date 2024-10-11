@@ -1,7 +1,7 @@
 ---
 title: UFW with Docker
 date: 2018-09-21 08:16 +0200
-tags: ufw, docker, iptables, firewall
+tags: [ufw, docker, iptables, firewall]
 ---
 
 Having recently moved a server from one machine to another - I wanted a simpler firewall to deal with than directly playing with iptables.

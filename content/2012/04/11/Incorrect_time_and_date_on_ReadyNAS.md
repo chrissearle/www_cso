@@ -1,7 +1,7 @@
 ---
 title: Incorrect time and date on ReadyNAS
 date: 2012-04-11 23:40:01 +0200
-tags: ntp, readynas
+tags: [ntp, readynas]
 ---
 
 My ReadyNAS (pro 6) had suddenly been set to 1992.

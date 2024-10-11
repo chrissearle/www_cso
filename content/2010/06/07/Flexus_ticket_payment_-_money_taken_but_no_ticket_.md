@@ -1,7 +1,7 @@
 ---
 title: "Flexus ticket payment - money taken but no ticket :("
 date: 2010-06-07 09:43:48 +0200
-tags: flexus
+tags: [flexus]
 ---
 
 Tried to load a new month card onto my flexus card this morning. The ticket machine at Blindern was "Not in use" - but the one at Forskningsparken was active.

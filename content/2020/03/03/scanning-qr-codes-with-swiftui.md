@@ -1,7 +1,7 @@
 ---
 title: Scanning QR codes with SwiftUI
 date: 2020-03-03 11:28 +0100
-tags: ios, swift, swiftui, xcode
+tags: [ios, swift, swiftui, xcode]
 series: Revisiting the Sbanken API with SwiftUI
 image: /images/posts/2020/03/config.png
 intro: So the first thing we want to do is to have a way to scan a QR code to get the relevant IDs for the app.

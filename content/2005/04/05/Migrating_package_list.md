@@ -1,7 +1,7 @@
 ---
 title: Migrating package list
 date: 2005-04-05 12:00:21 +0200
-tags: debian, apt
+tags: [debian, apt]
 ---
 
 On machine 1
