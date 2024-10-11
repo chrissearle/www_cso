@@ -1,11 +1,13 @@
-<script setup>
-import {computed} from "#imports";
+<script setup lang="ts">
+const props = defineProps<{
+  id: string,
+  title: string,
+  image: string,
+  width: string,
+  height: string
+}>()
 
-const props = defineProps(["id", "title", "image", "width", "height"]);
-
-const flickrUrl = computed(() => {
-  return `https://www.flickr.com/photos/chrissearle/${props.id}/`;
-});
+const flickrUrl = computed(() => `https://www.flickr.com/photos/chrissearle/${props.id}/`);
 </script>
 
 <template>

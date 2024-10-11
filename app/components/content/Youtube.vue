@@ -1,11 +1,10 @@
-<script setup>
-import {computed} from "#imports";
+<script setup lang="ts">
+const props = defineProps<{
+  id: string,
+  title: string
+}>()
 
-const props = defineProps(["id", "title"]);
-
-const youtubeUrl = computed(() => {
-  return `https://www.youtube.com/embed/${props.id}`;
-});
+const youtubeUrl = computed(() => `https://www.youtube.com/embed/${props.id}`);
 </script>
 
 <template>
