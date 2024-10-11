@@ -44,7 +44,7 @@ const categories = splitList(props.post.category)
   </v-card>
 </template>
 
-<style scoped>
+<style>
 .post {
   width: 47%
 }
@@ -52,5 +52,11 @@ const categories = splitList(props.post.category)
 .postImg {
   width: 40%;
   max-height: 200px;
+}
+
+@media screen and (max-width: 960px) {
+  .post {
+    width: 94%
+  }
 }
 </style>

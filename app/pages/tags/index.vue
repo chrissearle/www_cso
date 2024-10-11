@@ -7,6 +7,12 @@ const {data} = await useAsyncData('Tags', () => queryContent().where({'tags': {$
 const tags = countSplitList((data.value ?? []).map((t) => t.tags))
 
 const sortedTags = new Map([...tags].sort((a, b) => String(a[0]).localeCompare(b[0])))
+
+const {lgAndUp} = useDisplay()
+
+const size = computed(() => {
+  return (lgAndUp.value ? 'large' : 'small')
+})
 </script>
 <template>
   <Head>
@@ -15,10 +21,10 @@ const sortedTags = new Map([...tags].sort((a, b) => String(a[0]).localeCompare(b
 
   <v-container class="d-flex flex flex-wrap ga-3">
   <div v-for="[tag, count] in sortedTags">
-    <v-btn size="large" :to="tagsLink(tag)">
+    <v-btn :size="size" :to="tagsLink(tag)">
       {{ tag }}
       <template v-slot:append>
-      <v-chip>{{ count }}</v-chip>
+      <v-chip :size="size">{{ count }}</v-chip>
       </template>
     </v-btn>
   </div>

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const {categoryLink} = useLinks()
 
-const {data} = await useAsyncData('categoryList', () => queryContent().where({'NavCategories': {$exists: true}}).only('category').find())
+const {data} = await useAsyncData('NavCategories', () => queryContent().where({'category': {$exists: true}}).only('category').find())
 
 const uniqueFilter = (value: string, index: number, self: string[]) => {
   return self.indexOf(value) === index;
@@ -16,7 +16,7 @@ const categories = data.value?.map((c) => {
 </script>
 
 <template>
-  <div v-if="categories?.length > 0">
+  <div class="d-none d-md-flex" v-if="categories?.length > 0">
     <v-spacer/>
 
     <v-btn v-for="category in categories" :to="categoryLink(category)">

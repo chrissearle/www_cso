@@ -8,7 +8,7 @@ const props = defineProps<{
 </script>
 
 <template>
-  <div class="d-flex flex ga-3 justify-center ma-6">
+  <div class="d-flex flex flex-wrap ga-3 justify-center ma-6">
     <v-btn to="/">
       <v-icon>mdi-chevron-double-left</v-icon>
       1
