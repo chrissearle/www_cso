@@ -5,15 +5,6 @@ COPY . .
 RUN npm install
 RUN npm run generate
 
-FROM node:22-alpine AS deploy
+FROM nginx AS deploy
 
-WORKDIR /app
-COPY --from=build /app/.output/public/ .
-
-ENV NODE_ENV=production
-
-EXPOSE 3000
-
-RUN npm install -g serve
-
-CMD [ "npx", "serve", "." ]
+COPY --from=build /app/.output/public/ /usr/share/nginx/html
