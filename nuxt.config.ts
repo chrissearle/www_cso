@@ -9,7 +9,8 @@ export default defineNuxtConfig({
       '@nuxt/content',
       "@nuxt/image",
       "@nuxtjs/sitemap",
-      "nuxt-disqus"
+      "nuxt-disqus",
+      "nuxt-gtag"
     ],
     vuetify: {
         moduleOptions: {
@@ -89,5 +90,8 @@ export default defineNuxtConfig({
                 trailingSlash: "append"
             }
         }
+    },
+    gtag: {
+        id: 'G-MFFN7PQDM8',
     }
 })
