@@ -5,11 +5,11 @@ const route = useRoute()
 
 const page = Number(route.params.number ?? "1")
 
-const {data: count} = await useAsyncData('pageCount', () => queryContent()
+const {data: count} = await useAsyncData(`PageCount-${page}`, () => queryContent()
     .where({_type: "markdown"})
     .count())
 
-const {data: posts} = await useAsyncData('pageList', () => queryContent()
+const {data: posts} = await useAsyncData(`Page-${page}`, () => queryContent()
     .where({_type: "markdown"})
     .only(["_path", "title", "date", "tags", "category", "intro", "image", "embedImage"])
     .sort({

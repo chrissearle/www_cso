@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const {categoryLink} = useLinks()
 
-const {data} = await useAsyncData('categoryList', () => queryContent().where({'category': {$exists: true}}).only('category').find())
+const {data} = await useAsyncData('categoryList', () => queryContent().where({'NavCategories': {$exists: true}}).only('category').find())
 
 const uniqueFilter = (value: string, index: number, self: string[]) => {
   return self.indexOf(value) === index;

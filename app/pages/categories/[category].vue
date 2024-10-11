@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const route = useRoute()
 
-const {data: posts} = await useAsyncData('categoryItemsList', () => queryContent()
+const {data: posts} = await useAsyncData(`Category-${route.params.category}`, () => queryContent()
     .where({_type: "markdown"})
     .where({'category': {$contains: route.params.category}})
     .only(["_path", "title", "date", "tags", "category", "intro", "image", "embedImage", "series"])

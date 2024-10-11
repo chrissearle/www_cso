@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const route = useRoute()
 
-const {data: posts} = await useAsyncData(`seriesItemList-${route.params.series}`, () => queryContent()
+const {data: posts} = await useAsyncData(`Series-${route.params.series}`, () => queryContent()
     .where({_type: "markdown"})
     .where({'series': {$contains: route.params.series}})
     .only(["_path", "title", "date", "tags", "category", "intro", "image", "embedImage", "series"])

@@ -2,7 +2,7 @@
 const {tagsLink} = useLinks()
 const {countSplitList} = useStrings()
 
-const {data} = await useAsyncData('tagList', () => queryContent().where({'tags': {$exists: true}}).only('tags').find())
+const {data} = await useAsyncData('Tags', () => queryContent().where({'tags': {$exists: true}}).only('tags').find())
 
 const tags = countSplitList((data.value ?? []).map((t) => t.tags))
 

@@ -1,11 +1,11 @@
 <script setup lang="ts">
 const {maxPostCount, pageCount} = usePaging()
 
-const {data: count} = await useAsyncData('pageCount', () => queryContent()
+const {data: count} = await useAsyncData('IndexCount', () => queryContent()
     .where({_type: "markdown"})
     .count())
 
-const {data: posts} = await useAsyncData('pageList', () => queryContent()
+const {data: posts} = await useAsyncData('Index', () => queryContent()
     .where({_type: "markdown"})
     .only(["_path", "title", "date", "tags", "category", "intro", "image", "embedImage", "series"])
     .sort({
