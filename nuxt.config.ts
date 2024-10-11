@@ -69,7 +69,8 @@ export default defineNuxtConfig({
         },
         experimental: {
             clientDB: true
-        }
+        },
+        respectPathCase: true
     },
     sitemap: {
         strictNuxtContentPaths: true
