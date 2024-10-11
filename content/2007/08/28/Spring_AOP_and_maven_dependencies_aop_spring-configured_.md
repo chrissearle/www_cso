@@ -4,7 +4,7 @@ date: 2007-08-28 13:31:17 +0200
 tags: java, aop, spring, maven, @configurable, aspectj
 ---
 
-Or - why does it say my spring context xml is invalid on <code><aop:spring-configured/></code>
+Or - why does it say my spring context xml is invalid on <code><aop:<spring-configured/></code>
 
 I've been trying to add the @Configurable to a spring project.
 

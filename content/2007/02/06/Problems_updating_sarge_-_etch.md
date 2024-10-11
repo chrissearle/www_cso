@@ -27,7 +27,7 @@ Upgrade request-tracker3.4 to 3.6 - how to upgrade db?
 
 Proftpd won't start since it can't route IPv6 to the machine (on a side note - why does every upgrade entail finding yet another way to disable IPv6?).
 
-Update. It starts - this is a warn not an error. Disabling IPv6 see [this post](/blog/disable_ipv6_in_a_2_6_kernel)
+Update. It starts - this is a warn not an error. Disabling IPv6 see [this post](/2005/03/17/Disable_IPv6_in_a_2_6_kernel/)
 
 Upgrade of gnokii-smsd has the following:
 

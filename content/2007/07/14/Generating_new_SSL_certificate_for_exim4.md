@@ -10,4 +10,4 @@ Cargo culted direct from the exim site.
 
 The really important bit is that the common name (CN) field must be the server name (at least so it seems to be for me)
 
-Don't forget - if your pop3 and imap certificates also expire at the same time to [renew them to](/blog/courier_imap_pop3_ssl).
+Don't forget - if your pop3 and imap certificates also expire at the same time to [renew them to](/2006/07/14/courier_imap_pop3_with_ssl/).

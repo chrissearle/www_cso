@@ -6,7 +6,7 @@ tags: linux, bluetooth
 
 Running a dial-up over bluetooth to a S700i.
 
-Most of this is cargo-culted from the pages listed on http://www.holtmann.org/linux/kernel/ (page no longer available) - with most of it coming from [here](http://www.teaparty.net/technotes/blue-gprs.html).
+Most of this is cargo-culted from the pages listed on holtmann.org (page no longer available) - with most of it coming from [teaparty.net](http://www.teaparty.net/technotes/blue-gprs.html).
 
 Installed bluez-hcidump, bluez-pin and bluez-utils.
 

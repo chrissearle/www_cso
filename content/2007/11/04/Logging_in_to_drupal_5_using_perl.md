@@ -11,5 +11,3 @@ You need to do three things (for drupal 5 - I used to be able to start at step 2
 1.  Grab the root page to get the PHPSESSID cookie
 1.  Login to associate your cookie with a logged in session
 1.  Call the script you want - in this case cron.php
-
-[drupal_cron.pl](drupal_cron.pl) is the script I used

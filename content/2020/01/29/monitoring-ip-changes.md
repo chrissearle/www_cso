@@ -12,7 +12,7 @@ Up until recently - I had a cron job that checked for changes and mailed me if i
 
 ## ipify.org
 
-First let's get the current IP using [ipify](ipify.org)
+First let's get the current IP using [ipify](https://ipify.org)
 
 ```shell
 IP=`curl https://api.ipify.org 2> /dev/null`
