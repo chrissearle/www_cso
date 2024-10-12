@@ -49,7 +49,6 @@ export default defineNuxtConfig({
                 "ruby",
                 "perl",
                 "swift",
-                "ini",
                 "shell",
                 "yaml",
                 "log",
