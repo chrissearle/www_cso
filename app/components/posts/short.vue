@@ -15,7 +15,7 @@ const categories = splitList(props.post.category)
 <template>
   <v-card class="post">
     <v-card-title>
-      <NuxtLink :to="`${props.post._path}/`">
+      <NuxtLink class="text-wrap" :to="`${props.post._path}/`">
         {{ props.post.title }}
       </NuxtLink>
     </v-card-title>
