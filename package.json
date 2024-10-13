@@ -18,6 +18,7 @@
     "luxon": "^3.5.0",
     "nuxt": "^3.13.0",
     "nuxt-disqus": "^1.1.1",
+    "nuxt-gtag": "^3.0.1",
     "rehype-external-links": "^3.0.0",
     "rehype-figure": "^1.0.1",
     "vue": "latest",
