@@ -6,6 +6,6 @@
       <NuxtPage />
     </v-main>
 
-    <NavFooter class="d-lg-none"/>
+    <NavFooter class="d-md-none"/>
   </v-app>
 </template>
