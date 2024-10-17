@@ -11,7 +11,7 @@ I wanted to set up a simple kiosk dashboard in homeassistant and make it availab
 
 To set up the actual dashboard I simply followed this tutorial from [Smart Home Junkie](https://www.youtube.com/@SmartHomeJunkie) for the config then changed out the view/sub-view contents with the controls and displays I wanted:
 
-::youtube{id="G3lT4zgjER8" title="Kiosk Mode in Home Assistant – How To – The Right Way! - Smart Home Junkie"}
+:youtube{id="G3lT4zgjER8" title="Kiosk Mode in Home Assistant – How To – The Right Way! - Smart Home Junkie"}
 
 ## Pi Setup
 

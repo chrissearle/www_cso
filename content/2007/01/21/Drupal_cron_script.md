@@ -10,6 +10,6 @@ Not sure where I saw the code (rss feed) - but the comment was present in the do
 
 Changes I've made - the dir match is changed from \*_ to _ so that it will follow symlinks. It also handles multiple drupal installs. Timeout wrapping added - one of my sites takes a long while to return.
 
-::download{title="drupal_cron.rb" path="/files/posts/2007/01/drupal_cron.rb"}
+:download{title="drupal_cron.rb" path="/files/posts/2007/01/drupal_cron.rb"}
 
 Feel free to comment with fixes or suggestions to make it better.
