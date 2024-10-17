@@ -11,4 +11,4 @@ I've tried lots of articles on the net about this - restarting different process
 
 The script on [this post](https://serverfault.com/questions/274882/cant-resolve-host-through-vpn-connection-from-mac-os-x/660309#660309) is so far the only way I have found to reliably get a DNS lookup to work.
 
-Just in case the post is unavailable in future - here's a :download{title="local copy of the script" path="reset_dns"} - just remember to replace the VPN name with your VPN name.
+Just in case the post is unavailable in future - here's a :download{title="local copy of the script" path="/files/posts/2020/01/reset_dns.sh"} - just remember to replace the VPN name with your VPN name.
