@@ -10,7 +10,8 @@ export default defineNuxtConfig({
       "@nuxt/image",
       "nuxt-disqus",
       "@nuxtjs/seo",
-      "nuxt-gtag"
+      "nuxt-gtag",
+      "@nuxt/scripts"
     ],
     vuetify: {
         moduleOptions: {
