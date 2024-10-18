@@ -2,7 +2,6 @@
 const {data} = await useAsyncData('NavIndexCategoriesCount', () => queryContent().where({'category': {$exists: true}}).count())
 
 const hasCategories = data.value || 0 > 0
-
 </script>
 
 <template>
@@ -13,14 +12,21 @@ const hasCategories = data.value || 0 > 0
       </v-btn>
     </v-toolbar-title>
 
-    <v-btn v-if="hasCategories" class="d-none d-md-flex" to="/categories/">Categories</v-btn>
-    <v-btn class="d-none d-md-flex" to="/tags/">Tags</v-btn>
-    <v-btn class="d-none d-md-flex" to="/series/">Series</v-btn>
+    <NavCategoriesMenu v-if="hasCategories" />
+
+    <v-btn class="d-none d-md-flex d-xl-none" to="/tags/">Tags</v-btn>
+    <v-btn class="d-none d-md-flex d-xl-none" to="/series/">Series</v-btn>
+
+    <v-btn class="d-none d-xl-flex" to="/tags/">All Tags</v-btn>
+    <v-btn class="d-none d-xl-flex" to="/series/">All Series</v-btn>
 
     <v-spacer class="d-none d-md-flex"/>
 
-    <v-btn to="/keys/">
+    <v-btn class="d-xs-flex d-xl-none" to="/keys/">
       Keys
+    </v-btn>
+    <v-btn class="d-none d-xl-flex" to="/keys/">
+      Cryptographic Keys
     </v-btn>
 
     <v-btn href="https://about.me/chrissearle"
