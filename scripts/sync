@@ -1,0 +1,5 @@
+#!/bin/bash
+
+for F in `git diff --name-only`; do
+    cp $F ../www_smu/$F
+done
