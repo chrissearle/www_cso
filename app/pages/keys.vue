@@ -1,6 +1,6 @@
 <template>
   <Head>
-    <Title>Chris Searle - Cryptographic Keys</Title>
+    <Title>Cryptographic Keys</Title>
   </Head>
 
   <v-container fluid>

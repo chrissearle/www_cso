@@ -13,7 +13,7 @@ const {data: posts} = await useAsyncData(`Category-${route.params.category}`, ()
 
 <template>
   <Head>
-    <Title>Chris Searle - Category: {{ route.params.category }}<</Title>
+    <Title>Category: {{ route.params.category }}</Title>
   </Head>
 
   <v-container>

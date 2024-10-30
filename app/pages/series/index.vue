@@ -18,7 +18,7 @@ const size = computed(() => {
 
 <template>
   <Head>
-    <Title>Chris Searle - All Series</Title>
+    <Title>All Series</Title>
   </Head>
 
   <v-container class="d-flex flex flex-wrap ga-3">

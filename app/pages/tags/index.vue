@@ -16,7 +16,7 @@ const size = computed(() => {
 </script>
 <template>
   <Head>
-    <Title>Chris Searle - All Tags</Title>
+    <Title>All Tags</Title>
   </Head>
 
   <v-container class="d-flex flex flex-wrap ga-3">

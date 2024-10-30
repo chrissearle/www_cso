@@ -18,10 +18,6 @@ const totalPages = computed(() => pageCount(count.value === undefined ? 0 : coun
 </script>
 
 <template>
-  <Head>
-    <Title>Chris Searle</Title>
-  </Head>
-
   <v-container class="d-flex flex flex-wrap ga-3">
     <PostsShort v-for="post in posts" :post="post"/>
   </v-container>

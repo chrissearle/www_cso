@@ -6,7 +6,7 @@ const {data} = await useAsyncData('Categories', () => queryContent().where({'cat
 
 const categories = countSplitList((data.value ?? []).map((c) => c.category))
 
-const sortedCategroes = new Map([...categories].sort((a, b) => String(a[0]).localeCompare(b[0])))
+const sortedCategories = new Map([...categories].sort((a, b) => String(a[0]).localeCompare(b[0])))
 
 const {lgAndUp} = useDisplay()
 
@@ -16,12 +16,12 @@ const size = computed(() => {
 </script>
 <template>
   <Head>
-    <Title>Chris Searle - All Tags</Title>
+    <Title>All Categories</Title>
   </Head>
 
   <v-container class="d-flex flex flex-wrap ga-3">
-  <div v-for="[category, count] in sortedCategroes">
-    <v-btn :size="size" size="large" :to="categoryLink(category)">
+  <div v-for="[category, count] in sortedCategories">
+    <v-btn :size="size" :to="categoryLink(category)">
       {{ category }}
       <template v-slot:append>
       <v-chip :size="size">{{ count }}</v-chip>

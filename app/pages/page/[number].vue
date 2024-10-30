@@ -24,7 +24,7 @@ const totalPages = computed(() => pageCount(count.value === undefined ? 0 : coun
 
 <template>
   <Head>
-    <Title>Chris Searle</Title>
+    <Title>Page {{ page }}</Title>
   </Head>
 
   <v-container class="d-flex flex flex-wrap ga-3">

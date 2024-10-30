@@ -13,7 +13,7 @@ const {data: posts} = await useAsyncData(`Tag-${route.params.tag}`, () => queryC
 
 <template>
   <Head>
-    <Title>Chris Searle - Tag: {{ route.params.tag }}<</Title>
+    <Title>Tag: {{ route.params.tag }}</Title>
   </Head>
 
   <v-container>

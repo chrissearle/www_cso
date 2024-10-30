@@ -13,7 +13,7 @@ const {data: posts} = await useAsyncData(`Series-${route.params.series}`, () => 
 
 <template>
   <Head>
-    <Title>Chris Searle - Series: {{ route.params.series }}<</Title>
+    <Title>Series: {{ route.params.series }}</Title>
   </Head>
 
   <v-container>
