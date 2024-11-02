@@ -1,6 +1,6 @@
 <template>
-    <figure>
-        <img :src="refinedSrc" :alt="alt" class="w-100"/>
+    <figure class="my-5">
+        <v-img :src="refinedSrc" :alt="alt" class="w-100" max-height="600"/>
         <figcaption class="text-center text-grey-lighten-3">{{ alt }}</figcaption>
     </figure>
 </template>
