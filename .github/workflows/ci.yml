@@ -30,7 +30,7 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: "${{ secrets.DOCKERHUB_USERNAME }}/www_cso:${{ github.sha }},${{ secrets.DOCKERHUB_USERNAME }}/www_cso:latest"
+          tags: "${{ secrets.DOCKERHUB_USERNAME }}/www_cso:latest"
 
       - name: Get latest to local docker
         if: github.ref == 'refs/heads/main'
