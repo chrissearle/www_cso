@@ -3,8 +3,10 @@ FROM node:23-alpine AS build
 WORKDIR /app
 COPY . .
 RUN npm install
-RUN npm run generate
+RUN npm run build
 
-FROM nginx AS deploy
+FROM node:23-alpine AS deploy
 
-COPY --from=build /app/.output/public/ /usr/share/nginx/html
+WORKDIR /app
+COPY --from=build /app/.output/ /app
+CMD ["node", "/app/server/index.mjs"]

@@ -29,7 +29,7 @@ export default defineNuxtConfig({
         name: 'Chris Searle',
         trailingSlash: true
     },
-    ssr: true,
+    ssr: false,
     content: {
         highlight: {
             theme: "github-dark",
