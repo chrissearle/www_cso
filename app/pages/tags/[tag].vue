@@ -1,23 +1,31 @@
 <script setup lang="ts">
 const route = useRoute()
+const { safeString } = useStrings()
 
-const {data: posts} = await useAsyncData(`Tag-${route.params.tag}`, () => queryContent()
+const slug = route.params.tag
+
+const {data: allPosts} = await useAsyncData(`Tag-${slug}`, () => queryContent()
     .where({_type: "markdown"})
-    .where({'tags': {$contains: route.params.tag}})
     .only(["_path", "title", "date", "tags", "category", "intro", "image", "embedImage", "series"])
-    .sort({
-      date: -1
-    })
+    .sort({date: -1})
     .find())
+
+const posts = (allPosts.value || []).filter((post: { tags: string[] }) =>
+    (post.tags || []).some((tag: string) => {
+      return safeString(tag) === slug;
+    })
+)
+
+const originalTag = (posts.length > 0 && posts[0] !== undefined) ? posts[0].tags.find((tag: string) => safeString(tag) === slug) : slug
 </script>
 
 <template>
   <Head>
-    <Title>Tag: {{ route.params.tag }}</Title>
+    <Title>Tag: {{ originalTag }}</Title>
   </Head>
 
   <v-container>
-    <h1 class="text-h3">Tag: {{ route.params.tag }}</h1>
+    <h1 class="text-h3">Tag: {{ originalTag }}</h1>
   </v-container>
 
   <v-container class="d-flex flex flex-wrap ga-3">

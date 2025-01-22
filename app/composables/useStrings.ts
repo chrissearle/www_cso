@@ -1,3 +1,5 @@
+import slugify from "slugify";
+
 export const useStrings = () => {
     const splitList = (items: string | string[] | undefined): string[] => {
         let list: string[] = []
@@ -22,8 +24,13 @@ export const useStrings = () => {
             .flat()
             .reduce((acc, e) => acc.set(e, (acc.get(e) || 0) + 1), new Map())
 
+    const safeString = (input: string): string => {
+        return slugify("" + input, {lower: true});
+    }
+
     return {
         splitList,
-        countSplitList
+        countSplitList,
+        safeString
     }
 }
