@@ -5,7 +5,7 @@ tags: [kafka, java, scala, kotlin]
 intro: Some time back I wrote about converting a simple java kafka project to scala. This is a just for fun look at how similar the kotlin code is.
 ---
 
-Some time back I wrote about [Kafka - java to scala](/series/Kafka%20-%20java%20to%20scala/).
+Some time back I wrote about [Kafka - java to scala](/series/kafka-java-to-scala/).
 
 I just wondered how similar the equivalent kotlin code would be.
 

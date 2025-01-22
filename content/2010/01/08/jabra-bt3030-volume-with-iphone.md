@@ -23,4 +23,4 @@ Note - I did have to re-pair the iphone and bt3030 after the update. But that wo
 
 **Update on AVRCP**
 
-As noted in the comments below - from iOS 4.1 the AVRCP version was updated allowing for next/prev and ff/rw. See also [iPhone 3.0 firmware release and stereo bluetooth - it does support AVRCP - just not all of it](/2009/07/09/iPhone_3_0_firmware_release_and_stereo_bluetooth_-_it_does_support_AVRCP_-_just_not_all_of_it)
+As noted in the comments below - from iOS 4.1 the AVRCP version was updated allowing for next/prev and ff/rw. See also [iPhone 3.0 firmware release and stereo bluetooth - it does support AVRCP - just not all of it](/2009/07/09/iphone-3-0-firmware-release-and-stereo-bluetooth-it-does-support-avrcp-just-not-all-of-it)

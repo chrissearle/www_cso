@@ -4,7 +4,7 @@ date: 2010-09-29 09:16:30 +0200
 tags: [mac, ssl, osx, openssl]
 ---
 
-For my own sites I use SSL certificates [signed by my own CA](/2008/08/09/Using_a_self-generated_Certificate_Authority_for_OpenSSL_on_debian_etch)
+For my own sites I use SSL certificates [signed by my own CA](/2008/08/09/using-a-self-generated-certificate-authority-for-openssl-on-debian-etch)
 
 The CA certificate needs to be imported to the machines where I use the websites and for Mac OSX it needs to go into the system keychain - not the users keychain.
 

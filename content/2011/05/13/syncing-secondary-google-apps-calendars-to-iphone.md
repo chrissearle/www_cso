@@ -6,7 +6,7 @@ tags: [google, googleapps, ios]
 
 ## Update
 
-See [CalDAV/CardDAV](/2012/12/17/Google_apps_removing_EAS_support_-_moving_to_CalDAV_CardDAV) for info on switching to a CalDAV/CardDAV setup.  
+See [CalDAV/CardDAV](/2012/12/17/google-apps-removing-eas-support-moving-to-caldav-carddav) for info on switching to a CalDAV/CardDAV setup.  
 
 ## Original Post
 

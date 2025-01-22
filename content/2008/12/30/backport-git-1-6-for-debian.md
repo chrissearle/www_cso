@@ -1,7 +1,7 @@
 ---
 title: Backport git 1.6 for debian
 date: 2008-12-30 00:13:10 +0100
-tags: [debian, debian experimental, git, git 1.6, git-core, git-core_1.6]
+tags: [debian, debian experimental, git, git 1.6, git-core, git-core-1.6]
 ---
 
 git 1.6 is available in debian experimental. I want to use it under debian stable (etch).
