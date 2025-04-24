@@ -1,16 +1,14 @@
 <script setup lang="ts">
 const route = useRoute()
-const { safeString } = useStrings()
+const {safeString} = useStrings()
 
 const slug = route.params.series
 
-const {data: allPosts} = await useAsyncData(`Series-${slug}`, () => queryContent()
-    .where({_type: "markdown"})
-    .only(["_path", "title", "date", "tags", "category", "intro", "image", "embedImage", "series"])
-    .sort({
-      date: -1
-    })
-    .find())
+const {data: allPosts} = await useAsyncData(`Series-${slug}`, () => queryCollection('content')
+    .select("path", "title", "date", "tags", "category", "intro", "image", "embedImage", "series")
+    .order('date', 'DESC')
+    .all()
+)
 
 const posts = (allPosts.value || [])
     .filter((post: { series: string }) => post.series && safeString(post.series) === slug)

@@ -1,6 +1,9 @@
 <script setup lang="ts">
 
-const {data} = await useAsyncData('NavFooterCategoriesCount', () => queryContent().where({'category': {$exists: true}}).count())
+const {data} = await useAsyncData('NavFooterCategoriesCount', () => queryCollection('content')
+    .where('category', 'IS NOT NULL')
+    .count()
+)
 
 const hasCategories = data.value || 0 > 0
 </script>

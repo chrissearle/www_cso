@@ -6,13 +6,13 @@ export default defineNuxtConfig({
     },
     devtools: {enabled: true},
     modules: [
-      'vuetify-nuxt-module',
-      '@nuxt/content',
-      "@nuxt/image",
-      "nuxt-disqus",
-      "@nuxtjs/seo",
-      "nuxt-gtag",
-      "@nuxt/scripts"
+        'vuetify-nuxt-module',
+        '@nuxt/content',
+        "@nuxt/image",
+        "nuxt-disqus",
+        "@nuxtjs/seo",
+        "nuxt-gtag",
+        "@nuxt/scripts"
     ],
     vuetify: {
         moduleOptions: {
@@ -75,9 +75,7 @@ export default defineNuxtConfig({
         respectPathCase: true,
         contentHead: false
     },
-    sitemap: {
-        strictNuxtContentPaths: true
-    },
+    sitemap: {},
     disqus: {
         shortname: "searle",
     },

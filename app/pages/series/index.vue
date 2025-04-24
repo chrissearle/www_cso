@@ -2,8 +2,11 @@
 const {seriesLink} = useLinks()
 const {countSplitList} = useStrings()
 
-const {data} = await useAsyncData('Series', () => queryContent().where({'series': {$exists: true}}).only('series').find())
-
+const {data} = await useAsyncData('Series', () => queryCollection('content')
+    .where('series', 'IS NOT NULL')
+    .order('series', 'ASC')
+    .all()
+)
 
 const series = countSplitList((data.value ?? []).map((s) => s.series))
 

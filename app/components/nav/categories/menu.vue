@@ -2,7 +2,11 @@
 const {categoryLink} = useLinks()
 const {xlAndUp} = useDisplay()
 
-const {data} = await useAsyncData('NavCategoriesMenu', () => queryContent().where({'category': {$exists: true}}).only('category').find())
+const {data} = await useAsyncData('NavCategoriesMenu', () => queryCollection('content').where(
+    'category', 'IS NOT NULL')
+    .select('category')
+    .all()
+)
 
 const uniqueFilter = (value: string, index: number, self: string[]) => {
   return self.indexOf(value) === index;

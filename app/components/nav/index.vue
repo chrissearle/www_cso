@@ -1,5 +1,8 @@
 <script setup lang="ts">
-const {data} = await useAsyncData('NavIndexCategoriesCount', () => queryContent().where({'category': {$exists: true}}).count())
+const {data} = await useAsyncData('NavIndexCategoriesCount', () => queryCollection('content')
+    .where('category', 'IS NOT NULL')
+    .count()
+)
 
 const hasCategories = data.value || 0 > 0
 </script>
@@ -12,7 +15,7 @@ const hasCategories = data.value || 0 > 0
       </v-btn>
     </v-toolbar-title>
 
-    <NavCategoriesMenu v-if="hasCategories" />
+    <NavCategoriesMenu v-if="hasCategories"/>
 
     <v-btn class="d-none d-md-flex d-xl-none" to="/tags/">Tags</v-btn>
     <v-btn class="d-none d-md-flex d-xl-none" to="/series/">Series</v-btn>

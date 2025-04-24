@@ -4,13 +4,10 @@ const { safeString } = useStrings()
 
 const slug = route.params.category
 
-const {data: allPosts} = await useAsyncData(`Category-${slug}`, () => queryContent()
-    .where({_type: "markdown"})
-    .only(["_path", "title", "date", "tags", "category", "intro", "image", "embedImage", "series"])
-    .sort({
-      date: -1
-    })
-    .find())
+const {data: allPosts} = await useAsyncData(`Category-${slug}`, () => queryCollection('content')
+    .select("path", "title", "date", "tags", "category", "intro", "image", "embedImage", "series")
+    .order('date', 'DESC')
+    .all())
 
 const posts = (allPosts.value || [])
     .filter((post: { category: string }) => post.category && safeString(post.category) === slug)

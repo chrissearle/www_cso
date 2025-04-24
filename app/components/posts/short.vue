@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import type {ParsedContent} from '@nuxt/content'
+import type {ParsedContentv2} from '@nuxt/content'
 
 const {seriesLink, categoryLink} = useLinks()
 const {dateFormat} = useDates()
 const {splitList} = useStrings()
 
 const props = defineProps<{
-  post: Pick<ParsedContent, "image" | "title" | "date" | "tags" | "embedImage" | "intro" | "_path" | "category" | "series">
+  post: Pick<ParsedContentv2, "image" | "title" | "date" | "tags" | "embedImage" | "intro" | "path" | "category" | "series">
 }>()
 
 const categories = splitList(props.post.category)
@@ -15,7 +15,7 @@ const categories = splitList(props.post.category)
 <template>
   <v-card class="post">
     <v-card-title>
-      <NuxtLink class="text-wrap" :to="`${props.post._path}/`">
+      <NuxtLink class="text-wrap" :to="`${props.post.path}/`">
         {{ props.post.title }}
       </NuxtLink>
     </v-card-title>

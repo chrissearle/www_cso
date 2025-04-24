@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import type {ParsedContent} from '@nuxt/content'
+import type {ParsedContentv2} from '@nuxt/content'
 
 const {dateFormat} = useDates()
 const {seriesLink, categoryLink} = useLinks()
 const {splitList} = useStrings()
 
 const props = defineProps<{
-  post: ParsedContent
+  post: Pick<ParsedContentv2, "image" | "title" | "date" | "tags" | "embedImage" | "intro" | "path" | "category" | "series">
 }>()
 
 let opts = {

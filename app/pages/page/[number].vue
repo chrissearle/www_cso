@@ -5,19 +5,15 @@ const route = useRoute()
 
 const page = Number(route.params.number ?? "1")
 
-const {data: count} = await useAsyncData(`PageCount-${page}`, () => queryContent()
-    .where({_type: "markdown"})
-    .count())
+const {data: count} = await useAsyncData(`PageCount-${page}`, () => queryCollection('content').count())
 
-const {data: posts} = await useAsyncData(`Page-${page}`, () => queryContent()
-    .where({_type: "markdown"})
-    .only(["_path", "title", "date", "tags", "category", "intro", "image", "embedImage"])
-    .sort({
-      date: -1
-    })
+const {data: posts} = await useAsyncData(`Page-${page}`, () => queryCollection('content')
+    .select("path", "title", "date", "tags", "category", "intro", "image", "embedImage")
+    .order('date', 'DESC')
     .skip(maxPostCount * (page -1))
     .limit(maxPostCount)
-    .find())
+    .all()
+)
 
 const totalPages = computed(() => pageCount(count.value === undefined ? 0 : count.value))
 </script>

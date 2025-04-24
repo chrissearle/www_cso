@@ -2,9 +2,13 @@
 const {tagsLink} = useLinks()
 const {countSplitList} = useStrings()
 
-const {data} = await useAsyncData('Tags', () => queryContent().where({'tags': {$exists: true}}).only('tags').find())
+const {data} = await useAsyncData('Tags', () => queryCollection('content')
+    .where('tags', 'IS NOT NULL')
+    .select('tags')
+    .all()
+)
 
-const tags = countSplitList((data.value ?? []).map((t) => t.tags))
+const tags = countSplitList((data.value ?? []).map((t) => t.tags).flat())
 
 const sortedTags = new Map([...tags].sort((a, b) => String(a[0]).localeCompare(b[0])))
 
@@ -24,9 +28,13 @@ const size = computed(() => {
     <v-btn :size="size" :to="tagsLink(tag)">
       {{ tag }}
       <template v-slot:append>
-      <v-chip :size="size">{{ count }}</v-chip>
+        <v-chip :size="size">{{ count }}</v-chip>
       </template>
     </v-btn>
   </div>
   </v-container>
 </template>
+
+
+
+

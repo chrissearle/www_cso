@@ -1,12 +1,12 @@
 import slugify from "slugify";
 
 export const useStrings = () => {
-    const splitList = (items: string | string[] | undefined): string[] => {
+    const splitList = (items: string | string[] | undefined | null): string[] => {
         let list: string[] = []
 
         if (Array.isArray(items)) {
             list = items
-        } else if (items !== undefined) {
+        } else if (items !== undefined && items !== null) {
             list = items.split(",")
         }
 
