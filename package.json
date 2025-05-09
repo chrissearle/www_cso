@@ -19,7 +19,7 @@
     "@nuxtjs/sitemap": "^7.2.10",
     "@types/luxon": "^3.6.2",
     "luxon": "^3.6.1",
-    "nuxt": "^3.17.1",
+    "nuxt": "^3.17.2",
     "nuxt-disqus": "^1.1.1",
     "nuxt-gtag": "^3.0.2",
     "rehype-external-links": "^3.0.0",
