@@ -4,7 +4,7 @@ export default defineNuxtConfig({
     future: {
         compatibilityVersion: 4,
     },
-    devtools: {enabled: false},
+    devtools: {enabled: true},
     modules: [
         'vuetify-nuxt-module',
         '@nuxt/content',
