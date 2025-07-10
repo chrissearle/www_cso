@@ -16,7 +16,7 @@
     "@nuxt/image": "^1.10.0",
     "@nuxt/scripts": "^0.11.8",
     "@nuxtjs/seo": "^3.0.3",
-    "@nuxtjs/sitemap": "^7.4.0",
+    "@nuxtjs/sitemap": "^7.4.1",
     "@types/luxon": "^3.6.2",
     "better-sqlite3": "^11.10.0",
     "luxon": "^3.6.1",
