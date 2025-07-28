@@ -1,9 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-    compatibilityDate: "2024-04-03",
-    future: {
-        compatibilityVersion: 4,
-    },
+    compatibilityDate: "2025-07-28",
     devtools: {enabled: true},
     modules: [
         'vuetify-nuxt-module',
