@@ -32,9 +32,11 @@ const categories = splitList(props.post.category)
 
     <v-card-text class="d-flex flex ga-5 justify-start text-wrap">
       <div class="postImg" v-if="props.post.image || props.post.embedImage">
-        <v-img v-if="props.post.image" :src="props.post.image"/>
+        <NuxtLink class="text-wrap" :to="`${props.post.path}/`">
+          <v-img v-if="props.post.image" :src="props.post.image"/>
 
-        <v-img v-if="props.post.embedImage" :src="props.post.embedImage"/>
+          <v-img v-if="props.post.embedImage" :src="props.post.embedImage"/>
+        </NuxtLink>
       </div>
       <div>
         {{ props.post.intro }}
