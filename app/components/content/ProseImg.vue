@@ -1,15 +1,18 @@
 <template>
   <figure class="my-5">
-    <a :href="refinedSrc" target="_blank">
+    <a :href="refinedSrc" target="_blank" :title="alt" :aria-labelledby="captionId">
       <v-img :src="refinedSrc" :alt="alt" class="w-100" max-height="600"/>
+      <span class="v-sr-only">{{ alt }}</span>
     </a>
-    <figcaption class="text-center text-grey-lighten-3">{{ alt }}</figcaption>
+    <figcaption :id="captionId" class="text-center text-grey-lighten-3">{{ alt }}</figcaption>
   </figure>
 </template>
 
 <script setup lang="ts">
 import {withBase} from 'ufo';
 import {computed, useRuntimeConfig} from '#imports';
+
+const captionId = useId()
 
 const props = defineProps({
   src: {
