@@ -2,7 +2,7 @@
 title: mitmproxy with java
 date: 2020-12-09 08:05 +0100
 tags: [java, mitmproxy]
-image: /images/posts/2020/12/mitm_curl_response.png
+image: /images/posts/2020/12/mitm-curl-response.png
 intro: Using mitmproxy to debug java web calls
 ---
 
@@ -34,17 +34,17 @@ curl --proxy 127.0.0.1:8899 --cacert ~/.mitmproxy/mitmproxy-ca-cert.pem https://
 
 In the mitmproxy terminal there should be one flow now shown
 
-![mitmproxy flow from curl](/images/posts/2020/12/mitm_curl_flow.png)
+![mitmproxy flow from curl](/images/posts/2020/12/mitm-curl-flow.png)
 
 Using the arrow keys (up/down) to select a line - hitting enter drills down.
 
 There are three views (left/right arrow to navigate).
 
-![mitmproxy curl request](/images/posts/2020/12/mitm_curl_request.png)
+![mitmproxy curl request](/images/posts/2020/12/mitm-curl-request.png)
 
-![mitmproxy curl response](/images/posts/2020/12/mitm_curl_response.png)
+![mitmproxy curl response](/images/posts/2020/12/mitm-curl-response.png)
 
-![mitmproxy curl details](/images/posts/2020/12/mitm_curl_detail.png)
+![mitmproxy curl details](/images/posts/2020/12/mitm-curl-detail.png)
 
 To get back to the flow list - just hit `q`
 
@@ -110,7 +110,7 @@ This is because we also need to tell java about the mitmproxy CA certificate.
 
 This is done by adding the certificate to the truststore of the JVM.
 
-The location of this file depends on what OS, what java version, what java installation method etc. In my case - I'm testing with adoptopenjdk 11 under sdkman - so I found the cacerts file under $SDKMAN_DOR/candidates/java/11.0.9.hs-adpt/lib/security
+The location of this file depends on what OS, what java version, what java installation method etc. In my case - I'm testing with adoptopenjdk 11 under sdkman - so I found the cacerts file under $SDKMAN-DOR/candidates/java/11.0.9.hs-adpt/lib/security
 
 I don't want to modify this in place - so - I copied the cacerts file local to the project.
 
@@ -130,7 +130,7 @@ java -Dhttps.proxyHost=localhost -Dhttps.proxyPort=8899 -DProxyTest  -Djavax.net
 
 This time the command should complete and we should now see the call in the mitmproxy flow list
 
-![mitmproxy java httpclient request](/images/posts/2020/12/mitm_java_httpclient_request.png)
+![mitmproxy java httpclient request](/images/posts/2020/12/mitm-java-httpclient-request.png)
 
 ## Java Spring WebClient proxy (netty)
 
@@ -191,7 +191,7 @@ Now - let's add the proxy to the client instance. Here the host and port are har
 
 Again - if we run this then we get a PKIX path error - so we need to remember to add the truststore `-Djavax.net.ssl.trustStore=cacerts`
 
-![mitmproxy netty request](/images/posts/2020/12/mitm_netty_request.png)
+![mitmproxy netty request](/images/posts/2020/12/mitm-netty-request.png)
 
 ## Summary
 
