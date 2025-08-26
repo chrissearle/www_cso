@@ -2,7 +2,7 @@ FROM node:23-alpine AS build
 
 WORKDIR /app
 COPY . .
-RUN npm install
+RUN npm ci
 RUN npm run build
 
 FROM node:23-alpine AS deploy
