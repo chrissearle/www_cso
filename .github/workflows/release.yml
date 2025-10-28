@@ -34,7 +34,7 @@ jobs:
         env:
           FLUX_REPO_TOKEN: ${{ secrets.FLUX_TOKEN }}
         run: |
-          SERVICE="www_cso"
+          SERVICE="www.chrissearle.org"
           IMAGE="ghcr.io/${{ github.repository_owner }}/www_cso"
           TAG="${{ github.ref_name }}"
 
