@@ -25,3 +25,22 @@ jobs:
           docker buildx imagetools create \
             --tag ghcr.io/${{ github.repository_owner }}/www_cso:release \
             ghcr.io/${{ github.repository_owner }}/www_cso:staging
+
+          docker buildx imagetools create \
+            --tag ghcr.io/${{ github.repository_owner }}/www_cso:${{ github.ref_name }} \
+            ghcr.io/${{ github.repository_owner }}/www_cso:staging
+
+      - name: Trigger Flux repo image bump
+        env:
+          FLUX_REPO_TOKEN: ${{ secrets.FLUX_TOKEN }}
+        run: |
+          SERVICE="www_cso"
+          IMAGE="ghcr.io/${{ github.repository_owner }}/www_cso"
+          TAG="${{ github.ref_name }}"
+
+          curl -X POST \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: token ${FLUX_REPO_TOKEN}" \
+            https://api.github.com/repos/chrissearle/flux-repo/dispatches \
+            -d "$(jq -n --arg svc "$SERVICE" --arg img "$IMAGE" --arg tag "$TAG" \
+              '{event_type:"bump-image", client_payload:{service:$svc, image:$img, tag:$tag}}')"
