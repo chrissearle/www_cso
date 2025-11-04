@@ -9,7 +9,8 @@ export default defineNuxtConfig({
         "nuxt-disqus",
         "@nuxtjs/seo",
         "nuxt-gtag",
-        "@nuxt/scripts"
+        "@nuxt/scripts",
+        "@artmizu/nuxt-prometheus"
     ],
     vuetify: {
         moduleOptions: {
