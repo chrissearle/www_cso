@@ -11,4 +11,5 @@ FROM node:24-alpine AS deploy
 
 WORKDIR /app
 COPY --from=build /app/.output/ /app
+
 CMD ["node", "/app/server/index.mjs"]

@@ -45,6 +45,10 @@ jobs:
             type=sha,format=short
             type=raw,value=latest,enable={{is_default_branch}}
 
+      - name: Generate env file for Nuxt
+        run: |
+          echo "NUXT_PUBLIC_IMAGE_TAG=sha-${GITHUB_SHA::7}" >> .env
+
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
