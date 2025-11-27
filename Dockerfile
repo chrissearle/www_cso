@@ -1,4 +1,6 @@
-FROM node:24-alpine AS build
+# syntax=docker/dockerfile:1.7
+
+FROM --platform=$BUILDPLATFORM node:24-alpine AS build
 
 WORKDIR /app
 COPY . .
