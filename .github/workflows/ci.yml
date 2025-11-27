@@ -21,6 +21,9 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
+      - name: Compute short-sha tag (matches metadata-action)
+        run: echo "SHORT_SHA_TAG=sha-${GITHUB_SHA::7}" >> $GITHUB_ENV
+
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
 
@@ -56,7 +59,7 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
           build-args: |
-            IMAGE_TAG=sha-${GITHUB_SHA::7}
+            IMAGE_TAG=${{ env.SHORT_SHA_TAG }}
 
       - name: Tag staging (alias latest)
         if: github.ref == 'refs/heads/main'
@@ -64,9 +67,6 @@ jobs:
           docker buildx imagetools create \
             --tag ghcr.io/${{ github.repository_owner }}/www_cso:staging \
             ghcr.io/${{ github.repository_owner }}/www_cso:latest
-
-      - name: Compute short-sha tag (matches metadata-action)
-        run: echo "SHORT_SHA_TAG=sha-${GITHUB_SHA::7}" >> $GITHUB_ENV
 
       - name: Trigger Flux repo image bump
         env:
