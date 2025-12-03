@@ -14,21 +14,19 @@ const posts = (allPosts.value || [])
     .filter((post: { series: string }) => post.series && safeString(post.series) === slug)
 
 const originalSeries = (posts.length > 0 && posts[0] !== undefined) ? posts[0].series : slug
-
 </script>
 
 <template>
-  <Head>
-    <Title>Series: {{ originalSeries }}</Title>
-  </Head>
+  <UContainer>
+    <Head>
+      <Title>Series: {{ originalSeries }}</Title>
+    </Head>
 
-  <v-container>
-    <h1 class="text-h3">Series: {{ originalSeries }}</h1>
-  </v-container>
-
-  <v-container class="d-flex flex flex-wrap ga-3">
-    <PostsShort v-for="post in posts" :post="post"/>
-  </v-container>
+    <h1 class="pageTitle">Series: {{ originalSeries }}</h1>
+    <UPageGrid>
+      <PostsShort v-for="post in posts" :key="post.path" :post="post"/>
+    </UPageGrid>
+  </UContainer>
 </template>
 
 

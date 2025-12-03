@@ -1,10 +1,26 @@
 <template>
   <figure class="my-5">
-    <a :href="refinedSrc" target="_blank" :title="alt" :aria-labelledby="captionId">
-      <v-img :src="refinedSrc" :alt="alt" class="w-100" max-height="600"/>
-      <span class="d-sr-only">{{ alt }}</span>
+    <a
+        :href="refinedSrc"
+        target="_blank"
+        rel="noopener"
+        :title="alt"
+        :aria-labelledby="captionId"
+    >
+      <NuxtImg
+          :src="refinedSrc"
+          :alt="alt"
+          class="w-full max-h-[600px] object-contain"
+      />
+      <span class="sr-only">{{ alt }}</span>
     </a>
-    <figcaption :id="captionId" class="text-center text-grey-lighten-3">{{ alt }}</figcaption>
+
+    <figcaption
+        :id="captionId"
+        class="mt-2 text-center text-sm text-gray-500 dark:text-gray-400"
+    >
+      {{ alt }}
+    </figcaption>
   </figure>
 </template>
 

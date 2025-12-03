@@ -16,17 +16,14 @@ const originalCategory = (posts.length > 0 && posts[0] !== undefined) ? posts[0]
 </script>
 
 <template>
-  <Head>
-    <Title>Category: {{ originalCategory }}</Title>
-  </Head>
+  <UContainer>
+    <Head>
+      <Title>Category: {{ originalCategory }}</Title>
+    </Head>
 
-  <v-container>
-    <h1 class="text-h3">Category: {{ originalCategory }}</h1>
-  </v-container>
-
-  <v-container class="d-flex flex flex-wrap ga-3">
-    <PostsShort v-for="post in posts" :post="post"/>
-  </v-container>
+    <h1 class="pageTitle">Category: {{ originalCategory }}</h1>
+    <UPageGrid>
+      <PostsShort v-for="post in posts" :key="post.path" :post="post"/>
+    </UPageGrid>
+  </UContainer>
 </template>
-
-

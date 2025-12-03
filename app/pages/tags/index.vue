@@ -7,34 +7,32 @@ const {data} = await useAsyncData('Tags', () => queryCollection('content')
     .select('tags')
     .all()
 )
-
 const tags = countSplitList((data.value ?? []).map((t) => t.tags).flat())
 
 const sortedTags = new Map([...tags].sort((a, b) => String(a[0]).localeCompare(b[0])))
-
-const {lgAndUp} = useDisplay()
-
-const size = computed(() => {
-  return (lgAndUp.value ? 'large' : 'small')
-})
 </script>
+
 <template>
-  <Head>
-    <Title>All Tags</Title>
-  </Head>
+  <UContainer>
+    <Head>
+      <Title>All Tags</Title>
+    </Head>
 
-  <v-container class="d-flex flex flex-wrap ga-3">
-  <div v-for="[tag, count] in sortedTags">
-    <v-btn :size="size" :to="tagsLink(tag)">
-      {{ tag }}
-      <template v-slot:append>
-        <v-chip :size="size">{{ count }}</v-chip>
-      </template>
-    </v-btn>
-  </div>
-  </v-container>
+    <div class="flex flex-wrap gap-2">
+      <NuxtLink
+          v-for="[tag, count] in sortedTags"
+          :key="tag"
+          :to="tagsLink(tag)"
+          class="inline-block"
+      >
+        <UBadge
+            size="xl"
+            variant="soft"
+        >
+          {{ tag }}
+          <span class="ml-1 text-xs opacity-70">({{ count }})</span>
+        </UBadge>
+      </NuxtLink>
+    </div>
+  </UContainer>
 </template>
-
-
-
-

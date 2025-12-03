@@ -10,26 +10,30 @@ const {data} = await useAsyncData('Categories', () => queryCollection('content')
 const categories = countSplitList((data.value ?? []).map((c) => c.category).flat())
 
 const sortedCategories = new Map([...categories].sort((a, b) => String(a[0]).localeCompare(b[0])))
-
-const {lgAndUp} = useDisplay()
-
-const size = computed(() => {
-  return (lgAndUp.value ? 'large' : 'small')
-})
 </script>
-<template>
-  <Head>
-    <Title>All Categories</Title>
-  </Head>
 
-  <v-container class="d-flex flex flex-wrap ga-3">
-    <div v-for="[category, count] in sortedCategories">
-      <v-btn :size="size" :to="categoryLink(category)">
-        {{ category }}
-        <template v-slot:append>
-          <v-chip :size="size">{{ count }}</v-chip>
-        </template>
-      </v-btn>
+<template>
+  <UContainer>
+    <Head>
+      <Title>All Categories</Title>
+    </Head>
+
+    <div class="flex flex-wrap gap-2">
+      <NuxtLink
+          v-for="[category, count] in sortedCategories"
+          :key="category"
+          :to="categoryLink(category)"
+          class="inline-block"
+      >
+        <UBadge
+            icon="i-heroicons-tag"
+            size="xl"
+            variant="soft"
+        >
+          {{ category }}
+          <span class="ml-1 text-xs opacity-70">({{ count }})</span>
+        </UBadge>
+      </NuxtLink>
     </div>
-  </v-container>
+  </UContainer>
 </template>

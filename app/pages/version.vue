@@ -4,13 +4,14 @@ const imageTag = computed(() => config.public.imageTag || 'development')
 </script>
 
 <template>
-  <Head>
-    <Title>Version</Title>
-  </Head>
+  <UContainer>
 
-  <v-container fluid>
-    <h3 class="text-h3">Version</h3>
+    <Head>
+      <Title>Version</Title>
+    </Head>
+
+    <h3 class="pageTitle">Version</h3>
 
     <p>{{ imageTag }}</p>
-  </v-container>
+  </UContainer>
 </template>

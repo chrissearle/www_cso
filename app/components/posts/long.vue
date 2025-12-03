@@ -1,8 +1,6 @@
 <script setup lang="ts">
-import type {ParsedContentv2} from '@nuxt/content'
+import type {ParsedContentv2} from "@nuxt/content";
 
-const {dateFormat} = useDates()
-const {seriesLink, categoryLink} = useLinks()
 const {splitList} = useStrings()
 
 const props = defineProps<{
@@ -27,30 +25,16 @@ useSeoMeta(opts)
 
 const categories = splitList(props.post.category)
 </script>
-
 <template>
-  <div class="pa-10">
-    <v-card>
-      <v-card-title>{{ props.post.title }}</v-card-title>
+  <div>
+    <h1 class="pageTitle">{{ props.post.title }}</h1>
 
-      <v-card-subtitle class="d-flex flex-wrap flex align-center">
-        {{ dateFormat(props.post.date) }}
-        <v-btn class="mx-5" v-if="props.post.series" :to="seriesLink(props.post.series)" prepend-icon="mdi-group">{{ props.post.series }}</v-btn>
-        <v-btn class="mx-5" v-for="category in categories" :to="categoryLink(category)" prepend-icon="mdi-shape">{{ category }}</v-btn>
-      </v-card-subtitle>
-
-      <v-card-text>
-        <tags-list :tags="props.post.tags"/>
-      </v-card-text>
-
-    </v-card>
+    <div class="mt-1 flex flex-wrap gap-2">
+      <SeriesBadge v-if="post.series" :series="post.series"/>
+      <CategoriesBadges :categories="categories"/>
+      <TagsList :tags="props.post.tags"/>
+    </div>
 
     <ContentRenderer :value="props.post"/>
   </div>
 </template>
-
-<style>
-pre {
-  margin: 2em;
-}
-</style>

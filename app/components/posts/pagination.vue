@@ -1,27 +1,45 @@
 <script setup lang="ts">
-const {pageLink} = useLinks()
+const { pageLink } = useLinks()
 
 const props = defineProps<{
-  currentPage: number,
-  totalPages: number,
+  currentPage: number
+  totalPages: number
 }>()
+
+const isActive = (page: number) => page === props.currentPage
 </script>
 
 <template>
-  <div class="d-flex flex flex-wrap ga-3 justify-center ma-6">
-    <v-btn to="/">
-      <v-icon>mdi-chevron-double-left</v-icon>
-      1
-    </v-btn>
+  <div class="flex flex-wrap justify-center gap-3 my-6">
+    <UButton
+        to="/"
+        :variant="isActive(1) ? 'solid' : 'soft'"
+        size="sm"
+        :aria-current="isActive(1) ? 'page' : undefined"
+    >
+      <UIcon name="i-heroicons-chevron-double-left" class="h-4 w-4" />
+      <span class="ml-1">1</span>
+    </UButton>
 
-    <v-btn v-for="p in props.totalPages - 2" :to="pageLink(p + 1)">
+    <UButton
+        v-for="p in props.totalPages - 2"
+        :key="p"
+        :to="pageLink(p + 1)"
+        :variant="isActive(p + 1) ? 'solid' : 'soft'"
+        size="sm"
+        :aria-current="isActive(p + 1) ? 'page' : undefined"
+    >
       {{ p + 1 }}
-    </v-btn>
+    </UButton>
 
-    <v-btn :to="pageLink(props.totalPages)">
-      {{ props.totalPages }}
-      <v-icon>mdi-chevron-double-right</v-icon>
-    </v-btn>
-
+    <UButton
+        :to="pageLink(props.totalPages)"
+        :variant="isActive(props.totalPages) ? 'solid' : 'soft'"
+        size="sm"
+        :aria-current="isActive(props.totalPages) ? 'page' : undefined"
+    >
+      <span class="mr-1">{{ props.totalPages }}</span>
+      <UIcon name="i-heroicons-chevron-double-right" class="h-4 w-4" />
+    </UButton>
   </div>
 </template>

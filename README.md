@@ -5,7 +5,7 @@ Nuxt based static site generator
 ## Setup
 
 ```shell
-npm install
+pnpm install
 ```
 
 ## Development Server
@@ -13,14 +13,14 @@ npm install
 Start the development server on `http://localhost:3000`:
 
 ```shell
-npm run dev
+pnpm run dev
 ```
 
 ## Deployment
 
 ```shell
-npm run generate
-npx serve .output/public/
+pnpm run build
+node .output/server/index.mjs
 ```
 
 ## Docker deployment

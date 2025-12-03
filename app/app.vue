@@ -1,11 +1,9 @@
 <template>
-  <v-app>
-    <Nav />
+  <UApp>
+    <NavBar/>
 
-    <v-main>
-      <NuxtPage />
-    </v-main>
+    <NuxtPage/>
 
-    <NavFooter class="d-md-none"/>
-  </v-app>
+    <NavFooter />
+  </UApp>
 </template>

@@ -1,18 +1,30 @@
 # syntax=docker/dockerfile:1.20
 
-FROM --platform=$BUILDPLATFORM node:24-alpine AS build
+FROM node:24-bookworm-slim AS build
 
 ARG IMAGE_TAG
 ENV NUXT_PUBLIC_IMAGE_TAG=$IMAGE_TAG
+ENV NODE_ENV=production
+
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+RUN corepack enable
 
 WORKDIR /app
+
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
+
+RUN pnpm install --frozen-lockfile
+
 COPY . .
-RUN npm ci
-RUN npm run build
 
-FROM node:24-alpine AS deploy
+RUN pnpm run build
+
+FROM node:24-bookworm-slim AS deploy
 
 WORKDIR /app
-COPY --from=build /app/.output/ /app
+ENV NODE_ENV=production
 
-CMD ["node", "/app/server/index.mjs"]
+COPY --from=build /app/.output ./
+
+CMD ["node", "./server/index.mjs"]

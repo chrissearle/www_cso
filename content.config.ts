@@ -1,19 +1,25 @@
 import { defineContentConfig, defineCollection, z } from '@nuxt/content'
+import { asSitemapCollection } from '@nuxtjs/sitemap/content'
+
+const contentSchema = z.object({
+    tags: z.array(z.string()).optional(),
+    image: z.string().optional(),
+    date: z.string().optional(),
+    category: z.string().optional(),
+    intro: z.string().optional(),
+    embedImage: z.string().optional(),
+    series: z.string().optional(),
+    sitemap: z.any().optional(),
+})
 
 export default defineContentConfig({
     collections: {
-        content: defineCollection({
-            type: 'page',
-            source: '**/*.md',
-            schema: z.object({
-                tags: z.array(z.string()),
-                image: z.string(),
-                date: z.string(),
-                category: z.string(),
-                intro: z.string(),
-                embedImage: z.string(),
-                series: z.string(),
-            })
-        })
-    }
+        content: defineCollection(
+            asSitemapCollection({
+                type: 'page',
+                source: '**/*.md',
+                schema: contentSchema,
+            }),
+        ),
+    },
 })

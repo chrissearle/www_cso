@@ -1,14 +1,14 @@
 <script setup lang="ts">
-const {tagsLink} = useLinks()
+const {categoryLink} = useLinks()
 
 const props = defineProps<{
-  tags: string | string[]
+  categories: string | string[]
 }>()
 
 </script>
 
 <template>
   <div class="mt-1 flex flex-wrap gap-2">
-    <TagsBadges :tags="props.tags"/>
+    <CategoriesBadges :categories="props.categories" />
   </div>
 </template>

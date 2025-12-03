@@ -19,19 +19,21 @@ const totalPages = computed(() => pageCount(count.value === undefined ? 0 : coun
 </script>
 
 <template>
-  <Head>
-    <Title>Page {{ page }}</Title>
-  </Head>
+  <UContainer>
+    <Head>
+      <Title>Page {{ page }}</Title>
+    </Head>
 
-  <v-container class="d-flex flex flex-wrap ga-3">
-    <PostsShort v-for="post in posts" :post="post"/>
-  </v-container>
+    <UPageGrid>
+      <PostsShort v-for="post in posts" :key="post.path" :post="post"/>
+    </UPageGrid>
 
-  <PostsPagination
-      v-if="totalPages > 1"
-      :currentPage="1"
-      :totalPages="totalPages"
-  />
 
+    <PostsPagination
+        v-if="totalPages > 1"
+        :currentPage="page"
+        :totalPages="totalPages"
+    />
+
+  </UContainer>
 </template>
-

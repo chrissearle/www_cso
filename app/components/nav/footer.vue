@@ -1,17 +1,38 @@
 <script setup lang="ts">
+const { categoryLink } = useLinks()
 
-const {data} = await useAsyncData('NavFooterCategoriesCount', () => queryCollection('content')
-    .where('category', 'IS NOT NULL')
-    .count()
+const { data: countData } = await useAsyncData(
+    'NavIndexCategoriesCount',
+    () => queryCollection('content')
+        .where('category', 'IS NOT NULL')
+        .count()
 )
 
-const hasCategories = data.value || 0 > 0
+const hasCategories = computed(
+    () => (countData.value ?? 0) > 0
+)
 </script>
 
 <template>
-  <v-footer class="d-flex flex justify-center ga-3">
-    <v-btn v-if="hasCategories" to="/categories/">Categories</v-btn>
-    <v-btn to="/tags/">Tags</v-btn>
-    <v-btn to="/series/">Series</v-btn>
-  </v-footer>
+  <UFooter class="md:hidden">
+    <UContainer class="py-4">
+      <div class="flex flex-wrap items-center justify-center gap-4 text-sm">
+        <NuxtLink
+            v-if="hasCategories"
+            to="/categories"
+            class="hover:underline"
+        >
+          All Categories
+        </NuxtLink>
+
+        <NuxtLink to="/tags" class="hover:underline">
+          All Tags
+        </NuxtLink>
+
+        <NuxtLink to="/series" class="hover:underline">
+          All Series
+        </NuxtLink>
+      </div>
+    </UContainer>
+  </UFooter>
 </template>

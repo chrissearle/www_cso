@@ -20,17 +20,16 @@ const originalTag = (posts.length > 0 && posts[0] !== undefined) ? posts[0].tags
 </script>
 
 <template>
-  <Head>
-    <Title>Tag: {{ originalTag }}</Title>
-  </Head>
+  <UContainer>
+    <Head>
+      <Title>Tag: {{ originalTag }}</Title>
+    </Head>
 
-  <v-container>
-    <h1 class="text-h3">Tag: {{ originalTag }}</h1>
-  </v-container>
-
-  <v-container class="d-flex flex flex-wrap ga-3">
-    <PostsShort v-for="post in posts" :post="post"/>
-  </v-container>
+    <h1 class="pageTitle">Tag: {{ originalTag }}</h1>
+    <UPageGrid>
+      <PostsShort v-for="post in posts" :key="post.path" :post="post"/>
+    </UPageGrid>
+  </UContainer>
 </template>
 
 
