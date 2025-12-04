@@ -22,6 +22,10 @@ RUN pnpm run build
 
 FROM node:24-bookworm-slim AS deploy
 
+ARG IMAGE_TAG
+ENV NUXT_PUBLIC_IMAGE_TAG=$IMAGE_TAG
+ENV NODE_ENV=production
+
 WORKDIR /app
 ENV NODE_ENV=production
 
