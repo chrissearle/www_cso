@@ -27,7 +27,6 @@ ENV NUXT_PUBLIC_IMAGE_TAG=$IMAGE_TAG
 ENV NODE_ENV=production
 
 WORKDIR /app
-ENV NODE_ENV=production
 
 COPY --from=build /app/.output ./
 
