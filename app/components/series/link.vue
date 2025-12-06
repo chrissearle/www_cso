@@ -6,6 +6,6 @@ const { series } = defineProps<{
 
 <template>
   <div class="mt-1 flex flex-wrap gap-2">
-    <SeriesBadge :series="series"/>
+    <SeriesBadge :series="series" />
   </div>
 </template>

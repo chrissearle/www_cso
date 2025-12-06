@@ -1,9 +1,20 @@
 <script setup lang="ts">
-const {dateFormat} = useDates()
-const {splitList} = useStrings()
+const { dateFormat } = useDates()
+const { splitList } = useStrings()
 
 const props = defineProps<{
-  post: Pick<ParsedContentv2, "image" | "title" | "date" | "tags" | "embedImage" | "intro" | "path" | "category" | "series">
+  post: Pick<
+    ParsedContentv2,
+    | "image"
+    | "title"
+    | "date"
+    | "tags"
+    | "embedImage"
+    | "intro"
+    | "path"
+    | "category"
+    | "series"
+  >
 }>()
 
 const categories = splitList(props.post.category)
@@ -27,17 +38,17 @@ const categories = splitList(props.post.category)
       </p>
 
       <NuxtImg
-          v-if="post.image || post.embedImage"
-          :src="post.image || post.embedImage"
-          :alt="post.title"
-          class="w-full rounded-lg"
+        v-if="post.image || post.embedImage"
+        :src="post.image || post.embedImage"
+        :alt="post.title"
+        class="w-full rounded-lg"
       />
     </template>
 
     <template #footer>
-      <SeriesLink v-if="post.series" :series="post.series"/>
-      <CategoriesList :categories="categories"/>
-      <TagsList :tags="post.tags"/>
+      <SeriesLink v-if="post.series" :series="post.series" />
+      <CategoriesList :categories="categories" />
+      <TagsList :tags="post.tags" />
     </template>
   </UPageCard>
 </template>

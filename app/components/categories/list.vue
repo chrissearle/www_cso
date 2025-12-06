@@ -2,7 +2,6 @@
 const props = defineProps<{
   categories: string | string[]
 }>()
-
 </script>
 
 <template>

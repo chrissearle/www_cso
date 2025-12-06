@@ -6,6 +6,6 @@ const { tags } = defineProps<{
 
 <template>
   <div class="mt-1 flex flex-wrap gap-2">
-    <TagsBadges :tags="tags"/>
+    <TagsBadges :tags="tags" />
   </div>
 </template>

@@ -1,8 +1,8 @@
 <template>
   <UApp>
-    <NavBar/>
+    <NavBar />
 
-    <NuxtPage/>
+    <NuxtPage />
 
     <NavFooter />
   </UApp>

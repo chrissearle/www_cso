@@ -2,17 +2,17 @@
 @import "@nuxt/ui";
 
 .pageTitle {
-    @apply mb-6 text-3xl font-semibold tracking-tight;
+  @apply mb-6 text-3xl font-semibold tracking-tight;
 }
 
 .sectionTitle {
-    @apply mb-6 text-2xl font-semibold tracking-tight;
+  @apply mb-6 text-2xl font-semibold tracking-tight;
 }
 
 .subSectionTitle {
-    @apply my-6 text-xl font-semibold tracking-tight;
+  @apply my-6 text-xl font-semibold tracking-tight;
 }
 
 .fingerprint {
-    @apply my-6;
+  @apply my-6;
 }

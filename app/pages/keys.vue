@@ -10,11 +10,12 @@
 
     <p class="mb-2">Get the public keys direct from the keyservers.</p>
 
-    <p class="mb-2">You can also check the proofs on my
+    <p class="mb-2">
+      You can also check the proofs on my
       <a
-          href="https://keyoxide.org/116FBA8295065A01C3BC7CC6CF79BF54D4BF0A41"
-          target="_blank"
-          rel="noopener noreferer"
+        href="https://keyoxide.org/116FBA8295065A01C3BC7CC6CF79BF54D4BF0A41"
+        target="_blank"
+        rel="noopener noreferer"
       >
         keyoxide profile.
       </a>
@@ -33,14 +34,15 @@
     </div>
 
     <p class="mb-2">
-      These replace the older two keys and are both using a larger key size
-      and SHA-256 instead of SHA-1.
+      These replace the older two keys and are both using a larger key size and
+      SHA-256 instead of SHA-1.
 
       <a
-          href="http://ekaia.org/blog/2009/05/10/creating-new-gpgkey/"
-          target="_blank"
-          rel="noopener noreferer"
-      >This blog post by Ana Beatriz Guerrero López</a>
+        href="http://ekaia.org/blog/2009/05/10/creating-new-gpgkey/"
+        target="_blank"
+        rel="noopener noreferer"
+        >This blog post by Ana Beatriz Guerrero López</a
+      >
       was very clear on how to generate these new keys.
     </p>
 
@@ -49,7 +51,8 @@
     <h3 class="subSectionTitle">Outdated</h3>
 
     <p class="mb-2">
-      These keys are no longer in use - but are published to help showing the history
+      These keys are no longer in use - but are published to help showing the
+      history
     </p>
 
     <h3 class="subSectionTitle">Work (83C1EAEB)</h3>

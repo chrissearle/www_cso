@@ -1,17 +1,28 @@
 <script setup lang="ts">
-import type {ParsedContentv2} from "@nuxt/content";
+import type { ParsedContentv2 } from "@nuxt/content"
 
-const {splitList} = useStrings()
+const { splitList } = useStrings()
 
 const props = defineProps<{
-  post: Pick<ParsedContentv2, "image" | "title" | "date" | "tags" | "embedImage" | "intro" | "path" | "category" | "series">
+  post: Pick<
+    ParsedContentv2,
+    | "image"
+    | "title"
+    | "date"
+    | "tags"
+    | "embedImage"
+    | "intro"
+    | "path"
+    | "category"
+    | "series"
+  >
 }>()
 
 const opts = {
   title: props.post.title,
   ogTitle: props.post.title,
-  ogType: 'article'
-};
+  ogType: "article",
+}
 
 if (props.post.image) {
   opts.ogImage = useSiteConfig().url + props.post.image
@@ -30,11 +41,11 @@ const categories = splitList(props.post.category)
     <h1 class="pageTitle">{{ props.post.title }}</h1>
 
     <div class="mt-1 flex flex-wrap gap-2">
-      <SeriesBadge v-if="post.series" :series="post.series"/>
-      <CategoriesBadges :categories="categories"/>
-      <TagsList :tags="props.post.tags"/>
+      <SeriesBadge v-if="post.series" :series="post.series" />
+      <CategoriesBadges :categories="categories" />
+      <TagsList :tags="props.post.tags" />
     </div>
 
-    <ContentRenderer :value="props.post"/>
+    <ContentRenderer :value="props.post" />
   </div>
 </template>

@@ -1,11 +1,10 @@
 <script setup lang="ts">
 const config = useRuntimeConfig()
-const imageTag = computed(() => config.public.imageTag || 'development')
+const imageTag = computed(() => config.public.imageTag || "development")
 </script>
 
 <template>
   <UContainer>
-
     <Head>
       <Title>Version</Title>
     </Head>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const {seriesLink} = useLinks()
+const { seriesLink } = useLinks()
 
 const { series } = defineProps<{
   series: string
@@ -7,12 +7,10 @@ const { series } = defineProps<{
 </script>
 
 <template>
-    <UBadge
-        variant="soft"
-    >
-      <NuxtLink :to="seriesLink(series)">
-        <UIcon name="i-heroicons-user-group" class="h-4 w-4" />
-        {{ series }}
-      </NuxtLink>
-    </UBadge>
+  <UBadge variant="soft">
+    <NuxtLink :to="seriesLink(series)">
+      <UIcon name="i-heroicons-user-group" class="h-4 w-4" />
+      {{ series }}
+    </NuxtLink>
+  </UBadge>
 </template>
