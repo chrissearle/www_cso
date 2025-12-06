@@ -1,14 +1,11 @@
 <script setup lang="ts">
-const {tagsLink} = useLinks()
-
-const props = defineProps<{
+const { tags } = defineProps<{
   tags: string | string[]
 }>()
-
 </script>
 
 <template>
   <div class="mt-1 flex flex-wrap gap-2">
-    <TagsBadges :tags="props.tags"/>
+    <TagsBadges :tags="tags"/>
   </div>
 </template>

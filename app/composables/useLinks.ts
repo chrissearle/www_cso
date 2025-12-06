@@ -1,5 +1,3 @@
-import slugify from "slugify";
-
 const { safeString } = useStrings()
 
 export const useLinks = () => {

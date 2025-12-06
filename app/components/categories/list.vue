@@ -1,6 +1,4 @@
 <script setup lang="ts">
-const {categoryLink} = useLinks()
-
 const props = defineProps<{
   categories: string | string[]
 }>()

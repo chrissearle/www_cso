@@ -21,8 +21,8 @@ const totalPages = computed(() => pageCount(count.value === undefined ? 0 : coun
 
     <PostsPagination
         v-if="totalPages > 1"
-        :currentPage="1"
-        :totalPages="totalPages"
+        :current-page="1"
+        :total-pages="totalPages"
     />
 
   </UContainer>

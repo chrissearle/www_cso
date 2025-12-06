@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const {seriesLink} = useLinks()
 
-const props = defineProps<{
+const { series } = defineProps<{
   series: string
 }>()
 </script>

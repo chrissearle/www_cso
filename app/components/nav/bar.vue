@@ -1,41 +1,34 @@
 <script setup lang="ts">
-const { categoryLink } = useLinks()
+const {categoryLink} = useLinks()
+const {countSplitList} = useStrings()
 
-const { data: countData } = await useAsyncData(
-    'NavIndexCategoriesCount',
+const {data: countData} = await useAsyncData(
+    'NavIndexCategoriesCountBar',
     () => queryCollection('content')
         .where('category', 'IS NOT NULL')
         .count()
 )
 
-const { data: categoryData } = await useAsyncData(
-    'NavCategoriesMenu',
-    () => queryCollection('content')
-        .where('category', 'IS NOT NULL')
-        .select('category')
-        .all()
-)
+
+const {data: categoryData} = await useAsyncData('Categories', () => queryCollection('content')
+    .where('category', 'IS NOT NULL')
+    .select('category')
+    .all())
+
+
+const countedCategories = countSplitList((categoryData.value ?? []).map((c) => c.category))
+
+const categories = new Map([...countedCategories].sort((a, b) => String(a[0]).localeCompare(b[0])))
 
 const hasCategories = computed(
     () => (countData.value ?? 0) > 0
 )
 
-const uniqueFilter = (value: string, index: number, self: string[]) =>
-    self.indexOf(value) === index
-
-const categories = computed(() => {
-  const raw = categoryData.value ?? []
-
-  return raw
-      .map((c: any) =>
-          Array.isArray(c.category)
-              ? c.category
-              : c.category.split(',')
-      )
-      .flat()
-      .map((c: string) => c.trim())
-      .filter(uniqueFilter)
-      .sort()
+const categoryItems = computed(() => {
+  return [...categories.keys()].map(c => ({
+    label: c,
+    to: categoryLink(c)
+  }))
 })
 </script>
 
@@ -52,10 +45,7 @@ const categories = computed(() => {
       <div class="hidden md:flex items-center gap-6">
         <UDropdownMenu
             v-if="hasCategories"
-            :items="categories.map(c => ({
-            label: c,
-            to: categoryLink(c)
-          }))"
+            :items="categoryItems"
         >
           <span class="cursor-pointer text-sm font-medium hover:underline">
             <span class="hidden lg:inline">All Categories</span>

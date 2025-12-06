@@ -7,9 +7,10 @@ const {data} = await useAsyncData('Categories', () => queryCollection('content')
     .select('category')
     .all())
 
-const categories = countSplitList((data.value ?? []).map((c) => c.category).flat())
 
-const sortedCategories = new Map([...categories].sort((a, b) => String(a[0]).localeCompare(b[0])))
+const countedCategories = countSplitList((data.value ?? []).map((c) => c.category))
+
+const categories = new Map([...countedCategories].sort((a, b) => String(a[0]).localeCompare(b[0])))
 </script>
 
 <template>
@@ -20,7 +21,7 @@ const sortedCategories = new Map([...categories].sort((a, b) => String(a[0]).loc
 
     <div class="flex flex-wrap gap-2">
       <NuxtLink
-          v-for="[category, count] in sortedCategories"
+          v-for="[category, count] in categories"
           :key="category"
           :to="categoryLink(category)"
           class="inline-block"

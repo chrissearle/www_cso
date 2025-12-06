@@ -12,7 +12,7 @@ const heightAttr = computed(() => String(props.height))
 
 const flickrUrl = computed(() => `https://www.flickr.com/photos/chrissearle/${props.id}/`);
 
-if (process.client) {
+if (import.meta.client) {
   useHead({
     script: [
       {

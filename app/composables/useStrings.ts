@@ -13,8 +13,10 @@ export const useStrings = () => {
         return list.sort();
     };
 
-    const countSplitList = (items: string[]): string[]  =>
+
+    const countSplitList = (items: (string | string[] | undefined | null)[]): Map<string, number> =>
         items
+            .filter((tags): tags is string | string[] => tags !== undefined && tags !== null)
             .map((tags) => {
                 if (Array.isArray(tags)) {
                     return tags;
@@ -22,7 +24,8 @@ export const useStrings = () => {
                 return splitList(tags);
             })
             .flat()
-            .reduce((acc, e) => acc.set(e, (acc.get(e) || 0) + 1), new Map())
+            .reduce((acc, e) => acc.set(e, (acc.get(e) || 0) + 1), new Map<string, number>());
+
 
     const safeString = (input: string): string => {
         return slugify("" + input, {lower: true});

@@ -7,7 +7,7 @@ const props = defineProps<{
   post: Pick<ParsedContentv2, "image" | "title" | "date" | "tags" | "embedImage" | "intro" | "path" | "category" | "series">
 }>()
 
-let opts = {
+const opts = {
   title: props.post.title,
   ogTitle: props.post.title,
   ogType: 'article'

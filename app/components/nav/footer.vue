@@ -1,8 +1,6 @@
 <script setup lang="ts">
-const { categoryLink } = useLinks()
-
 const { data: countData } = await useAsyncData(
-    'NavIndexCategoriesCount',
+    'NavIndexCategoriesCountFooter',
     () => queryCollection('content')
         .where('category', 'IS NOT NULL')
         .count()

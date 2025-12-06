@@ -8,9 +8,9 @@ const {data} = await useAsyncData('Series', () => queryCollection('content')
     .all()
 )
 
-const series = countSplitList((data.value ?? []).map((s) => s.series))
+const countedSeries = countSplitList((data.value ?? []).map((s) => s.series))
 
-const sortedSeries = new Map([...series].sort((a, b) => String(a[0]).localeCompare(b[0])))
+const sortedSeries = new Map([...countedSeries].sort((a, b) => String(a[0]).localeCompare(b[0])))
 </script>
 
 <template>

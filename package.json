@@ -7,31 +7,42 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "prepare": "husky"
   },
   "dependencies": {
-    "@artmizu/nuxt-prometheus": "^2.7.0",
+    "@artmizu/nuxt-prometheus": "2.7.0",
     "@nuxt/content": "3.9.0",
     "@nuxt/eslint": "1.11.0",
     "@nuxt/image": "2.0.0",
     "@nuxt/scripts": "0.13.0",
     "@nuxt/ui": "4.2.1",
-    "@nuxtjs/seo": "^3.2.2",
-    "@unhead/vue": "^2.0.3",
-    "better-sqlite3": "^12.5.0",
-    "eslint": "^9.0.0",
-    "luxon": "^3.7.2",
-    "nuxt": "^4.2.1",
-    "nuxt-gtag": "^4.1.0",
-    "slugify": "^1.6.6",
-    "typescript": "^5.6.3",
-    "vue": "^3.5.25",
-    "vue-router": "^4.6.3"
+    "@nuxtjs/seo": "3.2.2",
+    "@unhead/vue": "2.0.19",
+    "better-sqlite3": "12.5.0",
+    "eslint": "9.39.1",
+    "luxon": "3.7.2",
+    "nuxt": "4.2.1",
+    "nuxt-gtag": "4.1.0",
+    "slugify": "1.6.6",
+    "typescript": "5.9.3",
+    "vue": "3.5.25",
+    "vue-router": "4.6.3"
   },
   "packageManager": "pnpm@10.24.0",
   "devDependencies": {
-    "autoprefixer": "^10.4.22",
-    "postcss": "^8.5.6",
-    "tailwindcss": "^4.1.17"
+    "autoprefixer": "10.4.22",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
+    "postcss": "8.5.6",
+    "tailwindcss": "4.1.17"
+  },
+  "lint-staged": {
+    "*.{js,ts,vue}": [
+      "pnpm lint:fix",
+      "git add"
+    ]
   }
 }
