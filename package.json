@@ -33,11 +33,18 @@
   },
   "packageManager": "pnpm@10.24.0",
   "devDependencies": {
-    "autoprefixer": "10.4.22",
+    "debug": "^4.4.3",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.7",
-    "postcss": "8.5.6",
-    "tailwindcss": "4.1.17"
+    "parse5": "^8.0.0",
+    "rehype-raw": "^7.0.0",
+    "remark-emoji": "^5.0.2",
+    "remark-gfm": "^4.0.1",
+    "remark-mdc": "^3.9.0",
+    "remark-rehype": "^11.1.2",
+    "tailwindcss": "4.1.17",
+    "unified": "^11.0.5",
+    "unist-util-visit": "^5.0.0"
   },
   "lint-staged": {
     "*.{js,ts,vue}": "pnpm lint:fix"
