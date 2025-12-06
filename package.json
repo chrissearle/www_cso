@@ -1,5 +1,5 @@
 {
-  "name": "www_cso_pnpm",
+  "name": "www_cso",
   "type": "module",
   "private": true,
   "scripts": {
@@ -40,9 +40,6 @@
     "tailwindcss": "4.1.17"
   },
   "lint-staged": {
-    "*.{js,ts,vue}": [
-      "pnpm lint:fix",
-      "git add"
-    ]
+    "*.{js,ts,vue}": "pnpm lint:fix"
   }
 }
