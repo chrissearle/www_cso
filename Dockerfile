@@ -4,7 +4,6 @@ FROM node:24-bookworm-slim AS build
 
 ARG IMAGE_TAG
 ENV NUXT_PUBLIC_IMAGE_TAG=$IMAGE_TAG
-ENV NODE_ENV=production
 
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
@@ -17,6 +16,9 @@ COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 RUN pnpm install --frozen-lockfile
 
 COPY . .
+
+RUN rm -rf .nuxt
+RUN pnpm nuxi prepare
 
 RUN pnpm run build
 
