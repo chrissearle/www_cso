@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Badge } from "@/types/badge"
+import type { Badge } from "~/types/badge"
 
 const props = defineProps<{
   badges: Badge[]
