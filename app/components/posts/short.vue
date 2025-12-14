@@ -46,7 +46,7 @@ const categories = splitList(props.post.category)
     </template>
 
     <template #footer>
-      <SeriesLink v-if="post.series" :series="post.series" />
+      <SeriesList v-if="post.series" :series="post.series" />
       <CategoriesList :categories="categories" />
       <TagsList :tags="post.tags" />
     </template>

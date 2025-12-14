@@ -2,10 +2,11 @@
 const props = defineProps<{
   categories: string | string[]
 }>()
+
+const { badgesForCategories } = useBadges()
+const badges = computed(() => badgesForCategories(props.categories))
 </script>
 
 <template>
-  <div class="mt-1 flex flex-wrap gap-2">
-    <CategoriesBadges :categories="props.categories" />
-  </div>
+  <BadgeList :badges="badges" />
 </template>

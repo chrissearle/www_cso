@@ -1,16 +1,12 @@
 <script setup lang="ts">
-const { seriesLink } = useLinks()
-
-const { series } = defineProps<{
+const props = defineProps<{
   series: string
 }>()
+
+const { badgesForSeries } = useBadges()
+const badges = computed(() => badgesForSeries(props.series))
 </script>
 
 <template>
-  <UBadge variant="soft">
-    <NuxtLink :to="seriesLink(series)">
-      <UIcon name="i-heroicons-user-group" class="h-4 w-4" />
-      {{ series }}
-    </NuxtLink>
-  </UBadge>
+  <BadgeItems :badges="badges" />
 </template>

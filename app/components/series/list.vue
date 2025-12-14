@@ -1,10 +1,10 @@
 <script setup lang="ts">
 const props = defineProps<{
-  tags: string | string[]
+  series: string
 }>()
 
-const { badgesForTags } = useBadges()
-const badges = computed(() => badgesForTags(props.tags))
+const { badgesForSeries } = useBadges()
+const badges = computed(() => badgesForSeries(props.series))
 </script>
 
 <template>

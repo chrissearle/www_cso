@@ -40,10 +40,10 @@ const categories = splitList(props.post.category)
   <div>
     <h1 class="pageTitle">{{ props.post.title }}</h1>
 
-    <div class="mt-1 flex flex-wrap gap-2">
+    <div class="mt-2 flex flex-wrap gap-2">
       <SeriesBadge v-if="post.series" :series="post.series" />
       <CategoriesBadges :categories="categories" />
-      <TagsList :tags="props.post.tags" />
+      <TagsBadges :tags="props.post.tags" />
     </div>
 
     <ContentRenderer :value="props.post" />
