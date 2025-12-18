@@ -41,8 +41,21 @@ const categories = splitList(props.post.category)
         v-if="post.image || post.embedImage"
         :src="post.image || post.embedImage"
         :alt="post.title"
-        class="w-full rounded-lg"
+        class="w-full rounded-lg mb-4"
       />
+
+      <div class="flex justify-end">
+        <UButton
+          :to="post.path"
+          variant="soft"
+          color="primary"
+          size="sm"
+          trailing-icon="i-heroicons-arrow-right-20-solid"
+          class="my-2"
+        >
+          Read post
+        </UButton>
+      </div>
     </template>
 
     <template #footer>
