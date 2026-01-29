@@ -11,7 +11,6 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "@nuxt/scripts",
     "nuxt-gtag",
-    "@nuxt/scripts",
     "@artmizu/nuxt-prometheus",
   ],
 
