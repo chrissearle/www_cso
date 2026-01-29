@@ -1,20 +1,11 @@
 <script setup lang="ts">
+import type { PostPreview } from "~/types/post"
+
 const { dateFormat } = useDates()
 const { splitList } = useStrings()
 
 const props = defineProps<{
-  post: Pick<
-    ParsedContentv2,
-    | "image"
-    | "title"
-    | "date"
-    | "tags"
-    | "embedImage"
-    | "intro"
-    | "path"
-    | "category"
-    | "series"
-  >
+  post: PostPreview
 }>()
 
 const categories = splitList(props.post.category)

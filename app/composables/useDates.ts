@@ -21,8 +21,8 @@ export const useDates = () => {
     return undefined
   }
 
-  const dateFormat = (dateStr: string) =>
-    fromFormat(dateStr)?.toFormat("yyyy-MM-dd")
+  const dateFormat = (dateStr: string | undefined) =>
+    dateStr ? fromFormat(dateStr)?.toFormat("yyyy-MM-dd") : undefined
 
   return {
     dateFormat,

@@ -3,10 +3,14 @@ import type { Badge } from "~/types/badge"
 export const useBadges = () => {
   const { categoryLink, seriesLink, tagsLink } = useLinks()
 
-  const toArray = (value: string | string[]) =>
-    Array.isArray(value) ? value : [value]
+  const toArray = (value: string | string[] | undefined): string[] => {
+    if (!value) return []
+    return Array.isArray(value) ? value : [value]
+  }
 
-  const badgesForCategories = (categories: string | string[]): Badge[] => {
+  const badgesForCategories = (
+    categories: string | string[] | undefined,
+  ): Badge[] => {
     return toArray(categories).map((category) => ({
       link: categoryLink(category),
       title: category,
@@ -14,7 +18,7 @@ export const useBadges = () => {
     }))
   }
 
-  const badgesForSeries = (series: string | string[]): Badge[] => {
+  const badgesForSeries = (series: string | string[] | undefined): Badge[] => {
     return toArray(series).map((s) => ({
       link: seriesLink(s),
       title: s,
@@ -22,7 +26,7 @@ export const useBadges = () => {
     }))
   }
 
-  const badgesForTags = (tags: string | string[]): Badge[] => {
+  const badgesForTags = (tags: string | string[] | undefined): Badge[] => {
     return toArray(tags).map((tag) => ({
       link: tagsLink(tag),
       title: tag,

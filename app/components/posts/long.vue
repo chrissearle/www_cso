@@ -1,21 +1,10 @@
 <script setup lang="ts">
-import type { ParsedContentv2 } from "@nuxt/content"
+import type { PostPreview } from "~/types/post"
 
 const { splitList } = useStrings()
 
 const props = defineProps<{
-  post: Pick<
-    ParsedContentv2,
-    | "image"
-    | "title"
-    | "date"
-    | "tags"
-    | "embedImage"
-    | "intro"
-    | "path"
-    | "category"
-    | "series"
-  >
+  post: PostPreview
 }>()
 
 const opts = {

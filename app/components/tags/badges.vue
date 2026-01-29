@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const props = defineProps<{
-  tags: string | string[]
+  tags?: string[]
 }>()
 
 const { badgesForTags } = useBadges()
