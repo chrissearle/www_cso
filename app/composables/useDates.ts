@@ -6,23 +6,27 @@ export const useDates = () => {
       return undefined
     }
 
-    let dt = DateTime.fromFormat(dateStr, "yyyy-MM-dd hh:mm ZZZ")
+    const formats = ["yyyy-MM-dd HH:mm ZZZ", "yyyy-MM-dd HH:mm:ss ZZZ"]
 
-    if (dt.isValid) {
-      return dt
+    for (const format of formats) {
+      const dt = DateTime.fromFormat(dateStr, format)
+      if (dt.isValid) {
+        return dt
+      }
     }
 
-    dt = DateTime.fromFormat(dateStr, "yyyy-MM-dd hh:mm:ss ZZZ")
-
-    if (dt.isValid) {
-      return dt
+    // Log in development for debugging
+    if (import.meta.dev) {
+      console.warn(`Invalid date format: ${dateStr}`)
     }
 
     return undefined
   }
 
-  const dateFormat = (dateStr: string | undefined) =>
-    dateStr ? fromFormat(dateStr)?.toFormat("yyyy-MM-dd") : undefined
+  const dateFormat = (dateStr: string | undefined) => {
+    if (!dateStr) return "No date"
+    return fromFormat(dateStr)?.toFormat("yyyy-MM-dd") ?? "Invalid date"
+  }
 
   return {
     dateFormat,
