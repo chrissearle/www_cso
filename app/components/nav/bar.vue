@@ -2,17 +2,14 @@
 const { categoryLink } = useLinks()
 const { countSplitList } = useStrings()
 
-const { data: countData } = await useAsyncData(
-  "NavIndexCategoriesCountBar",
-  () => queryCollection("content").where("category", "IS NOT NULL").count(),
-)
-
 const { data: categoryData } = await useAsyncData("Categories", () =>
   queryCollection("content")
     .where("category", "IS NOT NULL")
     .select("category")
     .all(),
 )
+
+const hasCategories = computed(() => (categoryData.value?.length ?? 0) > 0)
 
 const countedCategories = countSplitList(
   (categoryData.value ?? []).map((c) => c.category),
@@ -21,8 +18,6 @@ const countedCategories = countSplitList(
 const categories = new Map(
   [...countedCategories].sort((a, b) => String(a[0]).localeCompare(b[0])),
 )
-
-const hasCategories = computed(() => (countData.value ?? 0) > 0)
 
 const categoryItems = computed(() => {
   return [...categories.keys()].map((c) => ({
