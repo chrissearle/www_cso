@@ -16,5 +16,15 @@ export default withNuxt({
         math: "always",
       },
     ],
+    "vue/multi-word-component-names": "off",
+    "vue/no-v-html": "warn",
+    "no-console": ["warn", { allow: ["warn", "error"] }],
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        argsIgnorePattern: "^_",
+        varsIgnorePattern: "^_",
+      },
+    ],
   },
 })
